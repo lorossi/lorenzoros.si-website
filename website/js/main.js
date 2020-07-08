@@ -53,7 +53,7 @@ function moveOrbs(selector) {
     dy = mouse_coords.y - y;
 
     if (Math.abs(dx) < epsilon && Math.abs(dy) < epsilon) {
-      r = Math.random() * (10 - 3) + 3;
+      r = Math.random() * (20 - 3) + 3;
       theta = Math.random() * 2 * Math.PI;
       x = (r * Math.cos(theta) + 1) * 100;
       y = (r * Math.sin(theta) + 1) * 100;
@@ -72,7 +72,7 @@ var angle = 0;
 var gradient = [];
 var subtitles = ["not a designer", "not a full stack programmer", "not (yet) an engineer", "a good programmer", "a creative guy", "many good ideas", "eager to learn", "can use stackoverflow", "visit my GitHub", "likes minimalistic design"];
 var mouse_coords = {"x": 0, "y": 0};
-var max_orbs = 20;
+var max_orbs = 30;
 
 $(document).ready(function() {
   let subtitle_obj = ".title #subtitle";
@@ -87,7 +87,7 @@ $(document).ready(function() {
   for (let i = 0; i < max_orbs; i++) {
     let r, theta, x, y;
 
-    r = Math.random() * (10 - 3) + 3;
+    r = Math.random() * (20 - 3) + 3;
     theta = Math.random() * 2 * Math.PI;
     x = (r * Math.cos(theta) + 1) * 100;
     y = (r * Math.sin(theta) + 1) * 100;
