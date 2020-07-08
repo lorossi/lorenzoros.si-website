@@ -43,7 +43,7 @@ function moveOrbs(selector) {
   $(selector + ' > div').each(function () {
     let x, y, dx, dy, nx, ny, epsilon;
     epsilon = $(this).css("width");
-    epsilon = parseInt(epsilon.substring(0, epsilon.length - 2));
+    epsilon = parseInt(epsilon.substring(0, epsilon.length - 2)) * 3;
     x = $(this).css("left");
     y = $(this).css("top");
     x = parseInt(x.substring(0, x.length - 2));
@@ -72,7 +72,7 @@ var angle = 0;
 var gradient = [];
 var subtitles = ["not a designer", "not a full stack programmer", "not (yet) an engineer", "a good programmer", "a creative guy", "many good ideas", "eager to learn", "can use stackoverflow", "visit my GitHub", "likes minimalistic design"];
 var mouse_coords = {"x": 0, "y": 0};
-var max_orbs = 30;
+var max_orbs = 100;
 
 $(document).ready(function() {
   let subtitle_obj = ".title #subtitle";
