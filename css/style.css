@@ -74,3 +74,20 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.orbs {
+    z-index: -10;
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+}
+
+#orb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 100%;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+}

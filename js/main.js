@@ -38,27 +38,75 @@ function setSubtitle(selector) {
   $(selector).slideDown(300);
 }
 
+function moveOrbs(selector) {
+  let easing = 0.01;
+  $(selector + ' > div').each(function () {
+    let x, y, dx, dy, nx, ny, epsilon;
+    epsilon = $(this).css("width");
+    epsilon = parseInt(epsilon.substring(0, epsilon.length - 2));
+    x = $(this).css("left");
+    y = $(this).css("top");
+    x = parseInt(x.substring(0, x.length - 2));
+    y = parseInt(y.substring(0, y.length - 2));
+
+    dx = mouse_coords.x - x;
+    dy = mouse_coords.y - y;
+
+    if (Math.abs(dx) < epsilon && Math.abs(dy) < epsilon) {
+      r = Math.random() * (10 - 3) + 3;
+      theta = Math.random() * 2 * Math.PI;
+      x = (r * Math.cos(theta) + 1) * 100;
+      y = (r * Math.sin(theta) + 1) * 100;
+      $(this).css({"left": x + "vw", "top": y + "vh"});
+    } else {
+      x += dx * easing;
+      y += dy * easing;
+      $(this).css({"left": x + "px", "top": y + "px"});
+    }
+ });
+}
+
 
 
 var angle = 0;
 var gradient = [];
 var colors = [["#1ABC9C", "#2ECC71", true], ["#1ABC9C", "#3498DB", true], ["#1ABC9C", "#27AE60", true], ["#1ABC9C", "#2980B9", true], ["#2ECC71", "#3498DB", true], ["#2ECC71", "#16A085", true], ["#2ECC71", "#2980B9", true], ["#3498DB", "#9B59B6", false], ["#3498DB", "#16A085", true], ["#3498DB", "#27AE60", true], ["#3498DB", "#8E44AD", false], ["#9B59B6", "#2980B9", false], ["#16A085", "#27AE60", true], ["#16A085", "#2980B9", false], ["#27AE60", "#2980B9", false], ["#2980B9", "#8E44AD", false], ["#F1C40F", "#E74C3C", true], ["#F1C40F", "#D35400", true], ["#F1C40F", "#C0392B", true], ["#E67E22", "#E74C3C", false], ["#E67E22", "#C0392B", false], ["#E74C3C", "#F39C12", true], ["#F39C12", "#C0392B", false]]
 var subtitles = ["not a designer", "not a full stack programmer", "not (yet) an engineer", "a good programmer", "a creative guy", "many good ideas", "eager to learn", "can use stackoverflow", "visit my GitHub", "likes minimalistic design"];
+var mouse_coords = {"x": 0, "y": 0};
+var max_orbs = 20;
 
 $(document).ready(function() {
   let subtitle_obj = ".title #subtitle";
+  let icons_obj = ".icons a";
+  let orbs_container_obj = ".orbs";
+
   selectColors();
   setTextColor();
   angle = Math.random() * 360;
 
-  console.log("%c Curious about this website? Look at the repo here https://github.com", "font-size: 2rem");
+
+  for (let i = 0; i < max_orbs; i++) {
+    let x, y;
+    x = Math.random() * 100 + "vw";
+    y = Math.random() * 100 + "vh";
+    $("<div>", {
+      "id": "orb",
+      css: {
+          "left": x,
+          "top": y
+      }
+    }).appendTo(orbs_container_obj);
+  }
+
+  console.log("%c Curious about this website? Look at the repo here https://github.com/lorossi/lorenzoros.si-website", "font-size: 2rem");
 
   setTimeout(setSubtitle, 200, subtitle_obj);
   setInterval(setSubtitle, 1000 * 15, subtitle_obj);
 
   setInterval(rotateBackground, 100);
+  setInterval(moveOrbs, 10, orbs_container_obj);
 
-  $(".icons a").mouseenter(function() {
+  $(icons_obj).mouseenter(function() {
     if (gradient[2]) {
       $(this).css({"filter": "invert(100%)"});
     } else {
@@ -66,16 +114,22 @@ $(document).ready(function() {
     }
   });
 
-  $(".icons a").mouseleave(function() {
+  $(icons_obj).mouseleave(function() {
     if (gradient[2]) {
       $(this).css({"filter": "invert(0%)"});
     } else {
       $(this).css({"filter": "invert(100%)"});
     }
   });
+
   $(subtitle_obj).click(
     function() {
       setSubtitle(subtitle_obj);
     }
   );
+
+  $("body").mousemove(function(e) {
+    mouse_coords.x = e.pageX;
+    mouse_coords.y = e.pageY;
+  })
 })
