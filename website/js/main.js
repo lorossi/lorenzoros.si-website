@@ -70,7 +70,6 @@ function moveOrbs(selector) {
 
 var angle = 0;
 var gradient = [];
-var subtitles = ["not a designer", "not a full stack programmer", "not (yet) an engineer", "a good programmer", "a creative guy", "many good ideas", "eager to learn", "can use stackoverflow", "visit my GitHub", "likes minimalistic design"];
 var mouse_coords = {"x": 0, "y": 0};
 var max_orbs = 100;
 
