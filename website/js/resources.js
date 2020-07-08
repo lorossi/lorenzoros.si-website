@@ -25,14 +25,14 @@ var colors = [
 ];
 
 var strings = [
-  "not a designer",
-  "not a full stack programmer",
-  "not (yet) an engineer",
-  "a good programmer",
-  "a creative guy",
-  "many good ideas",
-  "eager to learn",
-  "can use stackoverflow",
-  "visit my GitHub",
-  "likes minimalistic design"
+    'not a designer',
+    'not a full stack programmer',
+    'not (yet) an engineer',
+    'a good programmer',
+    'a creative guy',
+    'has many good ideas',
+    'eager to learn',
+    'can use stackoverflow',
+    'visit my GitHub!',
+    'likes minimalistic design'
 ];
