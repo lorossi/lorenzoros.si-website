@@ -51,8 +51,8 @@ function setSubtitle(selector) {
 }
 
 function moveOrbs(selector) {
- let easing = 0.02;
- let epsilon = Math.sqrt(1.95);
+ let easing = 0.03;
+ let epsilon = Math.sqrt(2);
  let maxvel = 5;
  let width = $(window).width();
 

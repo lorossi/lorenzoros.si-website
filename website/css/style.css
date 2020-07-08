@@ -68,13 +68,6 @@ body {
   background-size: cover;
 }
 
-.icons #linkedin {
-  background: url('../src/svg/linkedin.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .icons #telegram {
   background: url('../src/svg/telegram.svg');
   background-position: center;
