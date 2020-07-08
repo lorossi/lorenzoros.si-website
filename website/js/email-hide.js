@@ -1,1 +1,0 @@
-window.onload=function _0x0856ca(){let _0x157c24=atob("I2VtYWls");let _0x783c7a=atob("Y29udGFjdEBsb3Jlbnpvcm9zLnNp");document.querySelector(_0x157c24).href="mailto:"+_0x783c7a;let _0x0f6a49=atob("I3RlbGVncmFt");let _0x1eb004=atob("aHR0cHM6Ly90Lm1lL2xvcm9zc2k=");document.querySelector(_0x0f6a49).href=0x1eb004;}
