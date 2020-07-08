@@ -39,33 +39,32 @@ function setSubtitle(selector) {
 }
 
 function moveOrbs(selector) {
-  let easing = 0.01;
+  let easing = 0.02;
+  let epsilon = 1.5;
   $(selector + ' > div').each(function () {
-    let x, y, dx, dy, nx, ny, epsilon;
-    epsilon = $(this).css("width");
-    epsilon = parseInt(epsilon.substring(0, epsilon.length - 2)) * 3;
+    let x, y, dx, dy, nx, ny, vel;
     x = $(this).css("left");
     y = $(this).css("top");
-    x = parseInt(x.substring(0, x.length - 2));
+    x = parseInt(x.substring(0, x.length - 2)); // remove px and convert to int
     y = parseInt(y.substring(0, y.length - 2));
 
-    dx = mouse_coords.x - x;
-    dy = mouse_coords.y - y;
+    dx = (mouse_coords.x - x) * easing;
+    dy = (mouse_coords.y - y) * easing;
+    vel = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 
-    if (Math.abs(dx) < epsilon && Math.abs(dy) < epsilon) {
+    if (vel < Math.sqrt(1.95)) {
       r = Math.random() * (20 - 3) + 3;
       theta = Math.random() * 2 * Math.PI;
       x = (r * Math.cos(theta) + 1) * 100;
       y = (r * Math.sin(theta) + 1) * 100;
       $(this).css({"left": x + "vw", "top": y + "vh"});
     } else {
-      x += dx * easing;
-      y += dy * easing;
+      x += dx;
+      y += dy;
       $(this).css({"left": x + "px", "top": y + "px"});
     }
  });
 }
-
 
 
 var angle = 0;
