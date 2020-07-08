@@ -36,11 +36,11 @@ function setTextColor() {
 }
 
 function setSubtitle(selector) {
- shuffle(subtitles);
- if (subtitles[0] == $(selector).text()) {
-  random_text = subtitles[1];
+ shuffle(strings);
+ if (strings[0] == $(selector).text()) {
+  random_text = strings[1];
  } else {
-  random_text = subtitles[0];
+  random_text = strings[0];
  }
 
  $(selector).text(random_text);

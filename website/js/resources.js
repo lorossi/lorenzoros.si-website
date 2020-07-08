@@ -24,7 +24,7 @@ var colors = [
     ['#F39C12', '#C0392B', false]
 ];
 
-var subtitles = [
+var strings = [
   "not a designer",
   "not a full stack programmer",
   "not (yet) an engineer",
