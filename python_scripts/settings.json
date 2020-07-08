@@ -1,0 +1,34 @@
+{
+   "colors" : [
+      "#1ABC9C",
+      "#2ECC71",
+      "#3498DB",
+      "#9B59B6",
+      "#16A085",
+      "#27AE60",
+      "#2980B9",
+      "#8E44AD",
+      "#F1C40F",
+      "#E67E22",
+      "#E74C3C",
+      "#F39C12",
+      "#D35400",
+      "#C0392B"
+   ],
+   "strings" : [
+     "not a designer",
+     "not a full stack programmer",
+     "not (yet) an engineer",
+     "a good programmer",
+     "a creative guy",
+     "many good ideas",
+     "eager to learn",
+     "can use stackoverflow",
+     "visit my GitHub",
+     "likes minimalistic design"
+   ],
+   "threshold_brightness" : 127,
+   "min_angle" : 20,
+   "max_angle" : 90,
+   "output_file": "resources.js"
+}
