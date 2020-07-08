@@ -18,6 +18,10 @@
     height: 18vw;
     margin-bottom: 5vh;
   }
+
+  .orbs {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1001px) and (min-width: 481px) {

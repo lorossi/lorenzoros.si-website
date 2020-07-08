@@ -86,9 +86,12 @@ $(document).ready(function() {
 
 
   for (let i = 0; i < max_orbs; i++) {
-    let x, y;
-    x = Math.random() * 100 + "vw";
-    y = Math.random() * 100 + "vh";
+    let r, theta, x, y;
+
+    r = Math.random() * (10 - 3) + 3;
+    theta = Math.random() * 2 * Math.PI;
+    x = (r * Math.cos(theta) + 1) * 100;
+    y = (r * Math.sin(theta) + 1) * 100;
     $("<div>", {
       "id": "orb",
       css: {
