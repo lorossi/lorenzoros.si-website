@@ -75,6 +75,13 @@ body {
   background-size: cover;
 }
 
+.icons #telegram {
+  background: url('../src/svg/telegram.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .orbs {
     z-index: -10;
     position: absolute;
