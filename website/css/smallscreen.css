@@ -1,6 +1,6 @@
 @media only screen and (max-width: 480px) and (min-width: 0px) {
   .title {
-    top: 2.5vh;
+    padding-top: 10vh;
   }
 
   .title #name {
@@ -11,71 +11,66 @@
     font-size: 1.75rem;
   }
 
-  .icons {
-    flex-wrap: wrap;
-    width: 50vw;
-    left: 25vw;
-    bottom: 2.5vh;
+  .text {
+    font-size: 1rem;
+  }
+
+  .myprojects {
+    font-size: 1rem;
+  }
+
+  .myprojects #subtitle {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .myprojects #projects {
+    font-size: 1rem;
   }
 
   .icons a {
-    width: 20vw;
-    height: 20vw;
-    margin-bottom: 2.5vh;
-  }
-
-  .orbs {
-    /*display: none;*/
-  }
-
-  .text {
-    font-size: 1.25rem;
-    top: 28vh;
-    width: 80vw;
-    left: 10vw;
+    width: 48px;
+    height: 48px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 }
 
 @media only screen and (max-width: 1001px) and (min-width: 481px) {
   .title {
-    top: 2.5vh;
+    padding-top: 5vh;
   }
 
   .title #name {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   .title #subtitle {
-    font-size: 2.25rem;
-  }
-
-  .icons {
-    bottom: 5vh;
-    flex-wrap: wrap;
-    width: 40vw;
-    left: 30vw;
-  }
-
-  .icons a {
-    width: 9vw;
-    height: 9vw;
-    margin-bottom: 2.5vh;
+    font-size: 3rem;
   }
 
   .text {
+    font-size: 2rem;
+  }
+
+  .myprojects #projects {
     font-size: 1.5rem;
-      top: 39vh;
+  }
+
+  .myprojects #subtitle {
+    font-size: 2rem;
+  }
+
+  .icons a {
+    width: 64px;
+    height: 64px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }
 
 @media only screen and (max-width: 1600px) and (min-width: 1001px) {
-  .icons {
-    width: 50vw;
-    left: 25vw;
-  }
-
   .text {
-    top: 46vh;
     font-size: 2.5rem;
   }
 }

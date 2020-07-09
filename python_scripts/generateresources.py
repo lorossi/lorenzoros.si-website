@@ -1,4 +1,5 @@
 import json
+from github import Github
 
 # Calculates hue of an rbg color. Inputs a string like #FFFFFF
 def calculateHue(color):
@@ -47,7 +48,7 @@ def loadSettings(path="settings.json"):
     return settings
 
 
-def saveToFile(combinations, strings, path):
+def saveToFile(combinations, strings, repos, path):
     newl = "\n"
     tab = "    "
     output_string = ""
@@ -72,7 +73,16 @@ def saveToFile(combinations, strings, path):
         output_string += f"{newl}{tab}'{line}',"
 
     output_string = output_string[:-1]
-    output_string += f"{newl}];{newl}"
+    output_string += f"{newl}];{newl}{newl}"
+
+    output_string += "var repos = ["
+    for r in repos:
+        line = str(r)
+        output_string += f"{newl}{tab}{line},"
+
+    output_string = output_string[:-1]
+    output_string += f"{newl}];"
+
     output_file = open(path,"w+")
     output_file.write(output_string)
     output_file.close()
@@ -86,6 +96,8 @@ max_angle = settings["max_angle"]
 threshold_brightness = settings["threshold_brightness"]
 strings = settings["strings"]
 output_file = settings["output_file"]
+github_credentials = settings["GitHub"]
+
 # list that will hold every color combination
 colors_combinations = []
 
@@ -114,4 +126,23 @@ for c1 in colors:
             if not (c2, c1, bright) in colors_combinations:
                 colors_combinations.append((c1, c2, bright))
 
-saveToFile(colors_combinations, strings, output_file)
+repos = []
+g = Github(github_credentials["username"], github_credentials["password"])
+
+for repo in g.get_user().get_repos():
+    if any(word in repo.name for word in github_credentials["skip_names"]):
+        continue
+
+    if any(url in repo.html_url for url in github_credentials["skip_urls"]):
+        continue
+
+
+    repos.append({
+        "name": repo.name,
+        "url": repo.html_url,
+        "commits": repo.get_commits().totalCount
+    })
+
+repos = sorted(repos, key=lambda d: d['commits'], reverse=True)
+
+saveToFile(colors_combinations, strings, repos, output_file)

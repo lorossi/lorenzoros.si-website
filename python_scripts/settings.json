@@ -1,4 +1,18 @@
 {
+  "GitHub" : {
+    "username" : "lo.rossi@live.com ",
+    "password" : "GitLor97!",
+    "skip_names" : [
+      "calcolo",
+      "optoelettronica",
+      "elettronica",
+      "url-extractor"
+    ],
+    "skip_urls" : [
+      "https://github.com/MicrosoftStreamURLExtractor/MicrosoftStreamURLExtractor.github.io"
+    ]
+  },
+
    "colors" : [
       "#1ABC9C",
       "#2ECC71",
@@ -15,6 +29,7 @@
       "#D35400",
       "#C0392B"
    ],
+
    "strings" : [
      "not a designer",
      "not a full stack programmer",
@@ -27,8 +42,9 @@
      "visit my GitHub!",
      "likes minimalistic design"
    ],
-   "threshold_brightness" : 127,
+
+   "threshold_brightness" : 100,
    "min_angle" : 20,
    "max_angle" : 90,
-   "output_file": "resources.js"
+   "output_file": "C:\Lorenzo\Siti\Personale-4\website\jsresources.js"
 }
