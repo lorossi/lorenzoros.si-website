@@ -53,15 +53,17 @@ function setSubtitle(selector) {
  }
 
  $(selector).text(random_text);
- $(selector).css({
-  "visibility": "block"
- });
  $(selector).slideDown(300);
+}
+
+function showText(selector) {
+  console.log(selector);
+  $(selector).slideDown(600);
 }
 
 function moveOrbs(selector) {
  let easing = 0.03;
- let epsilon = Math.sqrt(2);
+ let epsilon = Math.sqrt(1.95);
  let maxvel = 5;
  let width = $(window).width();
 
@@ -82,14 +84,18 @@ function moveOrbs(selector) {
   }
 
   if (vel < epsilon) {
+   let r, theta, x, y;
+
    r = Math.random() * (2 - 1) + 1;
+
    theta = Math.random() * 2 * Math.PI;
-   x = (r * Math.cos(theta) + 1) * 100;
-   y = (r * Math.sin(theta) + 1) * 100;
+   x = (r * Math.cos(theta) + 1) * 100 + "vw";
+   y = (r * Math.sin(theta) + 1) * 100 + "vh";
    $(this).css({
-    "left": x + "vw",
-    "top": y + "vh",
+    "left": x,
+    "top": y,
    });
+
   } else {
      x += dx;
      y += dy;
@@ -118,6 +124,7 @@ var dark_filter = "invert(4%) sepia(4%) saturate(1810%) hue-rotate(155deg) brigh
 
 $(document).ready(function() {
  let subtitle_obj = ".title #subtitle";
+ let text_obj = ".text"
  let icons_obj = ".icons a";
  let orbs_container_obj = ".orbs";
  let orbs_generated = false;
@@ -130,8 +137,9 @@ $(document).ready(function() {
  console.log("%c Curious about this website? Look at the repo here https://github.com/lorossi/lorenzoros.si-website", "font-size: 1.5rem;color:#ddd;background-color:#131516");
 
  setTimeout(setSubtitle, 200, subtitle_obj);
- setInterval(setSubtitle, 1000 * 15, subtitle_obj);
+ setTimeout(showText, 500, text_obj);
 
+ setInterval(setSubtitle, 1000 * 15, subtitle_obj);
  setInterval(rotateBackground, 100);
 
  $(subtitle_obj).click(
@@ -170,9 +178,11 @@ $(document).ready(function() {
     let r, theta, x, y;
 
     r = Math.random() * (2 - 1) + 1;
+  //  r = Math.sqrt(2);
     theta = Math.random() * 2 * Math.PI;
     x = (r * Math.cos(theta) + 1) * 100 + "vw";
     y = (r * Math.sin(theta) + 1) * 100 + "vh";
+
     $("<div>", {
      "id": "orb",
      css: {
@@ -180,7 +190,7 @@ $(document).ready(function() {
       "top": y
      }
     }).appendTo(orbs_container_obj);
-   }
+  }
    setInterval(moveOrbs, 10, orbs_container_obj);
   }
   mouse_coords.x = e.pageX;

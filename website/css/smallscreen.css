@@ -1,4 +1,8 @@
 @media only screen and (max-width: 480px) and (min-width: 0px) {
+  .title {
+    top: 2.5vh;
+  }
+
   .title #name {
     font-size: 3rem;
   }
@@ -9,24 +13,32 @@
 
   .icons {
     flex-wrap: wrap;
-    width: 40vw;
-    left: 30vw;
+    width: 50vw;
+    left: 25vw;
+    bottom: 2.5vh;
   }
 
   .icons a {
-    width: 18vw;
-    height: 18vw;
-    margin-bottom: 5vh;
+    width: 20vw;
+    height: 20vw;
+    margin-bottom: 2.5vh;
   }
 
   .orbs {
-    display: none;
+    /*display: none;*/
+  }
+
+  .text {
+    font-size: 1.25rem;
+    top: 28vh;
+    width: 80vw;
+    left: 10vw;
   }
 }
 
 @media only screen and (max-width: 1001px) and (min-width: 481px) {
   .title {
-    top: 5vh;
+    top: 2.5vh;
   }
 
   .title #name {
@@ -40,14 +52,19 @@
   .icons {
     bottom: 5vh;
     flex-wrap: wrap;
-    width: 20vw;
-    left: 40vw;
+    width: 40vw;
+    left: 30vw;
   }
 
   .icons a {
     width: 9vw;
     height: 9vw;
-    margin-bottom: 5vh;
+    margin-bottom: 2.5vh;
+  }
+
+  .text {
+    font-size: 1.5rem;
+      top: 39vh;
   }
 }
 
@@ -55,5 +72,10 @@
   .icons {
     width: 50vw;
     left: 25vw;
+  }
+
+  .text {
+    top: 46vh;
+    font-size: 2.5rem;
   }
 }
