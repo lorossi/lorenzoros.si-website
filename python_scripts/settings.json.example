@@ -1,16 +1,9 @@
 {
   "GitHub" : {
-    "username" : "lo.rossi@live.com ",
-    "password" : "GitLor97!",
-    "skip_names" : [
-      "calcolo",
-      "optoelettronica",
-      "elettronica",
-      "url-extractor"
-    ],
-    "skip_urls" : [
-      "https://github.com/MicrosoftStreamURLExtractor/MicrosoftStreamURLExtractor.github.io"
-    ]
+    "username" : "GITHUB-USERNAME",
+    "password" : "GITHUB PASSWORD",
+    "skip_names" : ["REPO NAMES TO SKIP"],
+    "skip_urls" : ["REPO URLS TO SKIP"]
   },
 
    "colors" : [
@@ -46,5 +39,5 @@
    "threshold_brightness" : 100,
    "min_angle" : 20,
    "max_angle" : 90,
-   "output_file": "C:\\Lorenzo\\Siti\\Personale-4\\website\\js\\resources.js"
+   "output_file": "resources.js"
 }

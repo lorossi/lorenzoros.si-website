@@ -39,7 +39,7 @@ var strings = [
 
 var repos = [
     {'name': 'formulario-campi-elettromagnetici', 'url': 'https://github.com/lorossi/formulario-campi-elettromagnetici', 'commits': 34},
-    {'name': 'lorenzoros.si-website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 32},
+    {'name': 'lorenzoros.si-website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 33},
     {'name': 'zero-width-steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 30},
     {'name': 'email-hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 24},
     {'name': 'MicrosoftStreamURLExtractor.github.io', 'url': 'https://github.com/lorossi/MicrosoftStreamURLExtractor.github.io', 'commits': 20},
