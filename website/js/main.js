@@ -127,13 +127,13 @@ $(document).ready(function() {
   let orbs_generated = false;
   let max_orbs = 50;
 
+  $('html,body').animate({scrollTop:0},800);
+  console.log("%c Curious about this website? Look at the repo here https://github.com/lorossi/lorenzoros.si-website", "font-size: 1.5rem;color:#ddd;background-color:#131516");
+
   selectColors();
   setTextColor(icons_svg_obj);
   setProjects(projects_obj)
   setOrbsContainerSize(orbs_container_obj);
-
-
-  console.log("%c Curious about this website? Look at the repo here https://github.com/lorossi/lorenzoros.si-website", "font-size: 1.5rem;color:#ddd;background-color:#131516");
 
   //setTimeout(setSubTitle, 200, name_obj, subtitle_obj);
   setSubTitle(subtitle_obj);
