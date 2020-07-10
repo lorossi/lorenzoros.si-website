@@ -18,6 +18,10 @@ a, a:visited, a:active, a:hover {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+}
+
 .background {
   min-height: 105vh;
   display: flex;
@@ -34,11 +38,11 @@ a, a:visited, a:active, a:hover {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+  text-align: center;
 }
 
 .title {
   padding-top: 5vh;
-  text-align: center;
   user-select: none;
 }
 
@@ -54,7 +58,6 @@ a, a:visited, a:active, a:hover {
   padding-top: 15vh;
   word-break: break-word;
   line-height: 140%;
-  text-align: center;
   font-size: 3rem;
   animation-delay: 0.5s;
 }
@@ -62,7 +65,6 @@ a, a:visited, a:active, a:hover {
 .myprojects {
   padding-top: 15vh;
   word-break: break-word;
-  text-align: center;
   animation-delay: 1s;
 }
 
@@ -81,7 +83,7 @@ a, a:visited, a:active, a:hover {
   flex-direction: row;
   justify-content: center;
   display: flex;
-  animation-delay: 1.5s;
+  animation-delay: 2s;
 }
 
 .icons a {
@@ -133,4 +135,13 @@ a, a:visited, a:active, a:hover {
   opacity: 0;
   transform: translate(-50%, -50%);
   z-index: 25;
+}
+
+.colorswitch {
+  font-weight: bold;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1vw;
+  left: 1vw;
+  user-select: none;
 }

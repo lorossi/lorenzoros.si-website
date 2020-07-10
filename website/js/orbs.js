@@ -10,9 +10,9 @@ class Orb {
     this.container = container;
     this.attachToContainer();
 
-    this.g = Math.pow(10, 6);
-    this.maxvel = 5;
-    this.maxacc = 0.05;
+    this.g = 2 * Math.pow(10, 5);
+    this.maxvel = 6;
+    this.maxacc = 0.2;
     this.maxforce = 0.1;
   }
 
@@ -26,9 +26,10 @@ class Orb {
         "height": this.r * 2 + "px",
         "opacity": 0,
         "animation-name": "fadeinOrb",
-        "animation-delay": "2s",
+        "animation-delay": "1s",
         "animation-duration": "3s",
-        "animation-fill-mode": "forwards"
+        "animation-fill-mode": "forwards",
+        "animation-timing": "ease-in"
       }
     }).attr("orbid", this.id).appendTo(this.container);
   }

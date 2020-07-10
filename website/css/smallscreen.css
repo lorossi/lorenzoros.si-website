@@ -15,6 +15,10 @@
     font-size: 1rem;
   }
 
+  .linebreak {
+    display: block;
+  }
+
   .myprojects {
     font-size: 1rem;
   }
@@ -33,6 +37,14 @@
     height: 48px;
     margin-left: 12px;
     margin-right: 12px;
+  }
+
+  .colorswitch {
+    width: 100vw;
+    font-size: 1rem;
+    left: 0;
+    top: 2vw;
+    text-align: center;
   }
 }
 
@@ -62,10 +74,10 @@
   }
 
   .icons a {
-    width: 64px;
-    height: 64px;
-    margin-left: 16px;
-    margin-right: 16px;
+    width: 96px;
+    height: 96px;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }
 

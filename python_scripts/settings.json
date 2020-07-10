@@ -43,7 +43,7 @@
      "likes minimalistic design"
    ],
 
-   "threshold_brightness" : 100,
+   "threshold_brightness" : 127,
    "min_angle" : 20,
    "max_angle" : 90,
    "output_file": "C:\\Lorenzo\\Siti\\Personale-4\\website\\js\\resources.js"

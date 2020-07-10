@@ -78,6 +78,7 @@ def saveToFile(combinations, strings, repos, path):
     output_string += "var repos = ["
     for r in repos:
         line = str(r)
+        line = line.replace("None", "null")
         output_string += f"{newl}{tab}{line},"
 
     output_string = output_string[:-1]
@@ -136,11 +137,16 @@ for repo in g.get_user().get_repos():
     if any(url in repo.html_url for url in github_credentials["skip_urls"]):
         continue
 
+    if not repo.language:
+        language = ""
+    else:
+        language = repo.language
 
     repos.append({
         "name": repo.name,
         "url": repo.html_url,
-        "commits": repo.get_commits().totalCount
+        "commits": repo.get_commits().totalCount,
+        "language": language
     })
 
 repos = sorted(repos, key=lambda d: d['commits'], reverse=True)
