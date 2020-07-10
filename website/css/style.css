@@ -22,6 +22,10 @@ p {
   margin: 0;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .background {
   min-height: 105vh;
   display: flex;
@@ -63,7 +67,7 @@ p {
 }
 
 .myprojects {
-  padding-top: 15vh;
+  padding-top: 20vh;
   word-break: break-word;
   animation-delay: 1s;
 }

@@ -37,7 +37,7 @@
    ],
 
    "threshold_brightness" : 100,
-   "min_angle" : 20,
+   "min_angle" : 30,
    "max_angle" : 90,
    "output_file": "resources.js"
 }
