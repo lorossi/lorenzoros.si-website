@@ -36,7 +36,7 @@ function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
       $(icons_obj).each(function() {
         $(this).css({
           "filter": dark_filter
-        })
+        });
       });
 
       $(color_switch_obj).css({
@@ -52,7 +52,7 @@ function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
       $(icons_obj).each(function() {
         $(this).css({
           "filter": light_filter
-        })
+        });
       });
 
       $(color_switch_obj).css({
@@ -72,7 +72,7 @@ function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
     $(icons_obj).each(function() {
       $(this).css({
         "filter": light_filter
-      })
+      });
     });
 
     $(color_switch_obj).css({
@@ -100,7 +100,7 @@ function setSubTitle(subtitle_obj) {
   } else {
     random_text = strings[0];
   }
-  
+
   $(subtitle_obj).text(random_text);
   $(subtitle_obj).fadeIn(500);
 }
@@ -110,9 +110,9 @@ function showText(text_obj, projects_obj, icons_obj, icons_svg_obj) {
     $(projects_obj).fadeIn(600, function() {
       $(icons_obj).css({
         "display": "flex"
-      })
-      $(icons_svg_obj).fadeIn(600)
-    })
+      });
+      $(icons_svg_obj).fadeIn(600);
+    });
   });
 }
 
@@ -133,7 +133,7 @@ function setOrbsContainerSize(selector) {
     $(selector).css({
       "height": height + "px",
       "width": width + "px"
-    })
+    });
   }
 }
 
@@ -149,14 +149,14 @@ var bw_filter = "invert(50%) sepia(27%) saturate(725%) hue-rotate(145deg) bright
 var angle = 0;
 var gradient = [];
 var mouse_coords = new Vector(null, null);
-var orbs = []
+var orbs = [];
 
 $(document).ready(function() {
   let name_obj = ".title #name";
   let subtitle_obj = ".title #subtitle";
-  let text_obj = ".text"
-  let projects_obj = ".myprojects #projects"
-  let projects_link_obj = ".myprojects #projects a"
+  let text_obj = ".text";
+  let projects_obj = ".myprojects #projects";
+  let projects_link_obj = ".myprojects #projects a";
   let icons_obj = ".icons";
   let icons_svg_obj = ".icons a";
   let background_obj = ".background";
@@ -205,12 +205,12 @@ $(document).ready(function() {
           $(this).css({
             "filter": "",
             "color": light_color
-        })
+        });
         } else {
           // we found an image
           $(this).css({
             "filter": light_filter
-          })
+          });
         }
       } else {
         if ($(this).text() != "") {
@@ -218,18 +218,18 @@ $(document).ready(function() {
           $(this).css({
             "filter": "",
             "color": dark_color
-        })
+        });
         } else {
           // we found an image
           $(this).css({
             "filter": dark_filter
-          })
+          });
         }
       }
     } else {
       $(this).css({
         "filter": bw_filter
-      })
+      });
     }
   }).mouseleave(function() {
     if (color_mode) {
@@ -239,12 +239,12 @@ $(document).ready(function() {
           $(this).css({
             "filter": "",
             "color": dark_color
-        })
+        });
         } else {
           // we found an image
           $(this).css({
             "filter": dark_filter
-          })
+          });
         }
       } else {
         if ($(this).text() != "") {
@@ -252,12 +252,12 @@ $(document).ready(function() {
           $(this).css({
             "filter": "",
             "color": light_color
-        })
+        });
         } else {
           // we found an image
           $(this).css({
             "filter": light_filter
-          })
+          });
         }
       }
     } else {
@@ -266,12 +266,12 @@ $(document).ready(function() {
         $(this).css({
           "filter": "",
           "color": light_text
-      })
+      });
       } else {
         // we found an image
         $(this).css({
           "filter": light_filter
-        })
+        });
       }
     }
   });
@@ -281,37 +281,44 @@ $(document).ready(function() {
       $(projects_obj + " *").each(function() {
         $(this).css({
           "color": ""
-        })
-      })
+        });
+      });
 
     if (color_mode) {
       color_mode = !color_mode;
-      $(this).text("switch to colors")
+      $(this).text("switch to colors");
       clearInterval(rotate_interval);
       setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
     } else {
-      color_mode = !color_mode
-      $(this).text("switch to dark mode")
+      color_mode = !color_mode;
+      $(this).text("switch to dark mode");
       selectColors();
       setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
       angle = Math.random() * 360;
       rotate_interval = setInterval(rotateBackground, 100); //REACTIVATE WITH COLORS
     }
-
-  })
+  });
 
   $(window).resize(function() {
     setOrbsContainerSize(orbs_container_obj);
-  })
+  });
 
 
   $("body").mousemove(function(e) {
     if (!orbs_generated) {
       orbs_generated = true;
-      let radius = 20;
-      let width, height;
+
+      let radius, width, height;
       width = $(".background").width();
       height = $(".background").height();
+
+      if (width > 1000) {
+        radius = 20;
+      } else if (width > 500){
+        radius = 10;
+      } else {
+        radius = 5;
+      }
 
       for (let i = 0; i < max_orbs; i++) {
         let x, y;
@@ -326,4 +333,4 @@ $(document).ready(function() {
     mouse_coords.y = e.pageY;
   });
 
-})
+});
