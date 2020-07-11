@@ -1,5 +1,5 @@
 python_scripts/*.js
 python_scripts/*.log
 python_scripts/*test.py
-python_scripts/settings*.json
+python_scripts/settings.json
 python_scripts/__pycache__
