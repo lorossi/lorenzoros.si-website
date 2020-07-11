@@ -8,6 +8,22 @@
   src: url('fonts/Roboto-Regular.ttf');
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #363538;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8D8C8A;
+  border-radius: 5px;
+}
+
+
 body {
   overflow-x: hidden;
   margin: 0;
