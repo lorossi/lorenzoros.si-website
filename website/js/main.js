@@ -91,9 +91,9 @@ function setProjects(projects_obj) {
     // loop through repos list (global variable)
     let string;
     if (repo.language) {
-      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name} - <span class="italic">${repo.language}</span></a><br>`;
+      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name} - <span class="italic">${repo.language}</span></a>`;
     } else {
-      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name}</a><br>`;
+      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name}</a>`;
     }
     $(projects_obj).append(string);
   });
@@ -105,7 +105,9 @@ function setCodeStats(stats_obj) {
   let string;
 
   // total repositories tracker
-  string = `${total_lines} lines, ${total_languages} languages, ${total_commits} commits, ${repos.length} repositories`;
+  // the two spans are regulated inside the smallscreen.css stylesheet and
+  //    respectively hide and show content in small screens
+  string = `${total_lines} lines, ${total_commits} commits, <span class="mobileshow"><br></span>${repos.length} repositories, ${total_languages} languages`;
   $(stats_obj).children().eq(1).html(string); // second child selection
 
   string = ``;

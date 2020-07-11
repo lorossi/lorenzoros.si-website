@@ -47,6 +47,14 @@ p {
   font-style: italic;
 }
 
+.mobileshow {
+    display: none;
+}
+
+.mobilehide {
+  display: inline;
+}
+
 .button {
   font-family: Roboto-Regular;
   position: absolute;
@@ -114,12 +122,17 @@ p {
   font-size: 2.5rem;
 }
 
+.myprojects #projects a {
+  display: inline-block;
+  padding-bottom: 0.5vh;
+}
+
 .codestats {
   padding-top: 18vh;
   animation-delay: 1.5s;
 }
 
-.codestats #title {
+.codestats #subtitle {
   font-size: 3rem;
   padding-bottom: 2vh;
 }

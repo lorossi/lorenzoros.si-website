@@ -15,16 +15,25 @@
     font-size: 1rem;
   }
 
-  .linebreak {
-    display: block;
+  .text p {
+    padding-bottom: 0.5rem;
+  }
+
+  .mobileshow {
+    display: inline;
+  }
+
+  .mobilehide {
+    display: none;
   }
 
   .myprojects {
     font-size: 1rem;
   }
 
-  .myprojects #subtitle {
-    font-size: 1rem;
+  .myprojects #subtitle,
+  .codestats #subtitle {
+    font-size: 1.25rem;
     padding-bottom: 1rem;
   }
 
@@ -32,7 +41,6 @@
     font-size: 1rem;
   }
 
-  .codestats #title,
   .codestats #total,
   .codestats #breakdown {
     font-size: 1rem;
