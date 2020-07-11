@@ -1,3 +1,5 @@
+// simple library made for handling 2D vectors
+
 class Vector {
   constructor(x, y) {
     this.x = x;
@@ -46,5 +48,9 @@ class Vector {
       this.x *= nmag / mag
       this.y *= nmag / mag
     }
+  }
+
+  heading() {
+    return Math.atan2(this.y, this.x);
   }
 }
