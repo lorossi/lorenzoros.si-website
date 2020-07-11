@@ -4,9 +4,9 @@ A repo contanining all the code used in my website
 ## Details
 Everything in this website is client sided. This choice was made in order to save money by getting a simple web host instead of a VPS (I might reconsider this idea in the future).
 
-The background colors and the "subtitles" (strings of text that appear under my name) are pre-generated using a python script that can be found inside the *python_scripts* folder.
+The background colors, the "subtitles" (strings of text that appear under my name) and all the stats about my projects are pre-generated using a python script that can be found inside the *python_scripts* folder. I run it once a day from a Raspberry Pi.
 
-I hid the email and my telegram links in the *email-hide.js* using my other project, [email-hide](https://github.com/lorossi/email-hide). I'm pretty confident this is enough to shield spammers.
+I hid the email and my telegram links in the *email-hide.js* using my other project, [email-hide](https://github.com/lorossi/email-hide). I'm pretty confident this is enough to shield myself from spammers.
 
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
