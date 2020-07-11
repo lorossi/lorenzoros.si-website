@@ -104,7 +104,7 @@ def saveToFile(**kwargs):
     output_string += f"{newl}{newl}"
 
     output_string += f"{slash} variable containing total bytes of code{newl}"
-    output_string += f"var total_lines = {kwargs['bytes_of_code']};"
+    output_string += f"var total_bytes = {kwargs['bytes_of_code']};"
     output_string += f"{newl}{newl}"
 
     output_string += f"{slash} variable containing total number of commits{newl}"

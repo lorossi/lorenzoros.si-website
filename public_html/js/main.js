@@ -107,7 +107,7 @@ function setCodeStats(stats_obj) {
   // total repositories tracker
   // the two spans are regulated inside the smallscreen.css stylesheet and
   //    respectively hide and show content in small screens
-  string = `${total_lines} lines, ${total_commits} commits, <span class="mobileshow"><br></span>${repos.length} repositories, ${total_languages} languages`;
+  string = `${total_bytes} bytes, ${total_commits} commits, <span class="mobileshow"><br></span>${repos.length} repositories, ${total_languages} languages`;
   $(stats_obj).children().eq(1).html(string); // second child selection
 
   string = ``;
