@@ -109,6 +109,10 @@ def saveToFile(**kwargs):
 
     output_string += f"{slash} variable containing total number of commits{newl}"
     output_string += f"var total_commits = {kwargs['number_of_commits']};"
+    output_string += f"{newl}{newl}"
+
+    output_string += f"{slash} variable containing total number of languages{newl}"
+    output_string += f"var total_languages = {len(kwargs['languages'])};"
     output_string += f"{newl}"
 
     output_file = open(kwargs["path"],"w+")
