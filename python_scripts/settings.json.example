@@ -6,38 +6,21 @@
     "skip_urls" : ["REPO URLS TO SKIP"]
   },
 
-   "colors" : [
-      "#1ABC9C",
-      "#2ECC71",
-      "#3498DB",
-      "#9B59B6",
-      "#16A085",
-      "#27AE60",
-      "#2980B9",
-      "#8E44AD",
-      "#F1C40F",
-      "#E67E22",
-      "#E74C3C",
-      "#F39C12",
-      "#D35400",
-      "#C0392B"
-   ],
+  "FTP" : {
+    "upload": true,
+    "server": "FTP-SERVER",
+    "username": "FTP-USERNAME",
+    "password": "FTP-PASSWORD",
+    "port": FTP-PORT,
+    "path": "FTP-REMOTE-DESTINATION-PATH"
+  },
 
-   "strings" : [
-     "not a designer",
-     "not a full stack programmer",
-     "not (yet) an engineer",
-     "a good programmer",
-     "a creative guy",
-     "has many good ideas",
-     "eager to learn",
-     "can use stackoverflow",
-     "visit my GitHub!",
-     "likes minimalistic design"
-   ],
+   "colors" : ["HEX COLOR TO CHOOSE"],
 
-   "threshold_brightness" : 100,
-   "min_angle" : 30,
-   "max_angle" : 90,
-   "output_file": "resources.js"
+   "strings" : ["SUBTITLES STRINGS"],
+
+   "threshold_brightness" : THRESHOLD-BRIGHTNESS,
+   "min_angle" : MINIMUM-ANGLE,
+   "max_angle" : MAXIMUM-ANGLE,
+   "output_file": "OUTPUT-FILE-PATH"
 }

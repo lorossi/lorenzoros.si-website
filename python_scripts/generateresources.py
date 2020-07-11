@@ -1,5 +1,16 @@
 import json
+import logging
 from github import Github
+from ftplib import FTP_TLS
+from datetime import datetime
+
+
+"""
+    This script updates informations about background colors and GitHub repo.
+    Since I don't have a VPS (I use normal hosting), I run this code every once
+    in a while and update the result through FTP into the server,
+    Every part is costumizable inside the file settings.json
+"""
 
 # Calculates hue of an rbg color. Inputs a string like #FFFFFF
 def calculateHue(color):
@@ -48,7 +59,8 @@ def loadSettings(path="settings.json"):
     return settings
 
 
-def saveToFile(combinations, strings, repos, path):
+#def saveToFile(combinations, strings, repos, languages, lines_of_code, number_of_commits, path):
+def saveToFile(**kwargs):
     newl = "\n"
     tab = "    "
     slash = "//"
@@ -59,115 +71,200 @@ def saveToFile(combinations, strings, repos, path):
 
     output_string += f"{slash} variable containing gradient colors{newl}"
     output_string += "var colors = ["
-    for c in combinations:
+    for c in kwargs["combinations"]:
         line = str(c)
         # convert to js notation
-        line = line.replace("(", "[")
-        line = line.replace(")", "]")
         line = line.replace("True", "true")
         line = line.replace("False", "false")
         output_string += f"{newl}{tab}{line},"
-
     # we remove last comma
     output_string = output_string[:-1]
     output_string += f"{newl}];{newl}{newl}"
 
     output_string += f"{slash} variable containing subtitles{newl}"
     output_string += "var strings = ["
-    for s in strings:
+    for s in kwargs["strings"]:
         line = str(s)
         output_string += f"{newl}{tab}'{line}',"
-
     output_string = output_string[:-1]
     output_string += f"{newl}];{newl}{newl}"
 
     output_string += f"{slash} variable containing infos about my repos{newl}"
     output_string += "var repos = ["
-    for r in repos:
+    for r in kwargs["repos"]:
         line = str(r)
         line = line.replace("None", "null")
         output_string += f"{newl}{tab}{line},"
-
     output_string = output_string[:-1]
-    output_string += f"{newl}];"
+    output_string += f"{newl}];{newl}{newl}"
 
-    output_file = open(path,"w+")
+    output_string += f"{slash} variable containing repos programming languages{newl}"
+    output_string += "var languages = "
+    output_string += f"{str(kwargs['languages'])};"
+    output_string += f"{newl}{newl}"
+
+    output_string += f"{slash} variable containing total number of lines of code{newl}"
+    output_string += f"var total_lines = {kwargs['lines_of_code']};"
+    output_string += f"{newl}{newl}"
+
+    output_string += f"{slash} variable containing total number of commits{newl}"
+    output_string += f"var total_commits = {kwargs['number_of_commits']};"
+    output_string += f"{newl}"
+
+    output_file = open(kwargs["path"],"w+")
     output_file.write(output_string)
     output_file.close()
     return
 
 
-settings = loadSettings()
-colors = settings["colors"]
-min_angle = settings["min_angle"]
-max_angle = settings["max_angle"]
-threshold_brightness = settings["threshold_brightness"]
-strings = settings["strings"]
-output_file = settings["output_file"]
-github_credentials = settings["GitHub"]
+def main():
+    logging.basicConfig(filename='generateresources.log', level=logging.INFO,
+                        format='%(asctime)s %(levelname)s %(message)s',
+                        filemode="w")
 
-# list that will hold every color combination
-colors_combinations = []
+    logging.info("started script")
+    settings = loadSettings()
+    logging.info("settings loaded")
+    colors = settings["colors"]
+    min_angle = settings["min_angle"]
+    max_angle = settings["max_angle"]
+    threshold_brightness = settings["threshold_brightness"]
+    strings = settings["strings"]
+    output_file = settings["output_file"]
+    github_credentials = settings["GitHub"]
+    ftp_credentials = settings["FTP"]
 
-# loop through colors
-for c1 in colors:
-    # keep track of original list of colrs
-    colors_copy = [c for c in colors]
+    # list that will hold every color combination
+    colors_combinations = []
 
-    # calculate the hue of the first color
-    c1_hue = calculateHue(c1)
+    # loop through colors
+    for c1 in colors:
+        # keep track of original list of colrs
+        colors_copy = [c for c in colors]
 
-    # loop through colors again
-    for c2 in colors_copy:
-        if c1 == c2:
+        # calculate the hue of the first color
+        c1_hue = calculateHue(c1)
+
+        # loop through colors again
+        for c2 in colors_copy:
+            if c1 == c2:
+                continue
+
+            c2_hue = calculateHue(c2)
+            angle_between = abs(c2_hue - c1_hue)
+            if angle_between > min_angle and angle_between < max_angle:
+                # the two colors are not too far (they are not complementary)
+                brightness = averageColor([c1, c2])
+                # we want to know if the gradient is "dark" or "light"
+                bright = brightness > threshold_brightness
+
+                new_dict = {
+                    "from": c1,
+                    "to": c2,
+                    "bright": bright
+                }
+
+                check_old = {
+                    "from": c2,
+                    "to": c1,
+                    "bright": bright
+                }
+
+                # we check if the couple hasn't been checked already
+                if not check_old in colors_combinations:
+                    colors_combinations.append(new_dict)
+
+    logging.info("colors calculated")
+
+    repos = []
+    languages = {}
+    relative_languages = {}
+    total_lines = 0
+    total_commits = 0
+
+    g = Github(github_credentials["username"], github_credentials["password"])
+    logging.info("logged into GitHub")
+
+    for repo in g.get_user().get_repos():
+        if any(word in repo.name for word in github_credentials["skip_names"]):
             continue
 
-        c2_hue = calculateHue(c2)
-        angle_between = abs(c2_hue - c1_hue)
-        if angle_between > min_angle and angle_between < max_angle:
-            # the two colors are not too far (they are not complementary)
-            brightness = averageColor([c1, c2])
-            # we want to know if the gradient is "dark" or "light"
-            bright = brightness > threshold_brightness
+        if any(url in repo.html_url for url in github_credentials["skip_urls"]):
+            continue
 
-            new_dict = {
-                "from": c1,
-                "to": c2,
-                "bright": bright
-            }
+        if not repo.language:
+            language = ""
+        else:
+            language = repo.language
 
-            check_old = {
-                "from": c2,
-                "to": c1,
-                "bright": bright
-            }
+        repos.append({
+            "name": repo.name,
+            "formatted_name": repo.name.replace("-", " "),
+            "url": repo.html_url,
+            "commits": repo.get_commits().totalCount,
+            "language": language,
+            "last_pushed": repo.pushed_at,
+            "last_pushed_timestamp": repo.pushed_at.strftime("%m-%d-%yT%H:%M:%S:%f")
+        })
 
-            # we check if the couple hasn't been checked already
-            if not check_old in colors_combinations:
-                colors_combinations.append(new_dict)
+        total_commits += repo.get_commits().totalCount
 
-repos = []
-g = Github(github_credentials["username"], github_credentials["password"])
+        repo_languages = repo.get_languages()
+        for l in repo_languages:
+            total_lines += repo_languages[l]
+            if l in languages:
+                languages[l] += repo_languages[l]
+            else:
+                languages[l] = repo_languages[l]
 
-for repo in g.get_user().get_repos():
-    if any(word in repo.name for word in github_credentials["skip_names"]):
-        continue
+    # sort by number of commits
+    #repos = sorted(repos, key=lambda d: d['commits'], reverse=True)
 
-    if any(url in repo.html_url for url in github_credentials["skip_urls"]):
-        continue
+    # sort by time
+    repos = sorted(repos, key=lambda x : x['last_pushed'], reverse=True)
 
-    if not repo.language:
-        language = ""
-    else:
-        language = repo.language
+    # remove last updated datetime
+    for r in repos:
+        del r["last_pushed"]
 
-    repos.append({
-        "name": repo.name,
-        "url": repo.html_url,
-        "commits": repo.get_commits().totalCount,
-        "language": language
-    })
+    for l in languages:
+        relative_languages[l] = round(languages[l] / total_lines * 100, 2)
+    relative_languages = {k: v for k, v in sorted(relative_languages.items(), key=lambda item: item[1], reverse=True)}
+    logging.info("repos loaded")
 
-repos = sorted(repos, key=lambda d: d['commits'], reverse=True)
+    kwargs = {
+        "combinations": colors_combinations,
+        "strings": strings,
+        "repos": repos,
+        "languages": relative_languages,
+        "lines_of_code": total_lines,
+        "number_of_commits": total_commits,
+        "path": output_file
+    }
+    saveToFile(**kwargs)
+    logging.info("file saved")
 
-saveToFile(colors_combinations, strings, repos, output_file)
+    if ftp_credentials["upload"]:
+        #time to upload to server
+        ftp = FTP_TLS(ftp_credentials["server"])
+        ftp.connect(port=ftp_credentials["port"])
+        ftp.login(user=ftp_credentials["username"], passwd=ftp_credentials["password"])
+        logging.info("connected to FTP")
+        ftp.cwd(ftp_credentials["path"])
+        file_path = settings["output_file"]
+
+        if "/" in file_path:
+            file_name = file_path.split("/")[-1]
+        else:
+            # file path is actually only a file name
+            file_name = file_path
+
+        # save file
+        ftp.storlines("STOR " + file_name, open(file_path, 'rb'))
+        logging.info("file uploaded")
+        ftp.close()
+
+    logging.info("done")
+
+if __name__ == "__main__":
+    main()
