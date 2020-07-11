@@ -103,8 +103,8 @@ def saveToFile(**kwargs):
     output_string += f"{str(kwargs['languages'])};"
     output_string += f"{newl}{newl}"
 
-    output_string += f"{slash} variable containing total number of lines of code{newl}"
-    output_string += f"var total_lines = {kwargs['lines_of_code']};"
+    output_string += f"{slash} variable containing total bytes of code{newl}"
+    output_string += f"var total_lines = {kwargs['bytes_of_code']};"
     output_string += f"{newl}{newl}"
 
     output_string += f"{slash} variable containing total number of commits{newl}"
@@ -183,7 +183,7 @@ def main():
     repos = []
     languages = {}
     relative_languages = {}
-    total_lines = 0
+    total_bytes = 0
     total_commits = 0
 
     g = Github(github_credentials["access_token"])
@@ -215,7 +215,7 @@ def main():
 
         repo_languages = repo.get_languages()
         for l in repo_languages:
-            total_lines += repo_languages[l]
+            total_bytes += repo_languages[l]
             if l in languages:
                 languages[l] += repo_languages[l]
             else:
@@ -232,7 +232,7 @@ def main():
         del r["last_pushed"]
 
     for l in languages:
-        relative_languages[l] = round(languages[l] / total_lines * 100, 2)
+        relative_languages[l] = round(languages[l] / total_bytes  * 100, 2)
     relative_languages = {k: v for k, v in sorted(relative_languages.items(), key=lambda item: item[1], reverse=True)}
     logging.info("repos loaded")
 
@@ -241,10 +241,11 @@ def main():
         "strings": strings,
         "repos": repos,
         "languages": relative_languages,
-        "lines_of_code": total_lines,
+        "bytes_of_code": total_bytes,
         "number_of_commits": total_commits,
         "path": output_file
     }
+
     saveToFile(**kwargs)
     logging.info("file saved")
 
