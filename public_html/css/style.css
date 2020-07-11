@@ -1,0 +1,208 @@
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('fonts/Roboto-Regular.ttf');
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #363538;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8D8C8A;
+  border-radius: 5px;
+}
+
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: Roboto-Thin;
+}
+
+body * {
+  z-index: 50;
+}
+
+a, a:visited, a:active, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.mobileshow {
+    display: none;
+}
+
+.mobilehide {
+  display: inline;
+}
+
+.button {
+  font-family: Roboto-Regular;
+  position: absolute;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+#colorswitch {
+  top: 1vw;
+  left: 1vw;
+}
+
+.background {
+  min-height: 105vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 0;
+}
+
+.title, .text, .myprojects, .codestats, .icons {
+  width: 100vw;
+  max-width: 100%;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  text-align: center;
+}
+
+.title {
+  padding-top: 5vh;
+  user-select: none;
+}
+
+.title #name {
+  font-size: 8rem;
+}
+
+.title #subtitle {
+  font-size: 5rem;
+}
+
+.text {
+  padding-top: 18vh;
+  word-break: break-word;
+  line-height: 140%;
+  font-size: 3rem;
+  animation-delay: 0.5s;
+}
+
+.myprojects {
+  padding-top: 18vh;
+  word-break: break-word;
+  animation-delay: 1s;
+}
+
+.myprojects #subtitle {
+  font-size: 3rem;
+  padding-bottom: 2vh;
+}
+
+.myprojects #projects {
+  font-size: 2.5rem;
+}
+
+.myprojects #projects a {
+  display: block;
+  padding-bottom: 0.5vh;
+}
+
+.codestats {
+  padding-top: 18vh;
+  animation-delay: 1.5s;
+}
+
+.codestats #subtitle {
+  font-size: 3rem;
+  padding-bottom: 2vh;
+}
+
+.codestats #total {
+  padding-bottom: 1vh;
+}
+
+.codestats #total,
+.codestats #breakdown {
+  font-size: 2.5rem;
+  line-height: 140%;
+}
+
+.icons {
+  padding-top: 18vh;
+  padding-bottom: 10vh;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  animation-delay: 2s;
+}
+
+.icons a {
+  width: 128px;
+  height: 128px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.icons #email {
+  background: url('../src/svg/email.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons #github {
+  background: url('../src/svg/github.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons #instagram {
+  background: url('../src/svg/instagram.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons #telegram {
+  background: url('../src/svg/telegram.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 25;
+}
+
+#orb {
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+}
