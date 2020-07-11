@@ -3,6 +3,11 @@
   src: url('fonts/Roboto-Thin.ttf');
 }
 
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('fonts/Roboto-Regular.ttf');
+}
+
 body {
   overflow-x: hidden;
   margin: 0;
@@ -26,6 +31,18 @@ p {
   font-style: italic;
 }
 
+.button {
+  font-family: Roboto-Regular;
+  position: absolute;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+#colorswitch {
+  top: 1vw;
+  left: 1vw;
+}
+
 .background {
   min-height: 105vh;
   display: flex;
@@ -34,7 +51,7 @@ p {
   z-index: 0;
 }
 
-.title, .text, .myprojects, .icons {
+.title, .text, .myprojects, .codestats, .icons {
   width: 100vw;
   max-width: 100%;
   opacity: 0;
@@ -59,7 +76,7 @@ p {
 }
 
 .text {
-  padding-top: 15vh;
+  padding-top: 18vh;
   word-break: break-word;
   line-height: 140%;
   font-size: 3rem;
@@ -67,22 +84,36 @@ p {
 }
 
 .myprojects {
-  padding-top: 20vh;
+  padding-top: 18vh;
   word-break: break-word;
   animation-delay: 1s;
 }
 
 .myprojects #subtitle {
   font-size: 3rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 2vh;
 }
 
 .myprojects #projects {
   font-size: 2.5rem;
 }
 
+.codestats {
+  padding-top: 18vh;
+  animation-delay: 1.5s;
+}
+
+.codestats #total {
+  font-size: 3rem;
+  padding-bottom: 2vh;
+}
+
+.codestats #breakdown {
+  font-size: 2.5rem;
+}
+
 .icons {
-  padding-top: 20vh;
+  padding-top: 18vh;
   padding-bottom: 10vh;
   flex-direction: row;
   justify-content: center;
@@ -139,13 +170,4 @@ p {
   opacity: 0;
   transform: translate(-50%, -50%);
   z-index: 25;
-}
-
-.colorswitch {
-  font-weight: bold;
-  position: absolute;
-  font-size: 1.5rem;
-  top: 1vw;
-  left: 1vw;
-  user-select: none;
 }

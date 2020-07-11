@@ -32,6 +32,14 @@
     font-size: 1rem;
   }
 
+  .codestats #total {
+    font-size: 1rem;
+  }
+
+  .codestats #breakdown {
+    font-size: 1rem;
+  }
+
   .icons a {
     width: 48px;
     height: 48px;
@@ -39,7 +47,7 @@
     margin-right: 12px;
   }
 
-  .colorswitch {
+  #colorswitch {
     width: 100vw;
     font-size: 1rem;
     left: 0;
@@ -72,6 +80,15 @@
   .myprojects #subtitle {
     font-size: 2rem;
   }
+
+  .codestats #total {
+    font-size: 2rem;
+  }
+
+  .codestats #breakdown {
+    font-size: 1.5rem;
+  }
+
 
   .icons a {
     width: 96px;
