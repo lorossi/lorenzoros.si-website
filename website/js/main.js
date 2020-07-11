@@ -108,7 +108,7 @@ function setCodeStats(stats_obj) {
   string = `${total_lines} lines of code between ${total_commits} commits ${newl} in ${repos.length} repositories`;
   $(stats_obj).children().eq(0).html(string); // first child selection
 
-  string = ``
+  string = ``;
   let count = 0;
   Object.entries(languages).forEach(([k,v]) => {
     // loop through languages dict
@@ -141,7 +141,7 @@ function setSubTitle(subtitle_obj) {
   $(subtitle_obj).fadeOut(100, function() {
     $(subtitle_obj).text(strings[0]);
     $(subtitle_obj).fadeIn(100);
-  })
+  });
 
 }
 
