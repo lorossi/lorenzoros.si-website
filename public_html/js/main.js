@@ -172,6 +172,7 @@ function setOrbsContainerSize(selector) {
   // loop through each orb to tell them the new size
   orbs.forEach(function(orb, index) {
     orb.resizeContainer(width, height);
+    orb.setRadius(width);
   });
 }
 
@@ -228,7 +229,7 @@ $(document).ready(function() {
   shuffle(strings);
   setSubTitle(subtitle_obj);
 
-  subtitle_interval = setInterval(setSubTitle, 1000 * 7.5, subtitle_obj);
+  subtitle_interval = setInterval(setSubTitle, 1000 * 5, subtitle_obj);
   setInterval(setOrbsContainerSize, 1000, orbs_container_obj);
 
   $(subtitle_obj).click(
@@ -236,7 +237,7 @@ $(document).ready(function() {
       // we clear and reset interval in order to preserve the delay between switches
       clearInterval(subtitle_interval);
       setSubTitle(subtitle_obj); // changes text when clickd on
-      subtitle_interval = setInterval(setSubTitle, 1000 * 7.5, subtitle_obj);
+      subtitle_interval = setInterval(setSubTitle, 1000 * 5, subtitle_obj);
     }
   );
 
@@ -357,26 +358,15 @@ $(document).ready(function() {
       // generate orbs for the first time
       orbs_generated = true;
 
-      let radius, width, height;
+      let width, height;
       width = $(".background").width();
       height = $(".background").height();
-
-      if (width > 1000) {
-        // PC
-        radius = 20;
-      } else if (width > 500){
-        // Tablet
-        radius = 10;
-      } else {
-        // Mobile
-        radius = 5;
-      }
 
       for (let i = 0; i < max_orbs; i++) {
         let x, y;
         x = randomBetween(0, width);
         y = randomBetween(0, height);
-        orb = new Orb(x, y, radius, i, orbs_container_obj, width, height);
+        orb = new Orb(x, y, i, orbs_container_obj, width, height);
         orbs.push(orb);
       }
       setInterval(moveOrbs, 10, orbs_container_obj);

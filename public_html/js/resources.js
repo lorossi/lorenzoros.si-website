@@ -21,6 +21,7 @@ var colors = [
 
 // variable containing subtitles
 var strings = [
+    'less is more',
     'not a designer',
     'not a full stack programmer',
     'not (yet) an engineer',
@@ -35,10 +36,10 @@ var strings = [
 
 // variable containing infos about my repos
 var repos = [
-    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 52, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T09:42:59:000000'},
+    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 65, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T18:23:56:000000'},
+    {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 26, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T13:01:21:000000'},
     {'name': 'corgos-telegram-bot', 'formatted_name': 'corgos telegram bot', 'url': 'https://github.com/lorossi/corgos-telegram-bot', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-10-20T13:12:18:000000'},
     {'name': 'zero-width-steganography', 'formatted_name': 'zero width steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 31, 'language': 'Python', 'last_pushed_timestamp': '07-09-20T15:01:32:000000'},
-    {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 24, 'language': 'JavaScript', 'last_pushed_timestamp': '07-08-20T15:27:40:000000'},
     {'name': 'formulario-campi-elettromagnetici', 'formatted_name': 'formulario campi elettromagnetici', 'url': 'https://github.com/lorossi/formulario-campi-elettromagnetici', 'commits': 34, 'language': 'TeX', 'last_pushed_timestamp': '07-06-20T15:38:41:000000'},
     {'name': 'MicrosoftStreamURLExtractor.github.io', 'formatted_name': 'MicrosoftStreamURLExtractor.github.io', 'url': 'https://github.com/lorossi/MicrosoftStreamURLExtractor.github.io', 'commits': 20, 'language': '', 'last_pushed_timestamp': '06-20-20T09:34:08:000000'},
     {'name': 'pi-day-2020-visualization', 'formatted_name': 'pi day 2020 visualization', 'url': 'https://github.com/lorossi/pi-day-2020-visualization', 'commits': 8, 'language': 'Processing', 'last_pushed_timestamp': '03-14-20T16:38:50:000000'},
@@ -47,13 +48,13 @@ var repos = [
 ];
 
 // variable containing repos programming languages
-var languages = {'TeX': 42.32, 'Python': 28.81, 'JavaScript': 13.0, 'HTML': 6.17, 'Processing': 5.77, 'CSS': 3.93};
+var languages = {'TeX': 42.12, 'Python': 28.66, 'JavaScript': 13.15, 'HTML': 6.29, 'Processing': 5.75, 'CSS': 4.03};
 
-// variable containing total number of lines of code
-var total_lines = 208422;
+// variable containing total bytes of code
+var total_bytes = 209386;
 
 // variable containing total number of commits
-var total_commits = 200;
+var total_commits = 215;
 
 // variable containing total number of languages
 var total_languages = 6;

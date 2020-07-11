@@ -6,27 +6,41 @@ class Orb {
     this.force = new Vector(0, 0);
 
     this.id = id;
-    this.r = r;
     this.container = container;
     this.attachToContainer();
 
     this.container_width = width;
     this.container_height = height;
+    this.setRadius(width);
 
     // tweakable parameters
     // the maxforce limits the amount of force "stored" in each element
     //    the higher it is, the further the orb will orbit
     this.maxvel = 6;
     this.maxacc = 0.2;
-    this.maxforce = 0.1;
+    // maxforce scales with the size
+    this.maxforce = 0.1 * Math.pow(this.container_width/2114.44, 2);
     // the G factor sacles with the size
-    this.g = 2 * Math.pow(10, 5) * Math.pow(2114.44/this.container_width, 2);
+    this.g = 2 * Math.pow(10, 5) * Math.pow(this.container_width/2114.44, 2);
   }
 
   resizeContainer(width, height) {
     // we update the container size
     this.container_width = width;
     this.container_height = height;
+  }
+
+  setRadius(width) {
+    if (width > 1000) {
+      // PC
+      this.r = 20;
+    } else if (width > 500){
+      // Tablet
+      this.r = 10;
+    } else {
+      // Mobile
+      this.r = 5;
+    }
   }
 
   attachToContainer() {
