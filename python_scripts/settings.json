@@ -13,12 +13,19 @@
     ]
   },
 
+  "FTP" : {
+    "upload": true,
+    "server": "ftp.lorenzoros.si",
+    "username": "lorenz66",
+    "password": "ruuB7@&AF~.%`,xSP66CNmcuA3^5,vU'",
+    "port": 21,
+    "path": "/public_html/js"
+  },
+
    "colors" : [
       "#1ABC9C",
-      "#2ECC71",
       "#3498DB",
       "#9B59B6",
-      "#27AE60",
       "#2980B9",
       "#8E44AD",
       "#F1C40F",
@@ -30,7 +37,9 @@
    ],
 
    "discarded_colors" : [
-      "#16A085"
+      "#16A085",
+      "#27AE60",
+      "#2ECC71"
    ],
 
    "strings" : [
@@ -46,8 +55,8 @@
      "likes minimalistic design"
    ],
 
-   "threshold_brightness" : 127,
+   "threshold_brightness" : 140,
    "min_angle" : 20,
    "max_angle" : 90,
-   "output_file": "C:\\Lorenzo\\Siti\\Personale-4\\website\\js\\resources.js"
+   "output_file": "C:/Lorenzo/Siti/Personale-4/website/js/resources.js"
 }

@@ -105,8 +105,8 @@ function setCodeStats(stats_obj) {
   let string;
 
   // total repositories tracker
-  string = `${total_lines} lines of code between ${total_commits} commits ${newl} in ${repos.length} repositories`;
-  $(stats_obj).children().eq(0).html(string); // first child selection
+  string = `${total_lines} lines, ${total_languages} languages, ${total_commits} commits, ${repos.length} repositories`;
+  $(stats_obj).children().eq(1).html(string); // second child selection
 
   string = ``;
   let count = 0;
@@ -130,7 +130,7 @@ function setCodeStats(stats_obj) {
     string = string.slice(0, -newl.length);
   }
 
-  $(stats_obj).children().eq(1).html(string); // second child selection
+  $(stats_obj).children().eq(2).html(string); // third child selection
 }
 
 function setSubTitle(subtitle_obj) {

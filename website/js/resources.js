@@ -35,7 +35,7 @@ var strings = [
 
 // variable containing infos about my repos
 var repos = [
-    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 38, 'language': 'JavaScript', 'last_pushed_timestamp': '07-10-20T18:43:10:000000'},
+    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 50, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T09:04:15:000000'},
     {'name': 'corgos-telegram-bot', 'formatted_name': 'corgos telegram bot', 'url': 'https://github.com/lorossi/corgos-telegram-bot', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-10-20T13:12:18:000000'},
     {'name': 'zero-width-steganography', 'formatted_name': 'zero width steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 31, 'language': 'Python', 'last_pushed_timestamp': '07-09-20T15:01:32:000000'},
     {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 24, 'language': 'JavaScript', 'last_pushed_timestamp': '07-08-20T15:27:40:000000'},
@@ -47,10 +47,13 @@ var repos = [
 ];
 
 // variable containing repos programming languages
-var languages = {'TeX': 44.29, 'Python': 28.18, 'JavaScript': 11.56, 'HTML': 6.21, 'Processing': 6.04, 'CSS': 3.71};
+var languages = {'TeX': 42.4, 'Python': 28.77, 'JavaScript': 12.99, 'HTML': 6.16, 'Processing': 5.79, 'CSS': 3.89};
 
 // variable containing total number of lines of code
-var total_lines = 199125;
+var total_lines = 208000;
 
 // variable containing total number of commits
-var total_commits = 186;
+var total_commits = 198;
+
+// variable containing total number of languages
+var total_languages = 6;

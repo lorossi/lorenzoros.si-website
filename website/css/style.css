@@ -119,13 +119,19 @@ p {
   animation-delay: 1.5s;
 }
 
-.codestats #total {
+.codestats #title {
   font-size: 3rem;
   padding-bottom: 2vh;
 }
 
+.codestats #total {
+  padding-bottom: 1vh;
+}
+
+.codestats #total,
 .codestats #breakdown {
   font-size: 2.5rem;
+  line-height: 140%;
 }
 
 .icons {

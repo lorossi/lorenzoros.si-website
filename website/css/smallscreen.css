@@ -32,10 +32,8 @@
     font-size: 1rem;
   }
 
-  .codestats #total {
-    font-size: 1rem;
-  }
-
+  .codestats #title,
+  .codestats #total,
   .codestats #breakdown {
     font-size: 1rem;
   }
@@ -81,10 +79,11 @@
     font-size: 2rem;
   }
 
-  .codestats #total {
+  .codestats #title {
     font-size: 2rem;
   }
 
+  .codestats #total,
   .codestats #breakdown {
     font-size: 1.5rem;
   }
