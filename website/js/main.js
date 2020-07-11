@@ -204,6 +204,7 @@ $(document).ready(function() {
 
   let color_mode = false; // black and white
   let rotate_interval; // setInterval for background rotation
+  let subtitle_interval; // setInterval for subtitle change
 
   $('html, body').animate({
     scrollTop: 0
@@ -225,12 +226,15 @@ $(document).ready(function() {
   shuffle(strings);
   setSubTitle(subtitle_obj);
 
-  setInterval(setSubTitle, 1000 * 5, subtitle_obj);
+  subtitle_interval = setInterval(setSubTitle, 1000 * 7.5, subtitle_obj);
   setInterval(setOrbsContainerSize, 1000, orbs_container_obj);
 
   $(subtitle_obj).click(
     function() {
+      // we clear and reset interval in order to preserve the delay between switches
+      clearInterval(subtitle_interval);
       setSubTitle(subtitle_obj); // changes text when clickd on
+      subtitle_interval = setInterval(setSubTitle, 1000 * 7.5, subtitle_obj);
     }
   );
 
