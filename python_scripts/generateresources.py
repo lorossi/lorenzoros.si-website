@@ -186,7 +186,7 @@ def main():
     total_lines = 0
     total_commits = 0
 
-    g = Github(github_credentials["username"], github_credentials["password"])
+    g = Github(github_credentials["access_token"])
     logging.info("logged into GitHub")
 
     for repo in g.get_user().get_repos():

@@ -1,7 +1,6 @@
 {
   "GitHub" : {
-    "username" : "lo.rossi@live.com ",
-    "password" : "GitLor97!",
+    "access_token" : "32175739c3c651a2452664cfe2d6614da3e00149",
     "skip_names" : [
       "calcolo",
       "optoelettronica",

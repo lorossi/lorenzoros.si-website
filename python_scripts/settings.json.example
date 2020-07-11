@@ -1,7 +1,6 @@
 {
   "GitHub" : {
-    "username" : "GITHUB-USERNAME",
-    "password" : "GITHUB PASSWORD",
+    "access_token" : "GITHUB ACCESS TOKEN",
     "skip_names" : ["REPO NAMES TO SKIP"],
     "skip_urls" : ["REPO URLS TO SKIP"]
   },
