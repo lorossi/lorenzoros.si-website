@@ -1,5 +1,5 @@
 class Orb {
-  constructor(x, y, r, id, container) {
+  constructor(x, y, r, id, container, width, height) {
     this.pos = new Vector(x, y);
     this.vel = new Vector(0, 0);
     this.acc = new Vector(0, 0);
@@ -10,13 +10,28 @@ class Orb {
     this.container = container;
     this.attachToContainer();
 
-    this.g = 2 * Math.pow(10, 5);
+    this.container_width = width;
+    this.container_height = height;
+
+    // tweakable parameters
+    // the maxforce limits the amount of force "stored" in each element
+    //    the higher it is, the further the orb will orbit
     this.maxvel = 6;
     this.maxacc = 0.2;
     this.maxforce = 0.1;
+    // the G factor sacles with the size
+    this.g = 2 * Math.pow(10, 5) * Math.pow(2114.44/this.container_width, 2);
+  }
+
+  resizeContainer(width, height) {
+    // we update the container size
+    this.container_width = width;
+    this.container_height = height;
   }
 
   attachToContainer() {
+    // add orb element to container
+    // each orb has an attribute, "orbid", made to select it
     $("<div>", {
       "id": "orb",
       css: {
@@ -41,36 +56,42 @@ class Orb {
     dist.copy(destination);
     dist.sub(this.pos);
 
+    // calculate magnitude force
     force_mag = this.g / Math.pow(dist.mag(), 2);
 
+    // calculate force vector
     dist.setMag(force_mag);
     this.force.add(dist);
     this.force.limit(this.maxforce);
 
+    // reset acceleration and add force to it
     this.acc.mult(0);
     this.acc.add(this.force);
     this.acc.limit(this.maxacc);
 
+    // add acceleration to velocity
     this.vel.add(this.acc);
     this.vel.limit(this.maxvel);
 
+    // add velocity to position
     this.pos.add(this.vel);
 
-    let container_width, container_height;
-    container_width = $(this.container).width();
-    container_height = $(this.container).height();
-
-    let visbility;
-    if (this.pos.x - this.r < 0 || this.pos.y - this.r < 0 || this.pos.x + this.r > container_width || this.pos.y + this.r > container_height) {
-      $("#orb[orbid=\"" + this.id + "\"]").css({
+    if (this.pos.x - this.r < 0 || this.pos.y - this.r < 0 || this.pos.x + this.r > this.container_width || this.pos.y + this.r > this.container_height) {
+      // the orbit is outside its container, so we don't want to render it
+      $(`#orb[orbid="${this.id}"]`).css({
         "display": "none"
       })
     } else {
-      $("#orb[orbid=\"" + this.id + "\"]").css({
+      // the orbit is outside the container. Render it normally
+      $(`#orb[orbid="${this.id}"]`).css({
         "left": this.pos.x + "px",
         "top": this.pos.y + "px",
-        "display": "block"
       })
+
+      // reset its visibility
+      if ($(`#orb[orbid="${this.id}"]`).css("display") == "none") {
+        $(`#orb[orbid="${this.id}"]`).css({"display": "block"});
+      }
     }
   }
 }
