@@ -126,11 +126,17 @@ function setCodeStats(stats_obj) {
     string += `${language} ${percent}%`;
     count++;
 
-    // every 3 languages, add newline
-    if (count % 3 == 0) {
-      string += newl;
+    // every 2 languages there's a new line on mobile
+    if (count % 2 == 0) {
+      string += `<span class="mobileshow">${newl}</span>`;
     } else {
-      string += spacing;
+      string += `<span class="mobileshow">${spacing}</span>`;
+    }
+    // every 2 languages there's a new line on wide screens
+    if (count % 3 == 0) {
+      string += `<span class="mobilehide">${newl}</span>`;
+    } else {
+      string += `<span class="mobilehide">${spacing}</span>`;
     }
   });
 
