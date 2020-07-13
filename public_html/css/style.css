@@ -84,6 +84,13 @@ p {
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  display: inline-block;
 }
 
 .title {

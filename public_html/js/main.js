@@ -106,7 +106,7 @@ function setProjects(projects_obj, max_projects = 12) {
   }
 }
 
-function setCodeStats(stats_obj) {
+function setCodeStats(stats_obj, breakdown_obj) {
   let newl = "<br>";
   let spacing = " - ";
   let string;
@@ -115,7 +115,7 @@ function setCodeStats(stats_obj) {
   // the two spans are regulated inside the smallscreen.css stylesheet and
   //    respectively hide and show content in small screens
   string = `${total_bytes} bytes, ${total_commits} commits, <span class="mobileshow"><br></span>${repos.length} repositories, ${total_languages} languages`;
-  $(stats_obj).children().eq(1).html(string); // second child selection
+  $(stats_obj).html(string); // second child selection
 
   string = ``;
   let count = 0;
@@ -145,7 +145,7 @@ function setCodeStats(stats_obj) {
     string = string.slice(0, -newl.length);
   }
 
-  $(stats_obj).children().eq(2).html(string); // third child selection
+  $(breakdown_obj).html(string); // third child selection
 }
 
 function setSubTitle(subtitle_obj) {
@@ -208,7 +208,8 @@ $(document).ready(function() {
   let subtitle_obj = ".title #subtitle";
   let projects_obj = ".myprojects #projects";
   let projects_link_obj = ".myprojects #projects a";
-  let stats_obj = ".codestats";
+  let stats_obj = ".codestats #total";
+  let breakdown_obj = ".codestats #breakdown"
   let icons_obj = ".icons";
   let icons_svg_obj = ".icons a";
   let background_obj = ".background";
@@ -236,7 +237,7 @@ $(document).ready(function() {
 
   setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
   setProjects(projects_obj);
-  setCodeStats(stats_obj);
+  setCodeStats(stats_obj, breakdown_obj);
   setOrbsContainerSize(orbs_container_obj);
 
   shuffle(strings);
