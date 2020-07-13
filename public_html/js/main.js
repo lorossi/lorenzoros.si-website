@@ -100,7 +100,7 @@ function setProjects(projects_obj, max_projects = 12) {
 
     // there are too many repos! exiting loop.
     if (i > max_projects) {
-      $(projects_obj).append(`<span class="italic">and more on my GitHub<span>`);
+      $(projects_obj).append(`<span class="italic"><a href="https://github.com/lorossi" target="_blank">and more on my GitHub</a><span>`);
       return
     }
   }
