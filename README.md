@@ -4,7 +4,7 @@ A repo contanining all the code used in my website
 ## Details
 
 ### Scalability
-I tested this website on multiple resolutions, screensizes and various devices. It works on PC, tablet and phones. The css for screen smaller than mine (a 15" FHD screen) is contained in *smallscreen.css* stylesheet.
+I tested this website on multiple resolutions, screen sizes and various devices. It works on PC, tablet and phones. The css for screen smaller than mine (a 15" FHD screen) is contained in *smallscreen.css* stylesheet.
 This being said, the website was created to be viewed mostly on PC. As such, some features might look a little bit wonky on mobile.
 
 ### Colors
