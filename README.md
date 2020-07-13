@@ -2,11 +2,21 @@
 A repo contanining all the code used in my website
 
 ## Details
-Everything in this website is client sided. This choice was made in order to save money by getting a simple web host instead of a VPS (I might reconsider this idea in the future).
 
-The background colors, the "subtitles" (strings of text that appear under my name) and all the stats about my projects are pre-generated using a python script that can be found inside the *python_scripts* folder. I run it once a day from a Raspberry Pi.
+### Scalability
+I tested this website on multiple resolutions, screensizes and various devices. It works on PC, tablet and phones. The css for screen smaller than mine (a 15" FHD screen) is contained in *smallscreen.css* stylesheet.
+This being said, the website was created to be viewed mostly on PC. As such, some features might look a little bit wonky on mobile.
 
-I hid the email and my telegram links in the *email-hide.js* using my other project, [email-hide](https://github.com/lorossi/email-hide). I'm pretty confident this is enough to shield myself from spammers.
+### Colors
+The website features both a colored and a black and white mode. The colors were carefully hand picked in order to make the text as legible as possible. Toggle between the two modes by clicking the text in the top right corner.
+
+### GitHub scraping
+The website features a coding tracker section. All the data is parsed by a script *(generateresources.py)* located inside the the *python_scripts* folder. That script is ran once a day, ad midnight (my timezone) and it's hosted on a RaspberryPi.
+I don't actually have a VPS, otherwise I would have built this entire website in flask. I might consider doing so in the future.
+
+### Email / Telegram Privacy
+If you look at the html source, you won't find my email or telegram profile. That's because I used a custom script *(hide.js)* to inject an "encrypted" text inside their respective containers. By doing so, I prevent spambots from scraping my email.
+You can look at its repo [here](https://github.com/lorossi/email-hide) or try it [here](https://lorossi.github.io/email-hide/)
 
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
