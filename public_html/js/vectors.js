@@ -1,5 +1,6 @@
 // simple library made for handling 2D vectors
-
+let alpha = 2 * Math.cos(Math.PI / 8) / (1 + Math.cos(Math.pi / 8));
+let beta = 2 * Math.sin(Math.PI / 8) / (1 + Math.cos(Math.pi / 8));
 class Vector {
   constructor(x, y) {
     this.x = x;
@@ -34,6 +35,12 @@ class Vector {
 
   mag() {
     return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+  }
+
+  approxMag() {
+    // much faster but less accurate way of calculating magnitude
+    // alpha max plus beta min algorithm
+    return Math.max(Math.abs(this.x), Math.abs(this.y)) * alpha + Math.min(Math.abs(this.x), Math.abs(this.y)) * beta;
   }
 
   setMag(nmag) {

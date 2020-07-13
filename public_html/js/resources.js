@@ -36,7 +36,8 @@ var strings = [
 
 // variable containing infos about my repos
 var repos = [
-    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 65, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T18:23:56:000000'},
+    {'name': 'bikemi-python-unofficial-api', 'formatted_name': 'bikemi python unofficial api', 'url': 'https://github.com/lorossi/bikemi-python-unofficial-api', 'commits': 3, 'language': 'Python', 'last_pushed_timestamp': '07-13-20T12:23:15:000000'},
+    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 67, 'language': 'JavaScript', 'last_pushed_timestamp': '07-13-20T12:15:45:000000'},
     {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 26, 'language': 'JavaScript', 'last_pushed_timestamp': '07-11-20T13:01:21:000000'},
     {'name': 'corgos-telegram-bot', 'formatted_name': 'corgos telegram bot', 'url': 'https://github.com/lorossi/corgos-telegram-bot', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-10-20T13:12:18:000000'},
     {'name': 'zero-width-steganography', 'formatted_name': 'zero width steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 31, 'language': 'Python', 'last_pushed_timestamp': '07-09-20T15:01:32:000000'},
@@ -48,13 +49,13 @@ var repos = [
 ];
 
 // variable containing repos programming languages
-var languages = {'TeX': 42.12, 'Python': 28.66, 'JavaScript': 13.15, 'HTML': 6.29, 'Processing': 5.75, 'CSS': 4.03};
+var languages = {'TeX': 40.47, 'Python': 31.44, 'JavaScript': 12.65, 'HTML': 6.05, 'Processing': 5.52, 'CSS': 3.87};
 
 // variable containing total bytes of code
-var total_bytes = 209386;
+var total_bytes = 217929;
 
 // variable containing total number of commits
-var total_commits = 215;
+var total_commits = 220;
 
 // variable containing total number of languages
 var total_languages = 6;

@@ -86,17 +86,24 @@ function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
   }
 }
 
-function setProjects(projects_obj) {
-  repos.forEach(function(repo, index) {
+function setProjects(projects_obj, max_projects = 12) {
+  for (const i in repos) {
     // loop through repos list (global variable)
+    let repo = repos[i];
     let string;
     if (repo.language) {
-      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name} - <span class="italic">${repo.language}</span></a>`;
+      string = `<a href="${repo.url}" target="_blank">${repo.formatted_name}<span class="italic"> - ${repo.language}</span></a>`;
     } else {
       string = `<a href="${repo.url}" target="_blank">${repo.formatted_name}</a>`;
     }
     $(projects_obj).append(string);
-  });
+
+    // there are too many repos! exiting loop.
+    if (i > max_projects) {
+      $(projects_obj).append(`<span class="italic">and more on my GitHub<span>`);
+      return
+    }
+  }
 }
 
 function setCodeStats(stats_obj) {
