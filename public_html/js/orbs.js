@@ -1,5 +1,5 @@
 class Orb {
-  constructor(x, y, r, id, container, width, height) {
+  constructor(x, y, id, container, width, height) {
     this.pos = new Vector(x, y);
     this.vel = new Vector(0, 0);
     this.acc = new Vector(0, 0);
@@ -7,19 +7,18 @@ class Orb {
 
     this.id = id;
     this.container = container;
-    this.attachToContainer();
 
     this.container_width = width;
     this.container_height = height;
     this.setRadius(width);
 
+    this.attachToContainer(this.container);
     // tweakable parameters
     // the maxforce limits the amount of force "stored" in each element
     //    the higher it is, the further the orb will orbit
     this.maxvel = 6;
     this.maxacc = 0.2;
-    // maxforce scales with the size
-    this.maxforce = 0.1 * Math.pow(this.container_width/2114.44, 2);
+    this.maxforce = 0.1;
     // the G factor sacles with the size
     this.g = 2 * Math.pow(10, 5) * Math.pow(this.container_width/2114.44, 2);
   }
@@ -53,7 +52,6 @@ class Orb {
         "top": this.pos.y + "px",
         "width": this.r * 2 + "px",
         "height": this.r * 2 + "px",
-        "opacity": 0,
         "animation-name": "fadeinOrb",
         "animation-delay": "1s",
         "animation-duration": "3s",

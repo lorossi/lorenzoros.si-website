@@ -371,7 +371,6 @@ $(document).ready(function() {
       }
       setInterval(moveOrbs, 10, orbs_container_obj);
     }
-
     // update mouse_coords global variable
     mouse_coords.x = e.pageX;
     mouse_coords.y = e.pageY;
