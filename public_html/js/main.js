@@ -27,7 +27,8 @@ function rotateBackground() {
 
 // select colors from list
 function selectColors() {
-  gradient = colors[Math.floor(Math.random() * colors.length)]; // global variable
+  let random_index = randomBetween(0, colors.length);
+  gradient = colors[random_index]; // global variable
 }
 
 function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
@@ -231,7 +232,7 @@ $(document).ready(function() {
 
   if (color_mode) {
     selectColors(); //REACTIVATE WITH COLORS
-    angle = Math.random() * 360;
+    angle = randomBetween(0, 360);
     rotate_interval = setInterval(rotateBackground, 100); //REACTIVATE WITH COLORS
   }
 
@@ -355,7 +356,7 @@ $(document).ready(function() {
       $(this).text("switch to dark mode");
       selectColors();
       setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
-      angle = Math.random() * 360;
+      angle = randomBetween(0, 360);
       rotate_interval = setInterval(rotateBackground, 100); // reactivate rotating background
     }
   });
