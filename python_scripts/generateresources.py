@@ -113,6 +113,10 @@ def saveToFile(**kwargs):
 
     output_string += f"{slash} variable containing total number of languages{newl}"
     output_string += f"var total_languages = {len(kwargs['languages'])};"
+    output_string += f"{newl}{newl}"
+
+    output_string += f"{slash} variable containing the timestamp of the last update{newl}"
+    output_string += f"var timestamp = '{kwargs['updated_timestamp']}';"
     output_string += f"{newl}"
 
     output_file = open(kwargs["path"],"w+")
@@ -236,6 +240,7 @@ def main():
     relative_languages = {k: v for k, v in sorted(relative_languages.items(), key=lambda item: item[1], reverse=True)}
     logging.info("repos loaded")
 
+    updated_timestamp = datetime.now().isoformat()
     kwargs = {
         "combinations": colors_combinations,
         "strings": strings,
@@ -243,6 +248,7 @@ def main():
         "languages": relative_languages,
         "bytes_of_code": total_bytes,
         "number_of_commits": total_commits,
+        "updated_timestamp": updated_timestamp,
         "path": output_file
     }
 
