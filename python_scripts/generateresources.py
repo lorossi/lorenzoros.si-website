@@ -212,7 +212,9 @@ def main():
             "commits": repo.get_commits().totalCount,
             "language": language,
             "last_pushed": repo.pushed_at,
-            "last_pushed_timestamp": repo.pushed_at.strftime("%m-%d-%yT%H:%M:%S:%f")
+            "last_pushed_timestamp": repo.pushed_at.strftime("%m-%d-%yT%H:%M:%S:%f"),
+            "created": repo.created_at,
+            "created_timestamp": repo.created_at.strftime("%m-%d-%yT%H:%M:%S:%f")
         })
 
         total_commits += repo.get_commits().totalCount
@@ -229,11 +231,12 @@ def main():
     #repos = sorted(repos, key=lambda d: d['commits'], reverse=True)
 
     # sort by time
-    repos = sorted(repos, key=lambda x : x['last_pushed'], reverse=True)
+    repos = sorted(repos, key=lambda x : x['created'], reverse=True)
 
     # remove last updated datetime
     for r in repos:
         del r["last_pushed"]
+        del r["created"]
 
     for l in languages:
         relative_languages[l] = round(languages[l] / total_bytes  * 100, 2)
