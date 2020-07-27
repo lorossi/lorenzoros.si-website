@@ -36,27 +36,31 @@ var strings = [
 
 // variable containing infos about my repos
 var repos = [
-    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 71, 'language': 'JavaScript', 'last_pushed_timestamp': '07-13-20T20:19:30:000000'},
-    {'name': 'rpi-homepage', 'formatted_name': 'rpi homepage', 'url': 'https://github.com/lorossi/rpi-homepage', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-13-20T20:14:50:000000'},
-    {'name': 'bikemi-python-unofficial-api', 'formatted_name': 'bikemi python unofficial api', 'url': 'https://github.com/lorossi/bikemi-python-unofficial-api', 'commits': 21, 'language': 'Python', 'last_pushed_timestamp': '07-13-20T19:44:22:000000'},
-    {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 27, 'language': 'JavaScript', 'last_pushed_timestamp': '07-13-20T14:21:52:000000'},
-    {'name': 'corgos-telegram-bot', 'formatted_name': 'corgos telegram bot', 'url': 'https://github.com/lorossi/corgos-telegram-bot', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-10-20T13:12:18:000000'},
-    {'name': 'zero-width-steganography', 'formatted_name': 'zero width steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 31, 'language': 'Python', 'last_pushed_timestamp': '07-09-20T15:01:32:000000'},
-    {'name': 'formulario-campi-elettromagnetici', 'formatted_name': 'formulario campi elettromagnetici', 'url': 'https://github.com/lorossi/formulario-campi-elettromagnetici', 'commits': 34, 'language': 'TeX', 'last_pushed_timestamp': '07-06-20T15:38:41:000000'},
-    {'name': 'MicrosoftStreamURLExtractor.github.io', 'formatted_name': 'MicrosoftStreamURLExtractor.github.io', 'url': 'https://github.com/lorossi/MicrosoftStreamURLExtractor.github.io', 'commits': 20, 'language': '', 'last_pushed_timestamp': '06-20-20T09:34:08:000000'},
-    {'name': 'pi-day-2020-visualization', 'formatted_name': 'pi day 2020 visualization', 'url': 'https://github.com/lorossi/pi-day-2020-visualization', 'commits': 8, 'language': 'Processing', 'last_pushed_timestamp': '03-14-20T16:38:50:000000'},
-    {'name': 'perlin-flow-field', 'formatted_name': 'perlin flow field', 'url': 'https://github.com/lorossi/perlin-flow-field', 'commits': 7, 'language': 'Processing', 'last_pushed_timestamp': '03-01-20T16:30:19:000000'},
-    {'name': 'appunti-vhdl', 'formatted_name': 'appunti vhdl', 'url': 'https://github.com/lorossi/appunti-vhdl', 'commits': 12, 'language': 'TeX', 'last_pushed_timestamp': '02-24-20T11:55:50:000000'}
+    {'name': 'lissajous', 'formatted_name': 'lissajous', 'url': 'https://github.com/lorossi/lissajous', 'commits': 17, 'language': 'Processing', 'last_pushed_timestamp': '07-17-20T08:02:00:000000', 'created_timestamp': '07-16-20T21:27:05:000000'},
+    {'name': 'bikemi-python-unofficial-api', 'formatted_name': 'bikemi python unofficial api', 'url': 'https://github.com/lorossi/bikemi-python-unofficial-api', 'commits': 21, 'language': 'Python', 'last_pushed_timestamp': '07-13-20T19:44:22:000000', 'created_timestamp': '07-13-20T11:59:30:000000'},
+    {'name': 'rpi-homepage', 'formatted_name': 'rpi homepage', 'url': 'https://github.com/lorossi/rpi-homepage', 'commits': 13, 'language': 'Python', 'last_pushed_timestamp': '07-21-20T10:26:16:000000', 'created_timestamp': '07-11-20T16:18:11:000000'},
+    {'name': 'lorenzoros.si-website', 'formatted_name': 'lorenzoros.si website', 'url': 'https://github.com/lorossi/lorenzoros.si-website', 'commits': 78, 'language': 'JavaScript', 'last_pushed_timestamp': '07-18-20T11:47:24:000000', 'created_timestamp': '07-08-20T16:22:03:000000'},
+    {'name': 'email-hide', 'formatted_name': 'email hide', 'url': 'https://github.com/lorossi/email-hide', 'commits': 27, 'language': 'JavaScript', 'last_pushed_timestamp': '07-13-20T14:21:52:000000', 'created_timestamp': '07-04-20T17:55:23:000000'},
+    {'name': 'MicrosoftStreamURLExtractor.github.io', 'formatted_name': 'MicrosoftStreamURLExtractor.github.io', 'url': 'https://github.com/lorossi/MicrosoftStreamURLExtractor.github.io', 'commits': 20, 'language': '', 'last_pushed_timestamp': '06-20-20T09:34:08:000000', 'created_timestamp': '06-20-20T11:34:23:000000'},
+    {'name': 'zero-width-steganography', 'formatted_name': 'zero width steganography', 'url': 'https://github.com/lorossi/zero-width-steganography', 'commits': 31, 'language': 'Python', 'last_pushed_timestamp': '07-09-20T15:01:32:000000', 'created_timestamp': '06-17-20T09:29:12:000000'},
+    {'name': 'corgos-telegram-bot', 'formatted_name': 'corgos telegram bot', 'url': 'https://github.com/lorossi/corgos-telegram-bot', 'commits': 12, 'language': 'Python', 'last_pushed_timestamp': '07-10-20T13:12:18:000000', 'created_timestamp': '06-05-20T13:11:52:000000'},
+    {'name': 'formulario-campi-elettromagnetici', 'formatted_name': 'formulario campi elettromagnetici', 'url': 'https://github.com/lorossi/formulario-campi-elettromagnetici', 'commits': 35, 'language': 'TeX', 'last_pushed_timestamp': '07-23-20T15:45:55:000000', 'created_timestamp': '03-23-20T16:55:33:000000'},
+    {'name': 'pi-day-2020-visualization', 'formatted_name': 'pi day 2020 visualization', 'url': 'https://github.com/lorossi/pi-day-2020-visualization', 'commits': 8, 'language': 'Processing', 'last_pushed_timestamp': '03-14-20T16:38:50:000000', 'created_timestamp': '03-14-20T16:06:55:000000'},
+    {'name': 'perlin-flow-field', 'formatted_name': 'perlin flow field', 'url': 'https://github.com/lorossi/perlin-flow-field', 'commits': 7, 'language': 'Processing', 'last_pushed_timestamp': '03-01-20T16:30:19:000000', 'created_timestamp': '03-01-20T16:09:42:000000'},
+    {'name': 'appunti-vhdl', 'formatted_name': 'appunti vhdl', 'url': 'https://github.com/lorossi/appunti-vhdl', 'commits': 12, 'language': 'TeX', 'last_pushed_timestamp': '02-24-20T11:55:50:000000', 'created_timestamp': '01-16-20T20:16:27:000000'}
 ];
 
 // variable containing repos programming languages
-var languages = {'TeX': 36.69, 'Python': 34.25, 'JavaScript': 12.96, 'HTML': 6.32, 'Processing': 5.01, 'CSS': 4.77};
+var languages = {'TeX': 34.88, 'Python': 32.67, 'JavaScript': 12.56, 'Processing': 9.21, 'HTML': 6.1, 'CSS': 4.59};
 
 // variable containing total bytes of code
-var total_bytes = 240416;
+var total_bytes = 253003;
 
 // variable containing total number of commits
-var total_commits = 255;
+var total_commits = 281;
 
 // variable containing total number of languages
 var total_languages = 6;
+
+// variable containing the timestamp of the last update
+var timestamp = '2020-07-27T20:52:41.668786';

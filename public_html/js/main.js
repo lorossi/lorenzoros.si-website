@@ -27,7 +27,7 @@ function rotateBackground() {
 
 // select colors from list
 function selectColors() {
-  let random_index = randomBetween(0, colors.length);
+  let random_index = randomInt(0, colors.length);
   gradient = colors[random_index]; // global variable
 }
 
