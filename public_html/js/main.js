@@ -28,7 +28,7 @@ function rotateBackground() {
 // select colors from list
 function selectColors() {
   let random_index = randomInt(0, colors.length);
-  gradient = colors[random_index]; // global variable
+  //gradient = colors[random_index]; // global variable
 }
 
 function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
