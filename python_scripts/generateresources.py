@@ -111,6 +111,10 @@ def saveToFile(**kwargs):
     output_string += f"var total_commits = {kwargs['number_of_commits']};"
     output_string += f"{newl}{newl}"
 
+    output_string += f"{slash} variable containing total number of stars{newl}"
+    output_string += f"var total_stars = {kwargs['stars']};"
+    output_string += f"{newl}{newl}"
+
     output_string += f"{slash} variable containing total number of languages{newl}"
     output_string += f"var total_languages = {len(kwargs['languages'])};"
     output_string += f"{newl}{newl}"
@@ -189,6 +193,7 @@ def main():
     relative_languages = {}
     total_bytes = 0
     total_commits = 0
+    total_stars = 0
 
     g = Github(github_credentials["access_token"])
     logging.info("logged into GitHub")
@@ -210,6 +215,7 @@ def main():
             "formatted_name": repo.name.replace("-", " "),
             "url": repo.html_url,
             "commits": repo.get_commits().totalCount,
+            "stars": repo.stargazers_count,
             "language": language,
             "last_pushed": repo.pushed_at,
             "last_pushed_timestamp": repo.pushed_at.strftime("%m-%d-%yT%H:%M:%S:%f"),
@@ -218,6 +224,7 @@ def main():
         })
 
         total_commits += repo.get_commits().totalCount
+        total_stars += repo.stargazers_count
 
         repo_languages = repo.get_languages()
         for l in repo_languages:
@@ -249,6 +256,7 @@ def main():
         "strings": strings,
         "repos": repos,
         "languages": relative_languages,
+        "stars": total_stars,
         "bytes_of_code": total_bytes,
         "number_of_commits": total_commits,
         "updated_timestamp": updated_timestamp,
