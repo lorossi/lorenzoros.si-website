@@ -28,7 +28,8 @@ function rotateBackground() {
 // select colors from list
 function selectColors() {
   let random_index = randomInt(0, colors.length);
-  //gradient = colors[random_index]; // global variable
+  gradient = colors[random_index]; // global variable
+  console.log(gradient);
 }
 
 function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
@@ -87,7 +88,7 @@ function setTextColor(icons_obj, background_obj, color_switch_obj, color_mode) {
   }
 }
 
-function setProjects(projects_obj, max_projects = 12) {
+function setProjects(projects_obj, max_projects = 15) {
   for (const i in repos) {
     // loop through repos list (global variable)
     let repo = repos[i];
@@ -346,13 +347,12 @@ $(document).ready(function() {
         });
       });
 
-    if (color_mode) {
-      color_mode = !color_mode;
+    color_mode = !color_mode;
+    if (!color_mode) {
       $(this).text("switch to colors");
       clearInterval(rotate_interval); // we don't need rotating background anymore
       setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
     } else {
-      color_mode = !color_mode;
       $(this).text("switch to dark mode");
       selectColors();
       setTextColor(icons_svg_obj, background_obj, color_switch_obj, color_mode);
