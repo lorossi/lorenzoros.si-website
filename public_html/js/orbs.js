@@ -38,7 +38,10 @@ class Orb {
       this.r = 10;
     } else {
       // Mobile
-      this.r = 5;
+      this.r = 7.5;
+      this.maxforce = 0.05;
+      this.maxacc = 0.1;
+      this.maxvel = 2;
     }
   }
 
