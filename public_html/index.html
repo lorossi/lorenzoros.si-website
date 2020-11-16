@@ -1,73 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160259-1"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-
-         gtag('config', 'UA-172160259-1');
-      </script>
-
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta charset="utf-8">
-
+      <meta content="width=device-width, initial-scale=1" name="viewport"/>
       <title>Lorenzo Rossi</title>
-
-      <link rel="icon" type="image/png" href="src/favicon.ico"/>
-
-      <link rel="stylesheet" href="css/animations.css">
       <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/smallscreen.css">
+      <link rel="stylesheet" href="css/phonestyle.css">
+      <link rel="stylesheet" href="css/animations.css">
 
-      <script src="js/jquery-3.5.1.min.js"></script>
-      <script src="js/resources.js"></script>
-      <script src="js/vectors.js"></script>
-      <script src="js/orbs.js"></script>
-      <script src="js/main.js"></script>
-      <script src="js/hide.js"></script>
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
+      <script src="js/jquery.visible.min.js"></script>
+
+      <script src="js/language.js"></script>
+      <script src="assets/resources/resources.js"></script>
+      <script src="js/showportfolio.js"></script>
+
+      <script src="js/secret.js"></script>
+
+      <script src="js/positionpages.js"></script>
+      <script src="js/sketch1.js"></script>
+      <script src="js/sketch2.js"></script>
+      <script src="js/sketch3.js"></script>
    </head>
    <body>
-      <div class="background">
-        <div class="title">
-          <div class="container">
-              <div id="name">Lorenzo Rossi</div>
-              <div id="subtitle"></div>
-           </div>
-         </div>
-         <div class="text">
-           <div class="container">
-            <p>i'm a programmer, creative <span class="mobileshow"><br></span>and wannabe designer</p>
-            <p>i'm not a front end developer, <span class="mobileshow"><br></span>but i always try my best</p>
-            <p>electronic engineering student <span class="mobileshow"><br></span>with a passion for computers</p>
-          </div>
-         </div>
-         <div class="myprojects">
-           <div class="container">
-              <div id="subtitle">
-                 <p>some of my projects</p>
-              </div>
-              <div id="projects">
-              </div>
+     <div class="sketch" id="sketch1"></div>
+     <div class="sketch" id="sketch2"></div>
+     <div class="sketch" id="sketch3"></div>
+      <div class="navbar">
+         <a href="/" lang="en">Homepage</a>
+         <a href="#portfolio" lang="en">Projects</a>
+         <a href="#contacts" lang="en">Contacts</a>
+         <p lang="en" class="languageswitch">Versione italiana</p>
+         <a href="/" lang="it">Homepage</a>
+         <a href="#portfolio" lang="it">Progetti</a>
+         <a href="#contacts" lang="it">Contatti</a>
+         <p lang="it" class="languageswitch">English version</pa>
+      </div>
+      <div class="content">
+         <div class="page" id="page1">
+            <div class="section" id="logo">
+               <h1>
+                  Lorenzo<br>Rossi
+               </h1>
+            </div>
+            <div class="section" id="description">
+               <p lang="en">
+                  Programmer, web developer and creative <br>
+                  Currently studing at Politecnico di Milano <br>
+                  Computer and development enthusiast since birth <br>
+                  <span class="italic">Scroll to learn more</span>
+               </p>
+               <p lang="it">
+                  Programmatore, web developer e creativo <br>
+                  Attualmente studente al Politecnico di Milano <br>
+                  Da sempre appassionato di computer e sviluppo informatico <br>
+                  <span class="italic">Scorri per scoprire di più</span>
+               </p>
             </div>
          </div>
-         <div class="codestats">
-           <div class="container">
-             <div id="subtitle">code tracker</div>
-             <div id="total"></div>
-             <div id="breakdown"></div>
-           </div>
+         <div class="page" id="page2">
+            <div class="section" id="portfolio">
+               <div lang="en" class="sectiontitle">
+                  <h1>
+                     Projects
+                  </h1>
+               </div>
+               <div lang="it" class="sectiontitle">
+                  <h1>
+                     Progetti
+                  </h1>
+               </div>
+
+               <table class="projectscontainer">
+               </table>
+
+               <div lang="en" class="morerepos">
+                 <ul class="codetracker">More projects on mu GitHub profile, featuring:
+                   <li class="codestats"><span id="repos"></span> repos with <span id="commits"></span> commits</li>
+                   <li class="codestats"><span id="languages"></span> different languages</li>
+                   <li class="codestats"><span id="stars"></span> stars</li>
+                 </ul>
+               </div>
+               <div lang="it" class="morerepos">
+                  <ul class="codetracker">Altri progetti sul mio profilo GitHub, contenente:
+                    <li class="codestats"><span id="repos"></span> repo con <span id="commits"></span> commits</li>
+                    <li class="codestats"><span id="languages"></span> linguaggi diversi</li>
+                    <li class="codestats"><span id="stars"></span> stelle</li>
+                  </ul>
+               </div>
+            </div>
          </div>
-         <div class="icons">
-            <a id="email" href="mailto:nicetry@spam.com" target="_blank"></a>
-            <a id="github" href="https://github.com/lorossi" target="_blank"></a>
-            <a id="instagram" href="https://www.instagram.com/lorossi97/" target="_blank"></a>
-            <a id="telegram" href="https://t.me/nicetryspammers" target="_blank"></a>
+         <div class="page" id="page3">
+            <div class="section" id="contacts">
+               <div lang="en" class="sectiontitle">
+                  <h1>
+                     Contacts
+                  </h1>
+               </div>
+               <div lang="it" class="sectiontitle">
+                  <h1>
+                     Contatti
+                  </h1>
+               </div>
+
+               <table class="contactscontainer">
+                 <tr>
+                  <td class="italic contact">
+                     Email
+                    <img class="icon" src="assets/icons/email.svg" alt="email">
+                   </td>
+                   <td class="address">
+                     <a id="email" href=""></a>
+                  </td>
+                </tr>
+
+                <tr>
+                 <td class="italic contact">
+                    GitHub
+                    <img class="icon" src="assets/icons/github.svg" alt="github">
+                  </td>
+                  <td class="address"><a id="github" href=""></a>
+                 </td>
+               </tr>
+
+               <tr>
+                <td class="italic contact">
+                   Telegram
+                   <img class="icon" src="assets/icons/telegram.svg" alt="telegram">
+                 </td>
+                 <td class="address"><a id="telegram" href=""></a>
+                </td>
+              </tr>
+
+              <tr>
+               <td class="italic contact">
+                  Instagram
+                  <img class="icon" src="assets/icons/instagram.svg" alt="instagram">
+                </td>
+                <td class="address"><a id="instagram" href=""></a>
+               </td>
+             </tr>
+               </table>
+
+            </div>
          </div>
       </div>
-      <div class="orbs"></div>
-      <div class="button" id="colorswitch">switch to colors</div>
    </body>
 </html>

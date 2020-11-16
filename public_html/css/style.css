@@ -1,215 +1,182 @@
-@font-face {
-  font-family: Roboto-Thin;
-  src: url('fonts/Roboto-Thin.ttf');
+:root {
+  --black: #000000;
+  --white: #fbfbfb;
 }
 
 @font-face {
-  font-family: Roboto-Regular;
-  src: url('fonts/Roboto-Regular.ttf');
+  font-family: AvenirRoman;
+  src: url(/assets/fonts/AvenirLTStd-Roman.otf);
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #363538;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #8D8C8A;
-  border-radius: 5px;
-}
-
-
-body {
-  overflow-x: hidden;
-  margin: 0;
-  font-family: Roboto-Thin;
+@font-face {
+  font-family: AvenirBlack;
+  src: url(/assets/fonts/AvenirLTStd-Black.otf);
 }
 
 body * {
+  padding: 0;
+  margin: 0;
   z-index: 50;
 }
 
-a, a:visited, a:active, a:hover {
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a, a:visited {
   color: inherit;
   text-decoration: none;
 }
 
-p {
-  margin: 0;
+*:lang(it) {
+  display: none;
+}
+
+body {
+  background: var(--black);
+  color:var(--white);
+  font-size: 62.5%;
+  font-family: AvenirRoman;
 }
 
 .italic {
   font-style: italic;
+  opacity: 1;
 }
 
-.mobileshow {
-    display: none;
-}
-
-.mobilehide {
-  display: inline;
-}
-
-.button {
-  font-family: Roboto-Regular;
+.sketch {
   position: absolute;
-  font-size: 1.5rem;
-  user-select: none;
-}
-
-#colorswitch {
-  top: 1vw;
-  left: 1vw;
-}
-
-.background {
-  min-height: 105vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  z-index: 0;
-}
-
-.title, .text, .myprojects, .codestats, .icons {
+  left: 0;
+  top: 0;
   width: 100vw;
-  max-width: 100%;
+  height: 100vw;
+  z-index: 100;
+}
+
+.page {
+  position: absolute;
+  min-height: 100vh;
+  width: 85vw;
+  top: 0;
+}
+
+.section, .navbar {
   opacity: 0;
   animation-name: fadein;
-  animation-duration: 1s;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  text-align: center;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 1.25rem;
+  top: 1.25rem;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-}
+  justify-content: flex-end;
+  font-size: 1.25rem;
+  z-index: 200;
 
-.container {
-  display: inline-block;
-}
-
-.title {
-  padding-top: 5vh;
-  user-select: none;
-}
-
-.title #name {
-  font-size: 8rem;
-}
-
-.title #subtitle {
-  font-size: 5rem;
-}
-
-.text {
-  padding-top: 18vh;
-  word-break: break-word;
-  line-height: 140%;
-  font-size: 3rem;
-  animation-delay: 0.5s;
-}
-
-.myprojects {
-  padding-top: 18vh;
-  word-break: break-word;
   animation-delay: 1s;
 }
 
-.myprojects #subtitle {
-  font-size: 3rem;
-  padding-bottom: 2vh;
+.navbar a, .navbar p {
+  padding: 0.5rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.myprojects #projects {
+.content {
+  background-color: none;
+  position: absolute;
+  text-align: left;
+  left: 7.5vw;
+  display: inline-block;
+  z-index: 100;
+}
+
+.section {
   font-size: 2.5rem;
 }
 
-.myprojects #projects a {
-  display: block;
-  padding-bottom: 0.5vh;
+#logo, .sectiontitle {
+  font-size: 5rem;
+  animation-delay: 0.2s;
+  letter-spacing: 5px;
 }
 
-.codestats {
-  padding-top: 18vh;
-  animation-delay: 1.5s;
+.sectiontitle {
+  margin-top: 5vh;
 }
 
-.codestats #subtitle {
-  font-size: 3rem;
-  padding-bottom: 2vh;
+#logo {
+  margin-top: 10vh;
 }
 
-.codestats #total {
-  padding-bottom: 1vh;
-}
-
-.codestats #total,
-.codestats #breakdown {
-  font-size: 2.5rem;
-  line-height: 140%;
-}
-
-.icons {
-  padding-top: 18vh;
-  padding-bottom: 10vh;
-  flex-direction: row;
-  justify-content: center;
-  display: flex;
-  animation-delay: 2s;
-}
-
-.icons a {
-  width: 128px;
-  height: 128px;
-  margin-left: 32px;
-  margin-right: 32px;
-}
-
-.icons #email {
-  background: url('../src/svg/email.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.icons #github {
-  background: url('../src/svg/github.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.icons #instagram {
-  background: url('../src/svg/instagram.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.icons #telegram {
-  background: url('../src/svg/telegram.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.orbs {
+#description {
+  animation-delay: 0.6s;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 25;
+  bottom: 5rem;
 }
 
-#orb {
-  position: absolute;
-  background-color: white;
-  border-radius: 100%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  z-index: 25;
+#portfolio {
+  animation-delay: 1s;
+}
+
+#codetracker {
+  animation-delay: 1.4s;
+}
+
+#contacts {
+  animation-delay: 1.8s;
+}
+
+.projectscontainer, .contactscontainer, .codetracker {
+  margin-top: 20vh;
+  max-width: 75vw;
+}
+
+.codetracker {
+  margin-bottom: 10vh;
+}
+
+.contact, .codestats {
+  margin-left: 7.5vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  max-width: 80vw;
+}
+
+.language, .contact {
+  vertical-align: top;
+  text-align: right;
+  padding-right: 2.5rem;
+  border-right: 1px solid var(--white);
+}
+
+.repo, .address {
+  padding-left: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.repo a:hover, .address a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.codestats, .codestats p {
+  display: inline;
+}
+
+.icon {
+  position: relative;
+  top: 0.5rem;
+  padding-left: 0.5rem;
+  filter: invert(1);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline;
 }
