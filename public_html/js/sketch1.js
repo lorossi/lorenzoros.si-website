@@ -5,17 +5,18 @@ const s1 = ( sketch ) => {
   particles = []; // if you resized the window before the sketch is loaded, it would reset a null array
   sketch.setup = () => {
     // SKETCH PARAMETERS
+    let w, h;
     if ($(window).width() > 600) {
       max_particles = 125;
       particles_scl = 2;
+      w = $(window).width();
+      h = $("#page1").height();
     } else {
       max_particles = 20;
       particles_scl = 2;
+      w = $(window).width() / 3;
+      h = $("#page1").height() / 3;
     }
-
-    let w, h;
-    w = $(window).width();
-    h = $("#page1").height();
     let canvas = sketch.createCanvas(w, h);
     canvas.parent('sketch1');
 

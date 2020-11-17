@@ -5,23 +5,24 @@ const s2 = ( sketch ) => {
 
   sketch.setup = () => {
 
+    let w, h;
     if ($(window).width() > 600) {
       max_particles = 150;
       particles_scl = 32;
+      w = $(window).width();
+      h = $("#page2").height();
     } else {
-      max_particles = 50;
-      particles_scl = 16;
+      max_particles = 20;
+      particles_scl = 32;
+      w = $(window).width() / 3;
+      h = $("#page2").height() / 3;
     }
-
-    particles = [];
-    noise_scl = sketch.map(sketch.width, 0, 1920, 0, 0.075);
-    time_scl = sketch.map(sketch.width, 0, 1920, 0, 0.075);
-
-    let w, h;
-    w = $(window).width();
-    h = $("#page2").height();
     let canvas = sketch.createCanvas(w, h);
     canvas.parent('sketch2');
+
+    particles = [];
+    noise_scl = sketch.map(sketch.width, 0, 1920, 0, 0.00075);
+    time_scl = sketch.map(sketch.width, 0, 1920, 0, 0.01);
     max_dpos = sketch.width / 25;
 
     for (let i = particles.length; i < max_particles; i++) {
@@ -37,7 +38,7 @@ const s2 = ( sketch ) => {
   }
 
   sketch.draw = () => {
-    if ($("#page2").visible(true)) {
+    if ($("#page2").visible(true) || $(".projectscontainer").visible(true)) {
       sketch.background(0);
       particles.forEach((p, i) => {
         p.show();
@@ -89,7 +90,7 @@ const s2 = ( sketch ) => {
       n = sketch.noise(noise_position.x, noise_position.y, sketch.frameCount * this.time_scl);
       rho = n * this.max_dpos;
       n = sketch.noise(noise_position.x, noise_position.y, sketch.frameCount * this.time_scl + this.noise_offset);
-      theta = n * sketch.TWO_PI;
+      theta = n * sketch.TWO_PI * 4;
       this.dpos = p5.Vector.fromAngle(theta).setMag(rho);
 
       n = sketch.noise(noise_position.x, noise_position.y, sketch.frameCount * this.time_scl + this.noise_offset * 2);

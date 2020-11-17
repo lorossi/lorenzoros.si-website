@@ -1,22 +1,26 @@
 const s3 = ( sketch ) => {
   let points, max_points;
-  let points_scl,max_dist_sq;
+  let points_scl, max_dist, max_dist_sq;
 
   sketch.setup = () => {
     let w, h;
-    w = $(window).width();
-    h = $("#page3").height();
-    let canvas = sketch.createCanvas(w, h);
-    canvas.parent('sketch3');
     if ($(window).width() > 600) {
       points_scl = 24;
-      max_points = 50;
-      max_dist_sq = Math.pow(sketch.width / 5, 2);
+      max_points = 30;
+      w = $(window).width();
+      h = $("#page3").height();
+      max_dist_sq = Math.pow(w / 5, 2);
     } else {
-      points_scl = 16;
-      max_points = 10;
-      max_dist_sq = Math.pow(sketch.width, 2);
+      points_scl = 32;
+      max_points = 5;
+      w = $(window).width() / 3;
+      h = $("#page3").height() / 3;
+      max_dist_sq = Math.pow(h, 2);
     }
+    max_dist = sketch.sqrt(max_dist_sq);
+
+    let canvas = sketch.createCanvas(w, h);
+    canvas.parent('sketch3');
 
     points = [];
     for (let i = 0; i < max_points; i++) {
@@ -30,6 +34,7 @@ const s3 = ( sketch ) => {
   sketch.draw = () => {
     if ($("#page3").visible(true)) {
       sketch.background(0);
+      sketch.push();
       for (let i = 0; i < points.length; i++) {
         p = points[i];
         p.show();
@@ -40,8 +45,8 @@ const s3 = ( sketch ) => {
             q = points[j];
             if (p.isClose(q)) {
               let current_dist = sketch.dist(p.position.x, p.position.y, q.position.x, q.position.y);
-              let max_dist = Math.sqrt(p.max_dist_sq);
-              let alpha = sketch.map(current_dist, 0, max_dist, p.alpha/2, 0);
+              let alpha = sketch.map(current_dist, 0, max_dist, p.alpha, 0);
+              
               sketch.strokeWeight(2);
               sketch.stroke(255, alpha);
               sketch.line(p.position.x, p.position.y, q.position.x, q.position.y);
@@ -49,6 +54,7 @@ const s3 = ( sketch ) => {
           }
         }
       }
+    sketch.pop();
     }
   }
 
@@ -99,7 +105,6 @@ const s3 = ( sketch ) => {
 
     isClose(point) {
       let mag_sq = this.position.copy().sub(point.position).magSq();
-
       if (mag_sq < this.max_dist_sq) {
         return true;
       }
