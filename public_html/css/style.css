@@ -61,14 +61,6 @@ body {
   top: 0;
 }
 
-.section, .navbar {
-  opacity: 0;
-  animation-name: fadein;
-  animation-duration: 0.75s;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-}
-
 .navbar {
   position: absolute;
   top: 0;
@@ -79,8 +71,10 @@ body {
   justify-content: flex-end;
   font-size: 1.25rem;
   z-index: 200;
+}
 
-  animation-delay: 1s;
+.section, .navbar {
+  display: none;
 }
 
 .navbar a, .navbar p {
@@ -104,7 +98,6 @@ body {
 
 #logo, .sectiontitle {
   font-size: 5rem;
-  animation-delay: 0.2s;
   letter-spacing: 5px;
 }
 
@@ -117,21 +110,8 @@ body {
 }
 
 #description {
-  animation-delay: 0.6s;
   position: absolute;
   bottom: 5rem;
-}
-
-#portfolio {
-  animation-delay: 1s;
-}
-
-#codetracker {
-  animation-delay: 1.4s;
-}
-
-#contacts {
-  animation-delay: 1.8s;
 }
 
 .projectscontainer, .contactscontainer, .codetracker {
