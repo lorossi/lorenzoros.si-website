@@ -48,4 +48,15 @@ window.onload=function _0xefcd01(){
 	}
 	document.querySelector(_0xabf535).innerHTML=_0xfe8065;
 	document.querySelector(_0xabf535).href=_0x768977;
+
+	let _0x0e6c09="VmtWamVGSXlSWGhqUld4VVlsaG9jVlJVUVhoaWJFNVZWR3hPVGsxcldscFdWM0JEV1Zaa1JtRjZhejA9";
+	let _0x996f3a="VjFaV2IxVXdNVWhVYTJ4VlZrWndUbHBXVW5Ka01YQkZVMjVPVGxJeFNrbFdiVFZ6VkZkS1ZrNVVTbHBpUlRBeFdYcEtTbVZGT1ZsaVIyeE9UVVJWTWxkV1dsTmphekV6VUZRd1BRPT0=";
+	let _0x5fe637="VmxaV2EwNUhVbk5hTTNCVVlteHdjVlJVUVRGa01WRjRWVzF3VVZWVU1Eaz0=";
+	for(let _0x02862e=0;_0x02862e<5;_0x02862e++){
+		_0x0e6c09=atob(_0x0e6c09);
+		_0x996f3a=atob(_0x996f3a);
+		_0x5fe637=atob(_0x5fe637);
+	}
+	document.querySelector(_0x0e6c09).innerHTML=_0x5fe637;
+	document.querySelector(_0x0e6c09).href=_0x996f3a;
 }
