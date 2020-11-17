@@ -12,7 +12,7 @@ The website features a coding tracker section. All the data is parsed by a scrip
 I don't actually have a VPS, otherwise I would have built this entire website in flask and it would require less js nonsense. I might consider doing so in the future.
 
 ### Email / Telegram / links Privacy
-If you look at the html source, you won't find my email or telegram profile. That's because I used a custom script *(hide.js)* to inject an "encrypted" text inside their respective containers. By doing so, I prevent spambots from scraping my email. *So far, I have yet to receive spam!*
+If you look at the html source, you won't find my email or telegram profile. That's because I used a custom script *(secret.js)* to inject an "encrypted" text inside their respective containers. By doing so, I prevent spambots from scraping my email. *So far, I have yet to receive spam!*
 You can look at its repo [here](https://github.com/lorossi/email-hide) or try it [here](https://lorossi.github.io/email-hide/)
 
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
