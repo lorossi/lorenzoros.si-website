@@ -1,4 +1,5 @@
 // this script moves pages according to their final position
+let page_width;
 
 function placeElements() {
   let page_selector = "page";
@@ -21,9 +22,13 @@ function placeElements() {
 }
 
 $(document).ready(function() {
+  page_width = $(window).width();
   placeElements();
 });
 
 $(window).resize(function() {
-  placeElements();
+  if ($(window).width() != page_width) {
+    page_width = $(window).width();
+    placeElements();
+  }
 });

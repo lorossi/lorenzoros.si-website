@@ -1,9 +1,9 @@
 const s3 = ( sketch ) => {
   let points, max_points;
   let points_scl, max_dist, max_dist_sq;
+  let w, h;
 
   sketch.setup = () => {
-    let w, h;
     if ($(window).width() > 600) {
       points_scl = 24;
       max_points = 30;
@@ -12,7 +12,7 @@ const s3 = ( sketch ) => {
       max_dist_sq = Math.pow(w / 5, 2);
     } else {
       points_scl = 32;
-      max_points = 5;
+      max_points = 10;
       w = $(window).width() / 3;
       h = $("#page3").height() / 3;
       max_dist_sq = Math.pow(h, 2);
@@ -46,8 +46,8 @@ const s3 = ( sketch ) => {
             if (p.isClose(q)) {
               let current_dist = sketch.dist(p.position.x, p.position.y, q.position.x, q.position.y);
               let alpha = sketch.map(current_dist, 0, max_dist, p.alpha, 0);
-              
-              sketch.strokeWeight(2);
+
+              sketch.strokeWeight(3);
               sketch.stroke(255, alpha);
               sketch.line(p.position.x, p.position.y, q.position.x, q.position.y);
             }
@@ -59,10 +59,11 @@ const s3 = ( sketch ) => {
   }
 
   sketch.windowResized = () => {
-    let w, h;
-    w = $(window).width();
-    h = $("#sketch3").height();
-    sketch.resizeCanvas(w, h);
+    if ($(window).width() != w) {
+      w = $(window).width();
+      h = $("#sketch3").height();
+      sketch.resizeCanvas(w, h);
+    }
   }
 
   sketch.calculateRight = () => {

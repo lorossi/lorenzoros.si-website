@@ -2,27 +2,29 @@ const s2 = ( sketch ) => {
 
   let particles, max_particles, particles_scl;
   let noise_scl, time_scl, max_dpos;
+  let w, h;
 
   sketch.setup = () => {
-
-    let w, h;
     if ($(window).width() > 600) {
       max_particles = 150;
       particles_scl = 32;
       w = $(window).width();
       h = $("#page2").height();
+      noise_scl = sketch.map(sketch.width, 0, 1920, 0, 0.005);
+      time_scl = sketch.map(sketch.width, 0, 1920, 0, 0.01);
     } else {
-      max_particles = 20;
+      max_particles = 30;
       particles_scl = 32;
       w = $(window).width() / 3;
       h = $("#page2").height() / 3;
+      noise_scl = sketch.map(sketch.width, 0, 600, 0, 0.025);
+      time_scl = sketch.map(sketch.width, 0, 600, 0, 0.075);
     }
+
     let canvas = sketch.createCanvas(w, h);
     canvas.parent('sketch2');
 
     particles = [];
-    noise_scl = sketch.map(sketch.width, 0, 1920, 0, 0.00075);
-    time_scl = sketch.map(sketch.width, 0, 1920, 0, 0.01);
     max_dpos = sketch.width / 25;
 
     for (let i = particles.length; i < max_particles; i++) {
@@ -38,23 +40,22 @@ const s2 = ( sketch ) => {
   }
 
   sketch.draw = () => {
-    if ($("#page2").visible(true) || $(".projectscontainer").visible(true)) {
-      sketch.background(0);
-      particles.forEach((p, i) => {
-        p.show();
-        p.move();
-      });
-    }
+    sketch.background(0);
+    particles.forEach((p, i) => {
+      p.show();
+      p.move();
+    });
   }
 
   sketch.windowResized = () => {
-    let w, h;
-    w = $(window).width();
-    h = $("#page2").height();
-    sketch.resizeCanvas(w, h);
-    particles = [];
-    sketch.addParticles();
-    sketch.background(0);
+    if ($(window).width() != w) {
+      w = $(window).width();
+      h = $("#page2").height();
+      sketch.resizeCanvas(w, h);
+      particles = [];
+      sketch.addParticles();
+      sketch.background(0);
+    }
   }
 
   sketch.addParticles = () => {
