@@ -1,6 +1,5 @@
 import json
 import logging
-from decimal import Decimal
 from github import Github
 from datetime import datetime
 
@@ -11,6 +10,7 @@ def loadSettings(path="settings.json"):
     with open(path) as json_file:
         settings = json.load(json_file)
     return settings
+
 
 # load repos from Github
 def loadRepos(g, skip_names=None, skip_urls=None, selected_repos=None):
@@ -49,6 +49,7 @@ def loadRepos(g, skip_names=None, skip_urls=None, selected_repos=None):
 
     return repos
 
+
 # format repos dict
 def formatRepos(repos):
     return_dict = {}
@@ -58,8 +59,10 @@ def formatRepos(repos):
     total_stars = 0
     total_size = 0
 
+    # sort by language
+    repos = sorted(repos, key=lambda x: x["main_language"], reverse=False)
     # sort by time
-    repos = sorted(repos, key=lambda x : (x["main_language"], x["created"]), reverse=False)
+    repos = sorted(repos, key=lambda x: x["created"], reverse=True)
 
     for repo in repos:
         total_commits += repo["commits"]
@@ -76,17 +79,17 @@ def formatRepos(repos):
                     languages[language]["absolute_size"] = repo["languages"][language]
         del repo["created"]
 
-    for l in languages:
+    for lang in languages:
         languages_list.append({
-            "language": l,
-            "absolute_size": languages[l]["absolute_size"]
+            "language": lang,
+            "absolute_size": languages[lang]["absolute_size"]
         })
 
-    for l in languages_list:
-        l["relative_size"] = l["absolute_size"] / total_size
-        l["relative_size_formatted"] = f"{round(l['relative_size'] * 100, 2)}%"
+    for lang in languages_list:
+        lang["relative_size"] = lang["absolute_size"] / total_size
+        lang["relative_size_formatted"] = f"{round(lang['relative_size'] * 100, 2)}%"
 
-    languages_list = sorted(languages_list, key=lambda x : x["absolute_size"], reverse=True)
+    languages_list = sorted(languages_list, key=lambda x: x["absolute_size"], reverse=True)
     del languages
 
     return_dict["repos"] = repos
@@ -101,6 +104,7 @@ def formatRepos(repos):
     }
     return return_dict
 
+
 # save to file
 def saveToFile(path, repos):
     newl = "\n"
@@ -114,9 +118,9 @@ def saveToFile(path, repos):
     )
 
     output_string += "let resources = "
-    output_string += json.dumps(repos, indent=4) # convert dict to json (will be read by js)
+    output_string += json.dumps(repos, indent=4)  # convert dict to json (will be read by js)
 
-    output_file = open(path,"w+")
+    output_file = open(path, "w+")
     output_file.write(output_string)
     output_file.close()
 
@@ -146,7 +150,7 @@ def main():
     saveToFile(outpath, repos)
     logging.info("file saved")
 
-    logging.info("script ended");
+    logging.info("script ended")
 
 
 if __name__ == "__main__":
