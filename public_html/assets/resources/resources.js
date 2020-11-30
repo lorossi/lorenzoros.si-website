@@ -6,41 +6,115 @@
 let resources = {
     "repos": [
         {
-            "name": "email-hide",
-            "formatted_name": "email hide",
-            "description": "A clever way to hide emails inside html web pages using client side JavaScript",
-            "url": "https://github.com/lorossi/email-hide",
-            "commits": 28,
+            "name": "every-color",
+            "formatted_name": "every color",
+            "description": "A Python script generating images with all the RGB colors in a set bit depth.",
+            "url": "https://github.com/lorossi/every-color",
+            "commits": 64,
             "stars": 0,
-            "main_language": "JavaScript",
+            "main_language": "Python",
             "languages": {
-                "JavaScript": 7582,
-                "HTML": 6921,
-                "CSS": 2377
+                "Python": 20375
             },
-            "size": 404,
-            "last_pushed_timestamp": "2020-11-13T14:58:54",
-            "created_timestamp": "2020-07-04T17:55:23",
+            "size": 169430,
+            "last_pushed_timestamp": "2020-11-30T11:30:54",
+            "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
             "selected": true
         },
         {
-            "name": "lorenzoros.si-website",
-            "formatted_name": "lorenzoros.si website",
-            "description": "A repo for my website - lorenzoros.si",
-            "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 84,
+            "name": "performances-monitor",
+            "formatted_name": "performances monitor",
+            "description": "Handy way to constantly check some hardware stats via browser",
+            "url": "https://github.com/lorossi/performances-monitor",
+            "commits": 51,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 14071,
+                "CSS": 6416,
+                "JavaScript": 6269,
+                "HTML": 4856
+            },
+            "size": 661,
+            "last_pushed_timestamp": "2020-11-26T14:10:04",
+            "created_timestamp": "2020-11-18T15:24:37",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "p5js-perlin",
+            "formatted_name": "p5js perlin",
+            "description": "A suite of looping animations made with p5js and perlin noise",
+            "url": "https://github.com/lorossi/p5js-perlin",
+            "commits": 2,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 21427,
-                "Python": 9784,
-                "CSS": 4819,
-                "HTML": 2716
+                "JavaScript": 41261,
+                "HTML": 1094,
+                "CSS": 612
             },
-            "size": 3709,
-            "last_pushed_timestamp": "2020-10-20T12:51:39",
-            "created_timestamp": "2020-07-08T16:22:03",
+            "size": 151919,
+            "last_pushed_timestamp": "2020-11-17T17:22:40",
+            "created_timestamp": "2020-11-17T17:11:05",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "fireworks",
+            "formatted_name": "fireworks",
+            "description": "A fireworks spectacle made in p5js",
+            "url": "https://github.com/lorossi/fireworks",
+            "commits": 15,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 13805,
+                "HTML": 690,
+                "CSS": 496
+            },
+            "size": 343,
+            "last_pushed_timestamp": "2020-11-17T14:36:12",
+            "created_timestamp": "2020-10-20T12:20:02",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "merrychristmas",
+            "formatted_name": "merrychristmas",
+            "description": "Ho ho ho, merry Christmas!",
+            "url": "https://github.com/lorossi/merrychristmas",
+            "commits": 20,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 8536,
+                "CSS": 1994,
+                "HTML": 1861
+            },
+            "size": 6671,
+            "last_pushed_timestamp": "2020-10-19T18:56:42",
+            "created_timestamp": "2020-10-13T10:10:50",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
+            "name": "quantomancaanatale",
+            "formatted_name": "quantomancaanatale",
+            "description": "Ce lo siamo chiesti tutti, quanto manca a Natale?",
+            "url": "https://github.com/lorossi/quantomancaanatale",
+            "commits": 16,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 4309,
+                "HTML": 1418,
+                "CSS": 1080
+            },
+            "size": 254,
+            "last_pushed_timestamp": "2020-10-20T12:19:39",
+            "created_timestamp": "2020-10-12T16:02:58",
             "created_year": 2020,
             "selected": false
         },
@@ -64,97 +138,6 @@ let resources = {
             "selected": true
         },
         {
-            "name": "quantomancaanatale",
-            "formatted_name": "quantomancaanatale",
-            "description": "Ce lo siamo chiesti tutti, quanto manca a Natale?",
-            "url": "https://github.com/lorossi/quantomancaanatale",
-            "commits": 16,
-            "stars": 0,
-            "main_language": "JavaScript",
-            "languages": {
-                "JavaScript": 4309,
-                "HTML": 1418,
-                "CSS": 1080
-            },
-            "size": 254,
-            "last_pushed_timestamp": "2020-10-20T12:19:39",
-            "created_timestamp": "2020-10-12T16:02:58",
-            "created_year": 2020,
-            "selected": false
-        },
-        {
-            "name": "merrychristmas",
-            "formatted_name": "merrychristmas",
-            "description": "Ho ho ho, merry Christmas!",
-            "url": "https://github.com/lorossi/merrychristmas",
-            "commits": 20,
-            "stars": 0,
-            "main_language": "JavaScript",
-            "languages": {
-                "JavaScript": 8536,
-                "CSS": 1994,
-                "HTML": 1861
-            },
-            "size": 6671,
-            "last_pushed_timestamp": "2020-10-19T18:56:42",
-            "created_timestamp": "2020-10-13T10:10:50",
-            "created_year": 2020,
-            "selected": false
-        },
-        {
-            "name": "fireworks",
-            "formatted_name": "fireworks",
-            "description": "A fireworks spectacle made in p5js",
-            "url": "https://github.com/lorossi/fireworks",
-            "commits": 12,
-            "stars": 0,
-            "main_language": "JavaScript",
-            "languages": {
-                "JavaScript": 12257,
-                "HTML": 690,
-                "CSS": 494
-            },
-            "size": 335,
-            "last_pushed_timestamp": "2020-10-21T19:05:35",
-            "created_timestamp": "2020-10-20T12:20:02",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
-            "name": "perlin-flow-field",
-            "formatted_name": "perlin flow field",
-            "description": "My personal implementation of a perlin flow field in Processing 3",
-            "url": "https://github.com/lorossi/perlin-flow-field",
-            "commits": 7,
-            "stars": 0,
-            "main_language": "Processing",
-            "languages": {
-                "Processing": 6179
-            },
-            "size": 2948,
-            "last_pushed_timestamp": "2020-03-01T16:30:19",
-            "created_timestamp": "2020-03-01T16:09:42",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
-            "name": "pi-day-2020-visualization",
-            "formatted_name": "pi day 2020 visualization",
-            "description": "A simple yet fascinating way of visualizing the first million digits of PI",
-            "url": "https://github.com/lorossi/pi-day-2020-visualization",
-            "commits": 8,
-            "stars": 0,
-            "main_language": "Processing",
-            "languages": {
-                "Processing": 5854
-            },
-            "size": 151877,
-            "last_pushed_timestamp": "2020-03-14T16:38:50",
-            "created_timestamp": "2020-03-14T16:06:55",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
             "name": "lissajous",
             "formatted_name": "lissajous",
             "description": "Lissajous curves generator in Processing",
@@ -168,60 +151,6 @@ let resources = {
             "size": 44638,
             "last_pushed_timestamp": "2020-09-07T18:57:49",
             "created_timestamp": "2020-07-16T21:27:05",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
-            "name": "corgos-telegram-bot",
-            "formatted_name": "corgos telegram bot",
-            "description": "Free delivery of cute corgis images",
-            "url": "https://github.com/lorossi/corgos-telegram-bot",
-            "commits": 13,
-            "stars": 0,
-            "main_language": "Python",
-            "languages": {
-                "Python": 23420
-            },
-            "size": 72,
-            "last_pushed_timestamp": "2020-08-01T12:48:07",
-            "created_timestamp": "2020-06-05T13:11:52",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
-            "name": "zero-width-steganography",
-            "formatted_name": "zero width steganography",
-            "description": "Hide text informations using invisible text characters",
-            "url": "https://github.com/lorossi/zero-width-steganography",
-            "commits": 31,
-            "stars": 0,
-            "main_language": "Python",
-            "languages": {
-                "Python": 27902
-            },
-            "size": 67,
-            "last_pushed_timestamp": "2020-07-09T15:01:32",
-            "created_timestamp": "2020-06-17T09:29:12",
-            "created_year": 2020,
-            "selected": true
-        },
-        {
-            "name": "rpi-homepage",
-            "formatted_name": "rpi homepage",
-            "description": "A flask based dashboard for my Raspberry Pi",
-            "url": "https://github.com/lorossi/rpi-homepage",
-            "commits": 14,
-            "stars": 0,
-            "main_language": "Python",
-            "languages": {
-                "Python": 9543,
-                "CSS": 3091,
-                "JavaScript": 2705,
-                "HTML": 2014
-            },
-            "size": 764,
-            "last_pushed_timestamp": "2020-11-10T08:25:24",
-            "created_timestamp": "2020-07-11T16:18:11",
             "created_year": 2020,
             "selected": true
         },
@@ -243,19 +172,95 @@ let resources = {
             "selected": true
         },
         {
-            "name": "appunti-vhdl",
-            "formatted_name": "appunti vhdl",
-            "description": "Appunti di VHDL",
-            "url": "https://github.com/lorossi/appunti-vhdl",
-            "commits": 12,
-            "stars": 3,
-            "main_language": "TeX",
+            "name": "rpi-homepage",
+            "formatted_name": "rpi homepage",
+            "description": "A flask based dashboard for my Raspberry Pi",
+            "url": "https://github.com/lorossi/rpi-homepage",
+            "commits": 15,
+            "stars": 0,
+            "main_language": "Python",
             "languages": {
-                "TeX": 36613
+                "Python": 9543,
+                "CSS": 3091,
+                "JavaScript": 2705,
+                "HTML": 2014
             },
-            "size": 1955,
-            "last_pushed_timestamp": "2020-02-24T11:55:50",
-            "created_timestamp": "2020-01-16T20:16:27",
+            "size": 766,
+            "last_pushed_timestamp": "2020-11-18T19:24:00",
+            "created_timestamp": "2020-07-11T16:18:11",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "lorenzoros.si-website",
+            "formatted_name": "lorenzoros.si website",
+            "description": "A repo for my website - lorenzoros.si",
+            "url": "https://github.com/lorossi/lorenzoros.si-website",
+            "commits": 97,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 29318,
+                "HTML": 6936,
+                "Python": 4686,
+                "CSS": 3465
+            },
+            "size": 3800,
+            "last_pushed_timestamp": "2020-11-17T10:29:13",
+            "created_timestamp": "2020-07-08T16:22:03",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
+            "name": "email-hide",
+            "formatted_name": "email hide",
+            "description": "A clever way to hide emails inside html web pages using client side JavaScript",
+            "url": "https://github.com/lorossi/email-hide",
+            "commits": 28,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 7582,
+                "HTML": 6921,
+                "CSS": 2377
+            },
+            "size": 404,
+            "last_pushed_timestamp": "2020-11-13T14:58:54",
+            "created_timestamp": "2020-07-04T17:55:23",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "zero-width-steganography",
+            "formatted_name": "zero width steganography",
+            "description": "Hide text informations using invisible text characters",
+            "url": "https://github.com/lorossi/zero-width-steganography",
+            "commits": 31,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 27902
+            },
+            "size": 67,
+            "last_pushed_timestamp": "2020-07-09T15:01:32",
+            "created_timestamp": "2020-06-17T09:29:12",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "corgos-telegram-bot",
+            "formatted_name": "corgos telegram bot",
+            "description": "Free delivery of cute corgis images",
+            "url": "https://github.com/lorossi/corgos-telegram-bot",
+            "commits": 14,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 22775
+            },
+            "size": 78,
+            "last_pushed_timestamp": "2020-11-26T14:17:56",
+            "created_timestamp": "2020-06-05T13:11:52",
             "created_year": 2020,
             "selected": true
         },
@@ -275,52 +280,103 @@ let resources = {
             "created_timestamp": "2020-03-23T16:55:33",
             "created_year": 2020,
             "selected": true
+        },
+        {
+            "name": "pi-day-2020-visualization",
+            "formatted_name": "pi day 2020 visualization",
+            "description": "A simple yet fascinating way of visualizing the first million digits of PI",
+            "url": "https://github.com/lorossi/pi-day-2020-visualization",
+            "commits": 8,
+            "stars": 0,
+            "main_language": "Processing",
+            "languages": {
+                "Processing": 5854
+            },
+            "size": 151877,
+            "last_pushed_timestamp": "2020-03-14T16:38:50",
+            "created_timestamp": "2020-03-14T16:06:55",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "perlin-flow-field",
+            "formatted_name": "perlin flow field",
+            "description": "My personal implementation of a perlin flow field in Processing 3",
+            "url": "https://github.com/lorossi/perlin-flow-field",
+            "commits": 7,
+            "stars": 0,
+            "main_language": "Processing",
+            "languages": {
+                "Processing": 6179
+            },
+            "size": 2948,
+            "last_pushed_timestamp": "2020-03-01T16:30:19",
+            "created_timestamp": "2020-03-01T16:09:42",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
+            "name": "appunti-vhdl",
+            "formatted_name": "appunti vhdl",
+            "description": "Appunti di VHDL",
+            "url": "https://github.com/lorossi/appunti-vhdl",
+            "commits": 12,
+            "stars": 3,
+            "main_language": "TeX",
+            "languages": {
+                "TeX": 36613
+            },
+            "size": 1955,
+            "last_pushed_timestamp": "2020-02-24T11:55:50",
+            "created_timestamp": "2020-01-16T20:16:27",
+            "created_year": 2020,
+            "selected": true
         }
     ],
     "languages": [
         {
-            "language": "TeX",
-            "absolute_size": 88664,
-            "relative_size": 0.2932805853439094,
-            "relative_size_formatted": "29.33%"
+            "language": "JavaScript",
+            "absolute_size": 132726,
+            "relative_size": 0.32866312067274833,
+            "relative_size_formatted": "32.87%"
         },
         {
             "language": "Python",
-            "absolute_size": 83862,
-            "relative_size": 0.2773966485621101,
-            "relative_size_formatted": "27.74%"
+            "absolute_size": 112565,
+            "relative_size": 0.2787393892570251,
+            "relative_size_formatted": "27.87%"
         },
         {
-            "language": "JavaScript",
-            "absolute_size": 75757,
-            "relative_size": 0.25058713010803196,
-            "relative_size_formatted": "25.06%"
+            "language": "TeX",
+            "absolute_size": 88664,
+            "relative_size": 0.21955447260769223,
+            "relative_size_formatted": "21.96%"
+        },
+        {
+            "language": "HTML",
+            "absolute_size": 26713,
+            "relative_size": 0.06614813934369397,
+            "relative_size_formatted": "6.61%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.077028162398534,
-            "relative_size_formatted": "7.7%"
-        },
-        {
-            "language": "HTML",
-            "absolute_size": 16543,
-            "relative_size": 0.054720526068576796,
-            "relative_size_formatted": "5.47%"
+            "relative_size": 0.0576644974692697,
+            "relative_size_formatted": "5.77%"
         },
         {
             "language": "CSS",
-            "absolute_size": 14205,
-            "relative_size": 0.04698694751883778,
-            "relative_size_formatted": "4.7%"
+            "absolute_size": 19881,
+            "relative_size": 0.04923038064957062,
+            "relative_size_formatted": "4.92%"
         }
     ],
     "stats": {
-        "total_size": 302318,
-        "total_commits": 357,
+        "total_size": 403836,
+        "total_commits": 492,
         "total_stars": 4,
         "total_languages": 6,
-        "total_repos": 15,
-        "last_updated": "2020-11-16T20:21:38.316036"
+        "total_repos": 18,
+        "last_updated": "2020-11-30T14:30:45.466539"
     }
 }
