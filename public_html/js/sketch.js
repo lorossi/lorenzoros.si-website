@@ -10,36 +10,40 @@ class Particle {
         this._max_size = 20;
         this._min_alpha = 0.4;
         this._max_alpha = 0.7;
+        this._min_speed = 0.5;
+        this._max_speed = 2.5;
       } else {
-        this._min_size = 2;
-        this._max_size = 6;
+        this._min_size = 4;
+        this._max_size = 8;
         this._min_alpha = 0.1;
         this._max_alpha = 0.25;
+        this._min_speed = 0.25;
+        this._max_speed = 1;
       }
 
 
       this.z = random(10);
       this.opacity = map(this.z, 0, 10, this._min_alpha, this._max_alpha);
       this._radius = map(this.z, 0, 10, this._min_size, this._max_size);
-      this.velocity = map(this.z, 0, 10, 0.5, 2.5);
+      this.speed = map(this.z, 0, 10, this._min_speed, this._max_speed);
 
       let x, y;
       x = random(this._radius, this._width - this._radius);
       y = random(this._radius, this._height - this._radius);
       this._position = new Vector(x, y);
 
-      this.speed = Vector.random2D();
-      this.speed.multiply_scalar(this.velocity);
+      this.velocity = Vector.random2D();
+      this.velocity.multiply_scalar(this.speed);
 
       this._paired = [];
     }
 
     move() {
       this._paired = [];
-      this._position.add(this.speed);
+      this._position.add(this.velocity);
 
-      if (this._position.x + this._radius > this._width || this._position.x - this._radius < 0) this.speed.x *= -1;
-      if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.speed.y *= -1;
+      if (this._position.x + this._radius > this._width || this._position.x - this._radius < 0) this.velocity.x *= -1;
+      if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.velocity.y *= -1;
 
     }
 
@@ -128,14 +132,14 @@ class Sketch {
   }
 
   setup() {
-    this.background = "#000000";
+    this.background = getCssProperty("--background");
     this.max_connections = 2;
 
     if (this.width > 600) {
       this.particles_num = 65;
       this.max_dist_sq = Math.pow(this.width * 0.15, 2);
     } else {
-      this.particles_num = 50;
+      this.particles_num = 30;
       this.max_dist_sq = Math.pow(this.width * 0.6, 2);
     }
 
@@ -168,12 +172,12 @@ class Sketch {
 
     for (let i = 0; i < this.particles.length; i++) {
       let pos_1 = this.particles[i].pos;
-      if (this.particles[i].length > this.max_connections) continue;
+      if (this.particles[i].paired.length > this.max_connections) continue;
 
       for (let j = 0; j < this.particles.length; j++) {
         if (i == j) continue;
         if (this.particles[j].paired.includes(i)) continue;
-        if (this.particles[j].length > this.max_connections) continue;
+        if (this.particles[j].paired.length > this.max_connections) continue;
         let pos_2 = this.particles[j].pos;
 
         let dist_sq = distSq(pos_1.x, pos_1.y, pos_2.x, pos_2.y);
