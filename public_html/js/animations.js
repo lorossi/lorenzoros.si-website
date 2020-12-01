@@ -5,20 +5,17 @@ function animate() {
   let duration = 1000;
   let bottom = $(document).scrollTop() + $(window).height();
 
-  if (bottom <= $("#page1").outerHeight() * 1.5 && $("#logo").css("display") == "none") {
-
+  if (bottom <= $("#page1").outerHeight() * 1.5 && $("#page1").css("display") == "none") {
     setTimeout(() => {
-      $("#logo").fadeIn(duration);
-      $("#sketch").fadeIn(duration);
-    }, 0);
-
-    setTimeout(() => {
-      $("#description").fadeIn(duration);
+      $("#page1").fadeIn(duration);
     }, duration / 2);
-
     setTimeout(() => {
       $(".navbar").fadeIn(duration);
     }, duration);
+    setTimeout(() => {
+      $(".sketch").fadeIn(duration);
+    }, duration);
+
   }
 
   if (bottom > $("#page2").offset().top && $("#page2").css("display") == "none" && $("#logo").css("display") == "block") {
@@ -36,7 +33,7 @@ function animate() {
 }
 
 $(document).ready(() => {
-  $("#logo, #description, .navbar, #page2, #page3").css("display", "none");
+  $(".navbar, #page1, #page2, #page3").css("display", "none");
   animate();
 });
 

@@ -113,16 +113,16 @@ body {
   letter-spacing: 5px;
 }
 
-.sectiontitle {
-  margin-top: 5vh;
-}
-
 #logo {
   margin-top: 10vh;
 }
 
 #description {
-  margin-top: 10vh;
+  margin-top: 20vh;
+}
+
+.sectiontitle {
+  margin-top: 5vh;
 }
 
 .projectscontainer, .contactscontainer {
