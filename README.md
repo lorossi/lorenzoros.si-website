@@ -18,6 +18,9 @@ You can look at its repo [here](https://github.com/lorossi/email-hide) or try it
 ### Double languages
 This website is actually written in two languages (Italian and English). A js script automatically discovers the user's PC language and switches to the correct version.
 
+### Background animation
+The background animation is made in pure js using html5 canvas element. Previously it was made in p5js but it lagged heavily on most devices (including mobiles). Now it's lighter on your hardware!
+
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
 # License
