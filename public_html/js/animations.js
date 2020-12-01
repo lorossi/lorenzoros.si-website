@@ -1,35 +1,55 @@
 /*jshint esversion: 6 */
 
-$(document).ready(function() {
+
+function animate() {
   let duration = 1000;
+  let bottom = $(document).scrollTop() + $(window).height();
 
-  setTimeout(function() {
-    $("#logo").fadeIn(duration);
-  }, 250);
-  setTimeout(function() {
-    $("#description").fadeIn(duration);
-  }, 500);
-  setTimeout(function() {
-    $(".navbar").fadeIn(duration, function() {
-      $(".navbar").css("display", "flex");
-    });
-  }, 1000);
+  if (bottom <= $("#page1").outerHeight() && $("#logo").css("display") == "none") {
+    setTimeout(function() {
+      $("#logo").fadeIn(duration);
+    }, 0);
 
-  setTimeout(function() {
-    $("#portfolio").fadeIn(duration);
-  }, 1500);
-  setTimeout(function() {
-    $(".projectscontainer").fadeIn(duration);
-  }, 1750);
-  setTimeout(function() {
-    $(".morerepos").fadeIn(duration, placeElements);
-  }, 2000);
+    setTimeout(function() {
+      $("#description").fadeIn(duration);
+    }, duration / 2);
 
-  setTimeout(function() {
-    $("#contacts").fadeIn(duration);
-  }, 2500);
-  setTimeout(function() {
-    $(".contactscontainer").fadeIn(duration);
-  }, 2750);
+    setTimeout(function() {
+      $(".navbar").fadeIn(duration);
+    }, duration);
+  }
 
+  if (bottom > $("#page2").offset().top && $("#portfolio").css("display") == "none") {
+    setTimeout(function() {
+      $("#portfolio").fadeIn(duration);
+    }, 0);
+
+    setTimeout(function() {
+      $("#projectscontainer").fadeIn(duration);
+    }, duration);
+
+    setTimeout(function() {
+      $(".morerepos").fadeIn(duration);
+    }, duration * 2);
+  }
+
+  if (bottom > $("#page3").offset().top && $("#contacts").css("display") == "none") {
+    setTimeout(function() {
+      $("#contacts").fadeIn(duration);
+    }, 0);
+
+    setTimeout(function() {
+      $(".contactscontainer").fadeIn(duration);
+    }, duration);
+  }
+
+}
+
+$(document).ready(() => {
+  animate();
+});
+
+
+$(document).on("scroll", () => {
+  animate();
 });

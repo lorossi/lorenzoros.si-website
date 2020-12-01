@@ -22,7 +22,7 @@ $(document).ready(function() {
     selector = `*:lang(${short_language})`;
     $(selector).css({"display": "none"});
 
-    if (active_language === "it-IT") {
+    if (active_language === "it-IT") { // switch languages around
       active_language = "en-EN";
     } else {
       active_language = "it-IT";

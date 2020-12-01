@@ -15,13 +15,12 @@ I don't actually have a VPS, otherwise I would have built this entire website in
 If you look at the html source, you won't find my email or telegram profile. That's because I used a custom script *(secret.js)* to inject an "encrypted" text inside their respective containers. By doing so, I prevent spambots from scraping my email. *So far, I have yet to receive spam!*
 You can look at its repo [here](https://github.com/lorossi/email-hide) or try it [here](https://lorossi.github.io/email-hide/)
 
+### Double languages
+This website is actually written in two languages (Italian and English). A js script automatically discovers the user's PC language and switches to the correct version.
+
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
 # License
 The website is distributed under CC 4.0 License.
 
 The logos are sourced from [Simple-Icons](https://github.com/simple-icons/simple-icons).
-
-Thanks to [customd](https://github.com/customd) for his wonderful [jQuery isvisible plugin.](https://github.com/customd/jquery-visible)
-
-Thanks to [josephg](https://github.com/josephg) for his marvelous (noisejs library.)[https://github.com/josephg/noisejs]

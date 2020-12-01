@@ -54,8 +54,13 @@ body {
   z-index: 100;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .page {
-  position: absolute;
   min-height: 100vh;
   width: 85vw;
   top: 0;
@@ -71,10 +76,6 @@ body {
   justify-content: flex-end;
   font-size: 1.25rem;
   z-index: 200;
-}
-
-.section, .navbar {
-  display: none;
 }
 
 .navbar a, .navbar p {
@@ -110,8 +111,7 @@ body {
 }
 
 #description {
-  position: absolute;
-  bottom: 5rem;
+  margin-top: 10vh;
 }
 
 .projectscontainer, .contactscontainer {
@@ -161,4 +161,16 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   display: inline;
+}
+
+#logo, #description, .navbar {
+  display: none;
+}
+
+#portfolio, #projectscontainer, .morerepos {
+  display: none;
+}
+
+#contacts, .contactscontainer {
+  display: none;
 }
