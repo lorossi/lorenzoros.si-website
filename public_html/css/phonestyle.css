@@ -1,23 +1,13 @@
 @media only screen and (max-width: 480px) and (min-width: 0px) {
   .navbar {
-    font-size: 0.8rem;
-    top: 0.8rem;
     left: 5vw;
     width: 90vw;
     justify-content: center;
   }
 
-  .section {
-    font-size: 1rem;
-  }
-
   .content {
     width: 90vw;
     left: 5vw;
-  }
-
-  #logo, .sectiontitle {
-    font-size: 2.5rem;
   }
 
   #logo {
@@ -33,10 +23,6 @@
     max-width: 90vw;
   }
 
-  .language, .contact {
-    padding-right: 0.5rem;
-  }
-
   .repo, .address {
     padding-left: 0.5rem;
     padding-bottom: 1rem;
@@ -50,19 +36,6 @@
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 481px) {
-  #logo, .sectiontitle {
-    font-size: 2rem;
-  }
-
-  .navbar {
-    font-size: 1.5rem;
-  }
-
-  .section {
-    font-size: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
   .projectscontainer, .contactscontainer, .codetracker {
     margin-top: 10vh;
   }
