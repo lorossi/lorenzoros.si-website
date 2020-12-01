@@ -1,3 +1,4 @@
 python_scripts/*.log
 python_scripts/*test.py
 python_scripts/setting*.json
+*_old.js

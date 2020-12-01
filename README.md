@@ -23,3 +23,5 @@ The website is distributed under CC 4.0 License.
 The logos are sourced from [Simple-Icons](https://github.com/simple-icons/simple-icons).
 
 Thanks to [customd](https://github.com/customd) for his wonderful [jQuery isvisible plugin.](https://github.com/customd/jquery-visible)
+
+Thanks to [josephg](https://github.com/josephg) for his marvelous (noisejs library.)[https://github.com/josephg/noisejs]

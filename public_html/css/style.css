@@ -114,13 +114,15 @@ body {
   bottom: 5rem;
 }
 
-.projectscontainer, .contactscontainer, .codetracker {
+.projectscontainer, .contactscontainer {
   margin-top: 20vh;
   max-width: 75vw;
 }
 
 .codetracker {
-  margin-bottom: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  max-width: 75vw;
 }
 
 .contact, .codestats {
