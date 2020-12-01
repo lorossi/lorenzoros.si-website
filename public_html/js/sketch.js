@@ -6,15 +6,15 @@ class Particle {
       this._height = height;
 
       if (this._width > 600) {
-        this._min_size = 5;
-        this._max_size = 15;
-        this._min_alpha = 0.1;
-        this._max_alpha = 0.3;
+        this._min_size = 10;
+        this._max_size = 20;
+        this._min_alpha = 0.2;
+        this._max_alpha = 0.5;
       } else {
         this._min_size = 2;
         this._max_size = 6;
-        this._min_alpha = 0.05;
-        this._max_alpha = 0.2;
+        this._min_alpha = 0.1;
+        this._max_alpha = 0.25;
       }
 
 
@@ -131,10 +131,10 @@ class Sketch {
     this.background = "#000000";
 
     if (this.width > 600) {
-      this.particles_num = 70;
-      this.max_dist_sq = Math.pow(this.width * 0.2, 2);
+      this.particles_num = 65;
+      this.max_dist_sq = Math.pow(this.width * 0.15, 2);
     } else {
-      this.particles_num = 40;
+      this.particles_num = 50;
       this.max_dist_sq = Math.pow(this.width * 0.4, 2);
     }
 
@@ -162,8 +162,8 @@ class Sketch {
     // draw lines
     this.ctx.save();
     let min_alpha, max_alpha;
-    min_alpha = this.particles[0].min_alpha;
     max_alpha = this.particles[0].max_alpha;
+    min_alpha = max_alpha / 4;
 
     for (let i = 0; i < this.particles.length; i++) {
       let pos_1 = this.particles[i].pos;
@@ -177,7 +177,6 @@ class Sketch {
         if (dist_sq < this.max_dist_sq) {
           this.particles[j].paired = i;
           this.particles[i].paired = j;
-
           let alpha = map(dist_sq, 0, this.max_dist_sq, max_alpha, min_alpha);
           this.ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
           this.ctx.lineWidth = 2;
@@ -194,6 +193,11 @@ class Sketch {
     // draw particles
     this.ctx.save();
     this.particles.forEach((p, i) => {
+      this.ctx.fillStyle = this.background;
+      this.ctx.beginPath();
+      this.ctx.arc(p.pos.x, p.pos.y, p.radius, 0, 2 * Math.PI);
+      this.ctx.fill();
+      
       this.ctx.fillStyle = p.color;
       this.ctx.beginPath();
       this.ctx.arc(p.pos.x, p.pos.y, p.radius, 0, 2 * Math.PI);

@@ -6,9 +6,9 @@ function placeElements() {
   sketch_selector = "#sketch";
   fade_selector = ".canvasfade";
 
-  let canvas_height = $("#page1").height() + $("#page2").height();
+  let canvas_height = $("#page1").height() + $("#page2").height() + $("#page3").height();
   let canvas_width = $(window).width();
-  let fade_height = canvas_height / 3;
+  let fade_height = canvas_height / 5;
 
   $(sketch_selector).prop("width", canvas_width);
   $(sketch_selector).prop("height", canvas_height);
