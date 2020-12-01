@@ -46,12 +46,23 @@ body {
 }
 
 .sketch {
+  display: none;
   position: absolute;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vw;
   z-index: 100;
+}
+
+.canvasfade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: 100;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
 }
 
 .content {
@@ -161,16 +172,4 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   display: inline;
-}
-
-#logo, #description, .navbar {
-  display: none;
-}
-
-#portfolio, #projectscontainer, .morerepos {
-  display: none;
-}
-
-#contacts, .contactscontainer {
-  display: none;
 }

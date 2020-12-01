@@ -39,7 +39,7 @@ function map(val, old_min, old_max, new_min, new_max) {
     val = old_min;
   }
 
-  return (new_max - new_min) / (old_max - old_min) * (val - old_min) + new_max;
+  return (val - old_min) * (new_max - new_min) / (old_max - old_min) + new_min;
 }
 
 function dist(x1, y1, x2, y2) {

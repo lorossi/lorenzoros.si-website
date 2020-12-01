@@ -21,11 +21,11 @@
   }
 
   #logo {
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
 
   #description {
-    bottom: 1rem;
+    margin-top: 25vh;
   }
 
   .projectscontainer, .contactscontainer, .codetracker {
@@ -61,10 +61,6 @@
   .section {
     font-size: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-
-  #description {
-    bottom: 1.5rem;
   }
 
   .projectscontainer, .contactscontainer, .codetracker {
