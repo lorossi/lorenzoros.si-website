@@ -8,15 +8,15 @@ class Particle {
       if (this._width > 600) {
         this._min_size = 10;
         this._max_size = 20;
-        this._min_alpha = 0.4;
-        this._max_alpha = 0.7;
+        this._min_alpha = 0.5;
+        this._max_alpha = 0.8;
         this._min_speed = 0.5;
         this._max_speed = 2.5;
       } else {
         this._min_size = 4;
         this._max_size = 8;
-        this._min_alpha = 0.1;
-        this._max_alpha = 0.25;
+        this._min_alpha = 0.5;
+        this._max_alpha = 0.8;
         this._min_speed = 0.25;
         this._max_speed = 1;
       }
@@ -36,6 +36,7 @@ class Particle {
       this.velocity.multiply_scalar(this.speed);
 
       this._paired = [];
+      this._color = getCssProperty("--text");
     }
 
     move() {
@@ -59,7 +60,8 @@ class Particle {
     }
 
     get color() {
-      return `rgba(255, 255, 255, ${this.opacity})`;
+      let hex_opacity = parseInt(this.opacity * 255).toString(16).padStart(2, '0');
+      return this._color + hex_opacity;
     }
 
     set paired(i) {
@@ -133,14 +135,15 @@ class Sketch {
 
   setup() {
     this.background = getCssProperty("--background");
-    this.max_connections = 2;
 
     if (this.width > 600) {
       this.particles_num = 65;
       this.max_dist_sq = Math.pow(this.width * 0.15, 2);
+      this.max_connections = 3;
     } else {
       this.particles_num = 30;
-      this.max_dist_sq = Math.pow(this.width * 0.6, 2);
+      this.max_dist_sq = Math.pow(this.width * 0.5, 2);
+      this.max_connections = 2;
     }
 
     this.particles = [];
@@ -170,14 +173,17 @@ class Sketch {
     max_alpha = this.particles[0].max_alpha;
     min_alpha = max_alpha / 4;
 
+    // stroke color as set in css
+    let stroke_color = getCssProperty("--text");
+
     for (let i = 0; i < this.particles.length; i++) {
       let pos_1 = this.particles[i].pos;
-      if (this.particles[i].paired.length > this.max_connections) continue;
+      if (this.particles[i].paired.length >= this.max_connections) continue;
 
       for (let j = 0; j < this.particles.length; j++) {
         if (i == j) continue;
         if (this.particles[j].paired.includes(i)) continue;
-        if (this.particles[j].paired.length > this.max_connections) continue;
+        if (this.particles[j].paired.length >= this.max_connections) continue;
         let pos_2 = this.particles[j].pos;
 
         let dist_sq = distSq(pos_1.x, pos_1.y, pos_2.x, pos_2.y);
@@ -185,8 +191,9 @@ class Sketch {
           this.particles[j].paired = i;
           this.particles[i].paired = j;
           let alpha = map(dist_sq, 0, this.max_dist_sq, max_alpha, min_alpha);
-          this.ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-          this.ctx.lineWidth = 2;
+          let stroke_alpha = parseInt(alpha * 255).toString(16).padStart(2, '0');
+          this.ctx.strokeStyle = stroke_color + stroke_alpha;
+          this.ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(pos_1.x, pos_1.y);
           ctx.lineTo(pos_2.x, pos_2.y);

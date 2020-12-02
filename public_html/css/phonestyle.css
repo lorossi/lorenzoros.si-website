@@ -23,11 +23,6 @@
     max-width: 90vw;
   }
 
-  .repo, .address {
-    padding-left: 0.5rem;
-    padding-bottom: 1rem;
-  }
-
   .icon {
     top: 0.2rem;
     width: 1rem;
@@ -43,10 +38,6 @@
   .contact, .codestats {
     margin-top: 1vh;
     margin-bottom: 1vh;
-  }
-
-  .repo, .address {
-    padding-bottom: 1rem;
   }
 
   .icon {
