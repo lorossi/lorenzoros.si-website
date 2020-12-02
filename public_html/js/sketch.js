@@ -8,24 +8,22 @@ class Particle {
       if (this._width > 600) {
         this._min_size = 10;
         this._max_size = 20;
-        this._min_alpha = 0.5;
+        this._min_alpha = 0.1;
         this._max_alpha = 0.8;
         this._min_speed = 0.5;
-        this._max_speed = 2.5;
+        this._max_speed = 3;
       } else {
         this._min_size = 4;
         this._max_size = 8;
-        this._min_alpha = 0.5;
+        this._min_alpha = 0.1;
         this._max_alpha = 0.8;
         this._min_speed = 0.25;
         this._max_speed = 1;
       }
 
-
-      this.z = random(10);
-      this.opacity = map(this.z, 0, 10, this._min_alpha, this._max_alpha);
-      this._radius = map(this.z, 0, 10, this._min_size, this._max_size);
-      this.speed = map(this.z, 0, 10, this._min_speed, this._max_speed);
+      this.opacity = this._max_alpha;
+      this._radius = random(this._min_size, this._max_size);
+      this.speed = random(this._min_speed, this._max_speed);
 
       let x, y;
       x = random(this._radius, this._width - this._radius);
@@ -171,7 +169,7 @@ class Sketch {
     this.ctx.save();
     let min_alpha, max_alpha;
     max_alpha = this.particles[0].max_alpha;
-    min_alpha = max_alpha / 4;
+    min_alpha = this.particles[0].min_alpha;
 
     // stroke color as set in css
     let stroke_color = getCssProperty("--text");
