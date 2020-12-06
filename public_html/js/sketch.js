@@ -121,8 +121,8 @@ class Sketch {
   }
 
   resized() {
-    this.width = canvas.width;
-    this.height = canvas.height;
+    this.width = this.canvas.width;
+    this.height = this.canvas.height;
 
     this.particles.forEach((p, i) => {
       p.width = this.width;
@@ -155,10 +155,10 @@ class Sketch {
     this.ctx.save();
 
     // reset canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // set background
-    ctx.fillStyle = this.background;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    this.ctx.fillStyle = this.background;
+    this.ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // move particles
     this.particles.forEach((p, i) => {
