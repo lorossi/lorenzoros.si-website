@@ -30,8 +30,6 @@ $(document).ready(function() {
       new_element += `${selected_repos.join(", ")}`;
       new_element += `</td>`;
 
-      console.log(l, selected_repos);
-
       // skips languages that don't have any repo
       if (selected_repos.length > 0) {
           $(repo_container).append(new_element);
