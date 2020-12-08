@@ -41,8 +41,8 @@ class Particle {
       this._paired = [];
       this._position.add(this.velocity);
 
-      if (this._position.x + this._radius > this._width || this._position.x - this._radius < 0) this.velocity.x *= -1;
-      if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.velocity.y *= -1;
+      if (this._position.x + this._radius > this._width || this._position.x - this._radius < 0) this.velocity.invertX();
+      if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.velocity.invertY();
 
     }
 
@@ -92,7 +92,7 @@ class Sketch {
   constructor(canvas, context, fps) {
     this.canvas = canvas;
     this.ctx = context;
-    this.fps = fps || 60;
+    this.fps = fps || 30;
     this.fps_interval = 1 / this.fps;
     this.width = canvas.width;
     this.height = canvas.height;
@@ -149,9 +149,24 @@ class Sketch {
       let new_part = new Particle(this.width, this.height);
       this.particles.push(new_part);
     }
+
+    // keep track of time to handle fps
+    this.then = performance.now();
   }
 
   draw() {
+    window.requestAnimationFrame(this.draw.bind(this));
+
+    let diff;
+    diff = performance.now() - this.then;
+    if (diff < this.fps_interval) {
+     // not enough time has passed, so we request next frame and give up on this render
+     return;
+    }
+
+    // updated last frame rendered time
+    this.then = performance.now();
+
     this.ctx.save();
 
     // reset canvas
@@ -218,8 +233,6 @@ class Sketch {
     this.ctx.restore();
 
     this.ctx.restore();
-
-    window.requestAnimationFrame(this.draw.bind(this));
   }
 }
 
