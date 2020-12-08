@@ -23,6 +23,18 @@ The background animation is made in pure js using html5 canvas element. Previous
 
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
+# Screenshots
+
+## PC / Bigger screens
+![page 1](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page1-pc.png?raw=true)
+![page 2](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page2-pc.png?raw=true)
+![page 3](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page3-pc.png?raw=true)
+
+## Mobile
+![page 1](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page1-mobile.png?raw=true)
+![page 2](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page2-mobile.png?raw=true)
+![page 3](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page3-mobile.png?raw=true)
+
 # License
 The website is distributed under CC 4.0 License.
 
