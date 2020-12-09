@@ -10,18 +10,19 @@ let resources = {
         {
             "name": "painting-bubbles",
             "formatted_name": "painting bubbles",
-            "description": null,
+            "description": "Feel like a painter without having to paint!",
             "url": "https://github.com/lorossi/painting-bubbles",
-            "commits": 58,
+            "commits": 88,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 22012,
-                "CSS": 2163,
-                "HTML": 1487
+                "JavaScript": 25116,
+                "Python": 3720,
+                "CSS": 2810,
+                "HTML": 1439
             },
-            "size": 6524,
-            "last_pushed_timestamp": "2020-12-06T14:33:01",
+            "size": 1399431,
+            "last_pushed_timestamp": "2020-12-09T18:09:57",
             "created_timestamp": "2020-12-03T12:44:19",
             "created_year": 2020,
             "selected": true
@@ -50,14 +51,14 @@ let resources = {
             "formatted_name": "js vectors",
             "description": "A simple 2D and 3D vectors library made in JS",
             "url": "https://github.com/lorossi/js-vectors",
-            "commits": 10,
+            "commits": 14,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 11070
+                "JavaScript": 11455
             },
-            "size": 16,
-            "last_pushed_timestamp": "2020-12-02T22:43:11",
+            "size": 25,
+            "last_pushed_timestamp": "2020-12-08T14:17:24",
             "created_timestamp": "2020-12-02T16:20:21",
             "created_year": 2020,
             "selected": true
@@ -67,14 +68,14 @@ let resources = {
             "formatted_name": "every color",
             "description": "A Python script generating images with all the RGB colors in a set bit depth.",
             "url": "https://github.com/lorossi/every-color",
-            "commits": 64,
+            "commits": 65,
             "stars": 0,
             "main_language": "Python",
             "languages": {
                 "Python": 20375
             },
-            "size": 169430,
-            "last_pushed_timestamp": "2020-11-30T11:30:54",
+            "size": 169433,
+            "last_pushed_timestamp": "2020-12-08T14:45:05",
             "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
             "selected": true
@@ -104,16 +105,16 @@ let resources = {
             "formatted_name": "p5js perlin",
             "description": "A suite of looping animations made with p5js and perlin noise",
             "url": "https://github.com/lorossi/p5js-perlin",
-            "commits": 14,
+            "commits": 16,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
                 "JavaScript": 41416,
-                "HTML": 1451,
-                "CSS": 612
+                "HTML": 1494,
+                "CSS": 760
             },
-            "size": 551313,
-            "last_pushed_timestamp": "2020-12-06T14:00:28",
+            "size": 551315,
+            "last_pushed_timestamp": "2020-12-08T18:20:16",
             "created_timestamp": "2020-11-17T17:11:05",
             "created_year": 2020,
             "selected": true
@@ -216,14 +217,14 @@ let resources = {
             "formatted_name": "bikemi python unofficial api",
             "description": "An unofficial Python API for BikeMi",
             "url": "https://github.com/lorossi/bikemi-python-unofficial-api",
-            "commits": 21,
+            "commits": 22,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 13213
+                "Python": 13383
             },
-            "size": 50,
-            "last_pushed_timestamp": "2020-07-13T19:44:22",
+            "size": 53,
+            "last_pushed_timestamp": "2020-12-08T15:00:19",
             "created_timestamp": "2020-07-13T11:59:30",
             "created_year": 2020,
             "selected": true
@@ -233,17 +234,17 @@ let resources = {
             "formatted_name": "rpi homepage",
             "description": "A flask based dashboard for my Raspberry Pi",
             "url": "https://github.com/lorossi/rpi-homepage",
-            "commits": 15,
+            "commits": 18,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 9543,
-                "CSS": 3091,
-                "JavaScript": 2705,
-                "HTML": 2014
+                "Python": 9761,
+                "CSS": 3155,
+                "JavaScript": 2874,
+                "HTML": 2054
             },
-            "size": 766,
-            "last_pushed_timestamp": "2020-11-18T19:24:00",
+            "size": 776,
+            "last_pushed_timestamp": "2020-12-08T13:42:50",
             "created_timestamp": "2020-07-11T16:18:11",
             "created_year": 2020,
             "selected": true
@@ -253,17 +254,17 @@ let resources = {
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 123,
+            "commits": 131,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 29024,
-                "HTML": 6766,
+                "JavaScript": 30722,
+                "HTML": 6765,
                 "Python": 5254,
-                "CSS": 3934
+                "CSS": 3976
             },
-            "size": 3743,
-            "last_pushed_timestamp": "2020-12-06T12:40:01",
+            "size": 4243,
+            "last_pushed_timestamp": "2020-12-08T14:11:22",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -273,16 +274,16 @@ let resources = {
             "formatted_name": "email hide",
             "description": "A clever way to hide emails inside html web pages using client side JavaScript",
             "url": "https://github.com/lorossi/email-hide",
-            "commits": 28,
+            "commits": 32,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 7582,
-                "HTML": 6921,
+                "JavaScript": 7892,
+                "HTML": 6965,
                 "CSS": 2377
             },
-            "size": 404,
-            "last_pushed_timestamp": "2020-11-13T14:58:54",
+            "size": 409,
+            "last_pushed_timestamp": "2020-12-08T14:33:29",
             "created_timestamp": "2020-07-04T17:55:23",
             "created_year": 2020,
             "selected": true
@@ -309,14 +310,14 @@ let resources = {
             "formatted_name": "corgos telegram bot",
             "description": "Free delivery of cute corgis images",
             "url": "https://github.com/lorossi/corgos-telegram-bot",
-            "commits": 14,
+            "commits": 15,
             "stars": 0,
             "main_language": "Python",
             "languages": {
                 "Python": 22775
             },
-            "size": 78,
-            "last_pushed_timestamp": "2020-11-26T14:17:56",
+            "size": 82,
+            "last_pushed_timestamp": "2020-12-08T14:50:50",
             "created_timestamp": "2020-06-05T13:11:52",
             "created_year": 2020,
             "selected": true
@@ -393,47 +394,47 @@ let resources = {
     "languages": [
         {
             "language": "JavaScript",
-            "absolute_size": 165891,
-            "relative_size": 0.37482376226885744,
-            "relative_size_formatted": "37.48%"
+            "absolute_size": 171557,
+            "relative_size": 0.37843149798053105,
+            "relative_size_formatted": "37.84%"
         },
         {
             "language": "Python",
-            "absolute_size": 113133,
-            "relative_size": 0.2556192722737379,
-            "relative_size_formatted": "25.56%"
+            "absolute_size": 117241,
+            "relative_size": 0.2586177611798728,
+            "relative_size_formatted": "25.86%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.2003325922310793,
-            "relative_size_formatted": "20.03%"
+            "relative_size": 0.19558077103788132,
+            "relative_size_formatted": "19.56%"
         },
         {
             "language": "HTML",
-            "absolute_size": 29052,
-            "relative_size": 0.06564177647632992,
-            "relative_size_formatted": "6.56%"
+            "absolute_size": 29130,
+            "relative_size": 0.06425683321679015,
+            "relative_size_formatted": "6.43%"
+        },
+        {
+            "language": "CSS",
+            "absolute_size": 23458,
+            "relative_size": 0.051745169708186184,
+            "relative_size_formatted": "5.17%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.05261600057842127,
-            "relative_size_formatted": "5.26%"
-        },
-        {
-            "language": "CSS",
-            "absolute_size": 22557,
-            "relative_size": 0.05096659617157421,
-            "relative_size_formatted": "5.1%"
+            "relative_size": 0.051367966876738495,
+            "relative_size_formatted": "5.14%"
         }
     ],
     "stats": {
-        "total_size": 442584,
-        "total_commits": 600,
+        "total_size": 453337,
+        "total_commits": 654,
         "total_stars": 4,
         "total_languages": 6,
         "total_repos": 21,
-        "last_updated": "2020-12-06T15:40:14.243903"
+        "last_updated": "2020-12-09T19:10:25.765975"
     }
 }
