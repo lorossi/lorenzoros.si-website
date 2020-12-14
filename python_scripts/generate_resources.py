@@ -129,9 +129,12 @@ def saveToFile(path, repos):
 
 
 def main():
-    logging.basicConfig(filename='generateresources.log', level=logging.INFO,
+    logfile = __file__.replace(".py", ".log")
+    logging.basicConfig(filename=logfile, level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(message)s',
                         filemode="w")
+    print(f"Logging into {logfile}")
+
     logging.info("started script")
     settings = loadSettings()
     logging.info("settings loaded")
@@ -153,6 +156,7 @@ def main():
     saveToFile(outpath, repos)
     logging.info("file saved")
 
+    print("script ended")
     logging.info("script ended")
 
 
