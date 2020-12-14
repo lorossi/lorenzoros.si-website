@@ -8,21 +8,55 @@
 let resources = {
     "repos": [
         {
+            "name": "minimalistic-maps",
+            "formatted_name": "minimalistic maps",
+            "description": null,
+            "url": "https://github.com/lorossi/minimalistic-maps",
+            "commits": 20,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 10337
+            },
+            "size": 202,
+            "last_pushed_timestamp": "2020-12-14T22:06:06",
+            "created_timestamp": "2020-12-14T14:48:14",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
+            "name": "perlin-italy-map",
+            "formatted_name": "perlin italy map",
+            "description": "A moving animation of Italy in all of its geological beauty",
+            "url": "https://github.com/lorossi/perlin-italy-map",
+            "commits": 27,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 15977
+            },
+            "size": 158842,
+            "last_pushed_timestamp": "2020-12-14T10:50:02",
+            "created_timestamp": "2020-12-12T18:03:06",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
             "name": "painting-bubbles",
             "formatted_name": "painting bubbles",
             "description": "Feel like a painter without having to paint!",
             "url": "https://github.com/lorossi/painting-bubbles",
-            "commits": 88,
+            "commits": 107,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 25116,
-                "Python": 3720,
-                "CSS": 2810,
+                "JavaScript": 27383,
+                "CSS": 2875,
+                "Python": 2848,
                 "HTML": 1439
             },
-            "size": 1399431,
-            "last_pushed_timestamp": "2020-12-09T18:09:57",
+            "size": 2208964,
+            "last_pushed_timestamp": "2020-12-10T22:29:15",
             "created_timestamp": "2020-12-03T12:44:19",
             "created_year": 2020,
             "selected": true
@@ -30,18 +64,18 @@ let resources = {
         {
             "name": "empty-html5-project",
             "formatted_name": "empty html5 project",
-            "description": null,
+            "description": "Empty HTML5 project",
             "url": "https://github.com/lorossi/empty-html5-project",
-            "commits": 1,
+            "commits": 3,
             "stars": 0,
             "main_language": "HTML",
             "languages": {
-                "HTML": 665,
-                "JavaScript": 98,
+                "HTML": 574,
+                "JavaScript": 83,
                 "CSS": 44
             },
             "size": 37,
-            "last_pushed_timestamp": "2020-12-03T12:43:17",
+            "last_pushed_timestamp": "2020-12-09T22:43:08",
             "created_timestamp": "2020-12-03T12:40:15",
             "created_year": 2020,
             "selected": false
@@ -68,14 +102,14 @@ let resources = {
             "formatted_name": "every color",
             "description": "A Python script generating images with all the RGB colors in a set bit depth.",
             "url": "https://github.com/lorossi/every-color",
-            "commits": 65,
+            "commits": 67,
             "stars": 0,
             "main_language": "Python",
             "languages": {
                 "Python": 20375
             },
-            "size": 169433,
-            "last_pushed_timestamp": "2020-12-08T14:45:05",
+            "size": 169434,
+            "last_pushed_timestamp": "2020-12-13T22:36:10",
             "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
             "selected": true
@@ -254,17 +288,17 @@ let resources = {
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 131,
+            "commits": 133,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 30722,
-                "HTML": 6765,
+                "JavaScript": 30803,
+                "HTML": 6874,
                 "Python": 5254,
                 "CSS": 3976
             },
-            "size": 4243,
-            "last_pushed_timestamp": "2020-12-08T14:11:22",
+            "size": 4249,
+            "last_pushed_timestamp": "2020-12-09T18:11:06",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -394,47 +428,47 @@ let resources = {
     "languages": [
         {
             "language": "JavaScript",
-            "absolute_size": 171557,
-            "relative_size": 0.37843149798053105,
-            "relative_size_formatted": "37.84%"
+            "absolute_size": 173890,
+            "relative_size": 0.36137116969212063,
+            "relative_size_formatted": "36.14%"
         },
         {
             "language": "Python",
-            "absolute_size": 117241,
-            "relative_size": 0.2586177611798728,
-            "relative_size_formatted": "25.86%"
+            "absolute_size": 142683,
+            "relative_size": 0.2965180436205696,
+            "relative_size_formatted": "29.65%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.19558077103788132,
-            "relative_size_formatted": "19.56%"
+            "relative_size": 0.18425794116730224,
+            "relative_size_formatted": "18.43%"
         },
         {
             "language": "HTML",
-            "absolute_size": 29130,
-            "relative_size": 0.06425683321679015,
-            "relative_size_formatted": "6.43%"
+            "absolute_size": 29148,
+            "relative_size": 0.060574195492471866,
+            "relative_size_formatted": "6.06%"
         },
         {
             "language": "CSS",
-            "absolute_size": 23458,
-            "relative_size": 0.051745169708186184,
-            "relative_size_formatted": "5.17%"
+            "absolute_size": 23523,
+            "relative_size": 0.04888454784442897,
+            "relative_size_formatted": "4.89%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.051367966876738495,
-            "relative_size_formatted": "5.14%"
+            "relative_size": 0.04839410218310664,
+            "relative_size_formatted": "4.84%"
         }
     ],
     "stats": {
-        "total_size": 453337,
-        "total_commits": 654,
+        "total_size": 481195,
+        "total_commits": 726,
         "total_stars": 4,
         "total_languages": 6,
-        "total_repos": 21,
-        "last_updated": "2020-12-09T19:10:25.765975"
+        "total_repos": 23,
+        "last_updated": "2020-12-14T23:07:59.187667"
     }
 }
