@@ -121,7 +121,9 @@ def saveToFile(path, repos):
     )
 
     output_string += "let resources = "
-    output_string += json.dumps(repos, indent=4)  # convert dict to json (will be read by js)
+    # convert dict to json (will be read by js)
+    output_string += json.dumps(repos, indent=4)
+    output_string += ";"
 
     output_file = open(path, "w+")
     output_file.write(output_string)
