@@ -15,23 +15,23 @@ $(document).ready(function() {
 
   languages.forEach((l, i) => {
       let new_element = "";
-      new_element += `<tr>`;
-      new_element += `<td class="italic language">${l}</td>`;
+      new_element += `<tr><td class="italic language">${l}</td>`;
 
-      new_element += `<td class="repo">`;
       let selected_repos = [];
       resources.repos.forEach((r, j) => {
         if (r.selected && r.main_language === l) {
-          let string = `<a href="${r.url}">${r.formatted_name}</a>`;
-          selected_repos.push(string);
+          if (selected_repos.length > 0) {
+            new_element += `<td class="language"></td>`;
+          }
+          new_element += `<td class="repo"><a href="${r.url}">${r.formatted_name}</a></td><td class="description">${r.description}</td></tr>`;
+
+          selected_repos.push(r);
         }
       });
 
-      new_element += `${selected_repos.join(", ")}`;
-      new_element += `</td>`;
-
       // skips languages that don't have any repo
       if (selected_repos.length > 0) {
+          new_element += `<tr class="empty"></tr>`;
           $(repo_container).append(new_element);
       }
   });

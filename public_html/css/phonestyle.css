@@ -23,6 +23,18 @@
     max-width: 90vw;
   }
 
+  .codetracker {
+    margin-top: 5vh;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .repo {
+    text-align: left;
+  }
+
   .icon {
     top: 0.2rem;
     width: 1rem;

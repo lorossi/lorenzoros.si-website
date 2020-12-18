@@ -139,7 +139,7 @@ body {
 }
 
 .projectscontainer tr, .contactscontainer tr{
-  vertical-align: top;
+  vertical-align: text-top;
 }
 
 .codetracker {
@@ -163,12 +163,26 @@ body {
 
 .repo, .address {
   padding-left: var(--text-size);
+  padding-right: var(--text-size);
   padding-bottom: var(--text-size);
 }
 
 .repo a:hover, .address a:hover {
   font-style: italic;
   text-decoration: underline;
+}
+
+.repo {
+  text-align: right;
+}
+
+.description {
+  font-size: var(--description-size);
+  opacity: 0.75;
+}
+
+.empty {
+  height: var(--text-size);
 }
 
 .codestats, .codestats p {
@@ -186,5 +200,5 @@ body {
 }
 
 #contacts .sectiontitle:lang(en) {
-  
+
 }

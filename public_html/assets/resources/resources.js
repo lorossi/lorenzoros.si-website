@@ -12,14 +12,14 @@ let resources = {
             "formatted_name": "minimalistic maps",
             "description": null,
             "url": "https://github.com/lorossi/minimalistic-maps",
-            "commits": 20,
+            "commits": 25,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 10337
+                "Python": 11902
             },
-            "size": 202,
-            "last_pushed_timestamp": "2020-12-14T22:06:06",
+            "size": 211,
+            "last_pushed_timestamp": "2020-12-14T23:09:29",
             "created_timestamp": "2020-12-14T14:48:14",
             "created_year": 2020,
             "selected": false
@@ -288,17 +288,17 @@ let resources = {
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 133,
+            "commits": 136,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 30803,
+                "JavaScript": 32040,
                 "HTML": 6874,
-                "Python": 5254,
+                "Python": 5376,
                 "CSS": 3976
             },
-            "size": 4249,
-            "last_pushed_timestamp": "2020-12-09T18:11:06",
+            "size": 4251,
+            "last_pushed_timestamp": "2020-12-14T22:09:20",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -428,47 +428,47 @@ let resources = {
     "languages": [
         {
             "language": "JavaScript",
-            "absolute_size": 173890,
-            "relative_size": 0.36137116969212063,
-            "relative_size_formatted": "36.14%"
+            "absolute_size": 175127,
+            "relative_size": 0.3617437035109136,
+            "relative_size_formatted": "36.17%"
         },
         {
             "language": "Python",
-            "absolute_size": 142683,
-            "relative_size": 0.2965180436205696,
-            "relative_size_formatted": "29.65%"
+            "absolute_size": 144370,
+            "relative_size": 0.298211803296297,
+            "relative_size_formatted": "29.82%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.18425794116730224,
-            "relative_size_formatted": "18.43%"
+            "relative_size": 0.18314505317907373,
+            "relative_size_formatted": "18.31%"
         },
         {
             "language": "HTML",
             "absolute_size": 29148,
-            "relative_size": 0.060574195492471866,
-            "relative_size_formatted": "6.06%"
+            "relative_size": 0.06020833720634802,
+            "relative_size_formatted": "6.02%"
         },
         {
             "language": "CSS",
             "absolute_size": 23523,
-            "relative_size": 0.04888454784442897,
-            "relative_size_formatted": "4.89%"
+            "relative_size": 0.04858929312834241,
+            "relative_size_formatted": "4.86%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.04839410218310664,
-            "relative_size_formatted": "4.84%"
+            "relative_size": 0.0481018096790252,
+            "relative_size_formatted": "4.81%"
         }
     ],
     "stats": {
-        "total_size": 481195,
-        "total_commits": 726,
+        "total_size": 484119,
+        "total_commits": 734,
         "total_stars": 4,
         "total_languages": 6,
         "total_repos": 23,
-        "last_updated": "2020-12-14T23:07:59.187667"
+        "last_updated": "2020-12-18T19:54:41.439483"
     }
-}
+};
