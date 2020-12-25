@@ -106,8 +106,7 @@ class Sketch {
     // run once
     this.setup();
     // anti alias
-    this.ctx.beginPath();
-    this.ctx.translate(0.5, 0.5);
+    this.ctx.imageSmoothingQuality = "high";
     // run often draw
     this.draw();
   }
