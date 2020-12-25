@@ -24,10 +24,9 @@ def loadRepos(g, skip_names=None, skip_urls=None, selected_repos=None):
             continue
 
         if not repo.language:
-            language = None
-        else:
-            language = repo.language
+            continue
 
+        language = repo.language
         selected = repo.name in selected_repos
 
         repos.append({
