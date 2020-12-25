@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: AvenirBlack;
-  src: url(/fonts/AvenirLTStd-Black.otf);
+  src: url(fonts/AvenirLTStd-Black.otf);
 }
 
 body * {
@@ -157,12 +157,12 @@ body {
 
 .language, .contact {
   text-align: right;
-  padding-right: var(--text-size);
+  padding-right: calc(var(--text-size) / 2);
   border-right: 1px solid var(--text);
 }
 
 .repo, .address {
-  padding-left: var(--text-size);
+  padding-left: calc(var(--text-size) / 2);
   padding-right: var(--text-size);
   padding-bottom: var(--text-size);
 }
@@ -182,7 +182,7 @@ body {
 }
 
 .empty {
-  height: var(--text-size);
+  height: calc(var(--text-size) * 3);
 }
 
 .codestats, .codestats p {
