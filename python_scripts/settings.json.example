@@ -1,0 +1,24 @@
+{
+  "GitHub" : {
+    "access_token" : "ACCESS TOKEN",
+    "skip_names" : [
+      "REPO",
+      "NAMES",
+      "TO",
+      "SKIP"
+    ],
+    "skip_urls" : [
+      "REPO",
+      "URLS",
+      "TO",
+      "SKIP"
+    ],
+    "selected_repos" : [
+      "REPO",
+      "NAMES",
+      "TO",
+      "SHOW"
+    ]
+  },
+  "output_file": "OUTPUT FILE PATH"
+}
