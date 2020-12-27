@@ -179,7 +179,8 @@ body {
 
 .description {
   font-size: var(--description-size);
-  opacity: 0.85;
+  padding-bottom: calc(var(--description-size) / 2);
+  opacity: 0.75;
 }
 
 .empty {

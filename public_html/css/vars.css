@@ -3,7 +3,7 @@
   --text: #fbfbfb;
   --title-size: 5rem;
   --text-size: 2.5rem;
-  --description-size: 1.5rem;
+  --description-size: 2.5rem;
   --small-text-size: 1.25rem;
 }
 
@@ -11,7 +11,7 @@
   :root{
     --title-size: 2.25rem;
     --text-size: 1rem;
-    --description-size: 0.5rem;
+    --description-size: 1rem;
     --small-text-size: 0.8rem;
   }
 }
@@ -20,7 +20,7 @@
   :root{
     --title-size: 2rem;
     --text-size: 1.5rem;
-    --description-size: 1.25rem;
+    --description-size: 1.5rem;
     --small-text-size: 1.5rem;
   }
 }
