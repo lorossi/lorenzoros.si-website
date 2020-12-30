@@ -5,6 +5,10 @@
     justify-content: center;
   }
 
+  .flag {
+     display: none
+   }
+
   .content {
     width: 90vw;
     left: 5vw;
