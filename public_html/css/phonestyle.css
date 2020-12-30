@@ -6,8 +6,10 @@
   }
 
   .flag {
-     display: none
-   }
+    width: calc(var(--small-text-size) / 12);
+    height: auto;
+    margin-left: calc(var(--small-text-size) / 2);
+  }
 
   .content {
     width: 90vw;

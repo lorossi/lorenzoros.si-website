@@ -1,6 +1,8 @@
 // this script takes care of language handling
 // made by Lorenzo Rossi - www.lorenzoros.si
 
+/*jshint esversion: 6 */
+
 $(document).ready(function() {
   let list_selector = "li"; // elements that must be displayed as list
   let cell_selector = "td"; // elements that must be displayed as table cell
@@ -33,7 +35,7 @@ $(document).ready(function() {
     $(selector).css({"display": "inline-block"});
 
     $(selector + " " + list_selector).css({"display": "list-item"});
-    $(selector + " " + list_selector).css({"display": "table-cell"});
-  })
+    $(selector + " " + cell_selector).css({"display": "table-cell"});
+  });
 
 });
