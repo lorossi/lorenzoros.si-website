@@ -6,7 +6,7 @@ class Particle {
       this._height = height;
 
       if (this._width > 600) {
-        this._min_size = 5;
+        this._min_size = 8;
         this._max_size = 20;
         this._min_alpha = 0.1;
         this._max_alpha = 0.8;
@@ -138,9 +138,9 @@ class Sketch {
       this.max_dist_sq = Math.pow(this.width * 0.15, 2);
       this.max_connections = 3;
     } else {
-      this.particles_num = 30;
+      this.particles_num = 45;
       this.max_dist_sq = Math.pow(this.width * 0.5, 2);
-      this.max_connections = 2;
+      this.max_connections = 3;
     }
 
     this.particles = [];

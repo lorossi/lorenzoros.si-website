@@ -15,7 +15,7 @@ body * {
 }
 
 body::-webkit-scrollbar {
-  width: var(--small-text-size);
+  width: calc(var(--small-text-size) / 2);
 }
 
 body::-webkit-scrollbar-track {
@@ -24,8 +24,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--text);
-  border-radius: 1px;
-  opacity: 0.5;
 }
 
 html {
@@ -103,6 +101,21 @@ body {
   cursor: pointer;
 }
 
+.flag {
+  width: calc(var(--small-text-size) / 3);
+  height: calc(var(--small-text-size) / 3);
+  margin-top: calc(var(--small-text-size) / 1.5);
+  background-size: contain;
+}
+
+.flag#it {
+  background: url(flags/it.svg) no-repeat;
+}
+
+.flag#gb {
+  background: url(flags/gb.svg) no-repeat;
+}
+
 .content {
   background-color: none;
   position: absolute;
@@ -136,6 +149,7 @@ body {
 .projectscontainer, .contactscontainer {
   margin-top: 20vh;
   max-width: 75vw;
+  border-collapse: collapse;
 }
 
 .projectscontainer tr, .contactscontainer tr{
@@ -180,7 +194,7 @@ body {
 .description {
   font-size: var(--description-size);
   padding-bottom: calc(var(--description-size) / 2);
-  opacity: 0.75;
+  opacity: 0.5;
 }
 
 .empty {

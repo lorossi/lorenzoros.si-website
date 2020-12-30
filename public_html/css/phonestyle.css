@@ -40,6 +40,17 @@
     width: 1rem;
     height: 1rem;
   }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .icon {
+    padding-left: 0;
+  }
+
+  .contact {
+    padding-right: calc(var(--text-size) / 2);
+  }
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 481px) {

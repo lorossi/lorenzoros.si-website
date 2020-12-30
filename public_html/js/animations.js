@@ -1,12 +1,11 @@
 /*jshint esversion: 6 */
-let selectors = [".sketch", ".navbar", "#page1", "#page2", "#page3"];
+let selectors = [".sketch", ".navbar", "#page1"];
 
 function animate() {
-  let duration = 1000;
-  let bottom = $(document).scrollTop() + $(window).height();
+  let duration = 2000;
 
   selectors.forEach((s, i) => {
-    if (bottom >= $(s).offset().top && $(s).css("display") == "none") {
+    if ($(s).css("display") == "none") {
       $(s).fadeIn(duration);
     }
   });
@@ -17,10 +16,5 @@ $(document).ready(() => {
     $(s).css("display", "none");
   });
 
-  animate();
-});
-
-
-$(document).on("scroll", () => {
   animate();
 });
