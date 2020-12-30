@@ -140,7 +140,7 @@ class Sketch {
     } else {
       this.particles_num = 45;
       this.max_dist_sq = Math.pow(this.width * 0.5, 2);
-      this.max_connections = 3;
+      this.max_connections = 2;
     }
 
     this.particles = [];
