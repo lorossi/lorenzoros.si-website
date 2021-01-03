@@ -8,18 +8,35 @@
 let resources = {
     "repos": [
         {
+            "name": "fireflies-in-a-jar",
+            "formatted_name": "fireflies in a jar",
+            "description": "Gife life to a glass jar using some magic (and an Arduino)",
+            "url": "https://github.com/lorossi/fireflies-in-a-jar",
+            "commits": 14,
+            "stars": 0,
+            "main_language": "C++",
+            "languages": {
+                "C++": 6972
+            },
+            "size": 20,
+            "last_pushed_timestamp": "2020-12-25T22:48:45",
+            "created_timestamp": "2020-12-21T02:24:22",
+            "created_year": 2020,
+            "selected": true
+        },
+        {
             "name": "minimalistic-maps",
             "formatted_name": "minimalistic maps",
             "description": "Famous cities like you've never seen before!",
             "url": "https://github.com/lorossi/minimalistic-maps",
-            "commits": 25,
+            "commits": 28,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 11902
+                "Python": 12242
             },
-            "size": 211,
-            "last_pushed_timestamp": "2020-12-14T23:09:29",
+            "size": 216,
+            "last_pushed_timestamp": "2020-12-27T17:59:44",
             "created_timestamp": "2020-12-14T14:48:14",
             "created_year": 2020,
             "selected": false
@@ -29,14 +46,14 @@ let resources = {
             "formatted_name": "perlin italy map",
             "description": "A moving animation of Italy in all of its geological beauty",
             "url": "https://github.com/lorossi/perlin-italy-map",
-            "commits": 27,
+            "commits": 28,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 15977
+                "Python": 16650
             },
-            "size": 158842,
-            "last_pushed_timestamp": "2020-12-14T10:50:02",
+            "size": 158848,
+            "last_pushed_timestamp": "2020-12-26T16:12:23",
             "created_timestamp": "2020-12-12T18:03:06",
             "created_year": 2020,
             "selected": true
@@ -102,14 +119,14 @@ let resources = {
             "formatted_name": "every color",
             "description": "A Python script generating images with all the RGB colors in a set bit depth.",
             "url": "https://github.com/lorossi/every-color",
-            "commits": 67,
+            "commits": 78,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 20375
+                "Python": 21031
             },
-            "size": 169434,
-            "last_pushed_timestamp": "2020-12-13T22:36:10",
+            "size": 228705,
+            "last_pushed_timestamp": "2020-12-27T23:34:26",
             "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
             "selected": true
@@ -251,14 +268,14 @@ let resources = {
             "formatted_name": "bikemi python unofficial api",
             "description": "An unofficial Python API for BikeMi",
             "url": "https://github.com/lorossi/bikemi-python-unofficial-api",
-            "commits": 22,
+            "commits": 26,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 13383
+                "Python": 14029
             },
-            "size": 53,
-            "last_pushed_timestamp": "2020-12-08T15:00:19",
+            "size": 65,
+            "last_pushed_timestamp": "2020-12-27T13:10:43",
             "created_timestamp": "2020-07-13T11:59:30",
             "created_year": 2020,
             "selected": true
@@ -288,17 +305,17 @@ let resources = {
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 143,
+            "commits": 150,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 32109,
-                "HTML": 6874,
+                "JavaScript": 32800,
+                "HTML": 6754,
                 "Python": 5351,
-                "CSS": 4412
+                "CSS": 5105
             },
-            "size": 4256,
-            "last_pushed_timestamp": "2020-12-25T22:39:55",
+            "size": 4282,
+            "last_pushed_timestamp": "2021-01-03T16:47:46",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -428,47 +445,53 @@ let resources = {
     "languages": [
         {
             "language": "JavaScript",
-            "absolute_size": 175196,
-            "relative_size": 0.3615277786375952,
-            "relative_size_formatted": "36.15%"
+            "absolute_size": 175887,
+            "relative_size": 0.35521963041502574,
+            "relative_size_formatted": "35.52%"
         },
         {
             "language": "Python",
-            "absolute_size": 144345,
-            "relative_size": 0.2978648325729108,
-            "relative_size_formatted": "29.79%"
+            "absolute_size": 146660,
+            "relative_size": 0.2961930728062203,
+            "relative_size_formatted": "29.62%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.18296364623121386,
-            "relative_size_formatted": "18.3%"
+            "relative_size": 0.17906492981924668,
+            "relative_size_formatted": "17.91%"
         },
         {
             "language": "HTML",
-            "absolute_size": 29148,
-            "relative_size": 0.060148700265580404,
-            "relative_size_formatted": "6.01%"
+            "absolute_size": 29028,
+            "relative_size": 0.05862465919418358,
+            "relative_size_formatted": "5.86%"
         },
         {
             "language": "CSS",
-            "absolute_size": 23959,
-            "relative_size": 0.04944087792174561,
-            "relative_size_formatted": "4.94%"
+            "absolute_size": 24652,
+            "relative_size": 0.04978693325254973,
+            "relative_size_formatted": "4.98%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.04805416437095413,
-            "relative_size_formatted": "4.81%"
+            "relative_size": 0.04703019287084722,
+            "relative_size_formatted": "4.7%"
+        },
+        {
+            "language": "C++",
+            "absolute_size": 6972,
+            "relative_size": 0.014080581641926689,
+            "relative_size_formatted": "1.41%"
         }
     ],
     "stats": {
-        "total_size": 484599,
-        "total_commits": 741,
+        "total_size": 495150,
+        "total_commits": 781,
         "total_stars": 4,
-        "total_languages": 6,
-        "total_repos": 23,
-        "last_updated": "2020-12-25T23:44:41.257164"
+        "total_languages": 7,
+        "total_repos": 24,
+        "last_updated": "2021-01-03T18:35:44.030974"
     }
 };
