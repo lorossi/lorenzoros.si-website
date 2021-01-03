@@ -1,8 +1,8 @@
 @media only screen and (max-width: 480px) and (min-width: 0px) {
   .navbar {
-    left: 5vw;
-    width: 90vw;
     justify-content: center;
+    width: 90vw;
+    left: 5vw;
   }
 
   .flag {
@@ -17,20 +17,22 @@
   }
 
   #logo {
-    margin-top: 15vh;
+    padding-top: 15vh;
   }
 
   #description {
-    margin-top: 25vh;
+    padding-bottom:  calc(var(--big-text-size) * 3);
   }
 
   .projectscontainer, .contactscontainer, .codetracker {
-    margin-top: 10vh;
+    margin-top: 5vh;
     max-width: 90vw;
   }
 
-  .codetracker {
-    margin-top: 5vh;
+  .codetracker p {
+    display: block;
+    margin-top: calc(var(--text-size) / 2);
+    margin-left: calc(var(--text-size) * 2);
   }
 
   .description {
@@ -39,6 +41,7 @@
 
   .repo {
     text-align: left;
+    max-width: 85vw;
   }
 
   .icon {

@@ -1,22 +1,24 @@
 /*jshint esversion: 6 */
 
-let selectors = [".sketch", ".navbar", "#page1"];
+let selectors = [".sketch", "#logo", "#description", ".navbar"];
 
 function animate() {
-  let duration = 2000;
+  // fade in animation
+  selectors.forEach((s, i) => {
+    $(s).css("display", "none");
+  });
 
+  let duration = 1000;
   selectors.forEach((s, i) => {
     if ($(s).css("display") == "none") {
-      $(s).fadeIn(duration);
+      setTimeout(() => {
+        $(s).fadeIn(duration);
+      }, 250 * (i + 1));
     }
   });
 }
 
 $(document).ready(() => {
-  // fade in animation
-  selectors.forEach((s, i) => {
-    $(s).css("display", "none");
-  });
   // now actually fade in
   animate();
 

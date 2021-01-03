@@ -43,7 +43,6 @@ a, a:visited {
 body {
   background: var(--background);
   color:var(--text);
-  font-size: 62.5%;
   font-family: AvenirRoman;
 }
 
@@ -75,16 +74,17 @@ body {
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 .page {
   min-height: 100vh;
   width: 85vw;
   top: 0;
+}
+
+#page1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100vh;
 }
 
 .navbar {
@@ -109,11 +109,10 @@ body {
 .flag {
   display: inline-block;
   vertical-align: middle;
+  background-size: contain;
   width: calc(var(--small-text-size) / 3);
   height: auto;
   margin-left: calc(var(--small-text-size) / 3);
-  background-size: contain;
-  vertical-align: middle;
 }
 
 .flag#it {
@@ -142,11 +141,13 @@ body {
 }
 
 #logo {
-  margin-top: 10vh;
+  padding-top: 5vh;
 }
 
 #description {
-  margin-top: 20vh;
+  font-size: var(--big-text-size);
+  line-height: 150%;
+  padding-bottom: 5vh;
 }
 
 .sectiontitle {
@@ -154,7 +155,7 @@ body {
 }
 
 .projectscontainer, .contactscontainer {
-  margin-top: 20vh;
+  margin-top: 15vh;
   max-width: 75vw;
   border-collapse: collapse;
 }
@@ -169,7 +170,11 @@ body {
   max-width: 75vw;
 }
 
-.contact, .codestats {
+.codetracker p {
+  margin-left: var(--text-size);
+}
+
+.contact {
   margin-left: 7.5vw;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -196,31 +201,36 @@ body {
 .repo {
   text-align: right;
   vertical-align: baseline;
+  max-width: 20vw;
 }
 
 .description {
-  font-size: var(--description-size);
-  padding-bottom: calc(var(--description-size) / 2);
+  font-size: var(--text-size);
+  padding-bottom: calc(var(--text-size) / 2);
 }
 
 .empty {
-  height: calc(var(--text-size) * 3);
+  height: calc(var(--text-size) * 4);
 }
 
-.codestats, .codestats p {
+.codestats {
   display: inline;
+}
+
+.contactscontainer {
+  font-size: var(--big-text-size);
 }
 
 .icon {
-  position: relative;
-  top: 0.5rem;
-  padding-left: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  font-size: var(--big-text-size);
+
+  top: calc(var(--big-text-size)/2);
+  padding-left: calc(var(--big-text-size)/2);
   filter: invert(1);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--big-text-size);
+  height: var(--big-text-size);
   display: inline;
-}
-
-#contacts .sectiontitle:lang(en) {
-
 }

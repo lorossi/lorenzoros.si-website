@@ -1,17 +1,17 @@
 :root {
   --background: #040404;
   --text: #fbfbfb;
-  --title-size: 5rem;
-  --text-size: 2.5rem;
-  --description-size: 2.5rem;
-  --small-text-size: 1.25rem;
+  --title-size: 6rem;
+  --text-size: 1.5rem;
+  --big-text-size: 2rem;
+  --small-text-size: 1.5rem;
 }
 
 @media only screen and (max-width: 480px) and (min-width: 0px) {
   :root{
     --title-size: 2.25rem;
     --text-size: 1rem;
-    --description-size: 1rem;
+    --big-text-size: 1rem;
     --small-text-size: 0.8rem;
   }
 }
@@ -20,7 +20,7 @@
   :root{
     --title-size: 2rem;
     --text-size: 1.5rem;
-    --description-size: 1.5rem;
+    --big-text-size: 1.5rem;
     --small-text-size: 1.5rem;
   }
 }
