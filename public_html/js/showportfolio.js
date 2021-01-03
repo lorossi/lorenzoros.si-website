@@ -23,7 +23,7 @@ $(document).ready(function() {
           if (selected_repos.length > 0) {
             new_element += `<td class="language"></td>`;
           }
-          new_element += `<td class="repo"><a href="${r.url}">${r.formatted_name}</a></td><td class="description">${r.description.toLowerCase()}</td></tr>`;
+          new_element += `<td class="repo"><a href="${r.url}">${r.formatted_name}</a></td><td class="description opaque">${r.description.toLowerCase()}</td></tr>`;
 
           selected_repos.push(r);
         }

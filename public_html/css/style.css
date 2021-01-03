@@ -52,6 +52,10 @@ body {
   opacity: 1;
 }
 
+.opaque {
+  opacity: 0.5;
+}
+
 .sketch {
   position: absolute;
   left: 0;
@@ -197,7 +201,6 @@ body {
 .description {
   font-size: var(--description-size);
   padding-bottom: calc(var(--description-size) / 2);
-  opacity: 0.5;
 }
 
 .empty {
