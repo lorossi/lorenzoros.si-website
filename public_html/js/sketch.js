@@ -134,12 +134,12 @@ class Sketch {
     this.background = getCssProperty("--background");
 
     if (this.width > 600) {
-      this.particles_num = 65;
+      this.particles_num = 90;
       this.max_dist_sq = Math.pow(this.width * 0.15, 2);
       this.max_connections = 3;
     } else {
       this.particles_num = 45;
-      this.max_dist_sq = Math.pow(this.width * 0.5, 2);
+      this.max_dist_sq = Math.pow(this.width * 0.37, 2);
       this.max_connections = 2;
     }
 

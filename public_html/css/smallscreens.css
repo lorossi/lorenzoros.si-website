@@ -24,15 +24,9 @@
     padding-bottom:  calc(var(--big-text-size) * 3);
   }
 
-  .projectscontainer, .contactscontainer, .codetracker {
+  .projectscontainer, .contactscontainer {
     margin-top: 5vh;
     max-width: 90vw;
-  }
-
-  .codetracker p {
-    display: block;
-    margin-top: calc(var(--text-size) / 2);
-    margin-left: calc(var(--text-size) * 2);
   }
 
   .description {
@@ -60,10 +54,14 @@
   .contact {
     padding-right: calc(var(--text-size) / 2);
   }
+
+  .projectscontainer, .contactscontainer, .navbar, #description p {
+    backdrop-filter: initial;
+  }
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 481px) {
-  .projectscontainer, .contactscontainer, .codetracker {
+  .projectscontainer, .contactscontainer{
     margin-top: 10vh;
   }
 
@@ -76,5 +74,9 @@
     top: 0.3rem;
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .repo {
+    max-width: 20vw;
   }
 }

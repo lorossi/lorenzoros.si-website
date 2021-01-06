@@ -160,18 +160,12 @@ body {
   border-collapse: collapse;
 }
 
+.projectscontainer, .contactscontainer, .navbar, #description p {
+  backdrop-filter: blur(1px);
+}
+
 .projectscontainer tr, .contactscontainer tr {
   vertical-align: text-top;
-}
-
-.codetracker {
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  max-width: 75vw;
-}
-
-.codetracker p {
-  margin-left: var(--text-size);
 }
 
 .contact {
@@ -201,12 +195,13 @@ body {
 .repo {
   text-align: right;
   vertical-align: baseline;
-  max-width: 20vw;
+  max-width: 15vw;
 }
 
 .description {
   font-size: var(--text-size);
   padding-bottom: calc(var(--text-size) / 2);
+  cursor: pointer;
 }
 
 .empty {

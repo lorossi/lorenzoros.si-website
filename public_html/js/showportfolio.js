@@ -6,7 +6,6 @@
 
 $(document).ready(function() {
   let repo_container = "#portfolio .projectscontainer";
-  let stats_container = "#portfolio .codestats";
 
   let languages = new Set(resources.repos.map((r) => {
     return r.main_language;
@@ -35,11 +34,4 @@ $(document).ready(function() {
           $(repo_container).append(new_element);
       }
   });
-
-  $(stats_container + " #repos").text(resources.stats.total_repos);
-  $(stats_container + " #commits").text(resources.stats.total_commits);
-  $(stats_container + " #languages").text(resources.stats.total_languages);
-  $(stats_container + " #stars").text(resources.stats.total_stars);
-
-  placeElements();
 });
