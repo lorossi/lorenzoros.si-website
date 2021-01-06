@@ -58,10 +58,10 @@ def formatRepos(repos):
     total_stars = 0
     total_size = 0
 
-    # sort by language
-    repos = sorted(repos, key=lambda x: x["main_language"], reverse=False)
     # sort by time
     repos = sorted(repos, key=lambda x: x["created"], reverse=True)
+    # sort by language
+    repos = sorted(repos, key=lambda x: x["main_language"], reverse=False)
 
     for repo in repos:
         total_commits += repo["commits"]
