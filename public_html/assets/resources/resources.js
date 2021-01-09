@@ -48,18 +48,18 @@ let resources = {
             "formatted_name": "vaccino covid19",
             "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia",
             "url": "https://github.com/lorossi/vaccino-covid19",
-            "commits": 61,
+            "commits": 177,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 15349,
-                "Python": 11511,
-                "HTML": 4531,
-                "CSS": 3143,
-                "Shell": 102
+                "JavaScript": 71267,
+                "Python": 14432,
+                "HTML": 12256,
+                "CSS": 5671,
+                "Shell": 100
             },
-            "size": 110,
-            "last_pushed_timestamp": "2021-01-06T13:23:00",
+            "size": 332,
+            "last_pushed_timestamp": "2021-01-09T18:26:38",
             "created_timestamp": "2021-01-05T17:12:28",
             "created_year": 2021,
             "selected": true
@@ -220,17 +220,17 @@ let resources = {
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 154,
+            "commits": 156,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 33437,
+                "JavaScript": 35121,
                 "HTML": 5976,
                 "CSS": 5451,
                 "Python": 5351
             },
-            "size": 4291,
-            "last_pushed_timestamp": "2021-01-06T13:35:10",
+            "size": 4293,
+            "last_pushed_timestamp": "2021-01-06T13:49:29",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -485,59 +485,59 @@ let resources = {
     "languages": [
         {
             "language": "JavaScript",
-            "absolute_size": 193524,
-            "relative_size": 0.3633577982684909,
-            "relative_size_formatted": "36.34%"
+            "absolute_size": 251126,
+            "relative_size": 0.41620357556602633,
+            "relative_size_formatted": "41.62%"
         },
         {
             "language": "Python",
-            "absolute_size": 158171,
-            "relative_size": 0.2969795286885631,
-            "relative_size_formatted": "29.7%"
+            "absolute_size": 161092,
+            "relative_size": 0.26698576170958926,
+            "relative_size_formatted": "26.7%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.16647421418365413,
-            "relative_size_formatted": "16.65%"
+            "relative_size": 0.146947244904893,
+            "relative_size_formatted": "14.69%"
         },
         {
             "language": "HTML",
-            "absolute_size": 33503,
-            "relative_size": 0.06290473695970139,
-            "relative_size_formatted": "6.29%"
+            "absolute_size": 41228,
+            "relative_size": 0.06832920929507949,
+            "relative_size_formatted": "6.83%"
         },
         {
             "language": "CSS",
-            "absolute_size": 28376,
-            "relative_size": 0.05327835763867375,
-            "relative_size_formatted": "5.33%"
+            "absolute_size": 30904,
+            "relative_size": 0.05121873202811528,
+            "relative_size_formatted": "5.12%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.04372332655525076,
-            "relative_size_formatted": "4.37%"
+            "relative_size": 0.038594700127450185,
+            "relative_size_formatted": "3.86%"
         },
         {
             "language": "C++",
             "absolute_size": 6972,
-            "relative_size": 0.013090524015253503,
-            "relative_size_formatted": "1.31%"
+            "relative_size": 0.011555041408879748,
+            "relative_size_formatted": "1.16%"
         },
         {
             "language": "Shell",
-            "absolute_size": 102,
-            "relative_size": 0.00019151369041248668,
+            "absolute_size": 100,
+            "relative_size": 0.0001657349599667204,
             "relative_size_formatted": "0.02%"
         }
     ],
     "stats": {
-        "total_size": 532599,
-        "total_commits": 847,
+        "total_size": 603373,
+        "total_commits": 965,
         "total_stars": 4,
         "total_languages": 8,
         "total_repos": 26,
-        "last_updated": "2021-01-06T14:49:02.579361"
+        "last_updated": "2021-01-09T19:34:45.349264"
     }
 };

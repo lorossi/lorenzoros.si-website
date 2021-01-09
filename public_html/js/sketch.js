@@ -45,7 +45,7 @@ class Particle {
       if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.velocity.invertY();
 
     }
-
+    
     get pos() {
       return {
         x: this._position.x,
@@ -70,8 +70,16 @@ class Particle {
       return this._paired;
     }
 
+    get width() {
+      return this._width;
+    }
+
     set width(w) {
       this._width = w;
+    }
+
+    get height() {
+      return this._height;
     }
 
     set height(h) {
