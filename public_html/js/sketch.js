@@ -45,7 +45,7 @@ class Particle {
       if (this._position.y + this._radius > this._height || this._position.y - this._radius < 0) this.velocity.invertY();
 
     }
-    
+
     get pos() {
       return {
         x: this._position.x,
@@ -254,5 +254,7 @@ $(document).ready(() => {
 });
 
 $(window).resize(() => {
-  sketch.resized();
+  if (sketch) {
+    sketch.resized();  
+  }
 });
