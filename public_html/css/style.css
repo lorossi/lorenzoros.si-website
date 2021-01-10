@@ -201,7 +201,7 @@ body {
 .description {
   font-size: var(--text-size);
   padding-bottom: calc(var(--text-size) / 2);
-  cursor: pointer;
+  cursor: default;
 }
 
 .empty {
