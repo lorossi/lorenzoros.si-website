@@ -23,7 +23,7 @@ The background animation is made in pure js using html5 canvas element. Previous
 
 # Visit it [lorenzoros.si](https://www.lorenzoros.si)
 
-# Screenshots
+# Screenshots (OUTDATED)
 
 ## PC / Bigger screens
 ![page 1](https://github.com/lorossi/lorenzoros.si-website/blob/master/screenshots/page1-pc.png?raw=true)
