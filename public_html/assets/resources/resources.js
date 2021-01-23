@@ -8,6 +8,23 @@
 let resources = {
     "repos": [
         {
+            "name": "DPCM-map",
+            "formatted_name": "DPCM map",
+            "description": null,
+            "url": "https://github.com/valerionew/DPCM-map",
+            "commits": 23,
+            "stars": 0,
+            "main_language": "C++",
+            "languages": {
+                "C++": 1949
+            },
+            "size": 4733,
+            "last_pushed_timestamp": "2021-01-20T08:51:03",
+            "created_timestamp": "2021-01-17T10:36:49",
+            "created_year": 2021,
+            "selected": false
+        },
+        {
             "name": "fireflies-in-a-jar",
             "formatted_name": "fireflies in a jar",
             "description": "Gife life to a glass jar using some magic (and an Arduino)",
@@ -23,6 +40,23 @@ let resources = {
             "created_timestamp": "2020-12-21T02:24:22",
             "created_year": 2020,
             "selected": true
+        },
+        {
+            "name": "DWC-firmware",
+            "formatted_name": "DWC firmware",
+            "description": null,
+            "url": "https://github.com/lorossi/DWC-firmware",
+            "commits": 8,
+            "stars": 0,
+            "main_language": "C++",
+            "languages": {
+                "C++": 33821
+            },
+            "size": 18,
+            "last_pushed_timestamp": "2021-01-18T16:05:12",
+            "created_timestamp": "2020-12-16T17:02:20",
+            "created_year": 2020,
+            "selected": false
         },
         {
             "name": "empty-html5-project",
@@ -44,23 +78,80 @@ let resources = {
             "selected": false
         },
         {
+            "name": "blank-p5js-project",
+            "formatted_name": "blank p5js project",
+            "description": null,
+            "url": "https://github.com/lorossi/blank-p5js-project",
+            "commits": 2,
+            "stars": 0,
+            "main_language": "HTML",
+            "languages": {
+                "HTML": 452,
+                "JavaScript": 343,
+                "CSS": 64
+            },
+            "size": 267,
+            "last_pushed_timestamp": "2020-11-10T09:51:12",
+            "created_timestamp": "2020-11-02T18:30:39",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
+            "name": "random-mondrian",
+            "formatted_name": "random mondrian",
+            "description": "Procedural generation of Mondrian-like paintings",
+            "url": "https://github.com/lorossi/random-mondrian",
+            "commits": 10,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 13162,
+                "HTML": 1482,
+                "CSS": 1266
+            },
+            "size": 112,
+            "last_pushed_timestamp": "2021-01-23T17:29:19",
+            "created_timestamp": "2021-01-23T16:11:41",
+            "created_year": 2021,
+            "selected": true
+        },
+        {
             "name": "vaccino-covid19",
             "formatted_name": "vaccino covid19",
             "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia",
             "url": "https://github.com/lorossi/vaccino-covid19",
-            "commits": 177,
+            "commits": 757,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 71267,
-                "Python": 14432,
-                "HTML": 12256,
-                "CSS": 5671,
-                "Shell": 100
+                "JavaScript": 49641,
+                "Python": 43512,
+                "HTML": 16872,
+                "CSS": 7118,
+                "Shell": 58
             },
-            "size": 332,
-            "last_pushed_timestamp": "2021-01-09T18:26:38",
+            "size": 2816,
+            "last_pushed_timestamp": "2021-01-22T22:55:09",
             "created_timestamp": "2021-01-05T17:12:28",
+            "created_year": 2021,
+            "selected": true
+        },
+        {
+            "name": "digital-spirograph",
+            "formatted_name": "digital spirograph",
+            "description": "My parents never bought me a spirograph when I was little... but now I can code.",
+            "url": "https://github.com/lorossi/digital-spirograph",
+            "commits": 10,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 35515,
+                "HTML": 3124,
+                "CSS": 1571
+            },
+            "size": 174,
+            "last_pushed_timestamp": "2021-01-22T16:57:42",
+            "created_timestamp": "2021-01-04T23:10:16",
             "created_year": 2021,
             "selected": true
         },
@@ -88,17 +179,17 @@ let resources = {
             "formatted_name": "painting bubbles",
             "description": "Feel like a painter without having to paint!",
             "url": "https://github.com/lorossi/painting-bubbles",
-            "commits": 107,
+            "commits": 108,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
                 "JavaScript": 27383,
-                "CSS": 2875,
+                "CSS": 2859,
                 "Python": 2848,
                 "HTML": 1439
             },
             "size": 2208964,
-            "last_pushed_timestamp": "2020-12-10T22:29:15",
+            "last_pushed_timestamp": "2021-01-23T16:17:35",
             "created_timestamp": "2020-12-03T12:44:19",
             "created_year": 2020,
             "selected": true
@@ -108,17 +199,36 @@ let resources = {
             "formatted_name": "js vectors",
             "description": "A simple 2D and 3D vectors library made in JS",
             "url": "https://github.com/lorossi/js-vectors",
-            "commits": 14,
+            "commits": 20,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 11455
+                "JavaScript": 12539
             },
-            "size": 25,
-            "last_pushed_timestamp": "2020-12-08T14:17:24",
+            "size": 39,
+            "last_pushed_timestamp": "2021-01-10T13:46:59",
             "created_timestamp": "2020-12-02T16:20:21",
             "created_year": 2020,
             "selected": true
+        },
+        {
+            "name": "pi-montecarlo",
+            "formatted_name": "pi montecarlo",
+            "description": "Calculating PI by using Montecarlo method",
+            "url": "https://github.com/lorossi/pi-montecarlo",
+            "commits": 1,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 9500,
+                "HTML": 577,
+                "CSS": 235
+            },
+            "size": 3,
+            "last_pushed_timestamp": "2020-11-30T18:28:13",
+            "created_timestamp": "2020-11-30T18:28:07",
+            "created_year": 2020,
+            "selected": false
         },
         {
             "name": "p5js-perlin",
@@ -157,6 +267,25 @@ let resources = {
             "created_timestamp": "2020-10-20T12:20:02",
             "created_year": 2020,
             "selected": true
+        },
+        {
+            "name": "procedural-snowflakes",
+            "formatted_name": "procedural snowflakes",
+            "description": null,
+            "url": "https://github.com/lorossi/procedural-snowflakes",
+            "commits": 5,
+            "stars": 0,
+            "main_language": "JavaScript",
+            "languages": {
+                "JavaScript": 15801,
+                "HTML": 609,
+                "CSS": 71
+            },
+            "size": 305,
+            "last_pushed_timestamp": "2020-10-15T21:24:08",
+            "created_timestamp": "2020-10-13T20:23:11",
+            "created_year": 2020,
+            "selected": false
         },
         {
             "name": "merrychristmas",
@@ -213,24 +342,24 @@ let resources = {
             "last_pushed_timestamp": "2020-11-02T15:25:06",
             "created_timestamp": "2020-10-07T19:51:53",
             "created_year": 2020,
-            "selected": true
+            "selected": false
         },
         {
             "name": "lorenzoros.si-website",
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 156,
+            "commits": 160,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 35121,
+                "JavaScript": 35251,
                 "HTML": 5976,
-                "CSS": 5451,
+                "CSS": 5427,
                 "Python": 5351
             },
-            "size": 4293,
-            "last_pushed_timestamp": "2021-01-06T13:49:29",
+            "size": 4301,
+            "last_pushed_timestamp": "2021-01-11T16:57:42",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
             "selected": false
@@ -306,6 +435,42 @@ let resources = {
             "selected": true
         },
         {
+            "name": "breathing-city",
+            "formatted_name": "breathing city",
+            "description": "Visualizing a day in Milan by the bike sharing usage",
+            "url": "https://github.com/lorossi/breathing-city",
+            "commits": 6,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 23512
+            },
+            "size": 197,
+            "last_pushed_timestamp": "2020-12-27T16:39:07",
+            "created_timestamp": "2020-12-27T16:32:23",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
+            "name": "iot-stack",
+            "formatted_name": "iot stack",
+            "description": null,
+            "url": "https://github.com/lorossi/iot-stack",
+            "commits": 14,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 53070,
+                "C++": 9395,
+                "Shell": 176
+            },
+            "size": 39,
+            "last_pushed_timestamp": "2021-01-21T11:19:24",
+            "created_timestamp": "2020-12-26T18:30:40",
+            "created_year": 2020,
+            "selected": false
+        },
+        {
             "name": "minimalistic-maps",
             "formatted_name": "minimalistic maps",
             "description": "Famous cities like you've never seen before!",
@@ -327,14 +492,14 @@ let resources = {
             "formatted_name": "perlin italy map",
             "description": "A moving animation of Italy in all of its geological beauty",
             "url": "https://github.com/lorossi/perlin-italy-map",
-            "commits": 28,
+            "commits": 32,
             "stars": 0,
             "main_language": "Python",
             "languages": {
                 "Python": 16650
             },
-            "size": 158848,
-            "last_pushed_timestamp": "2020-12-26T16:12:23",
+            "size": 158941,
+            "last_pushed_timestamp": "2021-01-09T18:49:15",
             "created_timestamp": "2020-12-12T18:03:06",
             "created_year": 2020,
             "selected": true
@@ -344,14 +509,14 @@ let resources = {
             "formatted_name": "every color",
             "description": "A Python script generating images with all the RGB colors in a set bit depth.",
             "url": "https://github.com/lorossi/every-color",
-            "commits": 78,
+            "commits": 92,
             "stars": 0,
             "main_language": "Python",
             "languages": {
-                "Python": 21031
+                "Python": 21775
             },
-            "size": 228705,
-            "last_pushed_timestamp": "2020-12-27T23:34:26",
+            "size": 229063,
+            "last_pushed_timestamp": "2021-01-10T14:43:39",
             "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
             "selected": true
@@ -375,6 +540,23 @@ let resources = {
             "created_timestamp": "2020-11-18T15:24:37",
             "created_year": 2020,
             "selected": true
+        },
+        {
+            "name": "just-memes-telegram",
+            "formatted_name": "just memes telegram",
+            "description": null,
+            "url": "https://github.com/lorossi/just-memes-telegram",
+            "commits": 1,
+            "stars": 0,
+            "main_language": "Python",
+            "languages": {
+                "Python": 536054
+            },
+            "size": 56,
+            "last_pushed_timestamp": "2020-09-25T10:01:45",
+            "created_timestamp": "2020-09-25T10:00:26",
+            "created_year": 2020,
+            "selected": false
         },
         {
             "name": "bikemi-python-unofficial-api",
@@ -484,60 +666,60 @@ let resources = {
     ],
     "languages": [
         {
-            "language": "JavaScript",
-            "absolute_size": 251126,
-            "relative_size": 0.41620357556602633,
-            "relative_size_formatted": "41.62%"
+            "language": "Python",
+            "absolute_size": 803552,
+            "relative_size": 0.5906234036375931,
+            "relative_size_formatted": "59.06%"
         },
         {
-            "language": "Python",
-            "absolute_size": 161092,
-            "relative_size": 0.26698576170958926,
-            "relative_size_formatted": "26.7%"
+            "language": "JavaScript",
+            "absolute_size": 305035,
+            "relative_size": 0.2242055398139675,
+            "relative_size_formatted": "22.42%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.146947244904893,
-            "relative_size_formatted": "14.69%"
+            "relative_size": 0.06516943951371355,
+            "relative_size_formatted": "6.52%"
+        },
+        {
+            "language": "C++",
+            "absolute_size": 52137,
+            "relative_size": 0.038321517954598074,
+            "relative_size_formatted": "3.83%"
         },
         {
             "language": "HTML",
-            "absolute_size": 41228,
-            "relative_size": 0.06832920929507949,
-            "relative_size_formatted": "6.83%"
+            "absolute_size": 52088,
+            "relative_size": 0.038285502181159344,
+            "relative_size_formatted": "3.83%"
         },
         {
             "language": "CSS",
-            "absolute_size": 30904,
-            "relative_size": 0.05121873202811528,
-            "relative_size_formatted": "5.12%"
+            "absolute_size": 35518,
+            "relative_size": 0.026106290632591334,
+            "relative_size_formatted": "2.61%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.038594700127450185,
-            "relative_size_formatted": "3.86%"
-        },
-        {
-            "language": "C++",
-            "absolute_size": 6972,
-            "relative_size": 0.011555041408879748,
-            "relative_size_formatted": "1.16%"
+            "relative_size": 0.0171163125728125,
+            "relative_size_formatted": "1.71%"
         },
         {
             "language": "Shell",
-            "absolute_size": 100,
-            "relative_size": 0.0001657349599667204,
+            "absolute_size": 234,
+            "relative_size": 0.0001719936935645693,
             "relative_size_formatted": "0.02%"
         }
     ],
     "stats": {
-        "total_size": 603373,
-        "total_commits": 965,
+        "total_size": 1360515,
+        "total_commits": 1654,
         "total_stars": 4,
         "total_languages": 8,
-        "total_repos": 26,
-        "last_updated": "2021-01-09T19:34:45.349264"
+        "total_repos": 36,
+        "last_updated": "2021-01-23T18:34:45.902925"
     }
 };
