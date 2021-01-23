@@ -1,0 +1,46 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      {% if title %}
+        <title>{{ title }}</title>
+      {% elif errorcode %}
+        <title>Errore {{ errorcode }} </title>
+      {% else %}
+        <title>Lorenzo Rossi</title>
+      {% endif %}
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/vars.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/smallscreens.css') }}">
+
+      <link rel="shortcut icon" href="{{ url_for('static', filename='static/favicon.ico') }}" type="image/x-icon">
+      <link rel="icon" href="{{ url_for('static', filename='static/favicon.ico') }}" type="image/x-icon">
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160259-1"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-172160259-1');
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script src="{{ url_for('static', filename='js/vectors.min.js') }}"></script>
+
+      <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/language.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/secret.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/sketch.js') }}"></script>
+
+      {% block head %}{% endblock %}
+   </head>
+
+   <body>
+    {% block body %}{% endblock %}
+  </body>
+</html>

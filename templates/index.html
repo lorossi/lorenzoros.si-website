@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <canvas class="sketch" id="sketch"></canvas>
+
+    <div class="navbar">
+       <a href="/" lang="en">Homepage</a>
+       <a href="#portfolio" lang="en">Projects</a>
+       <a href="#contacts" lang="en">Contacts</a>
+       <p lang="en" class="languageswitch">Italiano<a class="flag" id="it"></a></p>
+       <a href="/" lang="it">Homepage</a>
+       <a href="#portfolio" lang="it">Progetti</a>
+       <a href="#contacts" lang="it">Contatti</a>
+       <p lang="it" class="languageswitch">English<a class="flag" id="gb"></a></p>
+    </div>
+
+    <div class="content">
+       <div class="page" id="page1">
+          <div class="section" id="logo">
+             <h1>
+                Lorenzo<br>Rossi
+             </h1>
+          </div>
+          <div class="section" id="description">
+             <p lang="en">
+                Programmer, web developer and creative <br>
+                Currently studing at Politecnico di Milano <br>
+                Computer and development enthusiast since birth <br>
+                Available for freelancing jobs! <br>
+                <span class="italic">Scroll to learn more</span>
+             </p>
+             <p lang="it">
+                Programmatore, web developer e creativo <br>
+                Attualmente studente al Politecnico di Milano <br>
+                Da sempre appassionato di computer e sviluppo informatico <br>
+                Disponibile per lavori da freelancer! <br>
+                <span class="italic">Scorri per scoprire di più</span>
+             </p>
+          </div>
+       </div>
+       <div class="page" id="page2">
+          <div class="section" id="portfolio">
+             <div lang="en" class="sectiontitle">
+                <h1>
+                   Projects
+                </h1>
+             </div>
+             <div lang="it" class="sectiontitle">
+                <h1>
+                   Progetti
+                </h1>
+             </div>
+             <table class="projectscontainer">
+
+             </table>
+          </div>
+       </div>
+       <div class="page" id="page3">
+          <div class="section" id="contacts">
+             <div lang="en" class="sectiontitle">
+                <h1>
+                   Contacts
+                </h1>
+             </div>
+             <div lang="it" class="sectiontitle">
+                <h1>
+                   Contatti
+                </h1>
+             </div>
+             <table class="contactscontainer">
+                <tr>
+                   <td class="italic contact">
+                      Email
+                      <img class="icon" src="{{ url_for('static', filename='assets/icons/email.svg') }}" alt="email">
+                   </td>
+                   <td class="address">
+                      <a id="email" href=""></a>
+                   </td>
+                </tr>
+                <tr>
+                   <td class="italic contact">
+                      GitHub
+                      <img class="icon" src="{{ url_for('static', filename='assets/icons/github.svg') }}" alt="github">
+                   </td>
+                   <td class="address"><a id="github" href=""></a>
+                   </td>
+                </tr>
+                <tr>
+                   <td class="italic contact">
+                      Telegram
+                      <img class="icon" src="{{ url_for('static', filename='assets/icons/telegram.svg') }}" alt="telegram">
+                   </td>
+                   <td class="address"><a id="telegram" href=""></a>
+                   </td>
+                </tr>
+                <tr>
+                   <td class="italic contact">
+                      Instagram
+                      <img class="icon" src="{{ url_for('static', filename='assets/icons/instagram.svg') }}" alt="instagram">
+                   </td>
+                   <td class="address"><a id="instagram" href=""></a>
+                   </td>
+                </tr>
+                <tr>
+                   <td class="italic contact">
+                      Vimeo
+                      <img class="icon" src="{{ url_for('static', filename='assets/icons/vimeo.svg') }}" alt="vimeo">
+                   </td>
+                   <td class="address"><a id="vimeo" href=""></a>
+                   </td>
+                </tr>
+             </table>
+          </div>
+       </div>
+    </div>
+{% endblock %}
