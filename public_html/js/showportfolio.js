@@ -22,7 +22,21 @@ $(document).ready(function() {
           if (selected_repos.length > 0) {
             new_element += `<td class="language"></td>`;
           }
-          new_element += `<td class="repo"><a href="${r.url}">${r.formatted_name}</a></td><td class="description opaque">${r.description.toLowerCase()}</td></tr>`;
+
+          new_element += `<td class="repo"><a href="${r.url}">${r.formatted_name}</a></td>`;
+          new_element += `<td class="description opaque">${r.description.toLowerCase()}</td>`;
+
+          if (r.homepage) {
+            let url = r.homepage.replace("https://", "").replace("http://", "").replace("www.", "");
+            if (url.slice(-1) == "/") {
+              url = url.slice(0, -1);
+            }
+            new_element += `<td class="website opaque"><a href="${r.homepage}">${url}</a></td>`;
+          } else {
+            new_element += `<td></td>`;
+          }
+
+          new_element +=`</tr>`;
 
           selected_repos.push(r);
         }

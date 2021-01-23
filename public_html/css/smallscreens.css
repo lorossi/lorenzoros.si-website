@@ -29,7 +29,7 @@
     max-width: 90vw;
   }
 
-  .description {
+  .description, .website {
     display: none;
   }
 

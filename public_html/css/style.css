@@ -156,7 +156,7 @@ body {
 
 .projectscontainer, .contactscontainer {
   margin-top: 15vh;
-  max-width: 75vw;
+  max-width: 85vw;
   border-collapse: collapse;
 }
 
@@ -181,13 +181,13 @@ body {
   border-right: 1px solid var(--text);
 }
 
-.repo, .address {
+.repo, .address, .website {
   padding-left: var(--text-size);
   padding-right: var(--text-size);
   padding-bottom: var(--text-size);
 }
 
-.repo a:hover, .address a:hover {
+.repo a:hover, .address a:hover, .website a:hover {
   font-style: italic;
   text-decoration: underline;
 }
@@ -202,8 +202,12 @@ body {
   font-size: var(--text-size);
   padding-bottom: calc(var(--text-size) / 2);
   cursor: default;
+  max-width: 35vw;
 }
 
+.website {
+  text-align: left;
+}
 .empty {
   height: calc(var(--text-size) * 4);
 }

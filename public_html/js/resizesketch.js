@@ -27,11 +27,11 @@ function placeElements() {
 $(document).ready(() => {
   page_width = $(window).width();
   placeElements();
-});
 
-$(window).resize(() => {
-  if ($(window).width() != page_width) {
-    page_width = $(window).width();
-    placeElements();
-  }
+  $(window).resize(() => {
+    if ($(window).width() != page_width) {
+      page_width = $(window).width();
+      placeElements();
+    }
+  });
 });

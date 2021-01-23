@@ -22,7 +22,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-20T08:51:03",
             "created_timestamp": "2021-01-17T10:36:49",
             "created_year": 2021,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "fireflies-in-a-jar",
@@ -39,7 +40,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-25T22:48:45",
             "created_timestamp": "2020-12-21T02:24:22",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "DWC-firmware",
@@ -56,7 +58,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-18T16:05:12",
             "created_timestamp": "2020-12-16T17:02:20",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "empty-html5-project",
@@ -75,7 +78,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-09T22:43:08",
             "created_timestamp": "2020-12-03T12:40:15",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": ""
         },
         {
             "name": "blank-p5js-project",
@@ -94,7 +98,8 @@ let resources = {
             "last_pushed_timestamp": "2020-11-10T09:51:12",
             "created_timestamp": "2020-11-02T18:30:39",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "random-mondrian",
@@ -113,7 +118,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-23T17:29:19",
             "created_timestamp": "2021-01-23T16:11:41",
             "created_year": 2021,
-            "selected": true
+            "selected": true,
+            "homepage": "https://lorenzoros.si/random-mondrian/"
         },
         {
             "name": "vaccino-covid19",
@@ -134,7 +140,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-22T22:55:09",
             "created_timestamp": "2021-01-05T17:12:28",
             "created_year": 2021,
-            "selected": true
+            "selected": true,
+            "homepage": "https://www.vaccinocovid19.live"
         },
         {
             "name": "digital-spirograph",
@@ -153,7 +160,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-22T16:57:42",
             "created_timestamp": "2021-01-04T23:10:16",
             "created_year": 2021,
-            "selected": true
+            "selected": true,
+            "homepage": "https://lorenzoros.si/digital-spirograph/"
         },
         {
             "name": "empty-html5-canvas-project",
@@ -172,7 +180,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-04T10:55:35",
             "created_timestamp": "2021-01-04T10:53:50",
             "created_year": 2021,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "painting-bubbles",
@@ -192,7 +201,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-23T16:17:35",
             "created_timestamp": "2020-12-03T12:44:19",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": "https://www.lorenzoros.si/painting-bubbles"
         },
         {
             "name": "js-vectors",
@@ -209,7 +219,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-10T13:46:59",
             "created_timestamp": "2020-12-02T16:20:21",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "pi-montecarlo",
@@ -228,7 +239,8 @@ let resources = {
             "last_pushed_timestamp": "2020-11-30T18:28:13",
             "created_timestamp": "2020-11-30T18:28:07",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "p5js-perlin",
@@ -247,7 +259,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-08T18:20:16",
             "created_timestamp": "2020-11-17T17:11:05",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": "https://lorenzoros.si/p5js-perlin/"
         },
         {
             "name": "fireworks",
@@ -266,7 +279,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-02T16:51:56",
             "created_timestamp": "2020-10-20T12:20:02",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": "http://lorossi.github.io/fireworks"
         },
         {
             "name": "procedural-snowflakes",
@@ -285,7 +299,8 @@ let resources = {
             "last_pushed_timestamp": "2020-10-15T21:24:08",
             "created_timestamp": "2020-10-13T20:23:11",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "merrychristmas",
@@ -304,7 +319,8 @@ let resources = {
             "last_pushed_timestamp": "2020-10-19T18:56:42",
             "created_timestamp": "2020-10-13T10:10:50",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": "https://lorossi.github.io/merrychristmas/"
         },
         {
             "name": "quantomancaanatale",
@@ -323,7 +339,8 @@ let resources = {
             "last_pushed_timestamp": "2020-10-20T12:19:39",
             "created_timestamp": "2020-10-12T16:02:58",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": "https://lorossi.github.io/quantomancaanatale/"
         },
         {
             "name": "hexapong",
@@ -342,27 +359,29 @@ let resources = {
             "last_pushed_timestamp": "2020-11-02T15:25:06",
             "created_timestamp": "2020-10-07T19:51:53",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": "https://lorossi.github.io/hexapong/"
         },
         {
             "name": "lorenzoros.si-website",
             "formatted_name": "lorenzoros.si website",
             "description": "A repo for my website - lorenzoros.si",
             "url": "https://github.com/lorossi/lorenzoros.si-website",
-            "commits": 160,
+            "commits": 161,
             "stars": 0,
             "main_language": "JavaScript",
             "languages": {
-                "JavaScript": 35251,
+                "JavaScript": 41575,
                 "HTML": 5976,
                 "CSS": 5427,
                 "Python": 5351
             },
             "size": 4301,
-            "last_pushed_timestamp": "2021-01-11T16:57:42",
+            "last_pushed_timestamp": "2021-01-23T18:03:41",
             "created_timestamp": "2020-07-08T16:22:03",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": "https://lorenzoros.si/"
         },
         {
             "name": "email-hide",
@@ -381,7 +400,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-08T14:33:29",
             "created_timestamp": "2020-07-04T17:55:23",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": "https://lorossi.github.io/email-hide/"
         },
         {
             "name": "lissajous",
@@ -398,7 +418,8 @@ let resources = {
             "last_pushed_timestamp": "2020-09-07T18:57:49",
             "created_timestamp": "2020-07-16T21:27:05",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "pi-day-2020-visualization",
@@ -415,7 +436,8 @@ let resources = {
             "last_pushed_timestamp": "2020-03-14T16:38:50",
             "created_timestamp": "2020-03-14T16:06:55",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "perlin-flow-field",
@@ -432,7 +454,8 @@ let resources = {
             "last_pushed_timestamp": "2020-03-01T16:30:19",
             "created_timestamp": "2020-03-01T16:09:42",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "breathing-city",
@@ -449,7 +472,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-27T16:39:07",
             "created_timestamp": "2020-12-27T16:32:23",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "iot-stack",
@@ -468,7 +492,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-21T11:19:24",
             "created_timestamp": "2020-12-26T18:30:40",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "minimalistic-maps",
@@ -485,7 +510,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-27T17:59:44",
             "created_timestamp": "2020-12-14T14:48:14",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": ""
         },
         {
             "name": "perlin-italy-map",
@@ -502,7 +528,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-09T18:49:15",
             "created_timestamp": "2020-12-12T18:03:06",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "every-color",
@@ -519,7 +546,8 @@ let resources = {
             "last_pushed_timestamp": "2021-01-10T14:43:39",
             "created_timestamp": "2020-11-24T13:31:02",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "performances-monitor",
@@ -539,7 +567,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-06T12:49:55",
             "created_timestamp": "2020-11-18T15:24:37",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "just-memes-telegram",
@@ -556,7 +585,8 @@ let resources = {
             "last_pushed_timestamp": "2020-09-25T10:01:45",
             "created_timestamp": "2020-09-25T10:00:26",
             "created_year": 2020,
-            "selected": false
+            "selected": false,
+            "homepage": null
         },
         {
             "name": "bikemi-python-unofficial-api",
@@ -573,7 +603,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-27T13:10:43",
             "created_timestamp": "2020-07-13T11:59:30",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "rpi-homepage",
@@ -593,7 +624,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-08T13:42:50",
             "created_timestamp": "2020-07-11T16:18:11",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "zero-width-steganography",
@@ -610,7 +642,8 @@ let resources = {
             "last_pushed_timestamp": "2020-07-09T15:01:32",
             "created_timestamp": "2020-06-17T09:29:12",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": ""
         },
         {
             "name": "corgos-telegram-bot",
@@ -627,7 +660,8 @@ let resources = {
             "last_pushed_timestamp": "2020-12-08T14:50:50",
             "created_timestamp": "2020-06-05T13:11:52",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "formulario-campi-elettromagnetici",
@@ -644,7 +678,8 @@ let resources = {
             "last_pushed_timestamp": "2020-10-24T16:53:52",
             "created_timestamp": "2020-03-23T16:55:33",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         },
         {
             "name": "appunti-vhdl",
@@ -661,65 +696,66 @@ let resources = {
             "last_pushed_timestamp": "2020-02-24T11:55:50",
             "created_timestamp": "2020-01-16T20:16:27",
             "created_year": 2020,
-            "selected": true
+            "selected": true,
+            "homepage": null
         }
     ],
     "languages": [
         {
             "language": "Python",
             "absolute_size": 803552,
-            "relative_size": 0.5906234036375931,
-            "relative_size_formatted": "59.06%"
+            "relative_size": 0.5878907464595318,
+            "relative_size_formatted": "58.79%"
         },
         {
             "language": "JavaScript",
-            "absolute_size": 305035,
-            "relative_size": 0.2242055398139675,
-            "relative_size_formatted": "22.42%"
+            "absolute_size": 311359,
+            "relative_size": 0.22779493415098634,
+            "relative_size_formatted": "22.78%"
         },
         {
             "language": "TeX",
             "absolute_size": 88664,
-            "relative_size": 0.06516943951371355,
-            "relative_size_formatted": "6.52%"
+            "relative_size": 0.06486791787474604,
+            "relative_size_formatted": "6.49%"
         },
         {
             "language": "C++",
             "absolute_size": 52137,
-            "relative_size": 0.038321517954598074,
-            "relative_size_formatted": "3.83%"
+            "relative_size": 0.0381442144978304,
+            "relative_size_formatted": "3.81%"
         },
         {
             "language": "HTML",
             "absolute_size": 52088,
-            "relative_size": 0.038285502181159344,
-            "relative_size_formatted": "3.83%"
+            "relative_size": 0.03810836535978268,
+            "relative_size_formatted": "3.81%"
         },
         {
             "language": "CSS",
             "absolute_size": 35518,
-            "relative_size": 0.026106290632591334,
-            "relative_size_formatted": "2.61%"
+            "relative_size": 0.025985503779157603,
+            "relative_size_formatted": "2.6%"
         },
         {
             "language": "Processing",
             "absolute_size": 23287,
-            "relative_size": 0.0171163125728125,
-            "relative_size_formatted": "1.71%"
+            "relative_size": 0.017037119953410753,
+            "relative_size_formatted": "1.7%"
         },
         {
             "language": "Shell",
             "absolute_size": 234,
-            "relative_size": 0.0001719936935645693,
+            "relative_size": 0.00017119792455439156,
             "relative_size_formatted": "0.02%"
         }
     ],
     "stats": {
-        "total_size": 1360515,
-        "total_commits": 1654,
+        "total_size": 1366839,
+        "total_commits": 1655,
         "total_stars": 4,
         "total_languages": 8,
         "total_repos": 36,
-        "last_updated": "2021-01-23T18:34:45.902925"
+        "last_updated": "2021-01-23T19:14:20.452877"
     }
 };

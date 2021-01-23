@@ -43,7 +43,8 @@ def loadRepos(g, skip_names=None, skip_urls=None, selected_repos=None):
             "created_timestamp": repo.created_at.isoformat(),
             "created_year": repo.created_at.year,
             "created": repo.created_at,
-            "selected": selected
+            "selected": selected,
+            "homepage": repo.homepage
         })
 
     return repos

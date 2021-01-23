@@ -22,30 +22,30 @@ $(document).ready(() => {
   // now actually fade in
   animate();
 
-  // mouse enters the grid
-  $(".projectscontainer tr *").mouseenter((e) => {
-    if ($(e.target).hasClass("description")) {
-      $(e.target).removeClass("opaque");
+  // highlight projects when mouse is over them
+  $(".projectscontainer .opaque").mouseenter((e) => {
+    let nodes = [];
+    if ($(e.target).prop('nodeName') === "A") {
+      nodes.push($(e.target).parent("td").toArray()[0]);
+      nodes.push($(e.target).parent("td").siblings(".opaque").toArray()[0]);
     } else {
-      $(e.target).parent().siblings().toArray().forEach((p, i) => {
-        if ($(p).hasClass("description")) {
-          $(p).removeClass("opaque");
-        }
-      });
+      nodes.push($(e.target));
+      nodes.push($(e.target).siblings(".opaque").toArray()[0]);
     }
+
+    nodes.forEach((n, i) => {
+      if ($(n).hasClass("opaque")) {
+        $(n).removeClass("opaque");
+        $(n).addClass("bright");
+      }
+    });
   });
 
-  // mouse leaves the grid
-  $(".projectscontainer tr *").mouseleave((e) => {
-    if ($(e.target).hasClass("description")) {
-      $(e.target).addClass("opaque");
-    } else {
-      $(e.target).parent().siblings().toArray().forEach((p, i) => {
-        if ($(p).hasClass("description")) {
-          $(p).addClass("opaque");
-        }
-      });
-    }
+  $(document).on("mouseleave", ".bright", (e) => {
+    let nodes = $(".bright").toArray();
+    nodes.forEach((n, i) => {
+      $(n).removeClass("bright");
+      $(n).addClass("opaque");
+    });
   });
-
 });
