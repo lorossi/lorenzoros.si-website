@@ -1,4 +1,12 @@
 @media only screen and (max-width: 480px) and (min-width: 0px) {
+  .pc {
+    display: none;
+  }
+
+  .mobile {
+    display: inline;
+  }
+
   .navbar {
     justify-content: center;
     width: 90vw;
@@ -29,7 +37,7 @@
     max-width: 90vw;
   }
 
-  .description, .website {
+  .description {
     display: none;
   }
 

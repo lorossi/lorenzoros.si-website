@@ -20,5 +20,6 @@
       "SHOW"
     ]
   },
-  "output_file": "OUTPUT FILE PATH"
+  "json_file": "JSON FILE PATH",
+  "html_file": "HTML FILE PATH"
 }

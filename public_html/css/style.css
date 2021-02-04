@@ -31,6 +31,14 @@ html {
   overflow-x: hidden;
 }
 
+.pc {
+  display: inline;
+}
+
+.mobile {
+  display: none;
+}
+
 a, a:visited {
   color: inherit;
   text-decoration: none;
@@ -181,13 +189,13 @@ body {
   border-right: 1px solid var(--text);
 }
 
-.repo, .address, .website {
+.repo, .address {
   padding-left: var(--text-size);
   padding-right: var(--text-size);
   padding-bottom: var(--text-size);
 }
 
-.repo a:hover, .address a:hover, .website a:hover {
+.repo a:hover, .address a:hover {
   font-style: italic;
   text-decoration: underline;
 }
@@ -202,12 +210,15 @@ body {
   font-size: var(--text-size);
   padding-bottom: calc(var(--text-size) / 2);
   cursor: default;
-  max-width: 35vw;
+  max-width: 50vw;
 }
 
-.website {
-  text-align: left;
+.homepage {
+  text-decoration: underline;
+  opacity: 1;
+  padding-left: calc(var(--text-size) / 2);
 }
+
 .empty {
   height: calc(var(--text-size) * 4);
 }
