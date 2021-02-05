@@ -1,24 +1,7 @@
 {
   "GitHub" : {
     "access_token" : "ACCESS TOKEN",
-    "skip_names" : [
-      "REPO",
-      "NAMES",
-      "TO",
-      "SKIP"
-    ],
-    "skip_urls" : [
-      "REPO",
-      "URLS",
-      "TO",
-      "SKIP"
-    ],
-    "selected_repos" : [
-      "REPO",
-      "NAMES",
-      "TO",
-      "SHOW"
-    ]
+    "topics": ["TOPIC", "TO", "INCLUDE"]
   },
   "json_file": "JSON FILE PATH",
   "html_file": "HTML FILE PATH"

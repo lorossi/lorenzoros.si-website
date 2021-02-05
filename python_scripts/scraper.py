@@ -28,16 +28,7 @@ class Scraper:
         new_repos = []
 
         for repo in self.g.get_user().get_repos():
-            if any(word in repo.name for word in self.settings["GitHub"]["skip_names"]):
-                continue
-
-            if any(url in repo.html_url for url in self.settings["GitHub"]["skip_urls"]):
-                continue
-
-            if not repo.language:
-                continue
-
-            if not repo.name in self.settings["GitHub"]["selected_repos"]:
+            if not any(t == r for t in self.settings["GitHub"]["topics"] for r in repo.get_topics()):
                 continue
 
             language = repo.language
@@ -70,7 +61,9 @@ class Scraper:
                 "created_year": repo.created_at.year,
                 "created": repo.created_at,
                 "homepage": homepage,
-                "homepage_clean": homepage_clean
+                "homepage_clean": homepage_clean,
+                "topics": repo.get_topics(),
+                "tags": [t.name for t in repo.get_tags()]
             })
 
         self._repos = copy.deepcopy(new_repos)
