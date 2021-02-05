@@ -1,6 +1,3 @@
-python_scripts/*.log
-python_scripts/repos.json
-python_scripts/table.html
-python_scripts/*test.py
-python_scripts/setting*.json
-*_old.js
+__pycache__
+*.log
+setting*.json
