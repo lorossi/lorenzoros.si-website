@@ -1,0 +1,678 @@
+{
+  "languages": [
+    {
+      "absolute_size": 224425,
+      "language": "JavaScript",
+      "relative_size": 0.3569145281746587,
+      "relative_size_formatted": "35.69%"
+    },
+    {
+      "absolute_size": 205504,
+      "language": "Python",
+      "relative_size": 0.32682349648214354,
+      "relative_size_formatted": "32.68%"
+    },
+    {
+      "absolute_size": 97051,
+      "language": "TeX",
+      "relative_size": 0.15434515706306695,
+      "relative_size_formatted": "15.43%"
+    },
+    {
+      "absolute_size": 51054,
+      "language": "HTML",
+      "relative_size": 0.08119378109136248,
+      "relative_size_formatted": "8.12%"
+    },
+    {
+      "absolute_size": 31695,
+      "language": "CSS",
+      "relative_size": 0.05040617565108971,
+      "relative_size_formatted": "5.04%"
+    },
+    {
+      "absolute_size": 12033,
+      "language": "Processing",
+      "relative_size": 0.019136693851066807,
+      "relative_size_formatted": "1.91%"
+    },
+    {
+      "absolute_size": 6972,
+      "language": "C++",
+      "relative_size": 0.011087927327319686,
+      "relative_size_formatted": "1.11%"
+    },
+    {
+      "absolute_size": 58,
+      "language": "Shell",
+      "relative_size": 9.224035929210296e-5,
+      "relative_size_formatted": "0.01%"
+    }
+  ],
+  "repos": [
+    {
+      "commits": 14,
+      "created_timestamp": "2020-12-21T02:24:22",
+      "created_year": 2020,
+      "description": "Gife life to a glass jar using some magic (and an Arduino).",
+      "formatted_name": "fireflies in a jar",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "C++": 6972
+      },
+      "last_pushed_timestamp": "2020-12-25T22:48:45",
+      "main_language": "C++",
+      "name": "fireflies-in-a-jar",
+      "size": 20,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "arduino",
+        "led",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/fireflies-in-a-jar"
+    },
+    {
+      "commits": 11,
+      "created_timestamp": "2021-01-23T16:11:41",
+      "created_year": 2021,
+      "description": "Procedural generation of Mondrian-like paintings.",
+      "formatted_name": "random mondrian",
+      "homepage": "https:\/\/lorenzoros.si\/random-mondrian\/",
+      "homepage_clean": "lorenzoros.si\/random-mondrian",
+      "languages": {
+        "CSS": 1266,
+        "HTML": 1482,
+        "JavaScript": 12604
+      },
+      "last_pushed_timestamp": "2021-01-24T01:53:23",
+      "main_language": "JavaScript",
+      "name": "random-mondrian",
+      "size": 1632,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "creative-coding",
+        "canvasjs",
+        "creativecoding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/random-mondrian"
+    },
+    {
+      "commits": 11,
+      "created_timestamp": "2021-01-04T23:10:16",
+      "created_year": 2021,
+      "description": "My parents never bought me a spirograph when I was a child... but now I can code.",
+      "formatted_name": "digital spirograph",
+      "homepage": "https:\/\/lorenzoros.si\/digital-spirograph\/",
+      "homepage_clean": "lorenzoros.si\/digital-spirograph",
+      "languages": {
+        "CSS": 1571,
+        "HTML": 3124,
+        "JavaScript": 35515
+      },
+      "last_pushed_timestamp": "2021-01-27T08:12:20",
+      "main_language": "JavaScript",
+      "name": "digital-spirograph",
+      "size": 175,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "js",
+        "canvas",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/digital-spirograph"
+    },
+    {
+      "commits": 108,
+      "created_timestamp": "2020-12-03T12:44:19",
+      "created_year": 2020,
+      "description": "Feel like a painter without having to paint!",
+      "formatted_name": "painting bubbles",
+      "homepage": "https:\/\/www.lorenzoros.si\/painting-bubbles",
+      "homepage_clean": "lorenzoros.si\/painting-bubbles",
+      "languages": {
+        "CSS": 2859,
+        "HTML": 1439,
+        "JavaScript": 27383,
+        "Python": 2848
+      },
+      "last_pushed_timestamp": "2021-01-23T16:17:35",
+      "main_language": "JavaScript",
+      "name": "painting-bubbles",
+      "size": 2208964,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "creativecoding",
+        "jscanvas",
+        "released",
+        "pixels"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
+    },
+    {
+      "commits": 20,
+      "created_timestamp": "2020-12-02T16:20:21",
+      "created_year": 2020,
+      "description": "A simple 2D and 3D vectors library made in JS.",
+      "formatted_name": "js vectors",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "JavaScript": 12539
+      },
+      "last_pushed_timestamp": "2021-01-10T13:46:59",
+      "main_language": "JavaScript",
+      "name": "js-vectors",
+      "size": 39,
+      "stars": 0,
+      "tags": [
+        "v1.0.3",
+        "v1.0.2",
+        "v1.0.1",
+        "v1.0.0"
+      ],
+      "topics": [
+        "vectors",
+        "3d-vectors",
+        "2d-vectors",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/js-vectors"
+    },
+    {
+      "commits": 16,
+      "created_timestamp": "2020-11-17T17:11:05",
+      "created_year": 2020,
+      "description": "A suite of looping animations made with p5js and perlin noise.",
+      "formatted_name": "p5js perlin",
+      "homepage": "https:\/\/lorenzoros.si\/p5js-perlin\/",
+      "homepage_clean": "lorenzoros.si\/p5js-perlin",
+      "languages": {
+        "CSS": 760,
+        "HTML": 1494,
+        "JavaScript": 41416
+      },
+      "last_pushed_timestamp": "2020-12-08T18:20:16",
+      "main_language": "JavaScript",
+      "name": "p5js-perlin",
+      "size": 551315,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "perlin-noise",
+        "p5js",
+        "animations",
+        "creativecoding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/p5js-perlin"
+    },
+    {
+      "commits": 15,
+      "created_timestamp": "2020-10-20T12:20:02",
+      "created_year": 2020,
+      "description": "A fireworks spectacle made in p5js.",
+      "formatted_name": "fireworks",
+      "homepage": "http:\/\/lorossi.github.io\/fireworks",
+      "homepage_clean": "lorossi.github.io\/fireworks",
+      "languages": {
+        "CSS": 496,
+        "HTML": 690,
+        "JavaScript": 13805
+      },
+      "last_pushed_timestamp": "2020-12-02T16:51:56",
+      "main_language": "JavaScript",
+      "name": "fireworks",
+      "size": 343,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "p5js",
+        "creative-coding",
+        "fireworks",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/fireworks"
+    },
+    {
+      "commits": 165,
+      "created_timestamp": "2020-07-08T16:22:03",
+      "created_year": 2020,
+      "description": "A repo for my website - lorenzoros.si.",
+      "formatted_name": "lorenzoros.si website",
+      "homepage": "https:\/\/lorenzoros.si\/",
+      "homepage_clean": "lorenzoros.si",
+      "languages": {
+        "CSS": 5677,
+        "HTML": 12096,
+        "JavaScript": 14357,
+        "Python": 6847
+      },
+      "last_pushed_timestamp": "2021-02-05T10:54:56",
+      "main_language": "JavaScript",
+      "name": "lorenzoros.si-website",
+      "size": 4341,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 32,
+      "created_timestamp": "2020-07-04T17:55:23",
+      "created_year": 2020,
+      "description": "A clever way to hide emails inside html web pages using client side JavaScript.",
+      "formatted_name": "email hide",
+      "homepage": "https:\/\/lorossi.github.io\/email-hide\/",
+      "homepage_clean": "lorossi.github.io\/email-hide",
+      "languages": {
+        "CSS": 2377,
+        "HTML": 6965,
+        "JavaScript": 7892
+      },
+      "last_pushed_timestamp": "2020-12-08T14:33:29",
+      "main_language": "JavaScript",
+      "name": "email-hide",
+      "size": 409,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "javascript",
+        "spam-protection",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/email-hide"
+    },
+    {
+      "commits": 8,
+      "created_timestamp": "2020-03-14T16:06:55",
+      "created_year": 2020,
+      "description": "A simple yet fascinating way of visualizing the first million digits of PI.",
+      "formatted_name": "pi day 2020 visualization",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Processing": 5854
+      },
+      "last_pushed_timestamp": "2020-03-14T16:38:50",
+      "main_language": "Processing",
+      "name": "pi-day-2020-visualization",
+      "size": 151877,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "processing3",
+        "data-visualization",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/pi-day-2020-visualization"
+    },
+    {
+      "commits": 7,
+      "created_timestamp": "2020-03-01T16:09:42",
+      "created_year": 2020,
+      "description": "My personal implementation of a perlin flow field in Processing 3.",
+      "formatted_name": "perlin flow field",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Processing": 6179
+      },
+      "last_pushed_timestamp": "2020-03-01T16:30:19",
+      "main_language": "Processing",
+      "name": "perlin-flow-field",
+      "size": 2948,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "perlin-flow-field",
+        "processing3",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/perlin-flow-field"
+    },
+    {
+      "commits": 22,
+      "created_timestamp": "2021-01-25T18:14:51",
+      "created_year": 2021,
+      "description": "Extract the dominant colors from any image.",
+      "formatted_name": "image palette",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 17262
+      },
+      "last_pushed_timestamp": "2021-01-27T22:19:01",
+      "main_language": "Python",
+      "name": "image-palette",
+      "size": 10142,
+      "stars": 0,
+      "tags": [
+        "v.1.0.1",
+        "v1.0.0"
+      ],
+      "topics": [
+        "python3",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/image-palette"
+    },
+    {
+      "commits": 792,
+      "created_timestamp": "2021-01-05T17:12:28",
+      "created_year": 2021,
+      "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
+      "formatted_name": "vaccino covid19",
+      "homepage": "https:\/\/www.vaccinocovid19.live",
+      "homepage_clean": "vaccinocovid19.live",
+      "languages": {
+        "CSS": 7118,
+        "HTML": 16854,
+        "JavaScript": 49647,
+        "Python": 51606,
+        "Shell": 58
+      },
+      "last_pushed_timestamp": "2021-02-04T22:55:07",
+      "main_language": "Python",
+      "name": "vaccino-covid19",
+      "size": 3645,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "opendata",
+        "visualization",
+        "released",
+        "italy",
+        "fullstack"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/vaccino-covid19"
+    },
+    {
+      "commits": 33,
+      "created_timestamp": "2020-12-12T18:03:06",
+      "created_year": 2020,
+      "description": "A moving animation of Italy in all of its geological beauty.",
+      "formatted_name": "perlin italy map",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 16650
+      },
+      "last_pushed_timestamp": "2021-01-27T09:24:51",
+      "main_language": "Python",
+      "name": "perlin-italy-map",
+      "size": 158942,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "italy",
+        "python3",
+        "creativecoding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/perlin-italy-map"
+    },
+    {
+      "commits": 99,
+      "created_timestamp": "2020-11-24T13:31:02",
+      "created_year": 2020,
+      "description": "A Python script generating images with all the RGB colors in a set bit depth.",
+      "formatted_name": "every color",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 21753
+      },
+      "last_pushed_timestamp": "2021-01-27T09:24:19",
+      "main_language": "Python",
+      "name": "every-color",
+      "size": 231610,
+      "stars": 0,
+      "tags": [
+        "v1.0.1",
+        "1.0"
+      ],
+      "topics": [
+        "python3",
+        "generative-art",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/every-color"
+    },
+    {
+      "commits": 53,
+      "created_timestamp": "2020-11-18T15:24:37",
+      "created_year": 2020,
+      "description": "Handy way to constantly check some hardware stats via browser.",
+      "formatted_name": "performances monitor",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "CSS": 6416,
+        "HTML": 4856,
+        "JavaScript": 6393,
+        "Python": 14071
+      },
+      "last_pushed_timestamp": "2021-01-27T09:25:30",
+      "main_language": "Python",
+      "name": "performances-monitor",
+      "size": 664,
+      "stars": 0,
+      "tags": [
+        "v1.0"
+      ],
+      "topics": [
+        "stats",
+        "visualization",
+        "hardware",
+        "webpage",
+        "python3",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/performances-monitor"
+    },
+    {
+      "commits": 26,
+      "created_timestamp": "2020-07-13T11:59:30",
+      "created_year": 2020,
+      "description": "An unofficial Python API for BikeMi.",
+      "formatted_name": "bikemi python unofficial api",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 14029
+      },
+      "last_pushed_timestamp": "2021-02-05T09:30:09",
+      "main_language": "Python",
+      "name": "bikemi-python-unofficial-api",
+      "size": 65,
+      "stars": 0,
+      "tags": [
+        "v1.0"
+      ],
+      "topics": [
+        "python3",
+        "opendata",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/bikemi-python-unofficial-api"
+    },
+    {
+      "commits": 18,
+      "created_timestamp": "2020-07-11T16:18:11",
+      "created_year": 2020,
+      "description": "A flask based dashboard for my Raspberry Pi.",
+      "formatted_name": "rpi homepage",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "CSS": 3155,
+        "HTML": 2054,
+        "JavaScript": 2874,
+        "Python": 9761
+      },
+      "last_pushed_timestamp": "2020-12-08T13:42:50",
+      "main_language": "Python",
+      "name": "rpi-homepage",
+      "size": 776,
+      "stars": 0,
+      "tags": [
+        "v1.0.0"
+      ],
+      "topics": [
+        "webpage",
+        "stats",
+        "hardware",
+        "python3",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/rpi-homepage"
+    },
+    {
+      "commits": 31,
+      "created_timestamp": "2020-06-17T09:29:12",
+      "created_year": 2020,
+      "description": "Hide text informations using invisible text characters.",
+      "formatted_name": "zero width steganography",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 27902
+      },
+      "last_pushed_timestamp": "2020-07-09T15:01:32",
+      "main_language": "Python",
+      "name": "zero-width-steganography",
+      "size": 67,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "released",
+        "encoding",
+        "whitespaces"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/zero-width-steganography"
+    },
+    {
+      "commits": 16,
+      "created_timestamp": "2020-06-05T13:11:52",
+      "created_year": 2020,
+      "description": "Free delivery of cute corgis images.",
+      "formatted_name": "corgos telegram bot",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 22775
+      },
+      "last_pushed_timestamp": "2021-01-27T09:25:18",
+      "main_language": "Python",
+      "name": "corgos-telegram-bot",
+      "size": 83,
+      "stars": 0,
+      "tags": [
+        "v1.0.1",
+        "v1.0"
+      ],
+      "topics": [
+        "telegram-bot",
+        "corgi",
+        "telegram",
+        "python3",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/corgos-telegram-bot"
+    },
+    {
+      "commits": 5,
+      "created_timestamp": "2020-04-01T10:10:09",
+      "created_year": 2020,
+      "description": "Formulario del corso di Optoelettronica - Ing. Elettronica - AA 2019\/2020.",
+      "formatted_name": "formulario optoelettronica",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "TeX": 8387
+      },
+      "last_pushed_timestamp": "2020-04-04T13:33:00",
+      "main_language": "TeX",
+      "name": "formulario-optoelettronica",
+      "size": 311,
+      "stars": 1,
+      "tags": [],
+      "topics": [
+        "formulario",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/formulario-optoelettronica"
+    },
+    {
+      "commits": 36,
+      "created_timestamp": "2020-03-23T16:55:33",
+      "created_year": 2020,
+      "description": "Formulario del corso di Campi Elettromagetici - Ing. Elettronica - AA 2019\/2020.",
+      "formatted_name": "formulario campi elettromagnetici",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "TeX": 52051
+      },
+      "last_pushed_timestamp": "2020-10-24T16:53:52",
+      "main_language": "TeX",
+      "name": "formulario-campi-elettromagnetici",
+      "size": 3769,
+      "stars": 1,
+      "tags": [],
+      "topics": [
+        "released",
+        "formulario"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/formulario-campi-elettromagnetici"
+    },
+    {
+      "commits": 13,
+      "created_timestamp": "2020-01-16T20:16:27",
+      "created_year": 2020,
+      "description": "Appunti di VHDL.",
+      "formatted_name": "appunti vhdl",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "TeX": 36613
+      },
+      "last_pushed_timestamp": "2021-02-05T09:21:02",
+      "main_language": "TeX",
+      "name": "appunti-vhdl",
+      "size": 1956,
+      "stars": 3,
+      "tags": [
+        "v1.1",
+        "v1.0"
+      ],
+      "topics": [
+        "vhdl",
+        "cheatsheet",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/appunti-vhdl"
+    }
+  ],
+  "stats": {
+    "last_updated": "2021-02-05T12:06:02.295259",
+    "total_commits": 1551,
+    "total_languages": 8,
+    "total_new_repos": 23,
+    "total_size": 628792,
+    "total_stars": 5
+  }
+}
