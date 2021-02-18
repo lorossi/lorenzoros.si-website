@@ -44,7 +44,7 @@ a, a:visited {
   text-decoration: none;
 }
 
-*:lang(it) {
+*:lang(it-IT) {
   display: none;
 }
 
@@ -95,6 +95,10 @@ body {
   max-height: 100vh;
 }
 
+.navbar, .title {
+  user-select: none;
+}
+
 .navbar {
   position: absolute;
   top: 0;
@@ -107,19 +111,23 @@ body {
   z-index: 200;
 }
 
-.navbar a, .navbar p {
+.navbar a {
   line-height: var(--small-text-size);
   padding: 0.5rem;
-  text-decoration: underline;
   cursor: pointer;
+}
+
+.navbar span {
+  text-decoration: underline;
 }
 
 .flag {
   display: inline-block;
   vertical-align: middle;
   background-size: contain;
-  width: calc(var(--small-text-size) / 3);
-  height: auto;
+  width: calc(var(--small-text-size));
+  height: calc(var(--small-text-size));
+  margin-top: calc(var(--small-text-size) / 6);
   margin-left: calc(var(--small-text-size) / 3);
 }
 

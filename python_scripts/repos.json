@@ -1,52 +1,64 @@
 {
   "languages": [
     {
-      "absolute_size": 224425,
+      "absolute_size": 232344,
       "language": "JavaScript",
-      "relative_size": 0.3569145281746587,
-      "relative_size_formatted": "35.69%"
+      "relative_size": 0.34382570169039056,
+      "relative_size_formatted": "34.38%"
     },
     {
-      "absolute_size": 205504,
+      "absolute_size": 208767,
       "language": "Python",
-      "relative_size": 0.32682349648214354,
-      "relative_size_formatted": "32.68%"
+      "relative_size": 0.30893614754328824,
+      "relative_size_formatted": "30.89%"
     },
     {
-      "absolute_size": 97051,
+      "absolute_size": 97826,
       "language": "TeX",
-      "relative_size": 0.15434515706306695,
-      "relative_size_formatted": "15.43%"
+      "relative_size": 0.14476419917692793,
+      "relative_size_formatted": "14.48%"
     },
     {
-      "absolute_size": 51054,
+      "absolute_size": 59024,
       "language": "HTML",
-      "relative_size": 0.08119378109136248,
-      "relative_size_formatted": "8.12%"
+      "relative_size": 0.0873444901377854,
+      "relative_size_formatted": "8.73%"
     },
     {
-      "absolute_size": 31695,
+      "absolute_size": 32409,
       "language": "CSS",
-      "relative_size": 0.05040617565108971,
-      "relative_size_formatted": "5.04%"
+      "relative_size": 0.04795926370417944,
+      "relative_size_formatted": "4.8%"
+    },
+    {
+      "absolute_size": 26040,
+      "language": "Go",
+      "relative_size": 0.03853433388431709,
+      "relative_size_formatted": "3.85%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.019136693851066807,
-      "relative_size_formatted": "1.91%"
+      "relative_size": 0.017806591383640075,
+      "relative_size_formatted": "1.78%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.011087927327319686,
-      "relative_size_formatted": "1.11%"
+      "relative_size": 0.010317257136768768,
+      "relative_size_formatted": "1.03%"
     },
     {
-      "absolute_size": 58,
+      "absolute_size": 173,
+      "language": "Batchfile",
+      "relative_size": 0.00025600767135126174,
+      "relative_size_formatted": "0.03%"
+    },
+    {
+      "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 9.224035929210296e-5,
-      "relative_size_formatted": "0.01%"
+      "relative_size": 0.00025600767135126174,
+      "relative_size_formatted": "0.03%"
     }
   ],
   "repos": [
@@ -66,13 +78,104 @@
       "name": "fireflies-in-a-jar",
       "size": 20,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "arduino",
         "led",
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/fireflies-in-a-jar"
+    },
+    {
+      "commits": 52,
+      "created_timestamp": "2021-02-12T21:45:02",
+      "created_year": 2021,
+      "description": "A simple CLI journal made in Go.",
+      "formatted_name": "go journal",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Batchfile": 173,
+        "Go": 26040,
+        "Python": 1490,
+        "Shell": 115
+      },
+      "last_pushed_timestamp": "2021-02-18T16:50:09",
+      "main_language": "Go",
+      "name": "go-journal",
+      "size": 41380,
+      "stars": 0,
+      "tags": [
+        "v1.1.0",
+        "1.0.1",
+        "1.0.0"
+      ],
+      "topics": [
+        "golang",
+        "go",
+        "journal",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/go-journal"
+    },
+    {
+      "commits": 166,
+      "created_timestamp": "2020-07-08T16:22:03",
+      "created_year": 2020,
+      "description": "A repo for my website - lorenzoros.si.",
+      "formatted_name": "lorenzoros.si website",
+      "homepage": "https:\/\/lorenzoros.si\/",
+      "homepage_clean": "lorenzoros.si",
+      "languages": {
+        "CSS": 5677,
+        "HTML": 18667,
+        "JavaScript": 14357,
+        "Python": 6847
+      },
+      "last_pushed_timestamp": "2021-02-09T15:13:58",
+      "main_language": "HTML",
+      "name": "lorenzoros.si-website",
+      "size": 4323,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 10,
+      "created_timestamp": "2021-02-05T14:34:02",
+      "created_year": 2021,
+      "description": "I challenged myself. Could I create some good looking looping animations in less than 24 hours?",
+      "formatted_name": "trippy animations",
+      "homepage": "https:\/\/www.lorenzoros.si\/trippy-animations",
+      "homepage_clean": "lorenzoros.si\/trippy-animations",
+      "languages": {
+        "CSS": 714,
+        "HTML": 1399,
+        "JavaScript": 7919,
+        "Python": 1773
+      },
+      "last_pushed_timestamp": "2021-02-06T14:05:59",
+      "main_language": "JavaScript",
+      "name": "trippy-animations",
+      "size": 162485,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "p5js",
+        "creativecoding",
+        "released",
+        "javascript"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/trippy-animations"
     },
     {
       "commits": 11,
@@ -92,7 +195,9 @@
       "name": "random-mondrian",
       "size": 1632,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "creative-coding",
         "canvasjs",
@@ -102,7 +207,7 @@
       "url": "https:\/\/github.com\/lorossi\/random-mondrian"
     },
     {
-      "commits": 11,
+      "commits": 12,
       "created_timestamp": "2021-01-04T23:10:16",
       "created_year": 2021,
       "description": "My parents never bought me a spirograph when I was a child... but now I can code.",
@@ -114,12 +219,14 @@
         "HTML": 3124,
         "JavaScript": 35515
       },
-      "last_pushed_timestamp": "2021-01-27T08:12:20",
+      "last_pushed_timestamp": "2021-02-10T09:10:41",
       "main_language": "JavaScript",
       "name": "digital-spirograph",
-      "size": 175,
+      "size": 176,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "js",
         "canvas",
@@ -147,7 +254,9 @@
       "name": "painting-bubbles",
       "size": 2208964,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "creativecoding",
         "jscanvas",
@@ -204,7 +313,9 @@
       "name": "p5js-perlin",
       "size": 551315,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "perlin-noise",
         "p5js",
@@ -232,7 +343,9 @@
       "name": "fireworks",
       "size": 343,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "p5js",
         "creative-coding",
@@ -240,31 +353,6 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/fireworks"
-    },
-    {
-      "commits": 165,
-      "created_timestamp": "2020-07-08T16:22:03",
-      "created_year": 2020,
-      "description": "A repo for my website - lorenzoros.si.",
-      "formatted_name": "lorenzoros.si website",
-      "homepage": "https:\/\/lorenzoros.si\/",
-      "homepage_clean": "lorenzoros.si",
-      "languages": {
-        "CSS": 5677,
-        "HTML": 12096,
-        "JavaScript": 14357,
-        "Python": 6847
-      },
-      "last_pushed_timestamp": "2021-02-05T10:54:56",
-      "main_language": "JavaScript",
-      "name": "lorenzoros.si-website",
-      "size": 4341,
-      "stars": 0,
-      "tags": [],
-      "topics": [
-        "released"
-      ],
-      "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
     },
     {
       "commits": 32,
@@ -284,7 +372,9 @@
       "name": "email-hide",
       "size": 409,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "javascript",
         "spam-protection",
@@ -308,7 +398,9 @@
       "name": "pi-day-2020-visualization",
       "size": 151877,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "processing3",
         "data-visualization",
@@ -333,7 +425,9 @@
       "name": "perlin-flow-field",
       "size": 2948,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "perlin-flow-field",
         "processing3",
@@ -370,7 +464,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 792,
+      "commits": 805,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -384,12 +478,14 @@
         "Python": 51606,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-02-04T22:55:07",
+      "last_pushed_timestamp": "2021-02-17T22:55:07",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 3645,
+      "size": 4790,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "opendata",
         "visualization",
@@ -415,7 +511,9 @@
       "name": "perlin-italy-map",
       "size": 158942,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "italy",
         "python3",
@@ -556,7 +654,9 @@
       "name": "zero-width-steganography",
       "size": 67,
       "stars": 0,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "released",
         "encoding",
@@ -570,8 +670,8 @@
       "created_year": 2020,
       "description": "Free delivery of cute corgis images.",
       "formatted_name": "corgos telegram bot",
-      "homepage": "",
-      "homepage_clean": null,
+      "homepage": "https:\/\/t.me\/corgos_bot",
+      "homepage_clean": "t.me\/corgos_bot",
       "languages": {
         "Python": 22775
       },
@@ -609,7 +709,9 @@
       "name": "formulario-optoelettronica",
       "size": 311,
       "stars": 1,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "formulario",
         "released"
@@ -617,7 +719,7 @@
       "url": "https:\/\/github.com\/lorossi\/formulario-optoelettronica"
     },
     {
-      "commits": 36,
+      "commits": 37,
       "created_timestamp": "2020-03-23T16:55:33",
       "created_year": 2020,
       "description": "Formulario del corso di Campi Elettromagetici - Ing. Elettronica - AA 2019\/2020.",
@@ -625,14 +727,16 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "TeX": 52051
+        "TeX": 52826
       },
-      "last_pushed_timestamp": "2020-10-24T16:53:52",
+      "last_pushed_timestamp": "2021-02-10T09:07:58",
       "main_language": "TeX",
       "name": "formulario-campi-elettromagnetici",
-      "size": 3769,
+      "size": 3895,
       "stars": 1,
-      "tags": [],
+      "tags": [
+
+      ],
       "topics": [
         "released",
         "formulario"
@@ -668,11 +772,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-02-05T12:06:02.295259",
-    "total_commits": 1551,
-    "total_languages": 8,
-    "total_new_repos": 23,
-    "total_size": 628792,
+    "last_updated": "2021-02-18T22:15:27.194781",
+    "total_commits": 1629,
+    "total_languages": 10,
+    "total_new_repos": 25,
+    "total_size": 675761,
     "total_stars": 5
   }
 }
