@@ -1,64 +1,64 @@
 {
   "languages": [
     {
-      "absolute_size": 232344,
+      "absolute_size": 231758,
       "language": "JavaScript",
-      "relative_size": 0.34382570169039056,
-      "relative_size_formatted": "34.38%"
+      "relative_size": 0.33130814668260133,
+      "relative_size_formatted": "33.13%"
     },
     {
-      "absolute_size": 208767,
+      "absolute_size": 208442,
       "language": "Python",
-      "relative_size": 0.30893614754328824,
-      "relative_size_formatted": "30.89%"
+      "relative_size": 0.2979769100130946,
+      "relative_size_formatted": "29.8%"
     },
     {
       "absolute_size": 97826,
       "language": "TeX",
-      "relative_size": 0.14476419917692793,
-      "relative_size_formatted": "14.48%"
+      "relative_size": 0.13984652420788993,
+      "relative_size_formatted": "13.98%"
     },
     {
-      "absolute_size": 59024,
+      "absolute_size": 62354,
       "language": "HTML",
-      "relative_size": 0.0873444901377854,
-      "relative_size_formatted": "8.73%"
+      "relative_size": 0.08913775653158433,
+      "relative_size_formatted": "8.91%"
     },
     {
-      "absolute_size": 32409,
-      "language": "CSS",
-      "relative_size": 0.04795926370417944,
-      "relative_size_formatted": "4.8%"
-    },
-    {
-      "absolute_size": 26040,
+      "absolute_size": 47265,
       "language": "Go",
-      "relative_size": 0.03853433388431709,
-      "relative_size_formatted": "3.85%"
+      "relative_size": 0.06756737438601106,
+      "relative_size_formatted": "6.76%"
+    },
+    {
+      "absolute_size": 32528,
+      "language": "CSS",
+      "relative_size": 0.046500191558831436,
+      "relative_size_formatted": "4.65%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.017806591383640075,
-      "relative_size_formatted": "1.78%"
+      "relative_size": 0.017201697154064763,
+      "relative_size_formatted": "1.72%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.010317257136768768,
-      "relative_size_formatted": "1.03%"
+      "relative_size": 0.009966777408637873,
+      "relative_size_formatted": "1.0%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00025600767135126174,
-      "relative_size_formatted": "0.03%"
+      "relative_size": 0.00024731102864233395,
+      "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.00025600767135126174,
-      "relative_size_formatted": "0.03%"
+      "relative_size": 0.00024731102864233395,
+      "relative_size_formatted": "0.02%"
     }
   ],
   "repos": [
@@ -89,26 +89,55 @@
       "url": "https:\/\/github.com\/lorossi\/fireflies-in-a-jar"
     },
     {
-      "commits": 52,
+      "commits": 21,
+      "created_timestamp": "2021-02-24T17:15:46",
+      "created_year": 2021,
+      "description": "A sudoku solver made in Go, supporting text and image input.",
+      "formatted_name": "sudoku solver",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Go": 19381
+      },
+      "last_pushed_timestamp": "2021-02-26T19:55:30",
+      "main_language": "Go",
+      "name": "sudoku-solver",
+      "size": 16305,
+      "stars": 0,
+      "tags": [
+        "v1.0.0"
+      ],
+      "topics": [
+        "golang",
+        "go",
+        "ocr",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/sudoku-solver"
+    },
+    {
+      "commits": 79,
       "created_timestamp": "2021-02-12T21:45:02",
       "created_year": 2021,
       "description": "A simple CLI journal made in Go.",
-      "formatted_name": "go journal",
+      "formatted_name": "journal",
       "homepage": "",
       "homepage_clean": null,
       "languages": {
         "Batchfile": 173,
-        "Go": 26040,
-        "Python": 1490,
+        "Go": 27884,
+        "Python": 1165,
         "Shell": 115
       },
-      "last_pushed_timestamp": "2021-02-18T16:50:09",
+      "last_pushed_timestamp": "2021-02-28T22:20:17",
       "main_language": "Go",
-      "name": "go-journal",
-      "size": 41380,
+      "name": "journal",
+      "size": 67354,
       "stars": 0,
       "tags": [
+        "v1.1.1",
         "v1.1.0",
+        "1.1.2",
         "1.0.1",
         "1.0.0"
       ],
@@ -118,10 +147,10 @@
         "journal",
         "released"
       ],
-      "url": "https:\/\/github.com\/lorossi\/go-journal"
+      "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 166,
+      "commits": 167,
       "created_timestamp": "2020-07-08T16:22:03",
       "created_year": 2020,
       "description": "A repo for my website - lorenzoros.si.",
@@ -129,15 +158,15 @@
       "homepage": "https:\/\/lorenzoros.si\/",
       "homepage_clean": "lorenzoros.si",
       "languages": {
-        "CSS": 5677,
-        "HTML": 18667,
-        "JavaScript": 14357,
+        "CSS": 5796,
+        "HTML": 21997,
+        "JavaScript": 13771,
         "Python": 6847
       },
-      "last_pushed_timestamp": "2021-02-09T15:13:58",
+      "last_pushed_timestamp": "2021-02-18T21:18:25",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 4323,
+      "size": 4331,
       "stars": 0,
       "tags": [
 
@@ -464,7 +493,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 805,
+      "commits": 815,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -478,10 +507,10 @@
         "Python": 51606,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-02-17T22:55:07",
+      "last_pushed_timestamp": "2021-02-27T22:55:05",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 4790,
+      "size": 5167,
       "stars": 0,
       "tags": [
 
@@ -772,11 +801,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-02-18T22:15:27.194781",
-    "total_commits": 1629,
+    "last_updated": "2021-02-28T23:25:20.840792",
+    "total_commits": 1688,
     "total_languages": 10,
-    "total_new_repos": 25,
-    "total_size": 675761,
+    "total_new_repos": 26,
+    "total_size": 699524,
     "total_stars": 5
   }
 }
