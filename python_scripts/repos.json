@@ -1,63 +1,63 @@
 {
   "languages": [
     {
-      "absolute_size": 231758,
+      "absolute_size": 304232,
       "language": "JavaScript",
-      "relative_size": 0.33130814668260133,
-      "relative_size_formatted": "33.13%"
+      "relative_size": 0.37459337130586606,
+      "relative_size_formatted": "37.46%"
     },
     {
-      "absolute_size": 208442,
+      "absolute_size": 228860,
       "language": "Python",
-      "relative_size": 0.2979769100130946,
-      "relative_size_formatted": "29.8%"
+      "relative_size": 0.2817896833898489,
+      "relative_size_formatted": "28.18%"
     },
     {
-      "absolute_size": 97826,
+      "absolute_size": 97883,
       "language": "TeX",
-      "relative_size": 0.13984652420788993,
-      "relative_size_formatted": "13.98%"
+      "relative_size": 0.12052092798762815,
+      "relative_size_formatted": "12.05%"
     },
     {
-      "absolute_size": 62354,
+      "absolute_size": 65894,
       "language": "HTML",
-      "relative_size": 0.08913775653158433,
-      "relative_size_formatted": "8.91%"
+      "relative_size": 0.08113365986756402,
+      "relative_size_formatted": "8.11%"
     },
     {
-      "absolute_size": 47265,
+      "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.06756737438601106,
-      "relative_size_formatted": "6.76%"
+      "relative_size": 0.07432224446726408,
+      "relative_size_formatted": "7.43%"
     },
     {
-      "absolute_size": 32528,
+      "absolute_size": 35584,
       "language": "CSS",
-      "relative_size": 0.046500191558831436,
-      "relative_size_formatted": "4.65%"
+      "relative_size": 0.04381370310995535,
+      "relative_size_formatted": "4.38%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.017201697154064763,
-      "relative_size_formatted": "1.72%"
+      "relative_size": 0.014815936643494064,
+      "relative_size_formatted": "1.48%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.009966777408637873,
-      "relative_size_formatted": "1.0%"
+      "relative_size": 0.008584451947015757,
+      "relative_size_formatted": "0.86%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00024731102864233395,
+      "relative_size": 0.00021301064068183104,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.00024731102864233395,
+      "relative_size": 0.00021301064068183104,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -89,6 +89,36 @@
       "url": "https:\/\/github.com\/lorossi\/fireflies-in-a-jar"
     },
     {
+      "commits": 48,
+      "created_timestamp": "2021-02-24T20:27:06",
+      "created_year": 2021,
+      "description": "Simple Go package to have colored and formatted text inside your terminal.",
+      "formatted_name": "colorize",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Go": 12910
+      },
+      "last_pushed_timestamp": "2021-04-08T22:16:41",
+      "main_language": "Go",
+      "name": "colorize",
+      "size": 194,
+      "stars": 0,
+      "tags": [
+        "v1.0.2",
+        "v1.0.1",
+        "v1.0.0"
+      ],
+      "topics": [
+        "golang-package",
+        "go-package",
+        "colors",
+        "terminal",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/colorize"
+    },
+    {
       "commits": 21,
       "created_timestamp": "2021-02-24T17:15:46",
       "created_year": 2021,
@@ -116,7 +146,7 @@
       "url": "https:\/\/github.com\/lorossi\/sudoku-solver"
     },
     {
-      "commits": 79,
+      "commits": 90,
       "created_timestamp": "2021-02-12T21:45:02",
       "created_year": 2021,
       "description": "A simple CLI journal made in Go.",
@@ -125,14 +155,14 @@
       "homepage_clean": null,
       "languages": {
         "Batchfile": 173,
-        "Go": 27884,
+        "Go": 28071,
         "Python": 1165,
         "Shell": 115
       },
-      "last_pushed_timestamp": "2021-02-28T22:20:17",
+      "last_pushed_timestamp": "2021-03-04T21:36:45",
       "main_language": "Go",
       "name": "journal",
-      "size": 67354,
+      "size": 72963,
       "stars": 0,
       "tags": [
         "v1.1.1",
@@ -175,6 +205,68 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 40,
+      "created_timestamp": "2021-04-08T14:17:52",
+      "created_year": 2021,
+      "description": "Fairly simple and straitforward boids simulation in EcmaScript.",
+      "formatted_name": "boids",
+      "homepage": "https:\/\/lorenzoros.si\/boids\/",
+      "homepage_clean": "lorenzoros.si\/boids",
+      "languages": {
+        "CSS": 2541,
+        "HTML": 3943,
+        "JavaScript": 23232
+      },
+      "last_pushed_timestamp": "2021-04-11T21:44:09",
+      "main_language": "JavaScript",
+      "name": "boids",
+      "size": 177,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "ecmascript",
+        "javascript",
+        "canvas",
+        "released",
+        "html5",
+        "html5-canvas"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/boids"
+    },
+    {
+      "commits": 43,
+      "created_timestamp": "2021-03-31T16:40:26",
+      "created_year": 2021,
+      "description": "Paintings are nice. Am i right?",
+      "formatted_name": "procedural paintings",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "CSS": 538,
+        "HTML": 1468,
+        "JavaScript": 48467
+      },
+      "last_pushed_timestamp": "2021-04-11T21:46:56",
+      "main_language": "JavaScript",
+      "name": "procedural-paintings",
+      "size": 336,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "javascript",
+        "ecmascript",
+        "canvas",
+        "html5",
+        "html5-canvas",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/procedural-paintings"
     },
     {
       "commits": 10,
@@ -236,7 +328,7 @@
       "url": "https:\/\/github.com\/lorossi\/random-mondrian"
     },
     {
-      "commits": 12,
+      "commits": 13,
       "created_timestamp": "2021-01-04T23:10:16",
       "created_year": 2021,
       "description": "My parents never bought me a spirograph when I was a child... but now I can code.",
@@ -245,13 +337,13 @@
       "homepage_clean": "lorenzoros.si\/digital-spirograph",
       "languages": {
         "CSS": 1571,
-        "HTML": 3124,
+        "HTML": 3482,
         "JavaScript": 35515
       },
-      "last_pushed_timestamp": "2021-02-10T09:10:41",
+      "last_pushed_timestamp": "2021-04-08T22:16:18",
       "main_language": "JavaScript",
       "name": "digital-spirograph",
-      "size": 176,
+      "size": 178,
       "stars": 0,
       "tags": [
 
@@ -295,7 +387,7 @@
       "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
     },
     {
-      "commits": 20,
+      "commits": 24,
       "created_timestamp": "2020-12-02T16:20:21",
       "created_year": 2020,
       "description": "A simple 2D and 3D vectors library made in JS.",
@@ -303,14 +395,15 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "JavaScript": 12539
+        "JavaScript": 12685
       },
-      "last_pushed_timestamp": "2021-01-10T13:46:59",
+      "last_pushed_timestamp": "2021-04-02T08:42:03",
       "main_language": "JavaScript",
       "name": "js-vectors",
-      "size": 39,
+      "size": 53,
       "stars": 0,
       "tags": [
+        "v1.0.4",
         "v1.0.3",
         "v1.0.2",
         "v1.0.1",
@@ -466,7 +559,7 @@
       "url": "https:\/\/github.com\/lorossi\/perlin-flow-field"
     },
     {
-      "commits": 22,
+      "commits": 23,
       "created_timestamp": "2021-01-25T18:14:51",
       "created_year": 2021,
       "description": "Extract the dominant colors from any image.",
@@ -474,12 +567,12 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "Python": 17262
+        "Python": 17297
       },
-      "last_pushed_timestamp": "2021-01-27T22:19:01",
+      "last_pushed_timestamp": "2021-04-08T22:17:21",
       "main_language": "Python",
       "name": "image-palette",
-      "size": 10142,
+      "size": 10146,
       "stars": 0,
       "tags": [
         "v.1.0.1",
@@ -493,7 +586,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 815,
+      "commits": 937,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -501,17 +594,17 @@
       "homepage": "https:\/\/www.vaccinocovid19.live",
       "homepage_clean": "vaccinocovid19.live",
       "languages": {
-        "CSS": 7118,
-        "HTML": 16854,
-        "JavaScript": 49647,
-        "Python": 51606,
+        "CSS": 7095,
+        "HTML": 14625,
+        "JavaScript": 50276,
+        "Python": 71989,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-02-27T22:55:05",
+      "last_pushed_timestamp": "2021-04-10T21:55:10",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 5167,
-      "stars": 0,
+      "size": 9660,
+      "stars": 1,
       "tags": [
 
       ],
@@ -773,7 +866,7 @@
       "url": "https:\/\/github.com\/lorossi\/formulario-campi-elettromagnetici"
     },
     {
-      "commits": 13,
+      "commits": 16,
       "created_timestamp": "2020-01-16T20:16:27",
       "created_year": 2020,
       "description": "Appunti di VHDL.",
@@ -781,12 +874,12 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "TeX": 36613
+        "TeX": 36670
       },
-      "last_pushed_timestamp": "2021-02-05T09:21:02",
+      "last_pushed_timestamp": "2021-03-15T13:38:06",
       "main_language": "TeX",
       "name": "appunti-vhdl",
-      "size": 1956,
+      "size": 2014,
       "stars": 3,
       "tags": [
         "v1.1",
@@ -801,11 +894,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-02-28T23:25:20.840792",
-    "total_commits": 1688,
+    "last_updated": "2021-04-11T23:51:14.950944",
+    "total_commits": 1961,
     "total_languages": 10,
-    "total_new_repos": 26,
-    "total_size": 699524,
-    "total_stars": 5
+    "total_new_repos": 29,
+    "total_size": 812166,
+    "total_stars": 6
   }
 }
