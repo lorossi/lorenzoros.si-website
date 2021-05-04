@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  font-family: Hack-Regular;
+}
+
+a:hover, a:active {
+  color: var(--link-hover-color)
+}
+
+a:visited {
+  color: inherit;
+}
+
+.navbar {
+  margin: var(--text-size);
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container {
+  width: 90vw;
+  margin-left: 7.5vw;
+}
+
+.typer {
+  margin-top: var(--title-size);
+  font-size: var(--title-size);
+    text-shadow: 1px 1px #BFBFBF;
+}
+
+.typer p {
+  line-height: 120%;
+  margin-bottom: calc(var(--title-size) / 2);  
+}
