@@ -1,63 +1,63 @@
 {
   "languages": [
     {
-      "absolute_size": 304232,
+      "absolute_size": 350037,
       "language": "JavaScript",
-      "relative_size": 0.37459337130586606,
-      "relative_size_formatted": "37.46%"
+      "relative_size": 0.39848205768044204,
+      "relative_size_formatted": "39.85%"
     },
     {
-      "absolute_size": 228860,
+      "absolute_size": 229080,
       "language": "Python",
-      "relative_size": 0.2817896833898489,
-      "relative_size_formatted": "28.18%"
+      "relative_size": 0.2607846306917145,
+      "relative_size_formatted": "26.08%"
     },
     {
-      "absolute_size": 97883,
+      "absolute_size": 109661,
       "language": "TeX",
-      "relative_size": 0.12052092798762815,
-      "relative_size_formatted": "12.05%"
+      "relative_size": 0.12483806262565088,
+      "relative_size_formatted": "12.48%"
     },
     {
-      "absolute_size": 65894,
+      "absolute_size": 70651,
       "language": "HTML",
-      "relative_size": 0.08113365986756402,
-      "relative_size_formatted": "8.11%"
+      "relative_size": 0.08042908566003283,
+      "relative_size_formatted": "8.04%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.07432224446726408,
-      "relative_size_formatted": "7.43%"
+      "relative_size": 0.06871608991537136,
+      "relative_size_formatted": "6.87%"
     },
     {
-      "absolute_size": 35584,
+      "absolute_size": 39284,
       "language": "CSS",
-      "relative_size": 0.04381370310995535,
-      "relative_size_formatted": "4.38%"
+      "relative_size": 0.044720898516209674,
+      "relative_size_formatted": "4.47%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.014815936643494064,
-      "relative_size_formatted": "1.48%"
+      "relative_size": 0.01369836503017898,
+      "relative_size_formatted": "1.37%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.008584451947015757,
-      "relative_size_formatted": "0.86%"
+      "relative_size": 0.00793692354279131,
+      "relative_size_formatted": "0.79%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00021301064068183104,
+      "relative_size": 0.00019694316880420205,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.00021301064068183104,
+      "relative_size": 0.00019694316880420205,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -180,7 +180,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 167,
+      "commits": 169,
       "created_timestamp": "2020-07-08T16:22:03",
       "created_year": 2020,
       "description": "A repo for my website - lorenzoros.si.",
@@ -189,14 +189,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 5796,
-        "HTML": 21997,
+        "HTML": 22682,
         "JavaScript": 13771,
         "Python": 6847
       },
-      "last_pushed_timestamp": "2021-02-18T21:18:25",
+      "last_pushed_timestamp": "2021-04-11T21:53:08",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 4331,
+      "size": 4338,
       "stars": 0,
       "tags": [
 
@@ -207,7 +207,68 @@
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
     },
     {
-      "commits": 40,
+      "commits": 17,
+      "created_timestamp": "2021-04-26T11:11:50",
+      "created_year": 2021,
+      "description": "Variations on the surface tiling.",
+      "formatted_name": "circle tiling",
+      "homepage": "https:\/\/lorenzoros.si\/circle-tiling\/",
+      "homepage_clean": "lorenzoros.si\/circle-tiling",
+      "languages": {
+        "CSS": 1639,
+        "HTML": 2023,
+        "JavaScript": 10489
+      },
+      "last_pushed_timestamp": "2021-04-27T21:18:45",
+      "main_language": "JavaScript",
+      "name": "circle-tiling",
+      "size": 1914,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "html5-canvas",
+        "javascript",
+        "ecmascript",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/circle-tiling"
+    },
+    {
+      "commits": 17,
+      "created_timestamp": "2021-04-23T10:30:17",
+      "created_year": 2021,
+      "description": "Hexagons are special.",
+      "formatted_name": "hexagons",
+      "homepage": "https:\/\/www.lorenzoros.si\/HEXAGONS\/",
+      "homepage_clean": "lorenzoros.si\/HEXAGONS",
+      "languages": {
+        "CSS": 1725,
+        "HTML": 1682,
+        "JavaScript": 31856
+      },
+      "last_pushed_timestamp": "2021-04-26T16:41:10",
+      "main_language": "JavaScript",
+      "name": "HEXAGONS",
+      "size": 35784,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "canvas",
+        "procedural-generation",
+        "digitalart",
+        "released",
+        "javascript",
+        "ecmascript"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/HEXAGONS"
+    },
+    {
+      "commits": 42,
       "created_timestamp": "2021-04-08T14:17:52",
       "created_year": 2021,
       "description": "Fairly simple and straitforward boids simulation in EcmaScript.",
@@ -215,14 +276,14 @@
       "homepage": "https:\/\/lorenzoros.si\/boids\/",
       "homepage_clean": "lorenzoros.si\/boids",
       "languages": {
-        "CSS": 2541,
-        "HTML": 3943,
-        "JavaScript": 23232
+        "CSS": 2715,
+        "HTML": 4043,
+        "JavaScript": 24448
       },
-      "last_pushed_timestamp": "2021-04-11T21:44:09",
+      "last_pushed_timestamp": "2021-04-23T19:29:28",
       "main_language": "JavaScript",
       "name": "boids",
-      "size": 177,
+      "size": 197,
       "stars": 0,
       "tags": [
 
@@ -238,22 +299,22 @@
       "url": "https:\/\/github.com\/lorossi\/boids"
     },
     {
-      "commits": 43,
+      "commits": 59,
       "created_timestamp": "2021-03-31T16:40:26",
       "created_year": 2021,
       "description": "Paintings are nice. Am i right?",
       "formatted_name": "procedural paintings",
-      "homepage": "",
-      "homepage_clean": null,
+      "homepage": "https:\/\/www.lorenzoros.si\/procedural-paintings\/",
+      "homepage_clean": "lorenzoros.si\/procedural-paintings",
       "languages": {
-        "CSS": 538,
-        "HTML": 1468,
-        "JavaScript": 48467
+        "CSS": 575,
+        "HTML": 1645,
+        "JavaScript": 50207
       },
-      "last_pushed_timestamp": "2021-04-11T21:46:56",
+      "last_pushed_timestamp": "2021-04-23T21:42:02",
       "main_language": "JavaScript",
       "name": "procedural-paintings",
-      "size": 336,
+      "size": 70585,
       "stars": 0,
       "tags": [
 
@@ -299,7 +360,7 @@
       "url": "https:\/\/github.com\/lorossi\/trippy-animations"
     },
     {
-      "commits": 11,
+      "commits": 18,
       "created_timestamp": "2021-01-23T16:11:41",
       "created_year": 2021,
       "description": "Procedural generation of Mondrian-like paintings.",
@@ -307,14 +368,14 @@
       "homepage": "https:\/\/lorenzoros.si\/random-mondrian\/",
       "homepage_clean": "lorenzoros.si\/random-mondrian",
       "languages": {
-        "CSS": 1266,
-        "HTML": 1482,
-        "JavaScript": 12604
+        "CSS": 1391,
+        "HTML": 1572,
+        "JavaScript": 13108
       },
-      "last_pushed_timestamp": "2021-01-24T01:53:23",
+      "last_pushed_timestamp": "2021-04-27T14:08:54",
       "main_language": "JavaScript",
       "name": "random-mondrian",
-      "size": 1632,
+      "size": 2127,
       "stars": 0,
       "tags": [
 
@@ -387,7 +448,7 @@
       "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
     },
     {
-      "commits": 24,
+      "commits": 25,
       "created_timestamp": "2020-12-02T16:20:21",
       "created_year": 2020,
       "description": "A simple 2D and 3D vectors library made in JS.",
@@ -397,10 +458,10 @@
       "languages": {
         "JavaScript": 12685
       },
-      "last_pushed_timestamp": "2021-04-02T08:42:03",
+      "last_pushed_timestamp": "2021-04-11T21:57:26",
       "main_language": "JavaScript",
       "name": "js-vectors",
-      "size": 53,
+      "size": 54,
       "stars": 0,
       "tags": [
         "v1.0.4",
@@ -586,7 +647,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 937,
+      "commits": 956,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -597,13 +658,13 @@
         "CSS": 7095,
         "HTML": 14625,
         "JavaScript": 50276,
-        "Python": 71989,
+        "Python": 72209,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-04-10T21:55:10",
+      "last_pushed_timestamp": "2021-04-27T21:55:08",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 9660,
+      "size": 13091,
       "stars": 1,
       "tags": [
 
@@ -816,6 +877,32 @@
       "url": "https:\/\/github.com\/lorossi\/corgos-telegram-bot"
     },
     {
+      "commits": 10,
+      "created_timestamp": "2021-04-15T14:06:34",
+      "created_year": 2021,
+      "description": "Formulario del corso di Elettronica dello Stato Solido - AA 2020\/2021.",
+      "formatted_name": "formulario stato solido",
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "TeX": 11778
+      },
+      "last_pushed_timestamp": "2021-04-20T15:51:11",
+      "main_language": "TeX",
+      "name": "formulario-stato-solido",
+      "size": 1043,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "latex",
+        "elettronica-dello-stato-solido",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/formulario-stato-solido"
+    },
+    {
       "commits": 5,
       "created_timestamp": "2020-04-01T10:10:09",
       "created_year": 2020,
@@ -894,11 +981,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-04-11T23:51:14.950944",
-    "total_commits": 1961,
+    "last_updated": "2021-04-28T15:32:29.528704",
+    "total_commits": 2052,
     "total_languages": 10,
-    "total_new_repos": 29,
-    "total_size": 812166,
+    "total_new_repos": 32,
+    "total_size": 878426,
     "total_stars": 6
   }
 }
