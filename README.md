@@ -55,6 +55,7 @@ I have learned *A LOT* since I finished this website. I'm kinda half-tempted to 
 1. Use monospaced font (like Hack) because I think it's a better fit for what I'm trying to convey
 1. Design the website on paper BEFOREHAND instead of randomly trying a lot of styles (and then failing)
 1. Design *MOBILE FIRST* so it's not a pain to port it
+1. Add a photo of me (something a little bit creative, maybe) also to fill the last page (and because it would make a lot of sense)
 
 I still don't have a VPS so dynamic updating and server-side generation won't be something feasible. I don't really need it since manually updating about once a month it's not a big deal.
 
