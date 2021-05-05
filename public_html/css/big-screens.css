@@ -1,0 +1,35 @@
+@media screen and (min-width: 481px) and (max-width: 769px) {
+
+}
+
+@media screen and (min-width: 770px) {
+  .navbar {
+   margin-top: calc(var(--title-size) * 2);
+  }
+
+  .typer {
+    margin-top: calc(var(--title-size) * 3);
+  }
+
+  .typer p {
+    line-height: 120%;
+  }   
+
+  .language {
+    margin-bottom: calc(var(--text-size) * 1.5);
+  }
+
+  .project-container {
+    margin-left: var(--text-size);
+  }
+
+  .project-link {
+    display: inline-block;
+    margin: 0;
+    line-height: 150%;
+  } 
+
+  .glitchline {
+    height: 4px;
+  }
+}
