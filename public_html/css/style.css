@@ -32,12 +32,16 @@ a:visited {
   
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.navbar a {
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .section { 
   min-height: 100vh;
-  padding-bottom: 10vh;
 }
 
 .title {
@@ -68,21 +72,34 @@ a:visited {
   margin-bottom: calc(var(--text-size) / 2);
 }
 
-.projects-list {
+.projects-list, .links-list {
   list-style-type: none;
-
   margin-bottom: calc(var(--text-size) * 3);
 }
 
-.project-container {
+.project-container,  .links-container {
   margin-left: calc(var(--small-text-size) / 2);
   margin-bottom: calc(var(--small-text-size) * 2);
 }
+ .links-container {
+    margin-top: calc(var(--small-text-size) * 2);
+    opacity: 0.9;
+ }
+
+ .links-container a {
+   font-family: HackItalic;
+   opacity: 1;
+ }
 
 .project-container::before {
   content: "> ";
   font-size: var(--small-text-size);
 }
+
+ .links-container::before {
+  content: "> ";
+  font-size: var(--text-size);
+ }
 
 .project-title {
   font-size: var(--small-text-size);
@@ -118,14 +135,14 @@ a:visited {
   text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
 }
 
-.projects-list, .language, .small-aberration {
+.projects-list, .links-list, .small-aberration {
   text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
 .glitchline {
   position: absolute;
   width: 100vw;
-  height: 3px;
+  height: 5px;
   z-index: -100;
   opacity: 0;
 
@@ -144,5 +161,5 @@ a:visited {
 
 @keyframes line {
   from {opacity: 0;}
-  to {opacity: 0.5;}
+  to {opacity: 0.75;}
 }
