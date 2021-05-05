@@ -15,11 +15,12 @@ body {
   min-height: 95%;
   background-color: var(--background-color);
   color: var(--text-color);
-
   font-family: Hack-Regular;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   color: inherit;
 }
 
@@ -36,7 +37,6 @@ a:visited {
 
 .navbar {
   margin-top: calc(var(--text-size) * 2);
-  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,13 +47,13 @@ a:visited {
   margin-right: 5vw;
 }
 
-.section { 
+.section {
   min-height: 100vh;
+  position: relative;
 }
 
 .title {
   font-size: var(--title-size);
-
   padding-bottom: var(--title-size);
   padding-top: var(--title-size);
 }
@@ -71,7 +71,7 @@ a:visited {
 
 .typer p {
   line-height: 130%;
-  margin-bottom: calc(var(--title-size) / 2);  
+  margin-bottom: calc(var(--title-size) / 2);
 }
 
 .language {
@@ -79,35 +79,37 @@ a:visited {
   margin-bottom: calc(var(--text-size) / 2);
 }
 
-.projects-list, .links-list {
+.projects-list,
+.links-list {
   list-style-type: none;
   margin-bottom: calc(var(--text-size) * 3);
 }
 
-.project-container,  .links-container {
+.project-container,
+.links-container {
   margin-left: calc(var(--small-text-size) / 2);
   margin-bottom: calc(var(--small-text-size) * 2);
 }
 
- .links-container {
-    margin-top: calc(var(--small-text-size) * 2);
-    opacity: 0.9;
- }
+.links-container {
+  margin-top: calc(var(--small-text-size) * 2);
+  opacity: 0.9;
+}
 
- .links-container a {
-   font-family: HackItalic;
-   opacity: 1;
- }
+.links-container a {
+  font-family: HackItalic;
+  opacity: 1;
+}
 
 .project-container::before {
   content: "> ";
   font-size: var(--small-text-size);
 }
 
- .links-container::before {
+.links-container::before {
   content: "> ";
   font-size: var(--text-size);
- }
+}
 
 .project-title {
   font-size: var(--small-text-size);
@@ -120,10 +122,18 @@ a:visited {
 
 .project-link {
   margin-left: calc(var(--small-text-size) / 2);
-   margin-top: calc(var(--small-text-size) / 2);
+  margin-top: calc(var(--small-text-size) / 2);
   display: block;
   font-family: HackItalic;
   font-size: var(--small-text-size);
+}
+
+.footer {
+  position: absolute;
+  bottom: 1vh;
+  width: 100%;
+  font-size: var(--small-text-size);
+  text-align: center;
 }
 
 .newline::before {
@@ -139,11 +149,15 @@ a:visited {
   animation-iteration-count: infinite;
 }
 
-.aberration, .typer, .title {
+.aberration,
+.typer,
+.title {
   text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
 }
 
-.projects-list, .links-list, .small-aberration {
+.projects-list,
+.links-list,
+.small-aberration {
   text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
@@ -152,9 +166,7 @@ a:visited {
   width: 100vw;
   height: 2px;
   opacity: 0;
-
   background-color: rgb(15, 15, 15);
-
   animation-name: line;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -162,13 +174,21 @@ a:visited {
 }
 
 @keyframes blink {
-  from {opacity: 0.75;}
-  to {opacity: 0;}
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes line {
-  from {opacity: 0;}
-  to {opacity: 0.75;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.75;
+  }
 }
 
 .icon {
@@ -177,7 +197,7 @@ a:visited {
   width: var(--text-size);
   height: var(--text-size);
   margin-right: calc(var(--text-size) / 2);
-  vertical-align: text-bottom
+  vertical-align: text-bottom;
 }
 
 .icon#email {
@@ -206,4 +226,13 @@ a:visited {
 
 .icon#linkedin {
   background: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3e%3cg fill="currentColor"%3e%3cpath d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248c-.822 0-1.359.54-1.359 1.248c0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/%3e%3c/g%3e%3c/svg%3e');
+}
+
+#flag {
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAzIDIiPg0KPHBhdGggZmlsbD0iIzAwOTI0NiIgZD0ibTAsMGgxdjJoLTF6Ii8+DQo8cGF0aCBmaWxsPSIjZmZmIiBkPSJtMSwwaDF2MmgtMXoiLz4NCjxwYXRoIGZpbGw9IiNjZTJiMzciIGQ9Im0yLDBoMXYyaC0xeiIvPg0KPC9zdmc+DQo=');
+  width: calc(var(--small-text-size) * 1.5);
+  height: var(--small-text-size);
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: text-bottom;
 }
