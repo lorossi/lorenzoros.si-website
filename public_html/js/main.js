@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   await timeout(5000);
 });
 
-const glitch_background = (items = 300) => {
+const glitch_background = (items = 250) => {
   // full page height
   const height = document.body.scrollHeight;
   // glitches container
-  const container = document.querySelector(".lines-container");
-
+  const linescontainer = document.querySelector(".lines-container");
+  // set its correct height
+  linescontainer.style.height = height + "px";
   for (let i = 0; i < items; i++) {
     // create the line
     const line = document.createElement("line");
@@ -19,7 +20,7 @@ const glitch_background = (items = 300) => {
     line.style.animationDuration = Math.random() * 500 + "ms";
     line.style.top = Math.random() * height + "px";
     // effectively add to container
-    container.append(line);
+    linescontainer.append(line);
   }
 };
 
