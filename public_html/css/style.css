@@ -16,6 +16,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Hack-Regular;
+  overflow-x: hidden;
 }
 
 a,
@@ -37,6 +38,8 @@ a:visited {
 
 .navbar {
   margin-top: calc(var(--text-size) * 2);
+  font-size: var(--text-size);
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -89,6 +92,7 @@ a:visited {
 .links-container {
   margin-left: calc(var(--small-text-size) / 2);
   margin-bottom: calc(var(--small-text-size) * 2);
+  font-size: var(--small-text-size);
 }
 
 .links-container {
@@ -101,23 +105,13 @@ a:visited {
   opacity: 1;
 }
 
-.project-container::before {
+.project-container::before, .links-container::before {
   content: "> ";
-  font-size: var(--small-text-size);
-}
-
-.links-container::before {
-  content: "> ";
-  font-size: var(--text-size);
-}
-
-.project-title {
   font-size: var(--small-text-size);
 }
 
 .project-description {
   opacity: 0.9;
-  font-size: var(--small-text-size);
 }
 
 .project-link {
@@ -125,7 +119,6 @@ a:visited {
   margin-top: calc(var(--small-text-size) / 2);
   display: block;
   font-family: HackItalic;
-  font-size: var(--small-text-size);
 }
 
 .footer {
