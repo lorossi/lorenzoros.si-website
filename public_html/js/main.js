@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  console.clear();
+  console.log("%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website", "font-size: 1rem;");
   glitch_background();
   await print_letters();
   await timeout(5000);
