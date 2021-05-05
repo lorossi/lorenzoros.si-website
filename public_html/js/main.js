@@ -33,7 +33,7 @@ const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 
 
       if (letter_count == 0) {
         // add the blinking cursor
-        dest_items[item_count].classList.add("writing", "newline", "aberration");
+        dest_items[item_count].classList.add("writing", "newline");
       }
 
       // next letter to be written

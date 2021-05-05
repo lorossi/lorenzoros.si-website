@@ -33,6 +33,15 @@ a:visited {
   justify-content: space-around;
 }
 
+.section { 
+  min-height: 100vh;
+}
+
+.title {
+  font-size: var(--title-size);
+  margin-bottom: var(--title-size);
+}
+
 .container {
   width: 90vw;
   margin-left: 7.5vw;
@@ -49,6 +58,30 @@ a:visited {
   margin-bottom: calc(var(--title-size) / 2);  
 }
 
+.language {
+  font-size: var(--text-size);
+  margin: calc(var(--text-size) / 2);
+}
+
+.project {
+  font-size: var(--small-text-size);
+  margin-left: calc(var(--small-text-size) * 2);
+  line-height: 150%;
+}
+
+.project-description {
+  opacity: 0.9;
+}
+
+.project-link {
+  font-family: HackItalic;
+}
+
+ul {
+  list-style-type: none;
+  margin: var(--text-size);
+}
+
 .newline::before {
   content: "> ";
   opacity: 0.75;
@@ -62,8 +95,12 @@ a:visited {
   animation-iteration-count: infinite;
 }
 
-.aberration {
+.aberration, .typer, .title {
   text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
+}
+
+.project, .language {
+  text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
 .glitchline {
