@@ -37,7 +37,8 @@ const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 
       }
 
       // next letter to be written
-      const current_letter = to_write[item_count][letter_count];
+      let current_letter = to_write[item_count][letter_count];
+      if (current_letter == undefined) current_letter = "";
       // append letter to container
       dest_items[item_count].append(current_letter);
       // increase letter count to proceed
@@ -47,8 +48,11 @@ const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 
       if (letter_count >= to_write[item_count].length) {
         // wait a little bit
         await timeout(newline_pause);
-        // remove the blinking cursor
-        dest_items[item_count].classList.remove("writing");
+        // remove the blinking cursor if this isn't the last line
+        if (item_count < dest_items.length - 1) {
+          dest_items[item_count].classList.remove("writing");
+        }
+
         letter_count = 0;
         item_count++;
       }
