@@ -2,19 +2,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   glitch_background();
   await print_letters();
   await timeout(5000);
-  destroy_letters();
 });
 
-const glitch_background = (items = 50) => {
+const glitch_background = (items = 300) => {
+  // full page height
   const height = document.body.scrollHeight;
+  // glitches container
   const container = document.querySelector(".lines-container");
 
   for (let i = 0; i < items; i++) {
+    // create the line
     const line = document.createElement("line");
+    // style it
     line.classList.add("glitchline");
     line.style.animationDelay = Math.random() * 2 + "s";
     line.style.animationDuration = Math.random() * 500 + "ms";
     line.style.top = Math.random() * height + "px";
+    // effectively add to container
     container.append(line);
   }
 };
@@ -24,7 +28,6 @@ const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 
     let to_write = [];
     const dest_items = [...document.querySelectorAll(selector)];
     dest_items.forEach(p => { to_write.push(p.textContent.split("")); p.textContent = ""; });
-
 
     let item_count = 0;
     let letter_count = 0;
@@ -69,13 +72,6 @@ const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 
     // bootstrap the function
     type();
   });
-};
-
-const destroy_letters = () => {
-  // the letters should now fall
-  // rigid body phisics...
-  // that kinda hard
-  // https://www.toptal.com/game/video-game-physics-part-i-an-introduction-to-rigid-body-dynamics
 };
 
 function timeout(ms) {

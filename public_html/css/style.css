@@ -7,9 +7,11 @@
 
 html {
   height: 100%;
+   scroll-behavior: smooth;
 }
 
 body {
+  height: 100%;
   min-height: 95%;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -17,8 +19,8 @@ body {
   font-family: Hack-Regular;
 }
 
-a:hover, a:active {
-  color: var(--link-hover-color)
+a, a:visited, a:active {
+  color: inherit;
 }
 
 a:visited {
@@ -35,16 +37,19 @@ a:visited {
 
 .section { 
   min-height: 100vh;
+  padding-bottom: 10vh;
 }
 
 .title {
   font-size: var(--title-size);
-  margin-bottom: var(--title-size);
+
+  padding-bottom: var(--title-size);
+  padding-top: var(--title-size);
 }
 
 .container {
-  width: 90vw;
-  margin-left: 7.5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .typer {
@@ -60,26 +65,40 @@ a:visited {
 
 .language {
   font-size: var(--text-size);
-  margin: calc(var(--text-size) / 2);
+  margin-bottom: calc(var(--text-size) / 2);
 }
 
-.project {
+.projects-list {
+  list-style-type: none;
+
+  margin-bottom: calc(var(--text-size) * 3);
+}
+
+.project-container {
+  margin-left: calc(var(--small-text-size) / 2);
+  margin-bottom: calc(var(--small-text-size) * 2);
+}
+
+.project-container::before {
+  content: "> ";
   font-size: var(--small-text-size);
-  margin-left: calc(var(--small-text-size) * 2);
-  line-height: 150%;
+}
+
+.project-title {
+  font-size: var(--small-text-size);
 }
 
 .project-description {
   opacity: 0.9;
+  font-size: var(--small-text-size);
 }
 
 .project-link {
+  margin-left: calc(var(--small-text-size) / 2);
+   margin-top: calc(var(--small-text-size) / 2);
+  display: block;
   font-family: HackItalic;
-}
-
-ul {
-  list-style-type: none;
-  margin: var(--text-size);
+  font-size: var(--small-text-size);
 }
 
 .newline::before {
@@ -99,7 +118,7 @@ ul {
   text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
 }
 
-.project, .language {
+.projects-list, .language, .small-aberration {
   text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
