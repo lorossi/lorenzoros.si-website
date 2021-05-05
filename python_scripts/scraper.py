@@ -31,10 +31,14 @@ class Scraper:
             if not any(t == r for t in self.settings["GitHub"]["topics"] for r in repo.get_topics()):
                 continue
 
+            logging.info(f"scraping repo {repo.full_name}")
             language = repo.language
             homepage = repo.homepage
+            homepage_mask = ["www.", "https://", "http://"]
             if homepage:
-                homepage_clean = repo.homepage.replace("www.", "").replace("https://", "").replace("http://", "")
+                homepage_clean = homepage
+                for h in homepage_mask:
+                    homepage_clean = homepage.replace(h, "")
                 if homepage_clean[-1] == "/":
                     homepage_clean = homepage_clean[:-1]
             else:
@@ -43,8 +47,9 @@ class Scraper:
             formatted_name = repo.name.replace("-", " ").lower()
 
             description = repo.description
-            if not description[-1] == "." and description[-1] not in ["!", "?"]:
-                description += "."
+            if not description[-1] == ".":
+                if description[-1] not in ["!", "?"]:
+                    description += "."
 
             new_repos.append({
                 "name": repo.name,
@@ -82,9 +87,11 @@ class Scraper:
         total_size = 0
 
         # sort by time
-        new_repos = sorted(self._repos, key=lambda x: x["created"], reverse=True)
+        new_repos = sorted(
+            self._repos, key=lambda x: x["created"], reverse=True)
         # sort by language
-        new_repos = sorted(new_repos, key=lambda x: x["main_language"], reverse=False)
+        new_repos = sorted(
+            new_repos, key=lambda x: x["main_language"], reverse=False)
 
         for repo in new_repos:
             total_commits += repo["commits"]
@@ -111,7 +118,8 @@ class Scraper:
             lang["relative_size"] = lang["absolute_size"] / total_size
             lang["relative_size_formatted"] = f"{round(lang['relative_size'] * 100, 2)}%"
 
-        languages_list = sorted(languages_list, key=lambda x: x["absolute_size"], reverse=True)
+        languages_list = sorted(
+            languages_list, key=lambda x: x["absolute_size"], reverse=True)
         del languages
 
         ordered_repos["repos"] = new_repos
@@ -133,45 +141,46 @@ class Scraper:
         logging.info("Repos saved")
 
         with open(self.settings["html_file"], "w") as html_file:
-            html_file.write(self._table)
+            html_file.write(self._list)
 
-    def formatTable(self):
-        self._table = ""
+    def formatList(self):
+        self._list = ""
 
-        languages = sorted(list(set(x["main_language"] for x in self._repos["repos"])))
+        languages = sorted(list(set(x["main_language"]
+                                    for x in self._repos["repos"])))
         for language in languages:
-            selected_repos = [x for x in self._repos["repos"] if x["main_language"] == language]
+            selected_repos = [x for x in self._repos["repos"]
+                              if x["main_language"] == language]
 
             if len(selected_repos) == 0:
                 continue
 
-            count = 0
-            for repo in selected_repos:
-                if count == 0:
-                    self._table += f"<tr><td class=\"italic language\">{language}</td>"
-                else:
-                    self._table += f"<tr><td class=\"italic language\"></td>"
+            self._list += "<ul class=\"projects-list\">\n"
+            self._list += f"\t<div class=\"language\">{language}</div>\n"
 
-                self._table += f"<td class=\"repo\"><a href=\"{repo['url']}\">{repo['formatted_name']}</a></td>"
-                self._table += f"<td class=\"description opaque\">{repo['description']}"
+            for repo in selected_repos:
+                self._list += "\t<li class=\"project-container\">\n"
+                self._list += f"\t\t<a class=\"project-title\" href=\"{repo['url']}\">{repo['formatted_name']}</a>\n"
+                self._list += f"\t\t<span class=\"project-description\">{repo['description']}</span>\n"
 
                 if repo["homepage"]:
-                    self._table += f"<a class=\"pc homepage\" href=\"{repo['homepage']}\">Try it here!</a>"
+                    self._list += f"\t\t<a class=\"project-link\" href=\"{repo['homepage']}\">Try it here!</a>\n"
+                self._list += "\t</li>\n"
 
-                self._table += "</td></tr>\n"
-                count += 1
+            self._list += "</ul>\n\n"
 
-            self._table += "<tr class=\"empty\"></tr>"
+        logging.info("Repos list generated")
 
     def loadData(self):
         with open(self.settings["json_file"], "r") as json_file:
             self._repos = ujson.load(json_file)
 
         # sort by time
-        self._repos["repos"] = sorted(self._repos["repos"], key=lambda x: datetime.fromisoformat(x["created_timestamp"]), reverse=True)
+        self._repos["repos"] = sorted(self._repos["repos"], key=lambda x: datetime.fromisoformat(
+            x["created_timestamp"]), reverse=True)
         # sort by language
-        self._repos["repos"] = sorted(self._repos["repos"], key=lambda x: x["main_language"], reverse=False)
-
+        self._repos["repos"] = sorted(
+            self._repos["repos"], key=lambda x: x["main_language"], reverse=False)
 
     @property
     def repos(self):
@@ -180,14 +189,18 @@ class Scraper:
 
 
 def main():
-    logfile = __file__.replace(".py", ".log")
+    """logfile = __file__.replace(".py", ".log")
     logging.basicConfig(filename=logfile, level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(message)s',
                         filemode="w")
-    print(f"Logging into {logfile}")
+
+    print(f"Logging into {logfile}")"""
+    logging.basicConfig(level=logging.INFO,
+                        format='%(asctime)s %(levelname)s %(message)s')
+
     s = Scraper()
     s.scrapeRepos()
-    s.formatTable()
+    s.formatList()
     s.saveData()
 
 
