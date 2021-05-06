@@ -12,7 +12,7 @@
   }
 
   .typer p {
-    line-height: 120%;
+    line-height: 150%;
   }   
 
   .language {
@@ -21,6 +21,11 @@
 
   .project-container {
     margin-left: var(--text-size);
+    margin-bottom: calc(var(--text-size) / 2);
+  }
+
+  .project-description {
+    line-height: 120%;
   }
 
   .project-link {

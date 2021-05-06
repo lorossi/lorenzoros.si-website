@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website", "font-size: 1rem;");
   glitch_background();
   await print_letters();
-  await timeout(5000);
+});
+
+window.addEventListener("resize", () => {
+
 });
 
 const glitch_background = (items = 250) => {
@@ -26,7 +29,16 @@ const glitch_background = (items = 250) => {
   }
 };
 
-const print_letters = async (selector = ".typer p", speed = 50, newline_pause = 500) => {
+const remove_glitches = () => {
+  // glitches container
+  const linescontainer = document.querySelector(".lines-container");
+  // remove everything
+  linescontainer.innerHTML = "";
+  // reset glitches
+  glitch_background();
+};
+
+const print_letters = async (selector = ".typer p", speed = 25, newline_pause = 500) => {
   return new Promise(resolve => {
     let to_write = [];
     const dest_items = [...document.querySelectorAll(selector)];
