@@ -3,6 +3,11 @@
 }
 
 @media screen and (min-width: 770px) {
+  .container {
+    margin-left: 25vw;
+    margin-right: 25vw;
+  }
+
   .navbar {
    margin-top: calc(var(--title-size) * 2);
   }

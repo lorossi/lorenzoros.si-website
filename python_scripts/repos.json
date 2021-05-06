@@ -3,61 +3,61 @@
     {
       "absolute_size": 387238,
       "language": "JavaScript",
-      "relative_size": 0.41686142332580145,
-      "relative_size_formatted": "41.69%"
+      "relative_size": 0.423253485596366,
+      "relative_size_formatted": "42.33%"
     },
     {
-      "absolute_size": 229275,
+      "absolute_size": 215246,
       "language": "Python",
-      "relative_size": 0.24681436954282152,
-      "relative_size_formatted": "24.68%"
+      "relative_size": 0.2352651851333686,
+      "relative_size_formatted": "23.53%"
     },
     {
       "absolute_size": 113744,
       "language": "TeX",
-      "relative_size": 0.12244533267595112,
-      "relative_size_formatted": "12.24%"
+      "relative_size": 0.12432288273793649,
+      "relative_size_formatted": "12.43%"
     },
     {
       "absolute_size": 76129,
       "language": "HTML",
-      "relative_size": 0.08195281273111094,
-      "relative_size_formatted": "8.2%"
+      "relative_size": 0.08320945931175594,
+      "relative_size_formatted": "8.32%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.064979648781349,
-      "relative_size_formatted": "6.5%"
+      "relative_size": 0.06597603256283692,
+      "relative_size_formatted": "6.6%"
     },
     {
       "absolute_size": 42838,
       "language": "CSS",
-      "relative_size": 0.04611507561869104,
-      "relative_size_formatted": "4.61%"
+      "relative_size": 0.046822194144110665,
+      "relative_size_formatted": "4.68%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.012953515685132576,
-      "relative_size_formatted": "1.3%"
+      "relative_size": 0.01315214207330136,
+      "relative_size_formatted": "1.32%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.007505352892607357,
-      "relative_size_formatted": "0.75%"
+      "relative_size": 0.007620438339155412,
+      "relative_size_formatted": "0.76%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.000186234373267509,
+      "relative_size": 0.00018909005058432104,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.000186234373267509,
+      "relative_size": 0.00018909005058432104,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -193,10 +193,10 @@
         "JavaScript": 14272,
         "Python": 7042
       },
-      "last_pushed_timestamp": "2021-05-05T18:52:39",
+      "last_pushed_timestamp": "2021-05-06T08:26:18",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 4969,
+      "size": 5004,
       "stars": 0,
       "tags": [
 
@@ -335,7 +335,7 @@
       "commits": 42,
       "created_timestamp": "2021-04-08T14:17:52",
       "created_year": 2021,
-      "description": "Fairly simple and straitforward boids simulation in EcmaScript.",
+      "description": "Fairly simple and straightforward boids simulation in EcmaScript.",
       "formatted_name": "boids",
       "homepage": "https:\/\/lorenzoros.si\/boids\/",
       "homepage_clean": "https:\/\/lorenzoros.si\/boids",
@@ -713,7 +713,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 963,
+      "commits": 964,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -727,10 +727,10 @@
         "Python": 72209,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-05-04T21:55:07",
+      "last_pushed_timestamp": "2021-05-05T21:55:08",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 14591,
+      "size": 14782,
       "stars": 1,
       "tags": [
 
@@ -829,32 +829,6 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/performances-monitor"
-    },
-    {
-      "commits": 26,
-      "created_timestamp": "2020-07-13T11:59:30",
-      "created_year": 2020,
-      "description": "An unofficial Python API for BikeMi.",
-      "formatted_name": "bikemi python unofficial api",
-      "homepage": "",
-      "homepage_clean": null,
-      "languages": {
-        "Python": 14029
-      },
-      "last_pushed_timestamp": "2021-02-05T09:30:09",
-      "main_language": "Python",
-      "name": "bikemi-python-unofficial-api",
-      "size": 65,
-      "stars": 0,
-      "tags": [
-        "v1.0"
-      ],
-      "topics": [
-        "python3",
-        "opendata",
-        "released"
-      ],
-      "url": "https:\/\/github.com\/lorossi\/bikemi-python-unofficial-api"
     },
     {
       "commits": 18,
@@ -1047,11 +1021,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-05-05T21:27:52.025133",
-    "total_commits": 2128,
+    "last_updated": "2021-05-06T10:36:35.172677",
+    "total_commits": 2103,
     "total_languages": 10,
-    "total_new_repos": 34,
-    "total_size": 928937,
+    "total_new_repos": 33,
+    "total_size": 914908,
     "total_stars": 4
   }
 }

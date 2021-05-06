@@ -14,8 +14,8 @@
 
 @media screen and (min-width: 770px) {
   :root {
-    --title-size: 2.5rem;
-    --text-size: 2rem;
-    --small-text-size: 1.5rem;
+    --title-size: 2rem;
+    --text-size: 1.5rem;
+    --small-text-size: 1.25rem;
   }
 }

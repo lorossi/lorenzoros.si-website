@@ -138,10 +138,11 @@ class Scraper:
     def saveData(self):
         with open(self.settings["json_file"], "w") as json_file:
             ujson.dump(self._repos, json_file, indent=2, sort_keys=True)
-        logging.info("Repos saved")
 
         with open(self.settings["html_file"], "w") as html_file:
             html_file.write(self._list)
+
+        logging.info("Files saved")
 
     def formatList(self):
         self._list = ""
