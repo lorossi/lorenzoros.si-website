@@ -8,7 +8,7 @@
   }
 
   .typer {
-    margin-top: calc(var(--title-size) * 3);
+    margin-top: calc(var(--title-size) * 2);
   }
 
   .typer p {
