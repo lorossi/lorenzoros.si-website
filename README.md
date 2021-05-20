@@ -1,6 +1,6 @@
 # lorenzoros.si-website
 
-A repo contanining all the code used in my website
+A repo containing all the code used in my website
 
 ## Details
 
