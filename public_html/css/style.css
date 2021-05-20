@@ -99,6 +99,12 @@ a:visited {
   font-size: var(--small-text-size);
 }
 
+.interactive-container {
+  margin-left: calc(var(--small-text-size) * 3);
+  margin-bottom: calc(var(--small-text-size) * 3);
+  font-size: var(--small-text-size); 
+}
+
 .links-container {
   margin-top: calc(var(--small-text-size) * 2);
   margin-left: calc(var(--small-text-size) * 2);

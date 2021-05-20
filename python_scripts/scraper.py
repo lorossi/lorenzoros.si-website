@@ -189,7 +189,7 @@ class Scraper:
             if repo["name"] == "lorenzoros.si-website":
                 continue
 
-            self._interactive_list += "\t<li class=\"project-container\">\n"
+            self._interactive_list += "\t<li class=\"interactive-container\">\n"
             self._interactive_list += f"\t\t<a class=\"project-title\" href=\"{repo['homepage']}\">{repo['formatted_name']}</a>\n"
             self._interactive_list += "\t</li>\n"
 
