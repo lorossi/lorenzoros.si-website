@@ -10,6 +10,12 @@
 
   .navbar {
    margin-top: calc(var(--title-size) * 2);
+   justify-content: center;
+  }
+
+  .navbar a {
+    margin-left: calc(var(--title-size) * 2);
+    margin-right: calc(var(--title-size) * 2);
   }
 
   .typer {
@@ -25,7 +31,6 @@
   }
 
   .project-container {
-    margin-left: var(--text-size);
     margin-bottom: calc(var(--text-size) / 2);
   }
 

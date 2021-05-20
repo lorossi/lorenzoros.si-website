@@ -165,7 +165,7 @@ class Scraper:
                 self._list += f"\t\t<span class=\"project-description\">{repo['description']}</span>\n"
 
                 if repo["homepage"]:
-                    self._list += f"\t\t<a class=\"project-link\" href=\"{repo['homepage']}\">Try it!</a>\n"
+                    self._list += f"\t\t<a class=\"project-link\" href=\"{repo['homepage']}\">link</a>\n"
                 self._list += "\t</li>\n"
 
             self._list += "</ul>\n\n"

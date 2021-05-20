@@ -11,7 +11,7 @@ window.addEventListener("resize", () => {
 
 const glitch_background = (items = 250) => {
   // full page height
-  const height = document.body.scrollHeight;
+  const height = document.querySelector("body").scrollHeight;
   // glitches container
   const linescontainer = document.querySelector(".lines-container");
   // set its correct height
