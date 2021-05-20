@@ -3,61 +3,61 @@
     {
       "absolute_size": 362548,
       "language": "JavaScript",
-      "relative_size": 0.41090307371475204,
-      "relative_size_formatted": "41.09%"
+      "relative_size": 0.4145893250235856,
+      "relative_size_formatted": "41.46%"
     },
     {
-      "absolute_size": 188513,
+      "absolute_size": 188554,
       "language": "Python",
-      "relative_size": 0.2136560431589446,
-      "relative_size_formatted": "21.37%"
+      "relative_size": 0.215619657508791,
+      "relative_size_formatted": "21.56%"
     },
     {
       "absolute_size": 120027,
       "language": "TeX",
-      "relative_size": 0.13603567866533683,
-      "relative_size_formatted": "13.6%"
+      "relative_size": 0.13725606792647016,
+      "relative_size_formatted": "13.73%"
     },
     {
-      "absolute_size": 83512,
+      "absolute_size": 75626,
       "language": "HTML",
-      "relative_size": 0.09465046695076616,
-      "relative_size_formatted": "9.47%"
+      "relative_size": 0.08648160324766288,
+      "relative_size_formatted": "8.65%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.06841282074530783,
-      "relative_size_formatted": "6.84%"
+      "relative_size": 0.06902655879241831,
+      "relative_size_formatted": "6.9%"
     },
     {
       "absolute_size": 48007,
       "language": "CSS",
-      "relative_size": 0.05440996463867984,
-      "relative_size_formatted": "5.44%"
+      "relative_size": 0.05489808170616656,
+      "relative_size_formatted": "5.49%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.013637909148608214,
-      "relative_size_formatted": "1.36%"
+      "relative_size": 0.013760256153692215,
+      "relative_size_formatted": "1.38%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.007901895004080152,
-      "relative_size_formatted": "0.79%"
+      "relative_size": 0.007972783670202122,
+      "relative_size_formatted": "0.8%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00019607398676217247,
+      "relative_size": 0.00019783298550558908,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.00019607398676217247,
+      "relative_size": 0.00019783298550558908,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -66,7 +66,7 @@
       "commits": 14,
       "created_timestamp": "2020-12-21T02:24:22",
       "created_year": 2020,
-      "description": "Gife life to a glass jar using some magic (and an Arduino).",
+      "description": "Give life to a glass jar using some magic (and an Arduino).",
       "formatted_name": "fireflies in a jar",
       "homepage": "",
       "homepage_clean": null,
@@ -180,7 +180,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 207,
+      "commits": 209,
       "created_timestamp": "2020-07-08T16:22:03",
       "created_year": 2020,
       "description": "A repo for my website.",
@@ -189,11 +189,11 @@
       "homepage_clean": "https:\/\/lorenzoros.si",
       "languages": {
         "CSS": 11832,
-        "HTML": 32802,
+        "HTML": 24916,
         "JavaScript": 3173,
-        "Python": 8211
+        "Python": 8252
       },
-      "last_pushed_timestamp": "2021-05-20T14:29:56",
+      "last_pushed_timestamp": "2021-05-20T14:35:51",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
       "size": 6093,
@@ -916,7 +916,7 @@
       "commits": 37,
       "created_timestamp": "2020-03-23T16:55:33",
       "created_year": 2020,
-      "description": "Formulario del corso di Campi Elettromagetici - Ing. Elettronica - AA 2019\/2020.",
+      "description": "Formulario del corso di Campi Elettromagnetici - Ing. Elettronica - AA 2019\/2020.",
       "formatted_name": "formulario campi elettromagnetici",
       "homepage": "",
       "homepage_clean": null,
@@ -966,11 +966,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-05-20T16:34:22.252499",
-    "total_commits": 2119,
+    "last_updated": "2021-05-20T16:51:39.163028",
+    "total_commits": 2121,
     "total_languages": 10,
     "total_new_repos": 31,
-    "total_size": 882320,
+    "total_size": 874475,
     "total_stars": 4
   }
 }

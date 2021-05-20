@@ -4,7 +4,7 @@ A repo containing all the code used in my website
 
 ## Details
 
-**TODO**
+*I'm still working on this part...*
 
 ## License
 
