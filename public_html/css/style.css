@@ -150,18 +150,6 @@ a:visited {
   text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
-.glitchline {
-  position: absolute;
-  width: 100vw;
-  height: 2px;
-  opacity: 0;
-  background-color: rgb(15, 15, 15);
-  animation-name: line;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
-}
-
 @keyframes blink {
   from {
     opacity: 0.75;
@@ -169,6 +157,12 @@ a:visited {
   to {
     opacity: 0;
   }
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
 }
 
 .icon {

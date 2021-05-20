@@ -44,7 +44,19 @@
     line-height: 150%;
   } 
 
-  .glitchline {
-    height: 4px;
+  .contacts-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links-list {
+    max-width: 70%;
+  }
+
+  .photo-container {
+    width: 25vw;
+    height: 100%;
+    margin: 0;
   }
 }
