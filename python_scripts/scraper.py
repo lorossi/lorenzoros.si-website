@@ -158,7 +158,7 @@ class Scraper:
                                     for x in self._repos["repos"])))
         for language in languages:
             selected_repos = [x for x in self._repos["repos"]
-                              if x["main_language"] == language]
+                              if x["main_language"] == language and x["name"] == "lorenzoros.si-website"]
 
             if len(selected_repos) == 0:
                 continue
