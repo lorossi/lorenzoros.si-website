@@ -37,8 +37,8 @@ a:visited {
 }
 
 .navbar {
-  margin-top: calc(var(--text-size) * 2);
-  margin-bottom: calc(var(--text-size) * 2);
+  margin-top: calc(var(--text-size) * 3);
+  margin-bottom: calc(var(--text-size) * 5);
   font-size: var(--text-size);
   
   display: flex;
@@ -53,8 +53,15 @@ a:visited {
 
 .title {
   font-size: var(--title-size);
-  padding-bottom: var(--title-size);
+  padding-bottom: calc(var(--title-size) / 4);
   padding-top: var(--title-size);
+}
+
+
+.subtitle {
+  font-size: var(--text-size);
+  padding-bottom: calc(var(--text-size) * 2);
+  padding-top: 0;
 }
 
 .container {
@@ -109,11 +116,6 @@ a:visited {
   opacity: 0.7;
 }
 
-.project-link {
-  font-family: HackItalic;
-  display: block;
-}
-
 .footer {
   position: absolute;
   bottom: 1vh;
@@ -137,7 +139,8 @@ a:visited {
 
 .aberration,
 .typer,
-.title {
+.title,
+.subtitle {
   text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
 }
 
@@ -165,15 +168,6 @@ a:visited {
   }
   to {
     opacity: 0;
-  }
-}
-
-@keyframes line {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.75;
   }
 }
 

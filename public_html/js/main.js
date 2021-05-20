@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   console.clear();
   console.log("%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website", "font-size: 1rem;");
-  glitch_background();
   await print_letters();
 });
 
@@ -9,36 +8,8 @@ window.addEventListener("resize", () => {
 
 });
 
-const glitch_background = (items = 250) => {
-  // full page height
-  const height = document.querySelector("body").scrollHeight;
-  // glitches container
-  const linescontainer = document.querySelector(".lines-container");
-  // set its correct height
-  linescontainer.style.height = height + "px";
-  for (let i = 0; i < items; i++) {
-    // create the line
-    const line = document.createElement("line");
-    // style it
-    line.classList.add("glitchline");
-    line.style.animationDelay = Math.random() * 2 + "s";
-    line.style.animationDuration = Math.random() * 500 + "ms";
-    line.style.top = Math.random() * height + "px";
-    // effectively add to container
-    linescontainer.append(line);
-  }
-};
-
-const remove_glitches = () => {
-  // glitches container
-  const linescontainer = document.querySelector(".lines-container");
-  // remove everything
-  linescontainer.innerHTML = "";
-  // reset glitches
-  glitch_background();
-};
-
 const print_letters = async (selector = ".typer p", speed = 25, newline_pause = 500) => {
+  await timeout(500);
   return new Promise(resolve => {
     let to_write = [];
     const dest_items = [...document.querySelectorAll(selector)];
