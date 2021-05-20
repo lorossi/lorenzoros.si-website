@@ -4,5 +4,5 @@
     "topics": ["TOPIC", "TO", "INCLUDE"]
   },
   "json_file": "JSON FILE PATH",
-  "html_file": "HTML FILE PATH"
+  "html_projects_file": "HTML FILE PATH"
 }

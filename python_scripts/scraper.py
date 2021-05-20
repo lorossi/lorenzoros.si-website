@@ -106,7 +106,6 @@ class Scraper:
                     else:
                         languages[language] = {}
                         languages[language]["absolute_size"] = repo["languages"][language]
-            del repo["created"]
 
         for lang in languages:
             languages_list.append({
@@ -136,16 +135,24 @@ class Scraper:
         logging.info("Repos formatted")
 
     def saveData(self):
-        with open(self.settings["json_file"], "w") as json_file:
-            ujson.dump(self._repos, json_file, indent=2, sort_keys=True)
+        repos_to_dump = copy.deepcopy(self._repos)
+        for repo in repos_to_dump["repos"]:
+            # remove date as it's not serializable
+            del repo["created"]
 
-        with open(self.settings["html_file"], "w") as html_file:
-            html_file.write(self._list)
+        with open(self.settings["json_file"], "w") as json_file:
+            ujson.dump(repos_to_dump, json_file, indent=2, sort_keys=True)
+
+        with open(self.settings["html_projects_file"], "w") as html_file:
+            html_file.write(self._projects_list)
+
+        with open(self.settings["html_interactive_file"], "w") as html_file:
+            html_file.write(self._interactive_list)
 
         logging.info("Files saved")
 
     def formatList(self):
-        self._list = ""
+        self._projects_list = ""
 
         languages = sorted(list(set(x["main_language"]
                                     for x in self._repos["repos"])))
@@ -156,19 +163,37 @@ class Scraper:
             if len(selected_repos) == 0:
                 continue
 
-            self._list += "<ul class=\"projects-list\">\n"
-            self._list += f"\t<div class=\"language\">{language}</div>\n"
+            self._projects_list += "<ul class=\"projects-list\">\n"
+            self._projects_list += f"\t<div class=\"language\">{language}</div>\n"
 
             for repo in selected_repos:
-                self._list += "\t<li class=\"project-container\">\n"
-                self._list += f"\t\t<a class=\"project-title\" href=\"{repo['url']}\">{repo['formatted_name']}</a>\n"
-                self._list += f"\t\t<span class=\"project-description\">{repo['description']}</span>\n"
+                self._projects_list += "\t<li class=\"project-container\">\n"
+                self._projects_list += f"\t\t<a class=\"project-title\" href=\"{repo['url']}\">{repo['formatted_name']}</a>\n"
+                self._projects_list += f"\t\t<span class=\"project-description\">{repo['description']}</span>\n"
+                self._projects_list += "\t</li>\n"
 
-                if repo["homepage"]:
-                    self._list += f"\t\t<a class=\"project-link\" href=\"{repo['homepage']}\">link</a>\n"
-                self._list += "\t</li>\n"
+            self._projects_list += "</ul>\n\n"
 
-            self._list += "</ul>\n\n"
+        self._interactive_list = ""
+        self._interactive_list += "<ul class=\"projects-list\">\n"
+
+        selected_repos = [x for x in self._repos["repos"] if x["homepage"]]
+        selected_repos = sorted(
+            selected_repos, key=lambda x: x["created"], reverse=False)
+
+        for repo in selected_repos:
+
+            if not repo["homepage"]:
+                continue
+
+            if repo["name"] == "lorenzoros.si-website":
+                continue
+
+            self._interactive_list += "\t<li class=\"project-container\">\n"
+            self._interactive_list += f"\t\t<a class=\"project-title\" href=\"{repo['homepage']}\">{repo['formatted_name']}</a>\n"
+            self._interactive_list += "\t</li>\n"
+
+        self._interactive_list += "</ul>\n\n"
 
         logging.info("Repos list generated")
 
@@ -190,12 +215,6 @@ class Scraper:
 
 
 def main():
-    """logfile = __file__.replace(".py", ".log")
-    logging.basicConfig(filename=logfile, level=logging.INFO,
-                        format='%(asctime)s %(levelname)s %(message)s',
-                        filemode="w")
-
-    print(f"Logging into {logfile}")"""
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(message)s')
 
