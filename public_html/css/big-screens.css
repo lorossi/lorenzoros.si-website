@@ -60,3 +60,10 @@
     margin: 0;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+}
