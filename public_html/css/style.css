@@ -101,7 +101,7 @@ a:visited {
 
 .interactive-container {
   margin-left: calc(var(--small-text-size) * 3);
-  margin-bottom: calc(var(--small-text-size) * 3);
+  margin-bottom: calc(var(--small-text-size) * 1.5);
   font-size: var(--small-text-size); 
 }
 
