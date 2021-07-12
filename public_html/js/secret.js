@@ -20,4 +20,15 @@ window.onload = function _0x0ac259() {
   }
   document.querySelector(_0x6bb4f6).innerHTML = _0x06715e;
   document.querySelector(_0x6bb4f6).href = _0xb019cd;
+
+  let _0x308a8c = "VlRGU1QxVXlTa2hUYTJoWFlsUldjVmxzVm1GTlJsSkhXa1U1YVUxWGVGbFViR2hYV1ZaWmVsbDZhejA9";
+  let _0xe33665 = "VjFaV2IxVXdNVWhVYTJ4VlZrWndUbHBXVW5Ka01WSklUVWhvYVZKWVpEVmFWV2hoWVcxS1YxZHFSbUZXZWtFeFdsWmtTbVZzVW5WalIyaFdWa1JCTlE9PQ==";
+  let _0xbe70d4 = "VmpGU1MySXlSa2hUYmxKUFZqTm9jRlZXVVhkUFVUMDk=";
+  for (let _0xffe382 = 0; _0xffe382 < 5; _0xffe382++) {
+    _0x308a8c = atob(_0x308a8c);
+    _0xe33665 = atob(_0xe33665);
+    _0xbe70d4 = atob(_0xbe70d4);
+  }
+  document.querySelector(_0x308a8c).innerHTML = _0xbe70d4;
+  document.querySelector(_0x308a8c).href = _0xe33665;
 };
