@@ -38,7 +38,7 @@ class Scraper:
                 )
                 continue
 
-            # hide from list of interactive sites if found an unnwated topic
+            # hide from list of interactive sites if found an unwanted topic
             unwanted_topics = self.settings["GitHub"]["skip_websites"]
             hide_interactive = any(t in repo_topics for t in unwanted_topics)
 
@@ -124,10 +124,12 @@ class Scraper:
                     total_size += repo["languages"][language]
 
                     if any(language in key for key in languages):
-                        languages[language]["absolute_size"] += repo["languages"][language]
+                        languages[language]["absolute_size"] += \
+                            repo["languages"][language]
                     else:
                         languages[language] = {}
-                        languages[language]["absolute_size"] = repo["languages"][language]
+                        languages[language]["absolute_size"] = \
+                            repo["languages"][language]
 
         for lang in languages:
             languages_list.append({
@@ -137,7 +139,8 @@ class Scraper:
 
         for lang in languages_list:
             lang["relative_size"] = lang["absolute_size"] / total_size
-            lang["relative_size_formatted"] = f"{round(lang['relative_size'] * 100, 2)}%"
+            lang["relative_size_formatted"] = \
+                f"{round(lang['relative_size'] * 100, 2)}%"
 
         languages_list = sorted(
             languages_list, key=lambda x: x["absolute_size"], reverse=True)
@@ -192,12 +195,16 @@ class Scraper:
 
             # create html element
             self._projects_list += "<ul class=\"projects-list\">\n"
-            self._projects_list += f"\t<div class=\"language\">{language}</div>\n"
+            self._projects_list + "\t<div class=\"language\">"
+            self._projects_list += f"{language}</div>\n"
 
             for repo in selected_repos:
                 self._projects_list += "\t<li class=\"project-container\">\n"
-                self._projects_list += f"\t\t<a class=\"project-title\" href=\"{repo['url']}\">{repo['formatted_name']}</a>\n"
-                self._projects_list += f"\t\t<span class=\"project-description\">{repo['description']}</span>\n"
+                self._projects_list += "\t\t<a class=\"project-title\" "
+                self._projects_list += f"href=\"{repo['url']}\">"
+                self._projects_list += f"{repo['formatted_name']}</a>\n"
+                self._projects_list += "\t\t<span class=\"project-description\">"
+                self._projects_list += "{repo['description']}</span>\n"
                 self._projects_list += "\t</li>\n"
 
             self._projects_list += "</ul>\n\n"
@@ -222,7 +229,9 @@ class Scraper:
                 continue
 
             self._interactive_list += "\t<li class=\"interactive-container\">\n"
-            self._interactive_list += f"\t\t<a class=\"project-title\" href=\"{repo['homepage']}\">{repo['formatted_name']}</a>\n"
+            self._interactive_list += "\t\t<a class=\"project-title\" "
+            self._interactive_list += f"href=\"{repo['homepage']}\">"
+            self._interactive_list += f"{repo['formatted_name']}</a>\n"
             self._interactive_list += "\t</li>\n"
 
         self._interactive_list += "</ul>\n\n"
@@ -235,11 +244,15 @@ class Scraper:
             self._repos = ujson.load(json_file)
 
         # sort by time
-        self._repos["repos"] = sorted(self._repos["repos"], key=lambda x: datetime.fromisoformat(
-            x["created_timestamp"]), reverse=True)
+        self._repos["repos"] = sorted(self._repos["repos"],
+                                      key=lambda x: datetime.fromisoformat(
+            x["created_timestamp"]),
+            reverse=True)
+
         # sort by language
         self._repos["repos"] = sorted(
-            self._repos["repos"], key=lambda x: x["main_language"], reverse=False)
+            self._repos["repos"], key=lambda x: x["main_language"],
+            reverse=False)
 
     # getter
     @property
