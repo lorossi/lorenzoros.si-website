@@ -1,63 +1,63 @@
 {
   "languages": [
     {
-      "absolute_size": 395099,
+      "absolute_size": 437517,
       "language": "JavaScript",
-      "relative_size": 0.4291205341917938,
-      "relative_size_formatted": "42.91%"
+      "relative_size": 0.4463716749152947,
+      "relative_size_formatted": "44.64%"
     },
     {
       "absolute_size": 188513,
       "language": "Python",
-      "relative_size": 0.20474564416031837,
-      "relative_size_formatted": "20.47%"
+      "relative_size": 0.19232821479692663,
+      "relative_size_formatted": "19.23%"
     },
     {
-      "absolute_size": 122104,
+      "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.13261823924372065,
-      "relative_size_formatted": "13.26%"
+      "relative_size": 0.13818517940383385,
+      "relative_size_formatted": "13.82%"
     },
     {
-      "absolute_size": 85266,
+      "absolute_size": 87654,
       "language": "HTML",
-      "relative_size": 0.09260816015327168,
-      "relative_size_formatted": "9.26%"
+      "relative_size": 0.08942798289672228,
+      "relative_size_formatted": "8.94%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.06555970449149467,
-      "relative_size_formatted": "6.56%"
+      "relative_size": 0.06158363455874176,
+      "relative_size_formatted": "6.16%"
     },
     {
-      "absolute_size": 50023,
+      "absolute_size": 51322,
       "language": "CSS",
-      "relative_size": 0.054330424733740404,
-      "relative_size_formatted": "5.43%"
+      "relative_size": 0.05236067878505922,
+      "relative_size_formatted": "5.24%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.013069148208246173,
-      "relative_size_formatted": "1.31%"
+      "relative_size": 0.012276529516009072,
+      "relative_size_formatted": "1.23%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.007572351143346823,
-      "relative_size_formatted": "0.76%"
+      "relative_size": 0.007113102616605606,
+      "relative_size_formatted": "0.71%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.0001878968370337063,
+      "relative_size": 0.000176501255403438,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.0001878968370337063,
+      "relative_size": 0.000176501255403438,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -68,6 +68,7 @@
       "created_year": 2020,
       "description": "Give life to a glass jar using some magic (and an Arduino).",
       "formatted_name": "fireflies in a jar",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -94,6 +95,7 @@
       "created_year": 2021,
       "description": "Simple Go package to have colored and formatted text inside your terminal.",
       "formatted_name": "colorize",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -124,6 +126,7 @@
       "created_year": 2021,
       "description": "A sudoku solver made in Go, supporting text and image input.",
       "formatted_name": "sudoku solver",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -151,6 +154,7 @@
       "created_year": 2021,
       "description": "A simple CLI journal made in Go.",
       "formatted_name": "journal",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -180,23 +184,24 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 212,
+      "commits": 213,
       "created_timestamp": "2020-07-08T16:22:03",
       "created_year": 2020,
       "description": "A repo for my website.",
       "formatted_name": "lorenzoros.si website",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/",
-      "homepage_clean": "https:\/\/lorenzoros.si",
+      "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 11832,
-        "HTML": 33109,
+        "HTML": 33888,
         "JavaScript": 3173,
         "Python": 8211
       },
-      "last_pushed_timestamp": "2021-05-22T21:14:28",
+      "last_pushed_timestamp": "2021-06-17T16:53:32",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6570,
+      "size": 6582,
       "stars": 0,
       "tags": [
 
@@ -210,13 +215,46 @@
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
     },
     {
+      "commits": 41,
+      "created_timestamp": "2021-06-26T09:20:01",
+      "created_year": 2021,
+      "description": "One big question: canI recreate Pollock's technique using code?",
+      "formatted_name": "random pollock",
+      "hide_interactive": false,
+      "homepage": "https:\/\/lorenzoros.si\/random-pollock\/",
+      "homepage_clean": "lorenzoros.si\/random-pollock",
+      "languages": {
+        "CSS": 1299,
+        "HTML": 1609,
+        "JavaScript": 34452
+      },
+      "last_pushed_timestamp": "2021-07-12T21:47:46",
+      "main_language": "JavaScript",
+      "name": "random-pollock",
+      "size": 244,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "html5",
+        "javascript",
+        "ecmascript",
+        "creative-coding",
+        "digitalart",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/random-pollock"
+    },
+    {
       "commits": 19,
       "created_timestamp": "2021-05-04T18:54:59",
       "created_year": 2021,
       "description": "The 30's might have ended, but their style isn't.",
       "formatted_name": "duchampesque art",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/duchampesque-art",
-      "homepage_clean": "https:\/\/www.lorenzoros.si\/duchampesque-art",
+      "homepage_clean": "lorenzoros.si\/duchampesque-art",
       "languages": {
         "CSS": 1970,
         "HTML": 1578,
@@ -240,22 +278,23 @@
       "url": "https:\/\/github.com\/lorossi\/duchampesque-art"
     },
     {
-      "commits": 28,
+      "commits": 30,
       "created_timestamp": "2021-04-30T15:51:07",
       "created_year": 2021,
       "description": "Eyes. Watching you. Following you. You are being followed.",
       "formatted_name": "they see you",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/THEY-SEE-YOU",
-      "homepage_clean": "https:\/\/lorenzoros.si\/THEY-SEE-YOU",
+      "homepage_clean": "lorenzoros.si\/THEY-SEE-YOU",
       "languages": {
         "CSS": 1369,
         "HTML": 1290,
         "JavaScript": 32551
       },
-      "last_pushed_timestamp": "2021-06-17T16:47:30",
+      "last_pushed_timestamp": "2021-06-25T10:16:18",
       "main_language": "JavaScript",
       "name": "THEY-SEE-YOU",
-      "size": 176,
+      "size": 26124,
       "stars": 0,
       "tags": [
 
@@ -275,8 +314,9 @@
       "created_year": 2021,
       "description": "Procedurally generated Bauhaus canvas.",
       "formatted_name": "bauhaus time",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/bauhaus-time\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/bauhaus-time",
+      "homepage_clean": "lorenzoros.si\/bauhaus-time",
       "languages": {
         "CSS": 1449,
         "HTML": 1759,
@@ -301,22 +341,23 @@
       "url": "https:\/\/github.com\/lorossi\/bauhaus-time"
     },
     {
-      "commits": 28,
+      "commits": 30,
       "created_timestamp": "2021-04-26T11:11:50",
       "created_year": 2021,
       "description": "Variations on the surface tiling.",
       "formatted_name": "circle tiling",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/circle-tiling\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/circle-tiling",
+      "homepage_clean": "lorenzoros.si\/circle-tiling",
       "languages": {
         "CSS": 2050,
         "HTML": 2275,
         "JavaScript": 11030
       },
-      "last_pushed_timestamp": "2021-04-29T21:27:14",
+      "last_pushed_timestamp": "2021-07-04T21:41:59",
       "main_language": "JavaScript",
       "name": "circle-tiling",
-      "size": 3797,
+      "size": 3800,
       "stars": 0,
       "tags": [
 
@@ -336,8 +377,9 @@
       "created_year": 2021,
       "description": "Hexagons are special.",
       "formatted_name": "hexagons",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/HEXAGONS\/",
-      "homepage_clean": "https:\/\/www.lorenzoros.si\/HEXAGONS",
+      "homepage_clean": "lorenzoros.si\/HEXAGONS",
       "languages": {
         "CSS": 1725,
         "HTML": 1682,
@@ -362,13 +404,43 @@
       "url": "https:\/\/github.com\/lorossi\/HEXAGONS"
     },
     {
+      "commits": 26,
+      "created_timestamp": "2021-04-09T22:16:28",
+      "created_year": 2021,
+      "description": "Small collection of useful Javascript\/ECMAscript snippets that I constantly need.",
+      "formatted_name": "js utils",
+      "hide_interactive": true,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "JavaScript": 7966
+      },
+      "last_pushed_timestamp": "2021-07-12T18:45:47",
+      "main_language": "JavaScript",
+      "name": "js-utils",
+      "size": 414,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "javascript",
+        "ecmascript",
+        "snippets",
+        "javascript-library",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/js-utils"
+    },
+    {
       "commits": 42,
       "created_timestamp": "2021-04-08T14:17:52",
       "created_year": 2021,
       "description": "Fairly simple and straightforward boids simulation in EcmaScript.",
       "formatted_name": "boids",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/boids\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/boids",
+      "homepage_clean": "lorenzoros.si\/boids",
       "languages": {
         "CSS": 2715,
         "HTML": 4043,
@@ -398,8 +470,9 @@
       "created_year": 2021,
       "description": "Paintings are nice. Am i right?",
       "formatted_name": "procedural paintings",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/procedural-paintings\/",
-      "homepage_clean": "https:\/\/www.lorenzoros.si\/procedural-paintings",
+      "homepage_clean": "lorenzoros.si\/procedural-paintings",
       "languages": {
         "CSS": 575,
         "HTML": 1645,
@@ -429,8 +502,9 @@
       "created_year": 2021,
       "description": "I challenged myself. Could I create some good looking looping animations in less than 24 hours?",
       "formatted_name": "trippy animations",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/trippy-animations",
-      "homepage_clean": "https:\/\/www.lorenzoros.si\/trippy-animations",
+      "homepage_clean": "lorenzoros.si\/trippy-animations",
       "languages": {
         "CSS": 714,
         "HTML": 1399,
@@ -459,8 +533,9 @@
       "created_year": 2021,
       "description": "Procedural generation of Mondrian-like paintings.",
       "formatted_name": "random mondrian",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/random-mondrian\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/random-mondrian",
+      "homepage_clean": "lorenzoros.si\/random-mondrian",
       "languages": {
         "CSS": 1391,
         "HTML": 1571,
@@ -488,8 +563,9 @@
       "created_year": 2021,
       "description": "My parents never bought me a spirograph when I was a child... but now I can code.",
       "formatted_name": "digital spirograph",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/digital-spirograph\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/digital-spirograph",
+      "homepage_clean": "lorenzoros.si\/digital-spirograph",
       "languages": {
         "CSS": 1571,
         "HTML": 3482,
@@ -517,8 +593,9 @@
       "created_year": 2020,
       "description": "Feel like a painter without having to paint!",
       "formatted_name": "painting bubbles",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/painting-bubbles",
-      "homepage_clean": "https:\/\/www.lorenzoros.si\/painting-bubbles",
+      "homepage_clean": "lorenzoros.si\/painting-bubbles",
       "languages": {
         "CSS": 2859,
         "HTML": 1439,
@@ -542,20 +619,21 @@
       "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
     },
     {
-      "commits": 26,
+      "commits": 29,
       "created_timestamp": "2020-12-02T16:20:21",
       "created_year": 2020,
       "description": "A simple 2D and 3D vectors library made in JS.",
       "formatted_name": "js vectors",
-      "homepage": "",
-      "homepage_clean": null,
+      "hide_interactive": true,
+      "homepage": "https:\/\/lorossi.github.io\/js-vectors\/",
+      "homepage_clean": "lorossi.github.io\/js-vectors",
       "languages": {
         "JavaScript": 13120
       },
-      "last_pushed_timestamp": "2021-05-04T09:14:34",
+      "last_pushed_timestamp": "2021-07-03T21:28:02",
       "main_language": "JavaScript",
       "name": "js-vectors",
-      "size": 59,
+      "size": 433,
       "stars": 0,
       "tags": [
         "v1.0.4",
@@ -580,8 +658,9 @@
       "created_year": 2020,
       "description": "A suite of looping animations made with p5js and perlin noise.",
       "formatted_name": "p5js perlin",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/p5js-perlin\/",
-      "homepage_clean": "https:\/\/lorenzoros.si\/p5js-perlin",
+      "homepage_clean": "lorenzoros.si\/p5js-perlin",
       "languages": {
         "CSS": 760,
         "HTML": 1494,
@@ -610,8 +689,9 @@
       "created_year": 2020,
       "description": "A clever way to hide emails inside html web pages using client side JavaScript.",
       "formatted_name": "email hide",
+      "hide_interactive": false,
       "homepage": "https:\/\/lorossi.github.io\/email-hide\/",
-      "homepage_clean": "https:\/\/lorossi.github.io\/email-hide",
+      "homepage_clean": "lorossi.github.io\/email-hide",
       "languages": {
         "CSS": 2377,
         "HTML": 6965,
@@ -638,6 +718,7 @@
       "created_year": 2020,
       "description": "A simple yet fascinating way of visualizing the first million digits of PI.",
       "formatted_name": "pi day 2020 visualization",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -665,6 +746,7 @@
       "created_year": 2020,
       "description": "My personal implementation of a perlin flow field in Processing 3.",
       "formatted_name": "perlin flow field",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -692,6 +774,7 @@
       "created_year": 2021,
       "description": "Extract the dominant colors from any image.",
       "formatted_name": "image palette",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -714,13 +797,14 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1006,
+      "commits": 1031,
       "created_timestamp": "2021-01-05T17:12:28",
       "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
       "formatted_name": "vaccino covid19",
+      "hide_interactive": false,
       "homepage": "https:\/\/www.vaccinocovid19.live",
-      "homepage_clean": "https:\/\/www.vaccinocovid19.live",
+      "homepage_clean": "vaccinocovid19.live",
       "languages": {
         "CSS": 7095,
         "HTML": 14625,
@@ -728,10 +812,10 @@
         "Python": 72209,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-06-16T21:55:08",
+      "last_pushed_timestamp": "2021-07-11T21:55:06",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 28759,
+      "size": 34262,
       "stars": 1,
       "tags": [
 
@@ -751,6 +835,7 @@
       "created_year": 2020,
       "description": "A moving animation of Italy in all of its geological beauty.",
       "formatted_name": "perlin italy map",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -778,6 +863,7 @@
       "created_year": 2020,
       "description": "A Python script generating images with all the RGB colors in a set bit depth.",
       "formatted_name": "every color",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -805,6 +891,7 @@
       "created_year": 2020,
       "description": "Handy way to constantly check some hardware stats via browser.",
       "formatted_name": "performances monitor",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -837,6 +924,7 @@
       "created_year": 2020,
       "description": "A flask based dashboard for my Raspberry Pi.",
       "formatted_name": "rpi homepage",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -868,8 +956,9 @@
       "created_year": 2020,
       "description": "Free delivery of cute corgis images.",
       "formatted_name": "corgos telegram bot",
+      "hide_interactive": false,
       "homepage": "https:\/\/t.me\/corgos_bot",
-      "homepage_clean": "https:\/\/t.me\/corgos_bot",
+      "homepage_clean": "t.me\/corgos_bot",
       "languages": {
         "Python": 22775
       },
@@ -892,20 +981,21 @@
       "url": "https:\/\/github.com\/lorossi\/corgos-telegram-bot"
     },
     {
-      "commits": 14,
+      "commits": 21,
       "created_timestamp": "2021-04-15T14:06:34",
       "created_year": 2021,
       "description": "Formulario del corso di Elettronica dello Stato Solido - AA 2020\/2021.",
       "formatted_name": "formulario stato solido",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "TeX": 15601
+        "TeX": 21508
       },
-      "last_pushed_timestamp": "2021-05-18T16:03:48",
+      "last_pushed_timestamp": "2021-06-27T16:13:10",
       "main_language": "TeX",
       "name": "formulario-stato-solido",
-      "size": 1772,
+      "size": 3038,
       "stars": 0,
       "tags": [
 
@@ -918,21 +1008,22 @@
       "url": "https:\/\/github.com\/lorossi\/formulario-stato-solido"
     },
     {
-      "commits": 14,
+      "commits": 16,
       "created_timestamp": "2020-04-01T10:10:09",
       "created_year": 2020,
       "description": "Formulario del corso di Optoelettronica - Ing. Elettronica - AA 2020\/2021.",
       "formatted_name": "formulario optoelettronica",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "TeX": 17007
+        "TeX": 24440
       },
-      "last_pushed_timestamp": "2021-06-11T10:04:37",
+      "last_pushed_timestamp": "2021-06-30T09:17:45",
       "main_language": "TeX",
       "name": "formulario-optoelettronica",
-      "size": 1712,
-      "stars": 0,
+      "size": 2376,
+      "stars": 2,
       "tags": [
 
       ],
@@ -948,6 +1039,7 @@
       "created_year": 2020,
       "description": "Formulario del corso di Campi Elettromagnetici - Ing. Elettronica - AA 2019\/2020.",
       "formatted_name": "formulario campi elettromagnetici",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -973,6 +1065,7 @@
       "created_year": 2020,
       "description": "Appunti di VHDL.",
       "formatted_name": "appunti vhdl",
+      "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
@@ -996,11 +1089,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-06-17T18:49:30.523006",
-    "total_commits": 2184,
+    "last_updated": "2021-07-12T23:50:16.915981",
+    "total_commits": 2293,
     "total_languages": 10,
-    "total_new_repos": 32,
-    "total_size": 920718,
-    "total_stars": 4
+    "total_new_repos": 34,
+    "total_size": 980163,
+    "total_stars": 6
   }
 }
