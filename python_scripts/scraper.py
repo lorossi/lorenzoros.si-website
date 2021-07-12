@@ -28,22 +28,37 @@ class Scraper:
         new_repos = []
 
         for repo in self.g.get_user().get_repos():
-            if not any(t == r for t in self.settings["GitHub"]["topics"] for r in repo.get_topics()):
+            # check if any repo topic in in the list of wanted topics
+            repo_topics = repo.get_topics()
+            wanted_topics = self.settings["GitHub"]["topics"]
+            if not any(t in repo_topics for t in wanted_topics):
+                logging.info(
+                    f"skipping {repo.full_name}."
+                    f"Reason: topics are not interesting "
+                )
                 continue
 
+            # hide from list of interactive sites if found an unnwated topic
+            unwanted_topics = self.settings["GitHub"]["skip_websites"]
+            hide_interactive = any(t in repo_topics for t in unwanted_topics)
+
             logging.info(f"scraping repo {repo.full_name}")
+
             language = repo.language
             homepage = repo.homepage
             homepage_mask = ["www.", "https://", "http://"]
+            # get link for projects but skip unwanted projects
             if homepage:
+                # clean the link by removing the prefixes
                 homepage_clean = homepage
                 for h in homepage_mask:
-                    homepage_clean = homepage.replace(h, "")
+                    homepage_clean = homepage_clean.replace(h, "")
                 if homepage_clean[-1] == "/":
                     homepage_clean = homepage_clean[:-1]
             else:
                 homepage_clean = None
 
+            # clean name and description
             formatted_name = repo.name.replace("-", " ").lower()
 
             description = repo.description
@@ -51,6 +66,7 @@ class Scraper:
                 if description[-1] not in ["!", "?"]:
                     description += "."
 
+            # serialize all repos
             new_repos.append({
                 "name": repo.name,
                 "formatted_name": formatted_name,
@@ -67,6 +83,7 @@ class Scraper:
                 "created": repo.created_at,
                 "homepage": homepage,
                 "homepage_clean": homepage_clean,
+                "hide_interactive": hide_interactive,
                 "topics": repo.get_topics(),
                 "tags": [t.name for t in repo.get_tags()]
             })
@@ -92,6 +109,11 @@ class Scraper:
         # sort by language
         new_repos = sorted(
             new_repos, key=lambda x: x["main_language"], reverse=False)
+
+        # update global stats:
+        #   - total commits
+        #   - total starred
+        #   - languages sizes
 
         for repo in new_repos:
             total_commits += repo["commits"]
@@ -134,6 +156,7 @@ class Scraper:
         self._repos = copy.deepcopy(ordered_repos)
         logging.info("Repos formatted")
 
+    # save repos and html formatted files
     def saveData(self):
         repos_to_dump = copy.deepcopy(self._repos)
         for repo in repos_to_dump["repos"]:
@@ -151,11 +174,15 @@ class Scraper:
 
         logging.info("Files saved")
 
+    # format the repos in the list form, to be embedded into the homepage
     def formatList(self):
+        # create list of projects
         self._projects_list = ""
 
+        # sorted list of unique languages
         languages = sorted(list(set(x["main_language"]
                                     for x in self._repos["repos"])))
+        # filter repos by language
         for language in languages:
             selected_repos = [x for x in self._repos["repos"]
                               if x["main_language"] == language]
@@ -163,6 +190,7 @@ class Scraper:
             if len(selected_repos) == 0:
                 continue
 
+            # create html element
             self._projects_list += "<ul class=\"projects-list\">\n"
             self._projects_list += f"\t<div class=\"language\">{language}</div>\n"
 
@@ -181,12 +209,16 @@ class Scraper:
         selected_repos = sorted(
             selected_repos, key=lambda x: x["created"], reverse=False)
 
+        # create list of links
         for repo in selected_repos:
 
             if not repo["homepage"]:
                 continue
 
             if repo["name"] == "lorenzoros.si-website":
+                continue
+
+            if repo["hide_interactive"]:
                 continue
 
             self._interactive_list += "\t<li class=\"interactive-container\">\n"
@@ -197,6 +229,7 @@ class Scraper:
 
         logging.info("Repos list generated")
 
+    # load repos from file
     def loadData(self):
         with open(self.settings["json_file"], "r") as json_file:
             self._repos = ujson.load(json_file)
@@ -208,6 +241,7 @@ class Scraper:
         self._repos["repos"] = sorted(
             self._repos["repos"], key=lambda x: x["main_language"], reverse=False)
 
+    # getter
     @property
     def repos(self):
         self.loadData()
