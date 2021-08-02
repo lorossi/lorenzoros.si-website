@@ -31,4 +31,9 @@ window.onload = function _0x0ac259() {
   }
   document.querySelector(_0x308a8c).innerHTML = _0xbe70d4;
   document.querySelector(_0x308a8c).href = _0xe33665;
+
+  let _0xd60aa2 = atob("LnNlY3JldCNjdXJyaWN1bHVt");
+  let _0xdb86a8 = atob("aHR0cHM6Ly9naXRodWIuY29tL2xvcm9zc2kvY3VycmljdWx1bS12aXRhZS9yYXcvbWFpbi9jdXJyaWN1bHVtLXZpdGFlLnBkZg=="); let _0x040852 = atob("Y3VycmljdWx1bQ==");
+  document.querySelector(_0xd60aa2).innerHTML = _0x040852;
+  document.querySelector(_0xd60aa2).href = _0xdb86a8;
 };
