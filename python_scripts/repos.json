@@ -1,71 +1,71 @@
 {
   "languages": [
     {
-      "absolute_size": 437517,
+      "absolute_size": 478470,
       "language": "JavaScript",
-      "relative_size": 0.4463716749152947,
-      "relative_size_formatted": "44.64%"
+      "relative_size": 0.4653105522712177,
+      "relative_size_formatted": "46.53%"
     },
     {
-      "absolute_size": 188513,
+      "absolute_size": 191002,
       "language": "Python",
-      "relative_size": 0.19232821479692663,
-      "relative_size_formatted": "19.23%"
+      "relative_size": 0.18574883713693047,
+      "relative_size_formatted": "18.57%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.13818517940383385,
-      "relative_size_formatted": "13.82%"
+      "relative_size": 0.13171885895003407,
+      "relative_size_formatted": "13.17%"
     },
     {
-      "absolute_size": 87654,
+      "absolute_size": 90611,
       "language": "HTML",
-      "relative_size": 0.08942798289672228,
-      "relative_size_formatted": "8.94%"
+      "relative_size": 0.08811890913086987,
+      "relative_size_formatted": "8.81%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.06158363455874176,
-      "relative_size_formatted": "6.16%"
+      "relative_size": 0.05870185289818639,
+      "relative_size_formatted": "5.87%"
     },
     {
-      "absolute_size": 51322,
+      "absolute_size": 53041,
       "language": "CSS",
-      "relative_size": 0.05236067878505922,
-      "relative_size_formatted": "5.24%"
+      "relative_size": 0.0515822036972384,
+      "relative_size_formatted": "5.16%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.012276529516009072,
-      "relative_size_formatted": "1.23%"
+      "relative_size": 0.011702054205027615,
+      "relative_size_formatted": "1.17%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.007113102616605606,
-      "relative_size_formatted": "0.71%"
+      "relative_size": 0.006780247811639036,
+      "relative_size_formatted": "0.68%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.000176501255403438,
+      "relative_size": 0.0001682419494282205,
       "relative_size_formatted": "0.02%"
     },
     {
       "absolute_size": 173,
       "language": "Shell",
-      "relative_size": 0.000176501255403438,
+      "relative_size": 0.0001682419494282205,
       "relative_size_formatted": "0.02%"
     }
   ],
   "repos": [
     {
       "commits": 14,
+      "created_date": "2020-12-21",
       "created_timestamp": "2020-12-21T02:24:22",
-      "created_year": 2020,
       "description": "Give life to a glass jar using some magic (and an Arduino).",
       "formatted_name": "fireflies in a jar",
       "hide_interactive": false,
@@ -91,8 +91,8 @@
     },
     {
       "commits": 48,
+      "created_date": "2021-02-24",
       "created_timestamp": "2021-02-24T20:27:06",
-      "created_year": 2021,
       "description": "Simple Go package to have colored and formatted text inside your terminal.",
       "formatted_name": "colorize",
       "hide_interactive": false,
@@ -122,8 +122,8 @@
     },
     {
       "commits": 21,
+      "created_date": "2021-02-24",
       "created_timestamp": "2021-02-24T17:15:46",
-      "created_year": 2021,
       "description": "A sudoku solver made in Go, supporting text and image input.",
       "formatted_name": "sudoku solver",
       "hide_interactive": false,
@@ -150,8 +150,8 @@
     },
     {
       "commits": 90,
+      "created_date": "2021-02-12",
       "created_timestamp": "2021-02-12T21:45:02",
-      "created_year": 2021,
       "description": "A simple CLI journal made in Go.",
       "formatted_name": "journal",
       "hide_interactive": false,
@@ -184,9 +184,9 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 213,
+      "commits": 217,
+      "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
-      "created_year": 2020,
       "description": "A repo for my website.",
       "formatted_name": "lorenzoros.si website",
       "hide_interactive": false,
@@ -194,14 +194,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 11832,
-        "HTML": 33888,
-        "JavaScript": 3173,
-        "Python": 8211
+        "HTML": 35589,
+        "JavaScript": 3767,
+        "Python": 9942
       },
-      "last_pushed_timestamp": "2021-06-17T16:53:32",
+      "last_pushed_timestamp": "2021-07-12T21:58:07",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6582,
+      "size": 6602,
       "stars": 0,
       "tags": [
 
@@ -215,10 +215,70 @@
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
     },
     {
+      "commits": 6,
+      "created_date": "2021-07-19",
+      "created_timestamp": "2021-07-19T21:00:47",
+      "description": "XOR128 pseudo-random number generator.",
+      "formatted_name": "js xor128",
+      "hide_interactive": true,
+      "homepage": "https:\/\/lorossi.github.io\/js-XOR128\/",
+      "homepage_clean": "lorossi.github.io\/js-XOR128",
+      "languages": {
+        "JavaScript": 4130
+      },
+      "last_pushed_timestamp": "2021-07-19T21:32:27",
+      "main_language": "JavaScript",
+      "name": "js-XOR128",
+      "size": 380,
+      "stars": 0,
+      "tags": [
+        "v1.0"
+      ],
+      "topics": [
+        "javascript",
+        "ecmascript",
+        "javascript-library",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/js-XOR128"
+    },
+    {
+      "commits": 17,
+      "created_date": "2021-07-16",
+      "created_timestamp": "2021-07-16T10:30:53",
+      "description": "Create procedurally generated paintings in style of Ellswort Kelley.",
+      "formatted_name": "random ellsworth kelly",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "CSS": 1736,
+        "HTML": 1240,
+        "JavaScript": 34720
+      },
+      "last_pushed_timestamp": "2021-07-19T21:23:45",
+      "main_language": "JavaScript",
+      "name": "random-ellsworth-kelly",
+      "size": 4095,
+      "stars": 0,
+      "tags": [
+
+      ],
+      "topics": [
+        "html5-canvas",
+        "javascript",
+        "ecmascript",
+        "digitalart",
+        "creative-coding",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/random-ellsworth-kelly"
+    },
+    {
       "commits": 41,
+      "created_date": "2021-06-26",
       "created_timestamp": "2021-06-26T09:20:01",
-      "created_year": 2021,
-      "description": "One big question: canI recreate Pollock's technique using code?",
+      "description": "One big question: can I recreate Pollock's technique using code?",
       "formatted_name": "random pollock",
       "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/random-pollock\/",
@@ -231,7 +291,7 @@
       "last_pushed_timestamp": "2021-07-12T21:47:46",
       "main_language": "JavaScript",
       "name": "random-pollock",
-      "size": 244,
+      "size": 247,
       "stars": 0,
       "tags": [
 
@@ -247,9 +307,9 @@
       "url": "https:\/\/github.com\/lorossi\/random-pollock"
     },
     {
-      "commits": 19,
+      "commits": 20,
+      "created_date": "2021-05-04",
       "created_timestamp": "2021-05-04T18:54:59",
-      "created_year": 2021,
       "description": "The 30's might have ended, but their style isn't.",
       "formatted_name": "duchampesque art",
       "hide_interactive": false,
@@ -260,10 +320,10 @@
         "HTML": 1578,
         "JavaScript": 12521
       },
-      "last_pushed_timestamp": "2021-06-17T10:31:28",
+      "last_pushed_timestamp": "2021-07-17T21:18:09",
       "main_language": "JavaScript",
       "name": "duchampesque-art",
-      "size": 44843,
+      "size": 44845,
       "stars": 0,
       "tags": [
 
@@ -279,8 +339,8 @@
     },
     {
       "commits": 30,
+      "created_date": "2021-04-30",
       "created_timestamp": "2021-04-30T15:51:07",
-      "created_year": 2021,
       "description": "Eyes. Watching you. Following you. You are being followed.",
       "formatted_name": "they see you",
       "hide_interactive": false,
@@ -309,9 +369,9 @@
       "url": "https:\/\/github.com\/lorossi\/THEY-SEE-YOU"
     },
     {
-      "commits": 37,
+      "commits": 38,
+      "created_date": "2021-04-27",
       "created_timestamp": "2021-04-27T14:25:29",
-      "created_year": 2021,
       "description": "Procedurally generated Bauhaus canvas.",
       "formatted_name": "bauhaus time",
       "hide_interactive": false,
@@ -320,12 +380,12 @@
       "languages": {
         "CSS": 1449,
         "HTML": 1759,
-        "JavaScript": 23416
+        "JavaScript": 23414
       },
-      "last_pushed_timestamp": "2021-05-07T19:14:44",
+      "last_pushed_timestamp": "2021-07-14T10:55:05",
       "main_language": "JavaScript",
       "name": "bauhaus-time",
-      "size": 2486,
+      "size": 2489,
       "stars": 0,
       "tags": [
 
@@ -342,8 +402,8 @@
     },
     {
       "commits": 30,
+      "created_date": "2021-04-26",
       "created_timestamp": "2021-04-26T11:11:50",
-      "created_year": 2021,
       "description": "Variations on the surface tiling.",
       "formatted_name": "circle tiling",
       "hide_interactive": false,
@@ -372,23 +432,23 @@
       "url": "https:\/\/github.com\/lorossi\/circle-tiling"
     },
     {
-      "commits": 18,
+      "commits": 35,
+      "created_date": "2021-04-23",
       "created_timestamp": "2021-04-23T10:30:17",
-      "created_year": 2021,
       "description": "Hexagons are special.",
       "formatted_name": "hexagons",
       "hide_interactive": false,
       "homepage": "https:\/\/www.lorenzoros.si\/HEXAGONS\/",
       "homepage_clean": "lorenzoros.si\/HEXAGONS",
       "languages": {
-        "CSS": 1725,
-        "HTML": 1682,
-        "JavaScript": 31857
+        "CSS": 1723,
+        "HTML": 1706,
+        "JavaScript": 31955
       },
-      "last_pushed_timestamp": "2021-05-17T15:34:22",
+      "last_pushed_timestamp": "2021-07-17T21:06:27",
       "main_language": "JavaScript",
       "name": "HEXAGONS",
-      "size": 35787,
+      "size": 147881,
       "stars": 0,
       "tags": [
 
@@ -404,21 +464,21 @@
       "url": "https:\/\/github.com\/lorossi\/HEXAGONS"
     },
     {
-      "commits": 26,
+      "commits": 30,
+      "created_date": "2021-04-09",
       "created_timestamp": "2021-04-09T22:16:28",
-      "created_year": 2021,
       "description": "Small collection of useful Javascript\/ECMAscript snippets that I constantly need.",
       "formatted_name": "js utils",
       "hide_interactive": true,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "JavaScript": 7966
+        "JavaScript": 8850
       },
-      "last_pushed_timestamp": "2021-07-12T18:45:47",
+      "last_pushed_timestamp": "2021-07-19T20:57:08",
       "main_language": "JavaScript",
       "name": "js-utils",
-      "size": 414,
+      "size": 425,
       "stars": 0,
       "tags": [
 
@@ -434,8 +494,8 @@
     },
     {
       "commits": 42,
+      "created_date": "2021-04-08",
       "created_timestamp": "2021-04-08T14:17:52",
-      "created_year": 2021,
       "description": "Fairly simple and straightforward boids simulation in EcmaScript.",
       "formatted_name": "boids",
       "hide_interactive": false,
@@ -465,9 +525,9 @@
       "url": "https:\/\/github.com\/lorossi\/boids"
     },
     {
-      "commits": 59,
+      "commits": 60,
+      "created_date": "2021-03-31",
       "created_timestamp": "2021-03-31T16:40:26",
-      "created_year": 2021,
       "description": "Paintings are nice. Am i right?",
       "formatted_name": "procedural paintings",
       "hide_interactive": false,
@@ -476,12 +536,12 @@
       "languages": {
         "CSS": 575,
         "HTML": 1645,
-        "JavaScript": 50207
+        "JavaScript": 50215
       },
-      "last_pushed_timestamp": "2021-04-23T21:42:02",
+      "last_pushed_timestamp": "2021-07-16T14:06:54",
       "main_language": "JavaScript",
       "name": "procedural-paintings",
-      "size": 70585,
+      "size": 70591,
       "stars": 0,
       "tags": [
 
@@ -498,8 +558,8 @@
     },
     {
       "commits": 10,
+      "created_date": "2021-02-05",
       "created_timestamp": "2021-02-05T14:34:02",
-      "created_year": 2021,
       "description": "I challenged myself. Could I create some good looking looping animations in less than 24 hours?",
       "formatted_name": "trippy animations",
       "hide_interactive": false,
@@ -528,23 +588,23 @@
       "url": "https:\/\/github.com\/lorossi\/trippy-animations"
     },
     {
-      "commits": 19,
+      "commits": 24,
+      "created_date": "2021-01-23",
       "created_timestamp": "2021-01-23T16:11:41",
-      "created_year": 2021,
       "description": "Procedural generation of Mondrian-like paintings.",
       "formatted_name": "random mondrian",
       "hide_interactive": false,
       "homepage": "https:\/\/lorenzoros.si\/random-mondrian\/",
       "homepage_clean": "lorenzoros.si\/random-mondrian",
       "languages": {
-        "CSS": 1391,
-        "HTML": 1571,
-        "JavaScript": 13108
+        "CSS": 1376,
+        "HTML": 1563,
+        "JavaScript": 13410
       },
-      "last_pushed_timestamp": "2021-04-28T13:36:00",
+      "last_pushed_timestamp": "2021-07-20T14:59:08",
       "main_language": "JavaScript",
       "name": "random-mondrian",
-      "size": 2128,
+      "size": 2253,
       "stars": 0,
       "tags": [
 
@@ -559,8 +619,8 @@
     },
     {
       "commits": 13,
+      "created_date": "2021-01-04",
       "created_timestamp": "2021-01-04T23:10:16",
-      "created_year": 2021,
       "description": "My parents never bought me a spirograph when I was a child... but now I can code.",
       "formatted_name": "digital spirograph",
       "hide_interactive": false,
@@ -589,8 +649,8 @@
     },
     {
       "commits": 108,
+      "created_date": "2020-12-03",
       "created_timestamp": "2020-12-03T12:44:19",
-      "created_year": 2020,
       "description": "Feel like a painter without having to paint!",
       "formatted_name": "painting bubbles",
       "hide_interactive": false,
@@ -619,23 +679,24 @@
       "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
     },
     {
-      "commits": 29,
+      "commits": 31,
+      "created_date": "2020-12-02",
       "created_timestamp": "2020-12-02T16:20:21",
-      "created_year": 2020,
       "description": "A simple 2D and 3D vectors library made in JS.",
       "formatted_name": "js vectors",
       "hide_interactive": true,
       "homepage": "https:\/\/lorossi.github.io\/js-vectors\/",
       "homepage_clean": "lorossi.github.io\/js-vectors",
       "languages": {
-        "JavaScript": 13120
+        "JavaScript": 13339
       },
-      "last_pushed_timestamp": "2021-07-03T21:28:02",
+      "last_pushed_timestamp": "2021-07-20T16:13:29",
       "main_language": "JavaScript",
       "name": "js-vectors",
-      "size": 433,
+      "size": 443,
       "stars": 0,
       "tags": [
+        "v1.0.5",
         "v1.0.4",
         "v1.0.3",
         "v1.0.2",
@@ -654,8 +715,8 @@
     },
     {
       "commits": 16,
+      "created_date": "2020-11-17",
       "created_timestamp": "2020-11-17T17:11:05",
-      "created_year": 2020,
       "description": "A suite of looping animations made with p5js and perlin noise.",
       "formatted_name": "p5js perlin",
       "hide_interactive": false,
@@ -685,8 +746,8 @@
     },
     {
       "commits": 32,
+      "created_date": "2020-07-04",
       "created_timestamp": "2020-07-04T17:55:23",
-      "created_year": 2020,
       "description": "A clever way to hide emails inside html web pages using client side JavaScript.",
       "formatted_name": "email hide",
       "hide_interactive": false,
@@ -714,8 +775,8 @@
     },
     {
       "commits": 8,
+      "created_date": "2020-03-14",
       "created_timestamp": "2020-03-14T16:06:55",
-      "created_year": 2020,
       "description": "A simple yet fascinating way of visualizing the first million digits of PI.",
       "formatted_name": "pi day 2020 visualization",
       "hide_interactive": false,
@@ -742,8 +803,8 @@
     },
     {
       "commits": 7,
+      "created_date": "2020-03-01",
       "created_timestamp": "2020-03-01T16:09:42",
-      "created_year": 2020,
       "description": "My personal implementation of a perlin flow field in Processing 3.",
       "formatted_name": "perlin flow field",
       "hide_interactive": false,
@@ -770,8 +831,8 @@
     },
     {
       "commits": 23,
+      "created_date": "2021-01-25",
       "created_timestamp": "2021-01-25T18:14:51",
-      "created_year": 2021,
       "description": "Extract the dominant colors from any image.",
       "formatted_name": "image palette",
       "hide_interactive": false,
@@ -797,9 +858,9 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1031,
+      "commits": 1055,
+      "created_date": "2021-01-05",
       "created_timestamp": "2021-01-05T17:12:28",
-      "created_year": 2021,
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
       "formatted_name": "vaccino covid19",
       "hide_interactive": false,
@@ -809,13 +870,13 @@
         "CSS": 7095,
         "HTML": 14625,
         "JavaScript": 50276,
-        "Python": 72209,
+        "Python": 72967,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-07-11T21:55:06",
+      "last_pushed_timestamp": "2021-08-01T21:55:07",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 34262,
+      "size": 39387,
       "stars": 1,
       "tags": [
 
@@ -831,8 +892,8 @@
     },
     {
       "commits": 33,
+      "created_date": "2020-12-12",
       "created_timestamp": "2020-12-12T18:03:06",
-      "created_year": 2020,
       "description": "A moving animation of Italy in all of its geological beauty.",
       "formatted_name": "perlin italy map",
       "hide_interactive": false,
@@ -859,8 +920,8 @@
     },
     {
       "commits": 99,
+      "created_date": "2020-11-24",
       "created_timestamp": "2020-11-24T13:31:02",
-      "created_year": 2020,
       "description": "A Python script generating images with all the RGB colors in a set bit depth.",
       "formatted_name": "every color",
       "hide_interactive": false,
@@ -887,8 +948,8 @@
     },
     {
       "commits": 53,
+      "created_date": "2020-11-18",
       "created_timestamp": "2020-11-18T15:24:37",
-      "created_year": 2020,
       "description": "Handy way to constantly check some hardware stats via browser.",
       "formatted_name": "performances monitor",
       "hide_interactive": false,
@@ -920,8 +981,8 @@
     },
     {
       "commits": 18,
+      "created_date": "2020-07-11",
       "created_timestamp": "2020-07-11T16:18:11",
-      "created_year": 2020,
       "description": "A flask based dashboard for my Raspberry Pi.",
       "formatted_name": "rpi homepage",
       "hide_interactive": false,
@@ -952,8 +1013,8 @@
     },
     {
       "commits": 16,
+      "created_date": "2020-06-05",
       "created_timestamp": "2020-06-05T13:11:52",
-      "created_year": 2020,
       "description": "Free delivery of cute corgis images.",
       "formatted_name": "corgos telegram bot",
       "hide_interactive": false,
@@ -982,8 +1043,8 @@
     },
     {
       "commits": 21,
+      "created_date": "2021-04-15",
       "created_timestamp": "2021-04-15T14:06:34",
-      "created_year": 2021,
       "description": "Formulario del corso di Elettronica dello Stato Solido - AA 2020\/2021.",
       "formatted_name": "formulario stato solido",
       "hide_interactive": false,
@@ -1009,8 +1070,8 @@
     },
     {
       "commits": 16,
+      "created_date": "2020-04-01",
       "created_timestamp": "2020-04-01T10:10:09",
-      "created_year": 2020,
       "description": "Formulario del corso di Optoelettronica - Ing. Elettronica - AA 2020\/2021.",
       "formatted_name": "formulario optoelettronica",
       "hide_interactive": false,
@@ -1035,8 +1096,8 @@
     },
     {
       "commits": 37,
+      "created_date": "2020-03-23",
       "created_timestamp": "2020-03-23T16:55:33",
-      "created_year": 2020,
       "description": "Formulario del corso di Campi Elettromagnetici - Ing. Elettronica - AA 2019\/2020.",
       "formatted_name": "formulario campi elettromagnetici",
       "hide_interactive": false,
@@ -1061,8 +1122,8 @@
     },
     {
       "commits": 16,
+      "created_date": "2020-01-16",
       "created_timestamp": "2020-01-16T20:16:27",
-      "created_year": 2020,
       "description": "Appunti di VHDL.",
       "formatted_name": "appunti vhdl",
       "hide_interactive": false,
@@ -1089,11 +1150,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-07-12T23:50:16.915981",
-    "total_commits": 2293,
+    "last_updated": "2021-08-02T21:52:20.959794",
+    "total_commits": 2375,
     "total_languages": 10,
-    "total_new_repos": 34,
-    "total_size": 980163,
+    "total_new_repos": 36,
+    "total_size": 1028281,
     "total_stars": 6
   }
 }

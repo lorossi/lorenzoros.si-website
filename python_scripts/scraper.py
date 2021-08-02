@@ -33,7 +33,7 @@ class Scraper:
             wanted_topics = self.settings["GitHub"]["topics"]
             if not any(t in repo_topics for t in wanted_topics):
                 logging.info(
-                    f"skipping {repo.full_name}."
+                    f"skipping {repo.full_name}. "
                     f"Reason: topics are not interesting "
                 )
                 continue
@@ -66,6 +66,8 @@ class Scraper:
                 if description[-1] not in ["!", "?"]:
                     description += "."
 
+            last_pushed = repo.pushed_at.isoformat()
+            created = repo.created_at.isoformat()
             # serialize all repos
             new_repos.append({
                 "name": repo.name,
@@ -77,9 +79,9 @@ class Scraper:
                 "main_language": language,
                 "languages": repo.get_languages(),
                 "size": repo.size,
-                "last_pushed_timestamp": repo.pushed_at.isoformat(),
-                "created_timestamp": repo.created_at.isoformat(),
-                "created_year": repo.created_at.year,
+                "last_pushed_timestamp": last_pushed,
+                "created_timestamp": created,
+                "created_date": created[:-9],
                 "created": repo.created_at,
                 "homepage": homepage,
                 "homepage_clean": homepage_clean,
@@ -181,6 +183,7 @@ class Scraper:
     def formatList(self):
         # create list of projects
         self._projects_list = ""
+        self._projects_list += "<ul class=\"projects-list\">\n"
 
         # sorted list of unique languages
         languages = sorted(list(set(x["main_language"]
@@ -194,8 +197,7 @@ class Scraper:
                 continue
 
             # create html element
-            self._projects_list += "<ul class=\"projects-list\">\n"
-            self._projects_list + "\t<div class=\"language\">"
+            self._projects_list += "\t<div class=\"language\">"
             self._projects_list += f"{language}</div>\n"
 
             for repo in selected_repos:
@@ -204,11 +206,12 @@ class Scraper:
                 self._projects_list += f"href=\"{repo['url']}\">"
                 self._projects_list += f"{repo['formatted_name']}</a>\n"
                 self._projects_list += "\t\t<span class=\"project-description\">"
-                self._projects_list += "{repo['description']}</span>\n"
+                self._projects_list += f"{repo['description']}</span>\n"
                 self._projects_list += "\t</li>\n"
 
-            self._projects_list += "</ul>\n\n"
+        self._projects_list += "</ul>\n\n"
 
+        # create list of interactive projects
         self._interactive_list = ""
         self._interactive_list += "<ul class=\"projects-list\">\n"
 
@@ -216,7 +219,7 @@ class Scraper:
         selected_repos = sorted(
             selected_repos, key=lambda x: x["created"], reverse=False)
 
-        # create list of links
+        # add links
         for repo in selected_repos:
 
             if not repo["homepage"]:
@@ -232,6 +235,9 @@ class Scraper:
             self._interactive_list += "\t\t<a class=\"project-title\" "
             self._interactive_list += f"href=\"{repo['homepage']}\">"
             self._interactive_list += f"{repo['formatted_name']}</a>\n"
+            self._interactive_list += "\t\t<span class=\"project-date\">"
+            self._interactive_list += "Date created: "
+            self._interactive_list += f"{repo['created_date']}</span>\n"
             self._interactive_list += "\t</li>\n"
 
         self._interactive_list += "</ul>\n\n"
