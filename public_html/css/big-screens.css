@@ -31,10 +31,12 @@
   }   
 
   .language {
-    margin-bottom: calc(var(--text-size) * 1.5);
+    margin-top: calc(var(--text-size) * 1.5);
+    margin-bottom: calc(var(--text-size) / 2);
   }
 
   .project-container {
+    margin-top: calc(var(--text-size) / 2);
     margin-bottom: calc(var(--text-size) / 2);
   }
 

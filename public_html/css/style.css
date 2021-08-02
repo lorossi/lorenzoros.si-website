@@ -29,13 +29,6 @@ a:visited {
   color: inherit;
 }
 
-.lines-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -10;
-}
-
 .navbar {
   margin-top: calc(var(--text-size) * 3);
   margin-bottom: calc(var(--text-size) * 5);
@@ -84,6 +77,7 @@ a:visited {
 
 .language {
   font-size: var(--text-size);
+  margin-top: calc(var(--text-size));
   margin-bottom: calc(var(--text-size));
 }
 
@@ -116,7 +110,7 @@ a:visited {
   font-family: HackItalic;
 }
 
-.project-description {
+.project-description, .project-date {
   margin-top: calc(var(--small-text-size) / 4);
   margin-bottom: calc(var(--small-text-size) / 4);
   opacity: 0.7;
