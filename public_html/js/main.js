@@ -4,10 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   await print_letters();
 });
 
-window.addEventListener("resize", () => {
-
-});
-
 const print_letters = async (selector = ".typer p", speed = 25, newline_pause = 500) => {
   await timeout(500);
   return new Promise(resolve => {
