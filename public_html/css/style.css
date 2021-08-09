@@ -5,14 +5,16 @@
   z-index: 0;
 }
 
-html {
+html, body {
   height: 100%;
+  min-height: 100vh;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  height: 100%;
-  min-height: 95%;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Hack-Regular;
@@ -231,4 +233,35 @@ a:visited {
 
   border-radius: 100%;
   box-shadow: 2px 2px 5px -1px #00ffff, -2px -2px 5px -1px #ff00ff;
+}
+
+.animations-container {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; 
+}
+
+@keyframes fade {
+  from {
+   opacity: 0.25;    
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.line {
+  position: absolute;
+  height: 4px;
+  width: 100vw;
+  background-color: rgb(21, 20, 20);
+  opacity: 0;
+
+  animation-name: fade;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }

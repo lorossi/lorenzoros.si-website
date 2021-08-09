@@ -1,8 +1,27 @@
 document.addEventListener("DOMContentLoaded", async () => {
   console.clear();
   console.log("%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website", "font-size: 1rem;");
+  add_lines();
   await print_letters();
 });
+
+
+const add_lines = () => {
+  // select the animations container
+  const container = document.querySelector(".animations-container");
+
+  // loop to create the lines
+  for (let i = 0; i < 100; i++) {
+    const line = document.createElement("div");
+    line.classList.add("line");
+    // random position
+    line.style.top = `${Math.random() * 100}%`;
+    line.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`;
+    line.style.animationDelay = `${Math.random() * 2}s`;
+    // add to container
+    container.appendChild(line);
+  }
+};
 
 const print_letters = async (selector = ".typer p", speed = 25, newline_pause = 500) => {
   await timeout(500);
