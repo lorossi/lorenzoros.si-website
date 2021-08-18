@@ -1,63 +1,63 @@
 {
   "languages": [
     {
-      "absolute_size": 478470,
+      "absolute_size": 480015,
       "language": "JavaScript",
-      "relative_size": 0.4653105522712177,
-      "relative_size_formatted": "46.53%"
+      "relative_size": 0.4630408485730106,
+      "relative_size_formatted": "46.3%"
     },
     {
-      "absolute_size": 191002,
+      "absolute_size": 193902,
       "language": "Python",
-      "relative_size": 0.18574883713693047,
-      "relative_size_formatted": "18.57%"
+      "relative_size": 0.18704529362624897,
+      "relative_size_formatted": "18.7%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.13171885895003407,
-      "relative_size_formatted": "13.17%"
+      "relative_size": 0.13065446849394882,
+      "relative_size_formatted": "13.07%"
     },
     {
-      "absolute_size": 90611,
+      "absolute_size": 93381,
       "language": "HTML",
-      "relative_size": 0.08811890913086987,
-      "relative_size_formatted": "8.81%"
+      "relative_size": 0.0900788881193219,
+      "relative_size_formatted": "9.01%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.05870185289818639,
-      "relative_size_formatted": "5.87%"
+      "relative_size": 0.05822749643566152,
+      "relative_size_formatted": "5.82%"
     },
     {
-      "absolute_size": 53041,
+      "absolute_size": 54104,
       "language": "CSS",
-      "relative_size": 0.0515822036972384,
-      "relative_size_formatted": "5.16%"
+      "relative_size": 0.0521907900194664,
+      "relative_size_formatted": "5.22%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.011702054205027615,
-      "relative_size_formatted": "1.17%"
+      "relative_size": 0.01160749253852283,
+      "relative_size_formatted": "1.16%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.006780247811639036,
-      "relative_size_formatted": "0.68%"
+      "relative_size": 0.006725458154955636,
+      "relative_size_formatted": "0.67%"
+    },
+    {
+      "absolute_size": 272,
+      "language": "Shell",
+      "relative_size": 0.0002623816147659112,
+      "relative_size_formatted": "0.03%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.0001682419494282205,
-      "relative_size_formatted": "0.02%"
-    },
-    {
-      "absolute_size": 173,
-      "language": "Shell",
-      "relative_size": 0.0001682419494282205,
+      "relative_size": 0.00016688242409743618,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -79,9 +79,7 @@
       "name": "fireflies-in-a-jar",
       "size": 20,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "arduino",
         "led",
@@ -184,7 +182,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 217,
+      "commits": 225,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -193,19 +191,17 @@
       "homepage": "https:\/\/lorenzoros.si\/",
       "homepage_clean": "lorenzoros.si",
       "languages": {
-        "CSS": 11832,
-        "HTML": 35589,
-        "JavaScript": 3767,
-        "Python": 9942
+        "CSS": 12875,
+        "HTML": 38359,
+        "JavaScript": 4629,
+        "Python": 10240
       },
-      "last_pushed_timestamp": "2021-07-12T21:58:07",
+      "last_pushed_timestamp": "2021-08-09T22:02:56",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6602,
+      "size": 6645,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "released",
         "css",
@@ -243,7 +239,7 @@
       "url": "https:\/\/github.com\/lorossi\/js-XOR128"
     },
     {
-      "commits": 17,
+      "commits": 18,
       "created_date": "2021-07-16",
       "created_timestamp": "2021-07-16T10:30:53",
       "description": "Create procedurally generated paintings in style of Ellswort Kelley.",
@@ -256,14 +252,12 @@
         "HTML": 1240,
         "JavaScript": 34720
       },
-      "last_pushed_timestamp": "2021-07-19T21:23:45",
+      "last_pushed_timestamp": "2021-08-09T22:07:12",
       "main_language": "JavaScript",
       "name": "random-ellsworth-kelly",
-      "size": 4095,
+      "size": 4388,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "html5-canvas",
         "javascript",
@@ -275,7 +269,7 @@
       "url": "https:\/\/github.com\/lorossi\/random-ellsworth-kelly"
     },
     {
-      "commits": 41,
+      "commits": 69,
       "created_date": "2021-06-26",
       "created_timestamp": "2021-06-26T09:20:01",
       "description": "One big question: can I recreate Pollock's technique using code?",
@@ -284,18 +278,16 @@
       "homepage": "https:\/\/lorenzoros.si\/random-pollock\/",
       "homepage_clean": "lorenzoros.si\/random-pollock",
       "languages": {
-        "CSS": 1299,
+        "CSS": 1319,
         "HTML": 1609,
-        "JavaScript": 34452
+        "JavaScript": 35091
       },
-      "last_pushed_timestamp": "2021-07-12T21:47:46",
+      "last_pushed_timestamp": "2021-08-18T18:05:30",
       "main_language": "JavaScript",
       "name": "random-pollock",
-      "size": 247,
+      "size": 1003415,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "html5",
         "javascript",
@@ -325,9 +317,7 @@
       "name": "duchampesque-art",
       "size": 44845,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "javascript",
         "canvas",
@@ -356,9 +346,7 @@
       "name": "THEY-SEE-YOU",
       "size": 26124,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "html5",
         "canvas",
@@ -387,9 +375,7 @@
       "name": "bauhaus-time",
       "size": 2489,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "javascript",
         "ecmascript",
@@ -419,9 +405,7 @@
       "name": "circle-tiling",
       "size": 3800,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "html5-canvas",
         "javascript",
@@ -432,7 +416,7 @@
       "url": "https:\/\/github.com\/lorossi\/circle-tiling"
     },
     {
-      "commits": 35,
+      "commits": 37,
       "created_date": "2021-04-23",
       "created_timestamp": "2021-04-23T10:30:17",
       "description": "Hexagons are special.",
@@ -443,16 +427,14 @@
       "languages": {
         "CSS": 1723,
         "HTML": 1706,
-        "JavaScript": 31955
+        "JavaScript": 31999
       },
-      "last_pushed_timestamp": "2021-07-17T21:06:27",
+      "last_pushed_timestamp": "2021-08-10T22:15:11",
       "main_language": "JavaScript",
       "name": "HEXAGONS",
-      "size": 147881,
+      "size": 147882,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "canvas",
         "procedural-generation",
@@ -480,9 +462,7 @@
       "name": "js-utils",
       "size": 425,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "javascript",
         "ecmascript",
@@ -511,9 +491,7 @@
       "name": "boids",
       "size": 197,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "ecmascript",
         "javascript",
@@ -543,9 +521,7 @@
       "name": "procedural-paintings",
       "size": 70591,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "javascript",
         "ecmascript",
@@ -576,9 +552,7 @@
       "name": "trippy-animations",
       "size": 162485,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "p5js",
         "creativecoding",
@@ -606,9 +580,7 @@
       "name": "random-mondrian",
       "size": 2253,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "creative-coding",
         "canvasjs",
@@ -636,9 +608,7 @@
       "name": "digital-spirograph",
       "size": 178,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "js",
         "canvas",
@@ -667,9 +637,7 @@
       "name": "painting-bubbles",
       "size": 2208964,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "creativecoding",
         "jscanvas",
@@ -732,9 +700,7 @@
       "name": "p5js-perlin",
       "size": 551315,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "perlin-noise",
         "p5js",
@@ -763,9 +729,7 @@
       "name": "email-hide",
       "size": 409,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "javascript",
         "spam-protection",
@@ -790,9 +754,7 @@
       "name": "pi-day-2020-visualization",
       "size": 151877,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "processing3",
         "data-visualization",
@@ -818,9 +780,7 @@
       "name": "perlin-flow-field",
       "size": 2948,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "perlin-flow-field",
         "processing3",
@@ -858,7 +818,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1055,
+      "commits": 1071,
       "created_date": "2021-01-05",
       "created_timestamp": "2021-01-05T17:12:28",
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -873,14 +833,12 @@
         "Python": 72967,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-08-01T21:55:07",
+      "last_pushed_timestamp": "2021-08-17T21:55:05",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 39387,
+      "size": 43978,
       "stars": 1,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "opendata",
         "visualization",
@@ -907,9 +865,7 @@
       "name": "perlin-italy-map",
       "size": 158942,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "italy",
         "python3",
@@ -1012,7 +968,7 @@
       "url": "https:\/\/github.com\/lorossi\/rpi-homepage"
     },
     {
-      "commits": 16,
+      "commits": 26,
       "created_date": "2020-06-05",
       "created_timestamp": "2020-06-05T13:11:52",
       "description": "Free delivery of cute corgis images.",
@@ -1021,12 +977,13 @@
       "homepage": "https:\/\/t.me\/corgos_bot",
       "homepage_clean": "t.me\/corgos_bot",
       "languages": {
-        "Python": 22775
+        "Python": 25377,
+        "Shell": 99
       },
-      "last_pushed_timestamp": "2021-01-27T09:25:18",
+      "last_pushed_timestamp": "2021-08-14T15:49:08",
       "main_language": "Python",
       "name": "corgos-telegram-bot",
-      "size": 83,
+      "size": 123,
       "stars": 0,
       "tags": [
         "v1.0.1",
@@ -1058,9 +1015,7 @@
       "name": "formulario-stato-solido",
       "size": 3038,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "latex",
         "elettronica-dello-stato-solido",
@@ -1085,9 +1040,7 @@
       "name": "formulario-optoelettronica",
       "size": 2376,
       "stars": 2,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "formulario",
         "released"
@@ -1111,9 +1064,7 @@
       "name": "formulario-campi-elettromagnetici",
       "size": 3895,
       "stars": 0,
-      "tags": [
-
-      ],
+      "tags": [],
       "topics": [
         "released",
         "formulario"
@@ -1150,11 +1101,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-08-02T21:52:20.959794",
-    "total_commits": 2375,
+    "last_updated": "2021-08-18T22:32:34.179540",
+    "total_commits": 2440,
     "total_languages": 10,
     "total_new_repos": 36,
-    "total_size": 1028281,
+    "total_size": 1036658,
     "total_stars": 6
   }
 }
