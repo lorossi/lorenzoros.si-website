@@ -4,6 +4,7 @@ import logging
 
 from sys import argv
 from github import Github
+from bs4 import BeautifulSoup
 from datetime import datetime
 
 
@@ -304,15 +305,18 @@ class Scraper:
         with open(self._settings["html_base_file"], "r") as html_file:
             homepage = html_file.read()
 
+        soup = BeautifulSoup(self._interactive_list, 'html.parser')
         # replace the placeholder
         homepage = homepage.replace(
             "{{ INTERACTIVE PLACEHOLDER }}",
-            self._interactive_list
+            soup.prettify()
         )
+
+        soup = BeautifulSoup(self._projects_list, 'html.parser')
         # replace the placeholder
         homepage = homepage.replace(
             "{{ PROJECTS PLACEHOLDER }}",
-            self._projects_list
+            soup.prettify()
         )
 
         # save the file with the lists
