@@ -1,67 +1,107 @@
 {
   "languages": [
     {
-      "absolute_size": 480015,
+      "absolute_size": 480171,
       "language": "JavaScript",
-      "relative_size": 0.4630408485730106,
-      "relative_size_formatted": "46.3%"
+      "relative_size": 0.46011504529081854,
+      "relative_size_formatted": "46.01%"
     },
     {
-      "absolute_size": 193902,
+      "absolute_size": 190301,
       "language": "Python",
-      "relative_size": 0.18704529362624897,
-      "relative_size_formatted": "18.7%"
+      "relative_size": 0.18235243951402325,
+      "relative_size_formatted": "18.24%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.13065446849394882,
-      "relative_size_formatted": "13.07%"
+      "relative_size": 0.12978672638366254,
+      "relative_size_formatted": "12.98%"
     },
     {
-      "absolute_size": 93381,
+      "absolute_size": 76697,
       "language": "HTML",
-      "relative_size": 0.0900788881193219,
-      "relative_size_formatted": "9.01%"
+      "relative_size": 0.07349349216981015,
+      "relative_size_formatted": "7.35%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.05822749643566152,
-      "relative_size_formatted": "5.82%"
+      "relative_size": 0.057840778314068086,
+      "relative_size_formatted": "5.78%"
     },
     {
-      "absolute_size": 54104,
+      "absolute_size": 53505,
       "language": "CSS",
-      "relative_size": 0.0521907900194664,
-      "relative_size_formatted": "5.22%"
+      "relative_size": 0.051270183951728124,
+      "relative_size_formatted": "5.13%"
+    },
+    {
+      "absolute_size": 22997,
+      "language": "C",
+      "relative_size": 0.022036453048086938,
+      "relative_size_formatted": "2.2%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.01160749253852283,
-      "relative_size_formatted": "1.16%"
+      "relative_size": 0.0115304013361582,
+      "relative_size_formatted": "1.15%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.006725458154955636,
+      "relative_size": 0.006680791001055013,
       "relative_size_formatted": "0.67%"
     },
     {
-      "absolute_size": 272,
+      "absolute_size": 3080,
       "language": "Shell",
-      "relative_size": 0.0002623816147659112,
-      "relative_size_formatted": "0.03%"
+      "relative_size": 0.002951353454281331,
+      "relative_size_formatted": "0.3%"
+    },
+    {
+      "absolute_size": 1854,
+      "language": "Makefile",
+      "relative_size": 0.0017765614624148012,
+      "relative_size_formatted": "0.18%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00016688242409743618,
+      "relative_size": 0.00016577407389307475,
       "relative_size_formatted": "0.02%"
     }
   ],
   "repos": [
+    {
+      "commits": 18,
+      "created_date": "2021-10-14",
+      "created_timestamp": "2021-10-14T09:38:54",
+      "description": "A simple implementation of doubly linked lists in C.",
+      "formatted_name": "better lists",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "C": 22997,
+        "Makefile": 1854
+      },
+      "last_pushed_timestamp": "2021-10-15T20:41:13",
+      "main_language": "C",
+      "name": "better-lists",
+      "size": 30,
+      "stars": 0,
+      "tags": [
+        "v1.0.0"
+      ],
+      "topics": [
+        "c",
+        "c-library",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/better-lists"
+    },
     {
       "commits": 14,
       "created_date": "2020-12-21",
@@ -182,7 +222,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 225,
+      "commits": 226,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -192,14 +232,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 38359,
+        "HTML": 21749,
         "JavaScript": 4629,
-        "Python": 10240
+        "Python": 11674
       },
-      "last_pushed_timestamp": "2021-08-09T22:02:56",
+      "last_pushed_timestamp": "2021-10-15T20:47:31",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6645,
+      "size": 6656,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -239,7 +279,7 @@
       "url": "https:\/\/github.com\/lorossi\/js-XOR128"
     },
     {
-      "commits": 18,
+      "commits": 19,
       "created_date": "2021-07-16",
       "created_timestamp": "2021-07-16T10:30:53",
       "description": "Create procedurally generated paintings in style of Ellswort Kelley.",
@@ -250,12 +290,12 @@
       "languages": {
         "CSS": 1736,
         "HTML": 1240,
-        "JavaScript": 34720
+        "JavaScript": 34721
       },
-      "last_pushed_timestamp": "2021-08-09T22:07:12",
+      "last_pushed_timestamp": "2021-08-21T16:49:30",
       "main_language": "JavaScript",
       "name": "random-ellsworth-kelly",
-      "size": 4388,
+      "size": 4389,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -579,7 +619,7 @@
       "main_language": "JavaScript",
       "name": "random-mondrian",
       "size": 2253,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "creative-coding",
@@ -818,7 +858,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1071,
+      "commits": 1129,
       "created_date": "2021-01-05",
       "created_timestamp": "2021-01-05T17:12:28",
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -833,10 +873,10 @@
         "Python": 72967,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-08-17T21:55:05",
+      "last_pushed_timestamp": "2021-10-14T21:55:05",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 43978,
+      "size": 63109,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -903,7 +943,7 @@
       "url": "https:\/\/github.com\/lorossi\/every-color"
     },
     {
-      "commits": 53,
+      "commits": 58,
       "created_date": "2020-11-18",
       "created_timestamp": "2020-11-18T15:24:37",
       "description": "Handy way to constantly check some hardware stats via browser.",
@@ -912,15 +952,16 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "CSS": 6416,
-        "HTML": 4856,
-        "JavaScript": 6393,
-        "Python": 14071
+        "CSS": 6771,
+        "HTML": 5024,
+        "JavaScript": 6604,
+        "Python": 14552,
+        "Shell": 92
       },
-      "last_pushed_timestamp": "2021-01-27T09:25:30",
+      "last_pushed_timestamp": "2021-09-01T12:19:14",
       "main_language": "Python",
       "name": "performances-monitor",
-      "size": 664,
+      "size": 686,
       "stars": 0,
       "tags": [
         "v1.0"
@@ -936,7 +977,7 @@
       "url": "https:\/\/github.com\/lorossi\/performances-monitor"
     },
     {
-      "commits": 18,
+      "commits": 44,
       "created_date": "2020-07-11",
       "created_timestamp": "2020-07-11T16:18:11",
       "description": "A flask based dashboard for my Raspberry Pi.",
@@ -945,15 +986,16 @@
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "CSS": 3155,
-        "HTML": 2054,
-        "JavaScript": 2874,
-        "Python": 9761
+        "CSS": 2201,
+        "HTML": 1812,
+        "JavaScript": 2818,
+        "Python": 4250,
+        "Shell": 78
       },
-      "last_pushed_timestamp": "2020-12-08T13:42:50",
+      "last_pushed_timestamp": "2021-09-04T17:10:17",
       "main_language": "Python",
       "name": "rpi-homepage",
-      "size": 776,
+      "size": 897,
       "stars": 0,
       "tags": [
         "v1.0.0"
@@ -968,7 +1010,7 @@
       "url": "https:\/\/github.com\/lorossi\/rpi-homepage"
     },
     {
-      "commits": 26,
+      "commits": 36,
       "created_date": "2020-06-05",
       "created_timestamp": "2020-06-05T13:11:52",
       "description": "Free delivery of cute corgis images.",
@@ -977,17 +1019,18 @@
       "homepage": "https:\/\/t.me\/corgos_bot",
       "homepage_clean": "t.me\/corgos_bot",
       "languages": {
-        "Python": 25377,
-        "Shell": 99
+        "Python": 25372,
+        "Shell": 105
       },
-      "last_pushed_timestamp": "2021-08-14T15:49:08",
+      "last_pushed_timestamp": "2021-08-30T22:48:23",
       "main_language": "Python",
       "name": "corgos-telegram-bot",
-      "size": 123,
+      "size": 144,
       "stars": 0,
       "tags": [
         "v1.0.1",
-        "v1.0"
+        "v1.0",
+        "1.0.2"
       ],
       "topics": [
         "telegram-bot",
@@ -997,6 +1040,34 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/corgos-telegram-bot"
+    },
+    {
+      "commits": 3,
+      "created_date": "2021-10-08",
+      "created_timestamp": "2021-10-08T14:16:00",
+      "description": "Matrix in the shell. Again.",
+      "formatted_name": "shell matrix",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Shell": 2632
+      },
+      "last_pushed_timestamp": "2021-10-15T09:10:56",
+      "main_language": "Shell",
+      "name": "shell-matrix",
+      "size": 13,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "qrcode",
+        "shell",
+        "matrix",
+        "cli",
+        "ansi-escape-codes",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/shell-matrix"
     },
     {
       "commits": 21,
@@ -1101,11 +1172,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-08-18T22:32:34.179540",
-    "total_commits": 2440,
-    "total_languages": 10,
-    "total_new_repos": 36,
-    "total_size": 1036658,
-    "total_stars": 6
+    "last_updated": "2021-10-15T22:56:32.016508",
+    "total_commits": 2562,
+    "total_languages": 12,
+    "total_new_repos": 38,
+    "total_size": 1043589,
+    "total_stars": 7
   }
 }
