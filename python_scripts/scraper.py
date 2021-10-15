@@ -347,7 +347,7 @@ def main():
         s.scrapeRepos()
 
     s.formatRepos()
-    # s.saveRepos()
+    s.saveRepos()
     s.embedRepos()
 
 
