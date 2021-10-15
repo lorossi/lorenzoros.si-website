@@ -3,73 +3,73 @@
     {
       "absolute_size": 480171,
       "language": "JavaScript",
-      "relative_size": 0.46011504529081854,
-      "relative_size_formatted": "46.01%"
+      "relative_size": 0.45481333719787,
+      "relative_size_formatted": "45.48%"
     },
     {
-      "absolute_size": 190301,
+      "absolute_size": 190456,
       "language": "Python",
-      "relative_size": 0.18235243951402325,
-      "relative_size_formatted": "18.24%"
+      "relative_size": 0.18039808515998992,
+      "relative_size_formatted": "18.04%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.12978672638366254,
-      "relative_size_formatted": "12.98%"
+      "relative_size": 0.1282912496661154,
+      "relative_size_formatted": "12.83%"
     },
     {
-      "absolute_size": 76697,
+      "absolute_size": 88707,
       "language": "HTML",
-      "relative_size": 0.07349349216981015,
-      "relative_size_formatted": "7.35%"
+      "relative_size": 0.08402241431242505,
+      "relative_size_formatted": "8.4%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.057840778314068086,
-      "relative_size_formatted": "5.78%"
+      "relative_size": 0.057174303862452806,
+      "relative_size_formatted": "5.72%"
     },
     {
       "absolute_size": 53505,
       "language": "CSS",
-      "relative_size": 0.051270183951728124,
-      "relative_size_formatted": "5.13%"
+      "relative_size": 0.0506794196375292,
+      "relative_size_formatted": "5.07%"
     },
     {
       "absolute_size": 22997,
       "language": "C",
-      "relative_size": 0.022036453048086938,
-      "relative_size_formatted": "2.2%"
+      "relative_size": 0.021782536462092494,
+      "relative_size_formatted": "2.18%"
     },
     {
       "absolute_size": 12033,
       "language": "Processing",
-      "relative_size": 0.0115304013361582,
-      "relative_size_formatted": "1.15%"
+      "relative_size": 0.011397541472729443,
+      "relative_size_formatted": "1.14%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.006680791001055013,
-      "relative_size_formatted": "0.67%"
+      "relative_size": 0.006603811115089311,
+      "relative_size_formatted": "0.66%"
     },
     {
       "absolute_size": 3080,
       "language": "Shell",
-      "relative_size": 0.002951353454281331,
-      "relative_size_formatted": "0.3%"
+      "relative_size": 0.0029173462757422657,
+      "relative_size_formatted": "0.29%"
     },
     {
       "absolute_size": 1854,
       "language": "Makefile",
-      "relative_size": 0.0017765614624148012,
+      "relative_size": 0.0017560909075409613,
       "relative_size_formatted": "0.18%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.00016577407389307475,
+      "relative_size": 0.0001638639304231857,
       "relative_size_formatted": "0.02%"
     }
   ],
@@ -222,7 +222,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 226,
+      "commits": 229,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -232,11 +232,11 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 21749,
+        "HTML": 33759,
         "JavaScript": 4629,
-        "Python": 11674
+        "Python": 11829
       },
-      "last_pushed_timestamp": "2021-10-15T20:47:31",
+      "last_pushed_timestamp": "2021-10-15T21:00:50",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
       "size": 6656,
@@ -1172,11 +1172,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-10-15T22:56:32.016508",
-    "total_commits": 2562,
+    "last_updated": "2021-10-15T23:08:53.841254",
+    "total_commits": 2565,
     "total_languages": 12,
     "total_new_repos": 38,
-    "total_size": 1043589,
+    "total_size": 1055754,
     "total_stars": 7
   }
 }

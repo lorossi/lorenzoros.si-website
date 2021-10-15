@@ -4,7 +4,6 @@ import logging
 
 from sys import argv
 from github import Github
-from bs4 import BeautifulSoup
 from datetime import datetime
 
 
@@ -137,7 +136,7 @@ class Scraper:
                 homepage_clean = None
 
             # clean name and description
-            formatted_name = repo.name.replace("-", " ").lower()
+            formatted_name = repo.name.replace("-", " ").lower().strip()
 
             description = repo.description
             if description[-1] not in [".", "!", "?"]:
@@ -305,18 +304,16 @@ class Scraper:
         with open(self._settings["html_base_file"], "r") as html_file:
             homepage = html_file.read()
 
-        soup = BeautifulSoup(self._interactive_list, 'html.parser')
         # replace the placeholder
         homepage = homepage.replace(
             "{{ INTERACTIVE PLACEHOLDER }}",
-            soup.prettify()
+            self._interactive_list
         )
 
-        soup = BeautifulSoup(self._projects_list, 'html.parser')
         # replace the placeholder
         homepage = homepage.replace(
             "{{ PROJECTS PLACEHOLDER }}",
-            soup.prettify()
+            self._projects_list
         )
 
         # save the file with the lists
