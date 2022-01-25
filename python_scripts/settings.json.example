@@ -2,7 +2,7 @@
   "GitHub": {
     "access_token": ",
     "topics": [""],
-    "skip_websites": [""]
+    "topics_skip_websites": [""]
   },
   "json_file": "repos.json",
   "html_projects_file": "projects-list.html",
