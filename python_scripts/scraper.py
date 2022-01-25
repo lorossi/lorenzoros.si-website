@@ -5,6 +5,7 @@ import logging
 from sys import argv
 from github import Github
 from datetime import datetime
+from bs4 import BeautifulSoup
 
 
 class Scraper:
@@ -178,8 +179,8 @@ class Scraper:
         """
 
         # create list of projects
-        self._projects_list = ""
-        self._projects_list += "<ul class=\"projects-list\">"
+        html_list = ""
+        html_list += "<ul class=\"projects-list\">"
 
         # sorted list of unique languages
         languages = sorted(list({x["main_language"]
@@ -193,23 +194,25 @@ class Scraper:
                 continue
 
             # create html element
-            self._projects_list += "<div class=\"language\">"
-            self._projects_list += f"{language}</div>"
+            html_list += "<div class=\"language\">"
+            html_list += f"{language}</div>"
 
             for repo in selected_repos:
-                self._projects_list += "<li class=\"project-container\">"
-                self._projects_list += "<a class=\"project-title\" "
-                self._projects_list += f"href=\"{repo['url']}\">"
-                self._projects_list += f"{repo['formatted_name']}</a>"
-                self._projects_list += "<span class=\"project-description\">"
-                self._projects_list += f" {repo['description']}</span>"
-                self._projects_list += "</li>"
+                html_list += "<li class=\"project-container\">"
+                html_list += "<a class=\"project-title\" "
+                html_list += f"href=\"{repo['url']}\">"
+                html_list += f"{repo['formatted_name']}</a>"
+                html_list += "<span class=\"project-description\">"
+                html_list += f" {repo['description']}</span>"
+                html_list += "</li>"
 
-        self._projects_list += "</ul>"
+        html_list += "</ul>"
+        soup = BeautifulSoup(html_list, 'html.parser')
+        self._projects_list = soup.prettify()
 
         # create list of interactive projects
-        self._interactive_list = ""
-        self._interactive_list += "<ul class=\"projects-list\">"
+        html_list = ""
+        html_list += "<ul class=\"projects-list\">"
 
         selected_repos = [x for x in self._repos["repos"] if x["homepage"]]
         selected_repos = sorted(
@@ -231,16 +234,18 @@ class Scraper:
             if repo["hide_interactive"]:
                 continue
 
-            self._interactive_list += "<li class=\"interactive-container\">"
-            self._interactive_list += "<a class=\"project-title\" "
-            self._interactive_list += f"href=\"{repo['homepage']}\">"
-            self._interactive_list += f"{repo['formatted_name']}</a>"
-            self._interactive_list += "<span class=\"project-date\">"
-            self._interactive_list += " created: "
-            self._interactive_list += f"{repo['created_date']}</span>"
-            self._interactive_list += "</li>"
+            html_list += "<li class=\"interactive-container\">"
+            html_list += "<a class=\"project-title\" "
+            html_list += f"href=\"{repo['homepage']}\">"
+            html_list += f"{repo['formatted_name']}</a>"
+            html_list += "<span class=\"project-date\">"
+            html_list += " created: "
+            html_list += f"{repo['created_date']}</span>"
+            html_list += "</li>"
 
-        self._interactive_list += "</ul>"
+        html_list += "</ul>"
+        soup = BeautifulSoup(html_list, 'html.parser')
+        self._interactive_list = soup.prettify()
 
         logging.info("Repos list generated")
 
@@ -316,9 +321,11 @@ class Scraper:
             self._projects_list
         )
 
+        soup = BeautifulSoup(homepage, 'html.parser')
+
         # save the file with the lists
         with open("index.html", "w") as html_file:
-            html_file.write(homepage)
+            html_file.write(soup.prettify())
 
     @property
     def repos(self) -> list[dict]:
