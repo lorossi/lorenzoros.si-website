@@ -1,98 +1,127 @@
 {
   "languages": [
     {
-      "absolute_size": 480171,
+      "absolute_size": 490167,
       "language": "JavaScript",
-      "relative_size": 0.45481333719787,
-      "relative_size_formatted": "45.48%"
+      "relative_size": 0.3970606461458952,
+      "relative_size_formatted": "39.71%"
     },
     {
-      "absolute_size": 190456,
+      "absolute_size": 251744,
       "language": "Python",
-      "relative_size": 0.18039808515998992,
-      "relative_size_formatted": "18.04%"
+      "relative_size": 0.20392567288975438,
+      "relative_size_formatted": "20.39%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.1282912496661154,
-      "relative_size_formatted": "12.83%"
+      "relative_size": 0.10971665199122876,
+      "relative_size_formatted": "10.97%"
     },
     {
-      "absolute_size": 88707,
+      "absolute_size": 115872,
+      "language": "C",
+      "relative_size": 0.09386231874079072,
+      "relative_size_formatted": "9.39%"
+    },
+    {
+      "absolute_size": 89806,
       "language": "HTML",
-      "relative_size": 0.08402241431242505,
-      "relative_size_formatted": "8.4%"
+      "relative_size": 0.07274750929331894,
+      "relative_size_formatted": "7.27%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.057174303862452806,
-      "relative_size_formatted": "5.72%"
+      "relative_size": 0.04889634496540674,
+      "relative_size_formatted": "4.89%"
     },
     {
-      "absolute_size": 53505,
+      "absolute_size": 53771,
       "language": "CSS",
-      "relative_size": 0.0506794196375292,
-      "relative_size_formatted": "5.07%"
+      "relative_size": 0.04355729374664335,
+      "relative_size_formatted": "4.36%"
     },
     {
-      "absolute_size": 22997,
-      "language": "C",
-      "relative_size": 0.021782536462092494,
-      "relative_size_formatted": "2.18%"
-    },
-    {
-      "absolute_size": 12033,
+      "absolute_size": 23287,
       "language": "Processing",
-      "relative_size": 0.011397541472729443,
-      "relative_size_formatted": "1.14%"
+      "relative_size": 0.018863675577506157,
+      "relative_size_formatted": "1.89%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.006603811115089311,
-      "relative_size_formatted": "0.66%"
+      "relative_size": 0.005647680943289085,
+      "relative_size_formatted": "0.56%"
     },
     {
-      "absolute_size": 3080,
-      "language": "Shell",
-      "relative_size": 0.0029173462757422657,
-      "relative_size_formatted": "0.29%"
-    },
-    {
-      "absolute_size": 1854,
+      "absolute_size": 3717,
       "language": "Makefile",
-      "relative_size": 0.0017560909075409613,
-      "relative_size_formatted": "0.18%"
+      "relative_size": 0.0030109624306089403,
+      "relative_size_formatted": "0.3%"
+    },
+    {
+      "absolute_size": 3174,
+      "language": "Shell",
+      "relative_size": 0.002571104319277045,
+      "relative_size_formatted": "0.26%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.0001638639304231857,
-      "relative_size_formatted": "0.02%"
+      "relative_size": 0.0001401389562806959,
+      "relative_size_formatted": "0.01%"
     }
   ],
   "repos": [
     {
-      "commits": 18,
-      "created_date": "2021-10-14",
-      "created_timestamp": "2021-10-14T09:38:54",
-      "description": "A simple implementation of doubly linked lists in C.",
-      "formatted_name": "better lists",
+      "commits": 33,
+      "created_date": "2021-11-08",
+      "created_timestamp": "2021-11-08T13:36:24",
+      "description": "While I should be studying, I am developing a little pomodoro timer to help me study.",
+      "formatted_name": "pomoc",
       "hide_interactive": false,
       "homepage": "",
       "homepage_clean": null,
       "languages": {
-        "C": 22997,
+        "C": 82135,
+        "Makefile": 1863,
+        "Python": 970
+      },
+      "last_pushed_timestamp": "2021-11-18T08:00:58",
+      "main_language": "C",
+      "name": "pomoc",
+      "size": 144,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "cli",
+        "timer",
+        "pomodoro",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/pomoc"
+    },
+    {
+      "commits": 25,
+      "created_date": "2021-10-14",
+      "created_timestamp": "2021-10-14T09:38:54",
+      "description": "A simple implementation of doubly linked lists in C.",
+      "formatted_name": "better lists",
+      "hide_interactive": true,
+      "homepage": "https:\/\/lorossi.github.io\/better-lists\/html",
+      "homepage_clean": "lorossi.github.io\/better-lists\/html",
+      "languages": {
+        "C": 33737,
         "Makefile": 1854
       },
-      "last_pushed_timestamp": "2021-10-15T20:41:13",
+      "last_pushed_timestamp": "2021-11-10T17:11:59",
       "main_language": "C",
       "name": "better-lists",
-      "size": 30,
+      "size": 351,
       "stars": 0,
       "tags": [
+        "v1.1.0",
         "v1.0.0"
       ],
       "topics": [
@@ -222,7 +251,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 229,
+      "commits": 230,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -232,15 +261,15 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 33759,
+        "HTML": 34151,
         "JavaScript": 4629,
-        "Python": 11829
+        "Python": 11682
       },
-      "last_pushed_timestamp": "2021-10-15T21:00:50",
+      "last_pushed_timestamp": "2021-10-15T21:10:06",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6656,
-      "stars": 0,
+      "size": 6691,
+      "stars": 1,
       "tags": [],
       "topics": [
         "released",
@@ -249,6 +278,39 @@
         "javascript"
       ],
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 45,
+      "created_date": "2022-01-17",
+      "created_timestamp": "2022-01-17T22:50:46",
+      "description": "A simple chrome plugin to download webex videos.",
+      "formatted_name": "webex video downloader",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "CSS": 266,
+        "HTML": 707,
+        "JavaScript": 10614
+      },
+      "last_pushed_timestamp": "2022-01-20T12:24:11",
+      "main_language": "JavaScript",
+      "name": "webex-video-downloader",
+      "size": 316,
+      "stars": 3,
+      "tags": [
+        "v0.2.0",
+        "v0.1.1",
+        "v0.1.0"
+      ],
+      "topics": [
+        "chrome-extension",
+        "released",
+        "polimi",
+        "politecnico-di-milano",
+        "webex-downloader"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/webex-video-downloader"
     },
     {
       "commits": 6,
@@ -326,7 +388,7 @@
       "main_language": "JavaScript",
       "name": "random-pollock",
       "size": 1003415,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "html5",
@@ -356,7 +418,7 @@
       "main_language": "JavaScript",
       "name": "duchampesque-art",
       "size": 44845,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "javascript",
@@ -385,7 +447,7 @@
       "main_language": "JavaScript",
       "name": "THEY-SEE-YOU",
       "size": 26124,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "html5",
@@ -414,7 +476,7 @@
       "main_language": "JavaScript",
       "name": "bauhaus-time",
       "size": 2489,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "javascript",
@@ -444,7 +506,7 @@
       "main_language": "JavaScript",
       "name": "circle-tiling",
       "size": 3800,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "html5-canvas",
@@ -473,7 +535,7 @@
       "main_language": "JavaScript",
       "name": "HEXAGONS",
       "size": 147882,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "canvas",
@@ -492,8 +554,8 @@
       "description": "Small collection of useful Javascript\/ECMAscript snippets that I constantly need.",
       "formatted_name": "js utils",
       "hide_interactive": true,
-      "homepage": "",
-      "homepage_clean": null,
+      "homepage": "https:\/\/lorossi.github.io\/js-utils\/",
+      "homepage_clean": "lorossi.github.io\/js-utils",
       "languages": {
         "JavaScript": 8850
       },
@@ -591,7 +653,7 @@
       "main_language": "JavaScript",
       "name": "trippy-animations",
       "size": 162485,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "p5js",
@@ -619,7 +681,7 @@
       "main_language": "JavaScript",
       "name": "random-mondrian",
       "size": 2253,
-      "stars": 1,
+      "stars": 2,
       "tags": [],
       "topics": [
         "creative-coding",
@@ -676,7 +738,7 @@
       "main_language": "JavaScript",
       "name": "painting-bubbles",
       "size": 2208964,
-      "stars": 0,
+      "stars": 1,
       "tags": [],
       "topics": [
         "creativecoding",
@@ -739,7 +801,7 @@
       "main_language": "JavaScript",
       "name": "p5js-perlin",
       "size": 551315,
-      "stars": 0,
+      "stars": 2,
       "tags": [],
       "topics": [
         "perlin-noise",
@@ -776,6 +838,33 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/email-hide"
+    },
+    {
+      "commits": 18,
+      "created_date": "2020-07-16",
+      "created_timestamp": "2020-07-16T21:27:05",
+      "description": "Lissajous curves generator in Processing.",
+      "formatted_name": "lissajous",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Processing": 11254
+      },
+      "last_pushed_timestamp": "2020-09-07T18:57:49",
+      "main_language": "Processing",
+      "name": "lissajous",
+      "size": 44638,
+      "stars": 1,
+      "tags": [],
+      "topics": [
+        "processing",
+        "procedural-generation",
+        "digitalart",
+        "generative-art",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/lissajous"
     },
     {
       "commits": 8,
@@ -830,6 +919,31 @@
       "url": "https:\/\/github.com\/lorossi\/perlin-flow-field"
     },
     {
+      "commits": 13,
+      "created_date": "2021-11-04",
+      "created_timestamp": "2021-11-04T08:25:36",
+      "description": "There is no planet b. Act now!",
+      "formatted_name": "no planet b",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 17017
+      },
+      "last_pushed_timestamp": "2021-11-17T16:40:40",
+      "main_language": "Python",
+      "name": "no-planet-b",
+      "size": 37130,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "python",
+        "dataviz",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/no-planet-b"
+    },
+    {
       "commits": 23,
       "created_date": "2021-01-25",
       "created_timestamp": "2021-01-25T18:14:51",
@@ -858,7 +972,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1129,
+      "commits": 1231,
       "created_date": "2021-01-05",
       "created_timestamp": "2021-01-05T17:12:28",
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -873,10 +987,10 @@
         "Python": 72967,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2021-10-14T21:55:05",
+      "last_pushed_timestamp": "2022-01-24T22:55:08",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 63109,
+      "size": 108027,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -977,7 +1091,35 @@
       "url": "https:\/\/github.com\/lorossi\/performances-monitor"
     },
     {
-      "commits": 44,
+      "commits": 85,
+      "created_date": "2020-09-25",
+      "created_timestamp": "2020-09-25T10:00:26",
+      "description": "Bad memes and bad ideas.",
+      "formatted_name": "just memes telegram",
+      "hide_interactive": false,
+      "homepage": "https:\/\/t.me\/justmemes69lmao",
+      "homepage_clean": "t.me\/justmemes69lmao",
+      "languages": {
+        "Python": 42540,
+        "Shell": 94
+      },
+      "last_pushed_timestamp": "2022-01-25T10:52:35",
+      "main_language": "Python",
+      "name": "just-memes-telegram",
+      "size": 54502,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "python3",
+        "telegram-bot",
+        "memes",
+        "reddit-api",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/just-memes-telegram"
+    },
+    {
+      "commits": 48,
       "created_date": "2020-07-11",
       "created_timestamp": "2020-07-11T16:18:11",
       "description": "A flask based dashboard for my Raspberry Pi.",
@@ -988,14 +1130,14 @@
       "languages": {
         "CSS": 2201,
         "HTML": 1812,
-        "JavaScript": 2818,
-        "Python": 4250,
+        "JavaScript": 2200,
+        "Python": 5158,
         "Shell": 78
       },
-      "last_pushed_timestamp": "2021-09-04T17:10:17",
+      "last_pushed_timestamp": "2022-01-02T19:37:25",
       "main_language": "Python",
       "name": "rpi-homepage",
-      "size": 897,
+      "size": 903,
       "stars": 0,
       "tags": [
         "v1.0.0"
@@ -1010,7 +1152,7 @@
       "url": "https:\/\/github.com\/lorossi\/rpi-homepage"
     },
     {
-      "commits": 36,
+      "commits": 38,
       "created_date": "2020-06-05",
       "created_timestamp": "2020-06-05T13:11:52",
       "description": "Free delivery of cute corgis images.",
@@ -1022,11 +1164,11 @@
         "Python": 25372,
         "Shell": 105
       },
-      "last_pushed_timestamp": "2021-08-30T22:48:23",
+      "last_pushed_timestamp": "2022-01-24T10:53:11",
       "main_language": "Python",
       "name": "corgos-telegram-bot",
-      "size": 144,
-      "stars": 0,
+      "size": 145,
+      "stars": 1,
       "tags": [
         "v1.0.1",
         "v1.0",
@@ -1042,7 +1184,7 @@
       "url": "https:\/\/github.com\/lorossi\/corgos-telegram-bot"
     },
     {
-      "commits": 3,
+      "commits": 4,
       "created_date": "2021-10-08",
       "created_timestamp": "2021-10-08T14:16:00",
       "description": "Matrix in the shell. Again.",
@@ -1053,10 +1195,10 @@
       "languages": {
         "Shell": 2632
       },
-      "last_pushed_timestamp": "2021-10-15T09:10:56",
+      "last_pushed_timestamp": "2021-11-05T16:22:03",
       "main_language": "Shell",
       "name": "shell-matrix",
-      "size": 13,
+      "size": 16,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -1172,11 +1314,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2021-10-15T23:08:53.841254",
-    "total_commits": 2565,
+    "last_updated": "2022-01-25T12:32:01.242440",
+    "total_commits": 2876,
     "total_languages": 12,
-    "total_new_repos": 38,
-    "total_size": 1055754,
-    "total_stars": 7
+    "total_new_repos": 43,
+    "total_size": 1234489,
+    "total_stars": 24
   }
 }

@@ -1,8 +1,11 @@
 {
-  "GitHub" : {
-    "access_token" : "ACCESS TOKEN",
-    "topics": ["TOPIC", "TO", "INCLUDE"]
+  "GitHub": {
+    "access_token": ",
+    "topics": [""],
+    "skip_websites": [""]
   },
-  "json_file": "JSON FILE PATH",
-  "html_projects_file": "HTML FILE PATH"
+  "json_file": "repos.json",
+  "html_projects_file": "projects-list.html",
+  "html_interactive_file": "interactive-list.html",
+  "html_base_file": "base.html"
 }
