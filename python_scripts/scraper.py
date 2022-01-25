@@ -14,24 +14,23 @@ class Scraper:
         self._loadSettings()
         self._GitHubLogin()
 
-    def _loadSettings(self, path="settings.json"):
-        """
-        load settings from path
-        """
+    def _loadSettings(self, path: str = "settings.json") -> None:
+        """Loads settings from path
 
+        Args:
+            path (str, optional): Setting settings path. Defaults to "settings.json".
+        """
         with open(path, "r") as json_file:
             self._settings = ujson.load(json_file)
         logging.info("Settings loaded")
 
-    def _GitHubLogin(self):
+    def _GitHubLogin(self) -> None:
+        """Logs into github
         """
-        login into GitHub
-        """
-
         self._github = Github(self._settings["GitHub"]["access_token"])
         logging.info("Logged into GitHub")
 
-    def _createReposDict(self):
+    def _createReposDict(self) -> None:
         """
         format repos dict
         """
@@ -97,7 +96,7 @@ class Scraper:
         self._repos = copy.deepcopy(ordered_repos)
         logging.info("Repos formatted")
 
-    def scrapeRepos(self):
+    def scrapeRepos(self) -> None:
         """
         load repos from Github
         """
@@ -108,6 +107,7 @@ class Scraper:
             # check if any repo topic in in the list of wanted topics
             repo_topics = repo.get_topics()
             wanted_topics = self._settings["GitHub"]["topics"]
+
             if all(t not in repo_topics for t in wanted_topics):
                 logging.info(
                     f"skipping {repo.full_name}. "
@@ -116,7 +116,7 @@ class Scraper:
                 continue
 
             # hide from list of interactive sites if found an unwanted topic
-            unwanted_topics = self._settings["GitHub"]["skip_websites"]
+            unwanted_topics = self._settings["GitHub"]["topics_skip_websites"]
             hide_interactive = any(t in repo_topics for t in unwanted_topics)
 
             logging.info(f"scraping repo {repo.full_name}")
@@ -172,7 +172,7 @@ class Scraper:
         # now format all repos
         self._createReposDict()
 
-    def formatRepos(self):
+    def formatRepos(self) -> None:
         """
         format the repos in the list form, to be embedded into the homepage
         """
@@ -244,7 +244,7 @@ class Scraper:
 
         logging.info("Repos list generated")
 
-    def loadRepos(self):
+    def loadRepos(self) -> None:
         """
         load repos from json file
         """
@@ -265,7 +265,7 @@ class Scraper:
             self._repos["repos"], key=lambda x: x["main_language"],
             reverse=False)
 
-    def saveRepos(self):
+    def saveRepos(self) -> None:
         """
         save repos and html formatted files
         """
@@ -287,7 +287,7 @@ class Scraper:
 
         logging.info("Files saved")
 
-    def embedRepos(self):
+    def embedRepos(self) -> None:
         """
         save repos to base file
         """
@@ -321,7 +321,7 @@ class Scraper:
             html_file.write(homepage)
 
     @property
-    def repos(self):
+    def repos(self) -> list[dict]:
         """
         get the dict containing all the repos
         """
