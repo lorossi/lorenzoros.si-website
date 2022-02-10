@@ -108,14 +108,18 @@ class Scraper:
             repo_topics = repo.get_topics()
             wanted_topics = self._settings["GitHub"]["topics"]
 
-            if all(t not in repo_topics for t in wanted_topics):
-                logging.info(
+            if repo.private:
+                logging.warning(
                     f"skipping {repo.full_name}. "
-                    f"Reason: topics are not interesting "
+                    f"Reason: private repo "
                 )
                 continue
 
-            if repo.private:
+            if all(t not in repo_topics for t in wanted_topics):
+                logging.warning(
+                    f"skipping {repo.full_name}. "
+                    f"Reason: topics are not interesting "
+                )
                 continue
 
             # hide from list of interactive sites if found an unwanted topic
