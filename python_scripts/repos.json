@@ -1,81 +1,81 @@
 {
   "languages": [
     {
-      "absolute_size": 490167,
+      "absolute_size": 634126,
       "language": "JavaScript",
-      "relative_size": 0.3970606461458952,
-      "relative_size_formatted": "39.71%"
+      "relative_size": 0.43991558628957067,
+      "relative_size_formatted": "43.99%"
     },
     {
-      "absolute_size": 251744,
+      "absolute_size": 254233,
       "language": "Python",
-      "relative_size": 0.20392567288975438,
-      "relative_size_formatted": "20.39%"
+      "relative_size": 0.1763704046974204,
+      "relative_size_formatted": "17.64%"
+    },
+    {
+      "absolute_size": 172054,
+      "language": "C",
+      "relative_size": 0.11935993206944012,
+      "relative_size_formatted": "11.94%"
     },
     {
       "absolute_size": 135444,
       "language": "TeX",
-      "relative_size": 0.10971665199122876,
-      "relative_size_formatted": "10.97%"
+      "relative_size": 0.09396228299960041,
+      "relative_size_formatted": "9.4%"
     },
     {
-      "absolute_size": 115872,
-      "language": "C",
-      "relative_size": 0.09386231874079072,
-      "relative_size_formatted": "9.39%"
-    },
-    {
-      "absolute_size": 89806,
+      "absolute_size": 91423,
       "language": "HTML",
-      "relative_size": 0.07274750929331894,
-      "relative_size_formatted": "7.27%"
+      "relative_size": 0.06342336167473249,
+      "relative_size_formatted": "6.34%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.04889634496540674,
-      "relative_size_formatted": "4.89%"
+      "relative_size": 0.04187524974470541,
+      "relative_size_formatted": "4.19%"
     },
     {
-      "absolute_size": 53771,
+      "absolute_size": 54650,
       "language": "CSS",
-      "relative_size": 0.04355729374664335,
-      "relative_size_formatted": "4.36%"
+      "relative_size": 0.03791263375216446,
+      "relative_size_formatted": "3.79%"
     },
     {
       "absolute_size": 23287,
       "language": "Processing",
-      "relative_size": 0.018863675577506157,
-      "relative_size_formatted": "1.89%"
+      "relative_size": 0.01615501376370821,
+      "relative_size_formatted": "1.62%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.005647680943289085,
-      "relative_size_formatted": "0.56%"
+      "relative_size": 0.004836722461483816,
+      "relative_size_formatted": "0.48%"
     },
     {
-      "absolute_size": 3717,
+      "absolute_size": 5574,
       "language": "Makefile",
-      "relative_size": 0.0030109624306089403,
-      "relative_size_formatted": "0.3%"
+      "relative_size": 0.0038668805221329307,
+      "relative_size_formatted": "0.39%"
     },
     {
       "absolute_size": 3174,
       "language": "Shell",
-      "relative_size": 0.002571104319277045,
-      "relative_size_formatted": "0.26%"
+      "relative_size": 0.002201915819384629,
+      "relative_size_formatted": "0.22%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 0.0001401389562806959,
+      "relative_size": 0.00012001620565644009,
       "relative_size_formatted": "0.01%"
     }
   ],
   "repos": [
     {
-      "commits": 33,
+      "commits": 34,
       "created_date": "2021-11-08",
       "created_timestamp": "2021-11-08T13:36:24",
       "description": "While I should be studying, I am developing a little pomodoro timer to help me study.",
@@ -88,10 +88,10 @@
         "Makefile": 1863,
         "Python": 970
       },
-      "last_pushed_timestamp": "2021-11-18T08:00:58",
+      "last_pushed_timestamp": "2022-02-01T16:55:25",
       "main_language": "C",
       "name": "pomoc",
-      "size": 144,
+      "size": 162,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -101,6 +101,33 @@
         "released"
       ],
       "url": "https:\/\/github.com\/lorossi\/pomoc"
+    },
+    {
+      "commits": 11,
+      "created_date": "2021-11-02",
+      "created_timestamp": "2021-11-02T17:16:04",
+      "description": "Simple (at least I hope) C library to handle windows in terminal.",
+      "formatted_name": "cli gui",
+      "hide_interactive": true,
+      "homepage": "https:\/\/lorossi.github.io\/cli-gui\/html",
+      "homepage_clean": "lorossi.github.io\/cli-gui\/html",
+      "languages": {
+        "C": 56182,
+        "Makefile": 1857,
+        "Python": 2393
+      },
+      "last_pushed_timestamp": "2021-11-10T16:53:56",
+      "main_language": "C",
+      "name": "cli-gui",
+      "size": 515,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "c-library",
+        "cli-gui",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/cli-gui"
     },
     {
       "commits": 25,
@@ -251,7 +278,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 230,
+      "commits": 237,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -261,14 +288,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 34151,
+        "HTML": 34934,
         "JavaScript": 4629,
-        "Python": 11682
+        "Python": 11897
       },
-      "last_pushed_timestamp": "2021-10-15T21:10:06",
+      "last_pushed_timestamp": "2022-02-01T16:57:55",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6691,
+      "size": 6708,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -278,6 +305,32 @@
         "javascript"
       ],
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 7,
+      "created_date": "2022-01-31",
+      "created_timestamp": "2022-01-31T16:40:02",
+      "description": "Are you stuck in wordle? Do you want to know tomorrow's worlde solution? Fear no more!",
+      "formatted_name": "wordle solution",
+      "hide_interactive": false,
+      "homepage": "https:\/\/lorossi.github.io\/wordle-solution\/",
+      "homepage_clean": "lorossi.github.io\/wordle-solution",
+      "languages": {
+        "CSS": 879,
+        "HTML": 834,
+        "JavaScript": 143959
+      },
+      "last_pushed_timestamp": "2022-02-01T08:00:52",
+      "main_language": "JavaScript",
+      "name": "wordle-solution",
+      "size": 47,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "javascript",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/wordle-solution"
     },
     {
       "commits": 45,
@@ -476,7 +529,7 @@
       "main_language": "JavaScript",
       "name": "bauhaus-time",
       "size": 2489,
-      "stars": 1,
+      "stars": 2,
       "tags": [],
       "topics": [
         "javascript",
@@ -506,7 +559,7 @@
       "main_language": "JavaScript",
       "name": "circle-tiling",
       "size": 3800,
-      "stars": 1,
+      "stars": 2,
       "tags": [],
       "topics": [
         "html5-canvas",
@@ -681,7 +734,7 @@
       "main_language": "JavaScript",
       "name": "random-mondrian",
       "size": 2253,
-      "stars": 2,
+      "stars": 3,
       "tags": [],
       "topics": [
         "creative-coding",
@@ -801,7 +854,7 @@
       "main_language": "JavaScript",
       "name": "p5js-perlin",
       "size": 551315,
-      "stars": 2,
+      "stars": 3,
       "tags": [],
       "topics": [
         "perlin-noise",
@@ -972,7 +1025,7 @@
       "url": "https:\/\/github.com\/lorossi\/image-palette"
     },
     {
-      "commits": 1231,
+      "commits": 1247,
       "created_date": "2021-01-05",
       "created_timestamp": "2021-01-05T17:12:28",
       "description": "Controlla in tempo reale (o quasi) la distribuzione del vaccino contro il covid in Italia.",
@@ -987,10 +1040,10 @@
         "Python": 72967,
         "Shell": 58
       },
-      "last_pushed_timestamp": "2022-01-24T22:55:08",
+      "last_pushed_timestamp": "2022-02-09T22:55:07",
       "main_language": "Python",
       "name": "vaccino-covid19",
-      "size": 108027,
+      "size": 116294,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -1044,7 +1097,7 @@
       "main_language": "Python",
       "name": "every-color",
       "size": 231610,
-      "stars": 0,
+      "stars": 1,
       "tags": [
         "v1.0.1",
         "1.0"
@@ -1091,7 +1144,7 @@
       "url": "https:\/\/github.com\/lorossi\/performances-monitor"
     },
     {
-      "commits": 85,
+      "commits": 94,
       "created_date": "2020-09-25",
       "created_timestamp": "2020-09-25T10:00:26",
       "description": "Bad memes and bad ideas.",
@@ -1100,13 +1153,13 @@
       "homepage": "https:\/\/t.me\/justmemes69lmao",
       "homepage_clean": "t.me\/justmemes69lmao",
       "languages": {
-        "Python": 42540,
+        "Python": 42421,
         "Shell": 94
       },
-      "last_pushed_timestamp": "2022-01-25T10:52:35",
+      "last_pushed_timestamp": "2022-02-10T15:28:39",
       "main_language": "Python",
       "name": "just-memes-telegram",
-      "size": 54502,
+      "size": 54523,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -1314,11 +1367,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2022-01-25T12:32:01.242440",
-    "total_commits": 2876,
+    "last_updated": "2022-02-10T16:34:52.003589",
+    "total_commits": 2927,
     "total_languages": 12,
-    "total_new_repos": 43,
-    "total_size": 1234489,
-    "total_stars": 24
+    "total_new_repos": 45,
+    "total_size": 1441472,
+    "total_stars": 29
   }
 }
