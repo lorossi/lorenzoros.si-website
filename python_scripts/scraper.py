@@ -5,7 +5,6 @@ import logging
 from sys import argv
 from github import Github
 from datetime import datetime
-from bs4 import BeautifulSoup
 
 
 class Scraper:
@@ -180,7 +179,7 @@ class Scraper:
 
         # create list of projects
         html_list = ""
-        html_list += "<ul class=\"projects-list\">"
+        html_list += "<ul class=\"projects-list\">\n"
 
         # sorted list of unique languages
         languages = sorted(list({x["main_language"]
@@ -204,15 +203,14 @@ class Scraper:
                 html_list += f"{repo['formatted_name']}</a>"
                 html_list += "<span class=\"project-description\">"
                 html_list += f" {repo['description']}</span>"
-                html_list += "</li>"
+                html_list += "</li>\n"
 
         html_list += "</ul>"
-        soup = BeautifulSoup(html_list, 'html.parser')
-        self._projects_list = soup.prettify()
+        self._projects_list = html_list
 
         # create list of interactive projects
         html_list = ""
-        html_list += "<ul class=\"projects-list\">"
+        html_list += "<ul class=\"projects-list\">\n"
 
         selected_repos = [x for x in self._repos["repos"] if x["homepage"]]
         selected_repos = sorted(
@@ -241,11 +239,11 @@ class Scraper:
             html_list += "<span class=\"project-date\">"
             html_list += " created: "
             html_list += f"{repo['created_date']}</span>"
-            html_list += "</li>"
+            html_list += "</li>\n"
 
         html_list += "</ul>"
-        soup = BeautifulSoup(html_list, 'html.parser')
-        self._interactive_list = soup.prettify()
+
+        self._interactive_list = html_list
 
         logging.info("Repos list generated")
 
@@ -321,11 +319,9 @@ class Scraper:
             self._projects_list
         )
 
-        soup = BeautifulSoup(homepage, 'html.parser')
-
         # save the file with the lists
         with open("index.html", "w") as html_file:
-            html_file.write(soup.prettify())
+            html_file.write(homepage)
 
     @property
     def repos(self) -> list[dict]:
