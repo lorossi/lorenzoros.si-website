@@ -1,3 +1,2 @@
-beautifulsoup4>=4.10.0
 PyGithub>=1.55
 ujson>=5.1.0
