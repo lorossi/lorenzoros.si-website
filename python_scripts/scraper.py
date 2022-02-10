@@ -115,6 +115,9 @@ class Scraper:
                 )
                 continue
 
+            if repo.private:
+                continue
+
             # hide from list of interactive sites if found an unwanted topic
             unwanted_topics = self._settings["GitHub"]["topics_skip_websites"]
             hide_interactive = any(t in repo_topics for t in unwanted_topics)
