@@ -25,8 +25,7 @@ class Scraper:
         logging.info("Settings loaded")
 
     def _GitHubLogin(self) -> None:
-        """Logs into github
-        """
+        """Logs into github"""
         self._github = Github(self._settings["GitHub"]["access_token"])
         logging.info("Logged into GitHub")
 
@@ -42,13 +41,9 @@ class Scraper:
         total_size = 0
 
         # sort by time
-        new_repos = sorted(
-            self._repos, key=lambda x: x["created"], reverse=True
-        )
+        new_repos = sorted(self._repos, key=lambda x: x["created"], reverse=True)
         # sort by language
-        new_repos = sorted(
-            new_repos, key=lambda x: x["main_language"], reverse=False
-        )
+        new_repos = sorted(new_repos, key=lambda x: x["main_language"], reverse=False)
 
         # update global stats:
         #   - total commits
@@ -64,11 +59,13 @@ class Scraper:
                     total_size += repo["languages"][language]
 
                     if any(language in key for key in languages):
-                        languages[language]["absolute_size"] += \
-                            repo["languages"][language]
+                        languages[language]["absolute_size"] += repo["languages"][
+                            language
+                        ]
                     else:
                         languages[language] = {
-                            "absolute_size": repo["languages"][language]}
+                            "absolute_size": repo["languages"][language]
+                        }
         languages_list = [
             {"language": lang, "absolute_size": value["absolute_size"]}
             for lang, value in languages.items()
@@ -76,11 +73,13 @@ class Scraper:
 
         for lang in languages_list:
             lang["relative_size"] = lang["absolute_size"] / total_size
-            lang["relative_size_formatted"] = \
-                f"{round(lang['relative_size'] * 100, 2)}%"
+            lang[
+                "relative_size_formatted"
+            ] = f"{round(lang['relative_size'] * 100, 2)}%"
 
         languages_list = sorted(
-            languages_list, key=lambda x: x["absolute_size"], reverse=True)
+            languages_list, key=lambda x: x["absolute_size"], reverse=True
+        )
         del languages
 
         ordered_repos["repos"] = new_repos
@@ -91,7 +90,7 @@ class Scraper:
             "total_stars": total_stars,
             "total_languages": len(languages_list),
             "total_new_repos": len(new_repos),
-            "last_updated": datetime.now().isoformat()
+            "last_updated": datetime.now().isoformat(),
         }
         self._repos = copy.deepcopy(ordered_repos)
         logging.info("Repos formatted")
@@ -109,10 +108,7 @@ class Scraper:
             wanted_topics = self._settings["GitHub"]["topics"]
 
             if repo.private:
-                logging.warning(
-                    f"skipping {repo.full_name}. "
-                    f"Reason: private repo "
-                )
+                logging.warning(f"skipping {repo.full_name}. " f"Reason: private repo ")
                 continue
 
             if all(t not in repo_topics for t in wanted_topics):
@@ -152,26 +148,28 @@ class Scraper:
             last_pushed = repo.pushed_at.isoformat()
             created = repo.created_at.isoformat()
             # serialize all repos
-            new_repos.append({
-                "name": repo.name,
-                "formatted_name": formatted_name,
-                "description": description,
-                "url": repo.html_url,
-                "commits": repo.get_commits().totalCount,
-                "stars": repo.stargazers_count,
-                "main_language": language,
-                "languages": repo.get_languages(),
-                "size": repo.size,
-                "last_pushed_timestamp": last_pushed,
-                "created_timestamp": created,
-                "created_date": created[:-9],
-                "created": repo.created_at,
-                "homepage": homepage,
-                "homepage_clean": homepage_clean,
-                "hide_interactive": hide_interactive,
-                "topics": repo.get_topics(),
-                "tags": [t.name for t in repo.get_tags()]
-            })
+            new_repos.append(
+                {
+                    "name": repo.name,
+                    "formatted_name": formatted_name,
+                    "description": description,
+                    "url": repo.html_url,
+                    "commits": repo.get_commits().totalCount,
+                    "stars": repo.stargazers_count,
+                    "main_language": language,
+                    "languages": repo.get_languages(),
+                    "size": repo.size,
+                    "last_pushed_timestamp": last_pushed,
+                    "created_timestamp": created,
+                    "created_date": created[:-9],
+                    "created": repo.created_at,
+                    "homepage": homepage,
+                    "homepage_clean": homepage_clean,
+                    "hide_interactive": hide_interactive,
+                    "topics": repo.get_topics(),
+                    "tags": [t.name for t in repo.get_tags()],
+                }
+            )
 
         self._repos = copy.deepcopy(new_repos)
         logging.info("Repos scraped")
@@ -186,29 +184,29 @@ class Scraper:
 
         # create list of projects
         html_list = ""
-        html_list += "<ul class=\"projects-list\">\n"
+        html_list += '<ul class="projects-list">\n'
 
         # sorted list of unique languages
-        languages = sorted(list({x["main_language"]
-                                 for x in self._repos["repos"]}))
+        languages = sorted(list({x["main_language"] for x in self._repos["repos"]}))
         # filter repos by language
         for language in languages:
-            selected_repos = [x for x in self._repos["repos"]
-                              if x["main_language"] == language]
+            selected_repos = [
+                x for x in self._repos["repos"] if x["main_language"] == language
+            ]
 
             if not selected_repos:
                 continue
 
             # create html element
-            html_list += "<div class=\"language\">"
+            html_list += '<div class="language">'
             html_list += f"{language}</div>"
 
             for repo in selected_repos:
-                html_list += "<li class=\"project-container\">"
-                html_list += "<a class=\"project-title\" "
+                html_list += '<li class="project-container">'
+                html_list += '<a class="project-title" '
                 html_list += f"href=\"{repo['url']}\">"
                 html_list += f"{repo['formatted_name']}</a>"
-                html_list += "<span class=\"project-description\">"
+                html_list += '<span class="project-description">'
                 html_list += f" {repo['description']}</span>"
                 html_list += "</li>\n"
 
@@ -217,14 +215,13 @@ class Scraper:
 
         # create list of interactive projects
         html_list = ""
-        html_list += "<ul class=\"projects-list\">\n"
+        html_list += '<ul class="projects-list">\n'
 
         selected_repos = [x for x in self._repos["repos"] if x["homepage"]]
         selected_repos = sorted(
-            selected_repos, key=lambda x: datetime.fromisoformat(
-                x["created_timestamp"]
-            ),
-            reverse=False
+            selected_repos,
+            key=lambda x: datetime.fromisoformat(x["created_timestamp"]),
+            reverse=False,
         )
 
         # add links
@@ -239,11 +236,11 @@ class Scraper:
             if repo["hide_interactive"]:
                 continue
 
-            html_list += "<li class=\"interactive-container\">"
-            html_list += "<a class=\"project-title\" "
+            html_list += '<li class="interactive-container">'
+            html_list += '<a class="project-title" '
             html_list += f"href=\"{repo['homepage']}\">"
             html_list += f"{repo['formatted_name']}</a>"
-            html_list += "<span class=\"project-date\">"
+            html_list += '<span class="project-date">'
             html_list += " created: "
             html_list += f"{repo['created_date']}</span>"
             html_list += "</li>\n"
@@ -264,16 +261,14 @@ class Scraper:
         # sort by time
         self._repos["repos"] = sorted(
             self._repos["repos"],
-            key=lambda x: datetime.fromisoformat(
-                x["created_timestamp"]
-            ),
-            reverse=True
+            key=lambda x: datetime.fromisoformat(x["created_timestamp"]),
+            reverse=True,
         )
 
         # sort by language
         self._repos["repos"] = sorted(
-            self._repos["repos"], key=lambda x: x["main_language"],
-            reverse=False)
+            self._repos["repos"], key=lambda x: x["main_language"], reverse=False
+        )
 
     def saveRepos(self) -> None:
         """
@@ -316,15 +311,11 @@ class Scraper:
 
         # replace the placeholder
         homepage = homepage.replace(
-            "{{ INTERACTIVE PLACEHOLDER }}",
-            self._interactive_list
+            "{{ INTERACTIVE PLACEHOLDER }}", self._interactive_list
         )
 
         # replace the placeholder
-        homepage = homepage.replace(
-            "{{ PROJECTS PLACEHOLDER }}",
-            self._projects_list
-        )
+        homepage = homepage.replace("{{ PROJECTS PLACEHOLDER }}", self._projects_list)
 
         # save the file with the lists
         with open("index.html", "w") as html_file:
@@ -341,8 +332,7 @@ class Scraper:
 
 def main():
     logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s %(levelname)s %(message)s'
+        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
     )
 
     s = Scraper()
