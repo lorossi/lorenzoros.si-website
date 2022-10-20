@@ -285,10 +285,7 @@ class Scraper:
         logging.info("Files saved")
 
     def embedRepos(self) -> None:
-        """
-        save repos to base file
-        """
-
+        """Embed repos to base file."""
         # check if repos were scraped
         if not (self._interactive_list and self._projects_list):
             logging.error(
@@ -315,14 +312,13 @@ class Scraper:
 
     @property
     def repos(self) -> list[dict]:
-        """
-        get the dict containing all the repos
-        """
+        """Return the list of repos."""
         self.loadRepos()
         return self._repos
 
 
 def main():
+    """Scrape and create HTML and JSON files."""
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
     )
