@@ -1,2 +1,2 @@
 PyGithub==1.56
-ujson==5.1.0
+ujson==5.4.0
