@@ -1,3 +1,4 @@
+"""This script scrapes my GitHub profile and creates the html for my website."""
 import copy
 import ujson
 import logging
@@ -8,14 +9,19 @@ from datetime import datetime
 
 
 class Scraper:
+    """Repo scraper and HTML file creator."""
+
+    _github = None
+    _settings = None
+
     def __init__(self):
-        # GitHub object
+        """Init scraper."""
         self._github = None
         self._loadSettings()
         self._GitHubLogin()
 
     def _loadSettings(self, path: str = "settings.json") -> None:
-        """Loads settings from path
+        """Load settings from path.
 
         Args:
             path (str, optional): Setting settings path. Defaults to "settings.json".
@@ -25,15 +31,12 @@ class Scraper:
         logging.info("Settings loaded")
 
     def _GitHubLogin(self) -> None:
-        """Logs into github"""
+        """Log into GitHub."""
         self._github = Github(self._settings["GitHub"]["access_token"])
         logging.info("Logged into GitHub")
 
     def _createReposDict(self) -> None:
-        """
-        format repos dict
-        """
-
+        """Format repos dict."""
         ordered_repos = {}
         languages = {}
         total_commits = 0
@@ -96,10 +99,7 @@ class Scraper:
         logging.info("Repos formatted")
 
     def scrapeRepos(self) -> None:
-        """
-        load repos from Github
-        """
-
+        """Load repos from Github."""
         new_repos = []
 
         for repo in self._github.get_user().get_repos():
@@ -178,10 +178,7 @@ class Scraper:
         self._createReposDict()
 
     def formatRepos(self) -> None:
-        """
-        format the repos in the list form, to be embedded into the homepage
-        """
-
+        """Format the repos in the list form, to be embedded into the homepage."""
         # create list of projects
         html_list = ""
         html_list += '<ul class="projects-list">\n'
@@ -252,9 +249,7 @@ class Scraper:
         logging.info("Repos list generated")
 
     def loadRepos(self) -> None:
-        """
-        load repos from json file
-        """
+        """Load repos from json file."""
         with open(self._settings["json_file"], "r") as json_file:
             self._repos = ujson.load(json_file)
 
@@ -271,10 +266,7 @@ class Scraper:
         )
 
     def saveRepos(self) -> None:
-        """
-        save repos and html formatted files
-        """
-
+        """Save repos and html formatted files."""
         repos_to_dump = copy.deepcopy(self._repos)
         for repo in repos_to_dump["repos"]:
             # remove date as it's not serializable

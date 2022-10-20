@@ -1,75 +1,75 @@
 {
   "languages": [
     {
-      "absolute_size": 694930,
+      "absolute_size": 704590,
       "language": "JavaScript",
-      "relative_size": 0.3453272516486689,
-      "relative_size_formatted": "34.53%"
+      "relative_size": 0.3376345693636605,
+      "relative_size_formatted": "33.76%"
     },
     {
       "absolute_size": 585991,
       "language": "TeX",
-      "relative_size": 0.29119287053495335,
-      "relative_size_formatted": "29.12%"
+      "relative_size": 0.2808027632182983,
+      "relative_size_formatted": "28.08%"
     },
     {
-      "absolute_size": 273981,
+      "absolute_size": 335908,
       "language": "Python",
-      "relative_size": 0.13614767780057555,
-      "relative_size_formatted": "13.61%"
+      "relative_size": 0.16096474960730137,
+      "relative_size_formatted": "16.1%"
     },
     {
       "absolute_size": 183606,
       "language": "C",
-      "relative_size": 0.09123818998489848,
-      "relative_size_formatted": "9.12%"
+      "relative_size": 0.08798270305082992,
+      "relative_size_formatted": "8.8%"
     },
     {
-      "absolute_size": 114840,
+      "absolute_size": 117714,
       "language": "HTML",
-      "relative_size": 0.05706672841773004,
-      "relative_size_formatted": "5.71%"
+      "relative_size": 0.056407720373655504,
+      "relative_size_formatted": "5.64%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.02999531400862958,
-      "relative_size_formatted": "3.0%"
+      "relative_size": 0.02892504559521037,
+      "relative_size_formatted": "2.89%"
     },
     {
       "absolute_size": 57650,
       "language": "CSS",
-      "relative_size": 0.028647656681314325,
-      "relative_size_formatted": "2.86%"
+      "relative_size": 0.027625474281234515,
+      "relative_size_formatted": "2.76%"
     },
     {
       "absolute_size": 23287,
       "language": "Processing",
-      "relative_size": 0.011571864373595258,
-      "relative_size_formatted": "1.16%"
+      "relative_size": 0.011158966514954174,
+      "relative_size_formatted": "1.12%"
     },
     {
       "absolute_size": 7426,
       "language": "Makefile",
-      "relative_size": 0.0036901560887327004,
-      "relative_size_formatted": "0.37%"
+      "relative_size": 0.0035584869386374243,
+      "relative_size_formatted": "0.36%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.0034645526865936423,
-      "relative_size_formatted": "0.35%"
+      "relative_size": 0.003340933333716688,
+      "relative_size_formatted": "0.33%"
     },
     {
       "absolute_size": 3163,
       "language": "Shell",
-      "relative_size": 0.0015717699580745396,
-      "relative_size_formatted": "0.16%"
+      "relative_size": 0.0015156873400094498,
+      "relative_size_formatted": "0.15%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 8.596781623360586e-5,
+      "relative_size": 8.290038249182257e-5,
       "relative_size_formatted": "0.01%"
     }
   ],
@@ -278,7 +278,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 245,
+      "commits": 246,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -288,14 +288,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 55573,
+        "HTML": 57862,
         "JavaScript": 4629,
-        "Python": 11900
+        "Python": 11803
       },
-      "last_pushed_timestamp": "2022-07-29T17:13:06",
+      "last_pushed_timestamp": "2022-10-01T18:45:43",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6486,
+      "size": 6493,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -323,7 +323,7 @@
       "last_pushed_timestamp": "2022-09-17T18:24:07",
       "main_language": "JavaScript",
       "name": "planets",
-      "size": 21032,
+      "size": 21033,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -396,7 +396,7 @@
       "url": "https:\/\/github.com\/lorossi\/webex-video-downloader"
     },
     {
-      "commits": 32,
+      "commits": 34,
       "created_date": "2021-07-25",
       "created_timestamp": "2021-07-25T18:29:46",
       "description": "Javascript rendering of a perfect-looping matrix.",
@@ -409,10 +409,10 @@
         "HTML": 1168,
         "JavaScript": 15179
       },
-      "last_pushed_timestamp": "2022-08-26T16:35:08",
+      "last_pushed_timestamp": "2022-09-17T18:35:02",
       "main_language": "JavaScript",
       "name": "js-matrix",
-      "size": 72047,
+      "size": 72050,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -426,7 +426,7 @@
       "url": "https:\/\/github.com\/lorossi\/js-matrix"
     },
     {
-      "commits": 10,
+      "commits": 19,
       "created_date": "2021-07-19",
       "created_timestamp": "2021-07-19T21:00:47",
       "description": "XOR128 pseudo-random number generator.",
@@ -435,12 +435,13 @@
       "homepage": "https:\/\/lorossi.github.io\/js-XOR128\/",
       "homepage_clean": "lorossi.github.io\/js-XOR128",
       "languages": {
-        "JavaScript": 4452
+        "HTML": 585,
+        "JavaScript": 14112
       },
-      "last_pushed_timestamp": "2022-08-31T17:16:58",
+      "last_pushed_timestamp": "2022-10-19T08:21:03",
       "main_language": "JavaScript",
       "name": "js-XOR128",
-      "size": 387,
+      "size": 406,
       "stars": 0,
       "tags": [
         "v1.0"
@@ -1032,6 +1033,59 @@
       "url": "https:\/\/github.com\/lorossi\/perlin-flow-field"
     },
     {
+      "commits": 19,
+      "created_date": "2022-08-23",
+      "created_timestamp": "2022-08-23T13:24:34",
+      "description": "I tried to find the best build in MK8D.",
+      "formatted_name": "mk8d analysis",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 26784
+      },
+      "last_pushed_timestamp": "2022-10-01T21:52:09",
+      "main_language": "Python",
+      "name": "MK8D-analysis",
+      "size": 8959,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "mariokart8",
+        "mk8d",
+        "python3",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/MK8D-analysis"
+    },
+    {
+      "commits": 41,
+      "created_date": "2021-12-29",
+      "created_timestamp": "2021-12-29T22:21:48",
+      "description": "A modern implementation of the Enigma machine in Python.",
+      "formatted_name": "pynigma",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 35240
+      },
+      "last_pushed_timestamp": "2022-10-01T19:11:24",
+      "main_language": "Python",
+      "name": "pynigma",
+      "size": 122,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "python-module",
+        "python3",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/pynigma"
+    },
+    {
       "commits": 23,
       "created_date": "2021-01-25",
       "created_timestamp": "2021-01-25T18:14:51",
@@ -1459,11 +1513,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2022-09-17T20:32:40.462277",
-    "total_commits": 3253,
+    "last_updated": "2022-10-20T15:55:30.056789",
+    "total_commits": 3325,
     "total_languages": 12,
-    "total_new_repos": 48,
-    "total_size": 2012381,
+    "total_new_repos": 50,
+    "total_size": 2086842,
     "total_stars": 36
   }
 }
