@@ -1,75 +1,75 @@
 {
   "languages": [
     {
-      "absolute_size": 704590,
-      "language": "JavaScript",
-      "relative_size": 0.3376345693636605,
-      "relative_size_formatted": "33.76%"
-    },
-    {
-      "absolute_size": 585991,
+      "absolute_size": 841901,
       "language": "TeX",
-      "relative_size": 0.2808027632182983,
-      "relative_size_formatted": "28.08%"
+      "relative_size": 0.35368151393488384,
+      "relative_size_formatted": "35.37%"
     },
     {
-      "absolute_size": 335908,
+      "absolute_size": 736393,
+      "language": "JavaScript",
+      "relative_size": 0.3093577405075548,
+      "relative_size_formatted": "30.94%"
+    },
+    {
+      "absolute_size": 337560,
       "language": "Python",
-      "relative_size": 0.16096474960730137,
-      "relative_size_formatted": "16.1%"
+      "relative_size": 0.14180851649286483,
+      "relative_size_formatted": "14.18%"
     },
     {
       "absolute_size": 183606,
       "language": "C",
-      "relative_size": 0.08798270305082992,
-      "relative_size_formatted": "8.8%"
+      "relative_size": 0.07713264154280407,
+      "relative_size_formatted": "7.71%"
     },
     {
-      "absolute_size": 117714,
+      "absolute_size": 120352,
       "language": "HTML",
-      "relative_size": 0.056407720373655504,
-      "relative_size_formatted": "5.64%"
+      "relative_size": 0.05055971850026445,
+      "relative_size_formatted": "5.06%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.02892504559521037,
-      "relative_size_formatted": "2.89%"
+      "relative_size": 0.025357997607958014,
+      "relative_size_formatted": "2.54%"
     },
     {
-      "absolute_size": 57650,
+      "absolute_size": 59198,
       "language": "CSS",
-      "relative_size": 0.027625474281234515,
-      "relative_size_formatted": "2.76%"
+      "relative_size": 0.02486900272349986,
+      "relative_size_formatted": "2.49%"
     },
     {
       "absolute_size": 23287,
       "language": "Processing",
-      "relative_size": 0.011158966514954174,
-      "relative_size_formatted": "1.12%"
+      "relative_size": 0.009782838380049008,
+      "relative_size_formatted": "0.98%"
     },
     {
       "absolute_size": 7426,
       "language": "Makefile",
-      "relative_size": 0.0035584869386374243,
-      "relative_size_formatted": "0.36%"
+      "relative_size": 0.00311965293125967,
+      "relative_size_formatted": "0.31%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.003340933333716688,
-      "relative_size_formatted": "0.33%"
+      "relative_size": 0.0029289281223730704,
+      "relative_size_formatted": "0.29%"
     },
     {
       "absolute_size": 3163,
       "language": "Shell",
-      "relative_size": 0.0015156873400094498,
-      "relative_size_formatted": "0.15%"
+      "relative_size": 0.0013287721817363772,
+      "relative_size_formatted": "0.13%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 8.290038249182257e-5,
+      "relative_size": 7.267707475194222e-5,
       "relative_size_formatted": "0.01%"
     }
   ],
@@ -278,7 +278,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 246,
+      "commits": 251,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -288,14 +288,14 @@
       "homepage_clean": "lorenzoros.si",
       "languages": {
         "CSS": 12875,
-        "HTML": 57862,
+        "HTML": 59119,
         "JavaScript": 4629,
-        "Python": 11803
+        "Python": 11877
       },
-      "last_pushed_timestamp": "2022-10-01T18:45:43",
+      "last_pushed_timestamp": "2022-10-20T14:08:05",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6493,
+      "size": 6504,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -305,6 +305,35 @@
         "javascript"
       ],
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
+    },
+    {
+      "commits": 26,
+      "created_date": "2022-06-08",
+      "created_timestamp": "2022-06-08T19:02:49",
+      "description": "Visualizing some sorting algorithms.",
+      "formatted_name": "sorting visualization",
+      "hide_interactive": false,
+      "homepage": "https:\/\/lorenzoros.si\/sorting-visualization",
+      "homepage_clean": "lorenzoros.si\/sorting-visualization",
+      "languages": {
+        "CSS": 1548,
+        "HTML": 1381,
+        "JavaScript": 31803
+      },
+      "last_pushed_timestamp": "2022-11-15T15:57:32",
+      "main_language": "JavaScript",
+      "name": "sorting-visualization",
+      "size": 11290,
+      "stars": 0,
+      "tags": [],
+      "topics": [
+        "canvas",
+        "ecmascript",
+        "html5",
+        "javascript",
+        "released"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/sorting-visualization"
     },
     {
       "commits": 24,
@@ -1382,6 +1411,34 @@
       "url": "https:\/\/github.com\/lorossi\/shell-matrix"
     },
     {
+      "commits": 22,
+      "created_date": "2022-09-18",
+      "created_timestamp": "2022-09-18T13:29:23",
+      "description": "Notes for FLC. 2022\/2023 class, Politecnico di Milano .",
+      "formatted_name": "formal languages and compilers notes",
+      "hide_interactive": false,
+      "homepage": "",
+      "homepage_clean": null,
+      "languages": {
+        "Python": 1578,
+        "TeX": 255910
+      },
+      "last_pushed_timestamp": "2022-11-15T14:58:45",
+      "main_language": "TeX",
+      "name": "formal-languages-and-compilers-notes",
+      "size": 4126,
+      "stars": 1,
+      "tags": [],
+      "topics": [
+        "computer-science",
+        "latex",
+        "polimi",
+        "released",
+        "polimi-notes"
+      ],
+      "url": "https:\/\/github.com\/lorossi\/formal-languages-and-compilers-notes"
+    },
+    {
       "commits": 45,
       "created_date": "2022-04-19",
       "created_timestamp": "2022-04-19T16:54:41",
@@ -1513,11 +1570,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2022-10-20T15:55:30.056789",
-    "total_commits": 3325,
+    "last_updated": "2022-11-15T17:03:56.734201",
+    "total_commits": 3378,
     "total_languages": 12,
-    "total_new_repos": 50,
-    "total_size": 2086842,
-    "total_stars": 36
+    "total_new_repos": 52,
+    "total_size": 2380393,
+    "total_stars": 37
   }
 }
