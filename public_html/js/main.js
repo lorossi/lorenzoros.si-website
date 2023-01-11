@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const get_page_height = () => {
-  // get the full page height without considering the animation container
-  return [".navbar", ".container"]
-    .map((s) => document.querySelector(s))
+  return [...document.querySelectorAll("body > *")]
+    .filter((e) => !e.classList.contains("animations-container"))
+    .filter((e) => e.scrollHeight != undefined)
     .reduce((acc, e) => acc + e.scrollHeight, 0);
 };
 
