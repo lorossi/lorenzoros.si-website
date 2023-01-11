@@ -4,20 +4,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     "%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website",
     "font-size: 1rem;"
   );
+  window.addEventListener("resize", resize_animation_container);
   add_lines();
   await print_letters();
 });
 
+const get_page_height = () => {
+  // get the full page height without considering the animation container
+  const navbar = document.querySelector(".navbar");
+  const container = document.querySelector(".container");
+
+  return navbar.scrollHeight + container.scrollHeight;
+};
+
 const resize_animation_container = () => {
-  console.log({ page_height });
+  const container = document.querySelector(".animations-container");
+  container.style.height = `${get_page_height()}px`;
+  return container;
 };
 
 const add_lines = () => {
   // select the animations container
-  const page_height = document.body.scrollHeight;
-  const container = document.querySelector(".animations-container");
-
-  container.style.height = `${page_height}px`;
+  const container = resize_animation_container();
+  const page_height = get_page_height();
 
   // loop to create the lines
   for (let i = 0; i < 500; i++) {
