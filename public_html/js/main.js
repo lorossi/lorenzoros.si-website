@@ -11,10 +11,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const get_page_height = () => {
   // get the full page height without considering the animation container
-  const navbar = document.querySelector(".navbar");
-  const container = document.querySelector(".container");
-
-  return navbar.scrollHeight + container.scrollHeight;
+  return [".navbar", ".container"]
+    .map((s) => document.querySelector(s))
+    .reduce((acc, e) => acc + e.scrollHeight, 0);
 };
 
 const resize_animation_container = () => {
