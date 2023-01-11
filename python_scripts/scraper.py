@@ -1,11 +1,11 @@
 """This script scrapes my GitHub profile and creates the html for my website."""
 import copy
-import ujson
 import logging
-
-from sys import argv
-from github import Github
 from datetime import datetime
+from sys import argv
+
+import ujson
+from github import Github
 
 
 class Scraper:
@@ -306,6 +306,9 @@ class Scraper:
         # replace the placeholder
         homepage = homepage.replace("{{ PROJECTS PLACEHOLDER }}", self._projects_list)
 
+        # replace the date placeholder
+        homepage = homepage.replace("{{ DATE PLACEHOLDER }}", self.current_date)
+
         # save the file with the lists
         with open("index.html", "w") as html_file:
             html_file.write(homepage)
@@ -315,6 +318,11 @@ class Scraper:
         """Return the list of repos."""
         self.loadRepos()
         return self._repos
+
+    @property
+    def current_date(self) -> str:
+        """Return the current date, formatted as YYYYMMDD."""
+        return datetime.now().strftime("%Y%m%d")
 
 
 def main():
