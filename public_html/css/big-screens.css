@@ -1,5 +1,4 @@
 @media screen and (min-width: 481px) and (max-width: 769px) {
-
 }
 
 @media screen and (min-width: 770px) {
@@ -7,14 +6,14 @@
     padding-top: 5vh;
   }
 
-  .container {
+  .content {
     margin-left: 25vw;
     margin-right: 25vw;
   }
 
   .navbar {
-   margin-top: calc(var(--title-size) * 2);
-   justify-content: center;
+    margin-top: calc(var(--title-size) * 2);
+    justify-content: center;
   }
 
   .navbar a {
@@ -28,7 +27,7 @@
 
   .typer p {
     line-height: 150%;
-  }   
+  }
 
   .language {
     margin-top: calc(var(--text-size) * 1.5);
@@ -48,7 +47,7 @@
     display: inline-block;
     margin: 0;
     line-height: 150%;
-  } 
+  }
 
   .contacts-container {
     flex-direction: row;
@@ -72,7 +71,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .content {
     margin-left: 15vw;
     margin-right: 15vw;
   }
