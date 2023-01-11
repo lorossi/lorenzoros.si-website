@@ -4,10 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     "%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website",
     "font-size: 1rem;"
   );
-  window.addEventListener("resize", resize_animation_container);
+  window.addEventListener("resize", window_resized);
   add_lines();
   await print_letters();
 });
+
+const window_resized = () => {
+  resize_animation_container();
+  move_lines();
+};
 
 const get_page_height = () => {
   return [...document.querySelectorAll("body > *")]
@@ -22,6 +27,18 @@ const resize_animation_container = () => {
   return container;
 };
 
+const move_lines = () => {
+  const page_height = get_page_height();
+  document
+    .querySelectorAll(".line")
+    .forEach(
+      (l) =>
+        (l.style.top = `${Math.floor(
+          l.getAttribute("percent") * 0.01 * page_height
+        )}px`)
+    );
+};
+
 const add_lines = () => {
   // select the animations container
   const container = resize_animation_container();
@@ -32,9 +49,13 @@ const add_lines = () => {
     const line = document.createElement("div");
     line.classList.add("line");
     // random position
-    line.style.top = `${Math.random() * page_height}px`;
+    const percent = Math.random() * 100;
+    const position = Math.floor(percent * 0.01 * page_height);
+
+    line.style.top = `${position}px`;
     line.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`;
     line.style.animationDelay = `${Math.random() * 2}s`;
+    line.setAttribute("percent", percent);
     // add to container
     container.appendChild(line);
   }
