@@ -8,17 +8,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   await print_letters();
 });
 
+const resize_animation_container = () => {
+  console.log({ page_height });
+};
+
 const add_lines = () => {
   // select the animations container
+  const page_height = document.body.scrollHeight;
   const container = document.querySelector(".animations-container");
-  const max_height = container.clientHeight;
+
+  container.style.height = `${page_height}px`;
 
   // loop to create the lines
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 500; i++) {
     const line = document.createElement("div");
     line.classList.add("line");
     // random position
-    line.style.top = `${Math.random() * max_height}px`;
+    line.style.top = `${Math.random() * page_height}px`;
     line.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`;
     line.style.animationDelay = `${Math.random() * 2}s`;
     // add to container
