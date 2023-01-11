@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 const add_lines = () => {
   // select the animations container
   const container = document.querySelector(".animations-container");
+  const max_height = container.clientHeight;
 
   // loop to create the lines
   for (let i = 0; i < 100; i++) {
@@ -35,13 +36,11 @@ const add_paragraph = (container) => {
 const remove_cursor = (p) => p.classList.remove("writing");
 
 const print_letters = async () => {
-  const selector = ".typer";
   const typing_pause = 30;
   const newline_pause = 500;
   const start_pause = 250;
 
-  const container = document.querySelector(selector);
-
+  const container = document.querySelector(".typer");
   let to_write = container
     .getAttribute("data-text")
     .replaceAll("<br>", "\n")
@@ -54,9 +53,9 @@ const print_letters = async () => {
     const current_char = to_write.shift();
 
     if (current_char == "\n") {
+      await timeout(newline_pause);
       remove_cursor(current_p);
       current_p = add_paragraph(container);
-      await timeout(newline_pause);
     } else {
       current_p.innerHTML += current_char;
       await timeout(typing_pause);
