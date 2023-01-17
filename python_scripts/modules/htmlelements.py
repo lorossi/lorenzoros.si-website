@@ -1,7 +1,10 @@
 from __future__ import annotations
-from .github import Repo
+
 import logging
+
 import toml
+
+from .github import Repo
 
 
 class DOMelement:

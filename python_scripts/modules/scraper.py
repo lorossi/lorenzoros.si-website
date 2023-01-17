@@ -1,10 +1,12 @@
 from __future__ import annotations
-from .github import GitHub, Repo
-from .htmlelements import InteractiveList, StaticList
 
 import logging
+
 import toml
 import ujson
+
+from .github import GitHub, Repo
+from .htmlelements import InteractiveList, StaticList
 
 
 class Scraper(GitHub):
