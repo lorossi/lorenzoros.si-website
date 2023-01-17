@@ -1,75 +1,75 @@
 {
   "languages": [
     {
-      "absolute_size": 1188871,
+      "absolute_size": 1189997,
       "language": "TeX",
-      "relative_size": 0.4331054516734475,
-      "relative_size_formatted": "43.31%"
+      "relative_size": 0.42843050389674725,
+      "relative_size_formatted": "42.84%"
     },
     {
-      "absolute_size": 742041,
+      "absolute_size": 753361,
       "language": "JavaScript",
-      "relative_size": 0.27032537799745865,
-      "relative_size_formatted": "27.03%"
+      "relative_size": 0.2712299550722879,
+      "relative_size_formatted": "27.12%"
     },
     {
-      "absolute_size": 341249,
+      "absolute_size": 341539,
       "language": "Python",
-      "relative_size": 0.12431693790000116,
-      "relative_size_formatted": "12.43%"
+      "relative_size": 0.12296310484008881,
+      "relative_size_formatted": "12.3%"
     },
     {
       "absolute_size": 183606,
       "language": "C",
-      "relative_size": 0.06688762663060585,
-      "relative_size_formatted": "6.69%"
+      "relative_size": 0.06610303311560128,
+      "relative_size_formatted": "6.61%"
     },
     {
-      "absolute_size": 125469,
+      "absolute_size": 145298,
       "language": "HTML",
-      "relative_size": 0.045708329933201994,
-      "relative_size_formatted": "4.57%"
+      "relative_size": 0.05231113637697371,
+      "relative_size_formatted": "5.23%"
     },
     {
-      "absolute_size": 62373,
+      "absolute_size": 62389,
       "language": "CSS",
-      "relative_size": 0.02272247059372122,
-      "relative_size_formatted": "2.27%"
+      "relative_size": 0.022461695876219996,
+      "relative_size_formatted": "2.25%"
     },
     {
       "absolute_size": 60362,
       "language": "Go",
-      "relative_size": 0.021989863722735804,
-      "relative_size_formatted": "2.2%"
+      "relative_size": 0.02173192207729554,
+      "relative_size_formatted": "2.17%"
     },
     {
       "absolute_size": 23287,
       "language": "Processing",
-      "relative_size": 0.008483449132092188,
-      "relative_size_formatted": "0.85%"
+      "relative_size": 0.008383938063914072,
+      "relative_size_formatted": "0.84%"
     },
     {
       "absolute_size": 7426,
       "language": "Makefile",
-      "relative_size": 0.0027052902157820497,
+      "relative_size": 0.002673557094629016,
       "relative_size_formatted": "0.27%"
     },
     {
       "absolute_size": 6972,
       "language": "C++",
-      "relative_size": 0.002539898112635665,
+      "relative_size": 0.002510105044943913,
       "relative_size_formatted": "0.25%"
     },
     {
       "absolute_size": 3163,
       "language": "Shell",
-      "relative_size": 0.0011522802252247,
-      "relative_size_formatted": "0.12%"
+      "relative_size": 0.0011387639496783703,
+      "relative_size_formatted": "0.11%"
     },
     {
       "absolute_size": 173,
       "language": "Batchfile",
-      "relative_size": 6.302386309322578e-5,
+      "relative_size": 6.228459162009424e-5,
       "relative_size_formatted": "0.01%"
     }
   ],
@@ -278,7 +278,7 @@
       "url": "https:\/\/github.com\/lorossi\/journal"
     },
     {
-      "commits": 253,
+      "commits": 266,
       "created_date": "2020-07-08",
       "created_timestamp": "2020-07-08T16:22:03",
       "description": "A repo for my website.",
@@ -287,15 +287,15 @@
       "homepage": "https:\/\/lorenzoros.si\/",
       "homepage_clean": "lorenzoros.si",
       "languages": {
-        "CSS": 12875,
-        "HTML": 60149,
-        "JavaScript": 4629,
-        "Python": 11877
+        "CSS": 12891,
+        "HTML": 79391,
+        "JavaScript": 4957,
+        "Python": 12167
       },
-      "last_pushed_timestamp": "2022-11-15T16:06:44",
+      "last_pushed_timestamp": "2023-01-11T17:55:18",
       "main_language": "HTML",
       "name": "lorenzoros.si-website",
-      "size": 6512,
+      "size": 6563,
       "stars": 1,
       "tags": [],
       "topics": [
@@ -307,7 +307,7 @@
       "url": "https:\/\/github.com\/lorossi\/lorenzoros.si-website"
     },
     {
-      "commits": 29,
+      "commits": 30,
       "created_date": "2023-01-06",
       "created_timestamp": "2023-01-06T15:09:28",
       "description": "What would the world be like if time was in base 10 and not 60?",
@@ -318,13 +318,13 @@
       "languages": {
         "CSS": 3175,
         "HTML": 4087,
-        "JavaScript": 5648,
+        "JavaScript": 5651,
         "Python": 2120
       },
-      "last_pushed_timestamp": "2023-01-11T15:13:19",
+      "last_pushed_timestamp": "2023-01-16T08:31:00",
       "main_language": "JavaScript",
       "name": "decimalclock",
-      "size": 132,
+      "size": 152,
       "stars": 0,
       "tags": [],
       "topics": [
@@ -921,7 +921,7 @@
       "url": "https:\/\/github.com\/lorossi\/painting-bubbles"
     },
     {
-      "commits": 31,
+      "commits": 34,
       "created_date": "2020-12-02",
       "created_timestamp": "2020-12-02T16:20:21",
       "description": "A simple 2D and 3D vectors library made in JS.",
@@ -930,14 +930,16 @@
       "homepage": "https:\/\/lorossi.github.io\/js-vectors\/",
       "homepage_clean": "lorossi.github.io\/js-vectors",
       "languages": {
-        "JavaScript": 13339
+        "HTML": 587,
+        "JavaScript": 24328
       },
-      "last_pushed_timestamp": "2021-07-20T16:13:29",
+      "last_pushed_timestamp": "2023-01-16T19:53:09",
       "main_language": "JavaScript",
       "name": "js-vectors",
-      "size": 443,
+      "size": 458,
       "stars": 0,
       "tags": [
+        "v1.0.6",
         "v1.0.5",
         "v1.0.4",
         "v1.0.3",
@@ -1468,7 +1470,7 @@
       "url": "https:\/\/github.com\/lorossi\/data-bases-2-notes"
     },
     {
-      "commits": 33,
+      "commits": 37,
       "created_date": "2022-09-18",
       "created_timestamp": "2022-09-18T13:29:23",
       "description": "Notes for FLC. 2022\/2023 class, Politecnico di Milano .",
@@ -1478,12 +1480,12 @@
       "homepage_clean": null,
       "languages": {
         "Python": 1578,
-        "TeX": 384571
+        "TeX": 385697
       },
-      "last_pushed_timestamp": "2023-01-09T18:04:56",
+      "last_pushed_timestamp": "2023-01-12T17:37:00",
       "main_language": "TeX",
       "name": "formal-languages-and-compilers-notes",
-      "size": 8315,
+      "size": 9526,
       "stars": 2,
       "tags": [],
       "topics": [
@@ -1613,7 +1615,7 @@
       "main_language": "TeX",
       "name": "appunti-vhdl",
       "size": 2231,
-      "stars": 3,
+      "stars": 4,
       "tags": [
         "v1.1",
         "v1.0"
@@ -1627,11 +1629,11 @@
     }
   ],
   "stats": {
-    "last_updated": "2023-01-11T16:22:36.702332",
-    "total_commits": 3441,
+    "last_updated": "2023-01-17T11:13:31.045714",
+    "total_commits": 3462,
     "total_languages": 12,
     "total_new_repos": 54,
-    "total_size": 2744992,
-    "total_stars": 49
+    "total_size": 2777573,
+    "total_stars": 50
   }
 }

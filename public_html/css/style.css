@@ -146,16 +146,13 @@ a:visited {
 }
 
 .aberration,
-.typer,
-.title,
-.subtitle {
-  text-shadow: 1px 1px #00ffff, -1px -1px #ff00ff;
+.aberration > * {
+  text-shadow: var(--aberration);
 }
 
-.projects-list,
-.links-list,
-.small-aberration {
-  text-shadow: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
+.small-aberration,
+.small-aberration > * {
+  text-shadow: var(--small-aberration);
 }
 
 @keyframes blink {

@@ -1,15 +1,17 @@
 :root {
-  --background-color: #0A0A0D;
-  --text-color: #F2F2F2;
-  --link-hover-color: #BFBFBF;
+  --background-color: #0a0a0d;
+  --text-color: #f2f2f2;
+  --link-hover-color: #bfbfbf;
 
   --title-size: 1.25rem;
   --text-size: 1rem;
   --small-text-size: 0.75rem;
+
+  --aberration: 1px 1px #00ffff, -1px -1px #ff00ff;
+  --small-aberration: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
 }
 
 @media screen and (min-width: 481px) and (max-width: 769px) {
-
 }
 
 @media screen and (min-width: 770px) {
