@@ -248,7 +248,7 @@ a:visited {
 
 @keyframes fade {
   from {
-    opacity: 0.25;
+    opacity: 0.5;
   }
   to {
     opacity: 0;
@@ -257,7 +257,7 @@ a:visited {
 
 .line {
   position: absolute;
-  height: 3px;
+  height: 5px;
   width: 100vw;
   background-color: rgb(21, 20, 20);
   opacity: 0;
