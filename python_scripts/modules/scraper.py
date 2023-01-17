@@ -1,6 +1,6 @@
 from __future__ import annotations
 from .github import GitHub, Repo
-from .html import InteractiveList, StaticList
+from .htmlelements import InteractiveList, StaticList
 
 import logging
 import toml
