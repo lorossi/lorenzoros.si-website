@@ -181,7 +181,9 @@ class Scraper:
         """Format the repos in the list form, to be embedded into the homepage."""
         # create list of projects
         html_list = ""
-        html_list += '<ul class="projects-list">\n'
+        html_list += '<ul class="'
+        html_list += " ".join(self._settings["css_list_classes"])
+        html_list += '">\n'
 
         # sorted list of unique languages
         languages = sorted(list({x["main_language"] for x in self._repos["repos"]}))
@@ -212,7 +214,9 @@ class Scraper:
 
         # create list of interactive projects
         html_list = ""
-        html_list += '<ul class="projects-list">\n'
+        html_list += '<ul class="'
+        html_list += " ".join(self._settings["css_interactive_classes"])
+        html_list += '">\n'
 
         selected_repos = [x for x in self._repos["repos"] if x["homepage"]]
         selected_repos = sorted(
