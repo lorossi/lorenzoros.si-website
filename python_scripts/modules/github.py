@@ -168,7 +168,7 @@ class Repo:
             return self.name.replace("-", " ").lower()
 
         if name == "description_formatted":
-            return self.description.replace("-", " ")
+            return self.description[0].lower() + self.description[1:].replace("-", " ")
 
         raise AttributeError(
             f"Attribute {name} does not exist in {self.__class__.__name__}"

@@ -131,10 +131,7 @@ class InteractiveList(HTMLList):
         span_list = [
             DOMElementFactory.createElement(
                 element="span",
-                content=(
-                    f"created: {repo.created_at_formatted}, "
-                    f"updated: {repo.updated_at_formatted}"
-                ),
+                content=f"created: {repo.created_at_formatted}",
                 classlist=self._settings["span_classlist"],
             )
             for repo in self._repos

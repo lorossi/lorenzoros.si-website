@@ -16,6 +16,7 @@ def main(parser: argparse.ArgumentParser):
 
     s.createHTMLLists()
     s.saveHTMLLists()
+    s.embedHTMLLists()
 
 
 if __name__ == "__main__":
