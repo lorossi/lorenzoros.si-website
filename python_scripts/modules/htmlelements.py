@@ -81,34 +81,34 @@ class DOMElementFactory:
             case "div":
                 return DOMelement(
                     element="div",
-                    content=kwargs["content"],
-                    children=kwargs["children"],
+                    content=kwargs.get("content"),
+                    children=kwargs.get("children", []),
                     attributes={"class": kwargs["classlist"]},
                 )
             case "a":
                 return DOMelement(
                     element="a",
-                    content=kwargs["content"],
+                    content=kwargs.get("content"),
                     attributes={"href": kwargs["href"], "class": kwargs["classlist"]},
                 )
             case "span":
                 return DOMelement(
                     element="span",
-                    content=kwargs["content"],
+                    content=kwargs.get("content"),
                     attributes={"class": kwargs["classlist"]},
                 )
             case "li":
                 return DOMelement(
                     element="li",
-                    content=kwargs["content"],
-                    children=kwargs["children"],
+                    content=kwargs.get("content"),
+                    children=kwargs.get("children"),
                     attributes={"class": kwargs["classlist"]},
                 )
             case "ul":
                 return DOMelement(
                     element="ul",
-                    content=kwargs["content"],
-                    children=kwargs["children"],
+                    content=kwargs.get("content"),
+                    children=kwargs.get("children"),
                     attributes={"class": kwargs["classlist"]},
                 )
 
@@ -162,7 +162,7 @@ class InteractiveList(HTMLList):
 class StaticList(HTMLList):
     def __init__(self, repos: list[Repo], settings_path: str = "settings.toml"):
         super().__init__(repos, settings_path)
-        self._list = self._createUnorderedList()
+        self._list = self._createDivs()
 
     def _createLinks(self, repo: Repo) -> tuple[DOMelement]:
         a = DOMElementFactory.createElement(
@@ -191,21 +191,26 @@ class StaticList(HTMLList):
             for repo in [repo for repo in self._repos if repo.language == language]
         ]
 
-    def _createListDivs(self) -> list[DOMelement]:
+    def _createUnorderedList(self, language) -> list[DOMelement]:
+        return [
+            DOMElementFactory.createElement(
+                element="ul",
+                content="",
+                children=self._createListItems(language),
+                classlist=self._settings["ul_classlist"],
+            )
+        ]
+
+    def _createDivs(self) -> list[DOMelement]:
         return [
             DOMElementFactory.createElement(
                 element="div",
                 content=language,
-                children=self._createListItems(language),
+                children=self._createUnorderedList(language),
                 classlist=self._settings["div_classlist"],
             )
             for language in sorted(list(set([repo.language for repo in self._repos])))
         ]
 
-    def _createUnorderedList(self) -> list[DOMelement]:
-        return DOMElementFactory.createElement(
-            element="ul",
-            content="",
-            children=self._createListDivs(),
-            classlist=self._settings["ul_classlist"],
-        )
+    def __str__(self) -> str:
+        return "\n".join([str(element) for element in self._list])

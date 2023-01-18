@@ -16,13 +16,12 @@ def main(parser: argparse.ArgumentParser):
         s.saveRepos()
 
     s.createHTMLLists()
-    s.saveHTMLLists()
 
     r = Renderer(settings_path="resources/settings.toml")
     r.render(
         template="resources/base.html",
         context={"interactive_list": s.interactive_list, "static_list": s.static_list},
-        out_path="../index.html",
+        out_path="../public_html/index.html",
     )
 
 
