@@ -83,7 +83,10 @@ class DOMElementFactory:
                     element="div",
                     content=kwargs.get("content"),
                     children=kwargs.get("children", []),
-                    attributes={"class": kwargs["classlist"]},
+                    attributes={
+                        "class": kwargs["classlist"],
+                        "id": kwargs.get("idlist", []),
+                    },
                 )
             case "a":
                 return DOMelement(
@@ -208,6 +211,7 @@ class StaticList(HTMLList):
                 content=language,
                 children=self._createUnorderedList(language),
                 classlist=self._settings["div_classlist"],
+                idlist=[language.lower().replace(" ", "-")],
             )
             for language in sorted(list(set([repo.language for repo in self._repos])))
         ]
