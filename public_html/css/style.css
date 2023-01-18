@@ -83,8 +83,8 @@ a:visited {
 
 .language {
   font-size: var(--text-size);
-  margin-top: calc(var(--text-size));
-  margin-bottom: calc(var(--text-size));
+  margin-top: var(--text-size);
+  margin-bottom: var(--text-size);
 }
 
 .projects-list,
@@ -114,6 +114,10 @@ a:visited {
 
 .links-container a {
   font-family: HackItalic;
+}
+
+.project-title {
+  padding-right: calc(var(--small-text-size) / 2);
 }
 
 .project-description,
