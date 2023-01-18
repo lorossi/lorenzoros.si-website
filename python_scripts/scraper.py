@@ -2,6 +2,7 @@ import argparse
 import logging
 
 from modules.scraper import Scraper
+from modules.renderer import Renderer
 
 
 def main(parser: argparse.ArgumentParser):
@@ -16,7 +17,13 @@ def main(parser: argparse.ArgumentParser):
 
     s.createHTMLLists()
     s.saveHTMLLists()
-    s.embedHTMLLists()
+
+    r = Renderer(settings_path="resources/settings.toml")
+    r.render(
+        template="resources/base.html",
+        context={"interactive_list": s.interactive_list, "static_list": s.static_list},
+        out_path="../index.html",
+    )
 
 
 if __name__ == "__main__":

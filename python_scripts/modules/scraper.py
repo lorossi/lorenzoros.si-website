@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 import logging
-from datetime import datetime
 
 import toml
 import ujson
 
-from .renderer import Renderer
 from .github import GitHub, Repo
 from .htmlelements import InteractiveList, StaticList
 
@@ -95,21 +93,6 @@ class Scraper(GitHub):
         out_path = self._settings["out_path"]
         self._interactive_list.saveHTML(out_path)
         self._static_list.saveHTML(out_path)
-
-    def embedHTMLLists(self) -> None:
-        self._embedder = Renderer(settings_path=self._settings_path)
-
-        self._embedder.embedContent(
-            self._interactive_list.html,
-            self._settings["interactive_token"],
-        )
-        self._embedder.embedContent(
-            self._static_list.html, self._settings["static_token"]
-        )
-        current_date = datetime.now().strftime("%Y%m%d")
-        self._embedder.embedContent(current_date, self._settings["date_token"])
-
-        self._embedder.saveHTML(self._settings["out_path"])
 
     @property
     def interactive_list(self) -> InteractiveList:

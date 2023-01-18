@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from datetime import datetime
 
 import toml
 
@@ -10,7 +11,6 @@ class Renderer:
         logging.info(f"Initializing {self.__class__.__name__}...")
         self._settings_path = settings_path
         self._loadSettings(settings_path)
-        self._loadBase()
 
     def _loadSettings(self, path: str) -> None:
         logging.info(f"Loading settings from {path}")
@@ -18,21 +18,36 @@ class Renderer:
             self._settings = toml.load(f)[self.__class__.__name__]
         logging.info("Loaded settings")
 
-    def _loadBase(self):
-        full_path = self._settings["resources_path"] + self._settings["base_filename"]
-        logging.info(f"Loading base from {full_path}...")
-        with open(full_path, "r") as f:
-            self._base = f.read()
-        logging.info("Base file loaded")
+    def _extendContext(self, context: dict) -> dict:
+        logging.info("Extending context")
 
-    def embedContent(self, content: str, token: str) -> None:
-        html_token = "{{ " + token + " }}"
-        logging.info(f"Embedding {html_token}...")
-        self._base = self._base.replace(html_token, content)
+        if "date" not in context:
+            context["date"] = datetime.now().strftime("%Y%m%d")
 
-    def saveHTML(self, base_path: str, filename: str = "index.html") -> None:
-        full_path = base_path + filename
-        logging.info(f"Saving HTML to {full_path} for {self.__class__.__name__}")
-        with open(full_path, "w") as f:
-            f.write(self._base)
-        logging.info("Saved HTML")
+        if "isodate" not in context:
+            context["isodate"] = datetime.now().isoformat()
+
+        logging.info("Extended context")
+        return context
+
+    def _replaceTokens(self, template: str, context: dict) -> str:
+        logging.info("Replacing tokens")
+
+        for key, value in context.items():
+            token = "{{ " + key + " }}"
+            template = template.replace(token, str(value))
+
+        logging.info("Replaced tokens")
+        return template
+
+    def render(self, template: str, context: dict, out_path: str) -> None:
+        logging.info(f"Rendering {template} to {out_path}")
+        with open(template, "r") as f:
+            template = f.read()
+
+        context = self._extendContext(context)
+        template = self._replaceTokens(template, context)
+
+        with open(out_path, "w") as f:
+            f.write(template)
+        logging.info("Rendered")
