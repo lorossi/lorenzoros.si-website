@@ -81,7 +81,7 @@ a:visited {
   content: "> ";
 }
 
-.language {
+.language-container {
   font-size: var(--text-size);
   margin-top: var(--text-size);
   margin-bottom: var(--text-size);
@@ -136,7 +136,7 @@ a:visited {
 }
 
 .newline::before,
-.language::before {
+.language-container::before {
   content: "> ";
   opacity: 0.9;
 }
