@@ -6,7 +6,7 @@ from datetime import datetime
 import toml
 import ujson
 
-from .embedder import Embedder
+from .renderer import Renderer
 from .github import GitHub, Repo
 from .htmlelements import InteractiveList, StaticList
 
@@ -97,7 +97,7 @@ class Scraper(GitHub):
         self._static_list.saveHTML(out_path)
 
     def embedHTMLLists(self) -> None:
-        self._embedder = Embedder(settings_path=self._settings_path)
+        self._embedder = Renderer(settings_path=self._settings_path)
 
         self._embedder.embedContent(
             self._interactive_list.html,

@@ -5,7 +5,7 @@ import logging
 import toml
 
 
-class Embedder:
+class Renderer:
     def __init__(self, settings_path: str = "settings.toml"):
         logging.info(f"Initializing {self.__class__.__name__}...")
         self._settings_path = settings_path
