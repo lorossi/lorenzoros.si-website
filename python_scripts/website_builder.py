@@ -15,7 +15,7 @@ def main(parser: argparse.ArgumentParser):
         s.scrapeRepos(skip_private=True)
         s.saveRepos()
 
-    ...
+    s.saveStats()
 
     r = Renderer()
     r.renderFile(
@@ -24,7 +24,7 @@ def main(parser: argparse.ArgumentParser):
             "interactive_repos": s.interactive_repos,
             "repos_list": s.repos_list,
         },
-        output_path="index.html",
+        output_path="../public_html/index.html",
         format=True,
     )
 

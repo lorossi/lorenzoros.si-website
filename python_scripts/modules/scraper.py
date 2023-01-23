@@ -47,6 +47,20 @@ class Scraper(GitHub):
         logging.info(f"Loaded {len(self._repos)} repos")
         return len(self._repos)
 
+    def saveStats(self, path: str = None) -> None:
+        """Save stats to file.
+
+        Args:
+            path (str, optional): file path. Defaults to value from settings.
+        """
+        if path is None:
+            path = self._settings.out_path + "stats.json"
+
+        logging.info(f"Saving stats to {path}")
+        with open(path, "w") as f:
+            ujson.dump(self.stats, f, indent=4)
+        logging.info("Saved stats")
+
     def saveRepos(self, path: str = None) -> None:
         """Save repos list to file.
 
@@ -133,7 +147,13 @@ class Scraper(GitHub):
     @property
     def interactive_repos(self) -> list[Repo]:
         """Get the list of interactive repos."""
-        return [r for r in self.interesting_repos if r.is_interactive]
+        return [
+            r
+            for r in self.interesting_repos
+            if r.is_interactive
+            and (t not in self._settings.skip_websites_topics for t in r.topics)
+            and r.name not in self._settings.skip_websites_names
+        ]
 
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:

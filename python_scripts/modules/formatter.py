@@ -1,5 +1,5 @@
 """Format HTML."""
-from lxml import etree, html
+from yattag import indent
 
 
 class HTMLFormatter:
@@ -15,5 +15,5 @@ class HTMLFormatter:
         Returns:
             str: Formatted HTML.
         """
-        document_root = html.fromstring(html_text)
-        return etree.tostring(document_root, encoding="unicode", pretty_print=True)
+        ...
+        return indent(html_text)

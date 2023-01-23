@@ -257,7 +257,7 @@ class Repo:
             return self.name.replace("-", " ").lower()
 
         if name == "description_formatted":
-            description = self.description[0].lower() + self.description[1:]
+            description = self.description[0].upper() + self.description[1:]
             if description.endswith("."):
                 return description[:-1]
             return description

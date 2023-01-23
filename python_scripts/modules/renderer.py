@@ -169,6 +169,7 @@ class Renderer:
         template_path = self._settings.templates_path + template_name
         with open(template_path, "r") as f:
             template = f.read()
+        logging.info(f"Template loaded from {template_path}.")
 
         rendered = self.renderString(
             template, context_dict=context_dict, context=context, format=format
@@ -178,6 +179,7 @@ class Renderer:
             logging.info(f"Saving rendered page to {output_path}...")
             with open(output_path, "w") as f:
                 f.write(rendered)
+            logging.info("Saved.")
 
         return rendered
 
