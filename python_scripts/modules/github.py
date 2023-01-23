@@ -162,13 +162,18 @@ class Repo:
             return datetime.fromisoformat(a).strftime("%Y-%m-%d")
 
         if name == "language":
+            if len(self.languages) == 0:
+                return None
             return self.languages[0]["language"]
 
         if name == "name_formatted":
             return self.name.replace("-", " ").lower()
 
         if name == "description_formatted":
-            return self.description[0].lower() + self.description[1:].replace("-", " ")
+            description = self.description[0].lower() + self.description[1:]
+            if description.endswith("."):
+                return description[:-1]
+            return description
 
         raise AttributeError(
             f"Attribute {name} does not exist in {self.__class__.__name__}"
@@ -190,3 +195,7 @@ class Repo:
     @property
     def as_dict(self) -> dict:
         return {k: self.__getattribute__(k) for k in self._attributes}
+
+    @property
+    def is_interactive(self) -> bool:
+        return self.homepage != "" and self.homepage is not None
