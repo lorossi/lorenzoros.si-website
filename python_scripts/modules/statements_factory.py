@@ -1,3 +1,4 @@
+"""Factory for creating statements."""
 from __future__ import annotations
 
 import re
@@ -6,6 +7,7 @@ from .statements import ControlStatement, Statement
 
 
 class StatementFactory:
+    """Factory for creating statements."""
 
     _indentMap = {
         "if": 0,
@@ -41,12 +43,34 @@ class StatementFactory:
 
     @staticmethod
     def create(line: str, indent: int, list_container: str = "output") -> Statement:
+        """Create a statement.
+
+        Args:
+            line (str): content of the line.
+            indent (int): indent level of the line.
+            list_container (str, optional). Defaults to "output".
+
+        Returns:
+            Statement: _description_
+        """
         if "{%" and "%}" in line:
             return StatementFactory.createControlStatement(line, indent)
         return StatementFactory.createStatement(line, indent, list_container)
 
     @staticmethod
     def createControlStatement(line: str, indent: int) -> Statement:
+        """Create a control statement.
+
+        Args:
+            line (str): content of the line
+            indent (int): indent level of the line
+
+        Raises:
+            ValueError: Invalid condition, invalid operation or statement not found
+
+        Returns:
+            Statement: _description_
+        """
         groups = re.search(r"{% ([a-z]+)\s?(.*)? %}", line)
         if not groups:
             raise ValueError(f"Statement not found in line: {line}")
@@ -78,6 +102,16 @@ class StatementFactory:
 
     @staticmethod
     def createStatement(line: str, indent: int, list_container: str) -> Statement:
+        """Create a statement.
+
+        Args:
+            line (str): line content
+            indent (int): indent level of the line
+            list_container (str): list container
+
+        Returns:
+            Statement
+        """
         return Statement(
             content=line,
             indent=indent,

@@ -1,3 +1,4 @@
+"""Scraper module."""
 from __future__ import annotations
 
 import logging
@@ -9,16 +10,28 @@ from .settings import Settings
 
 
 class Scraper(GitHub):
+    """Scraper class."""
+
     _repos: list[Repo]
     _settings: Settings
     _settings_path: str
 
-    def __init__(self, settings_path: str = "settings.toml"):
+    def __init__(self, settings_path: str = "settings.toml") -> Scraper:
+        """Create a new Scraper instance."""
         logging.info(f"Initializing {self.__class__.__name__}...")
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
         super().__init__(self._settings.username, self._settings.token)
 
     def scrapeRepos(self, skip_private: bool = True) -> int:
+        """Scrape the repos.
+
+        Args:
+            skip_private (bool, optional): if true, private repos are skipped. \
+                Defaults to True.
+
+        Returns:
+            int: _description_
+        """
         logging.info("Loading repos...")
         repos = []
         repo_names = self.getReposNames(skip_private=skip_private)
@@ -35,6 +48,11 @@ class Scraper(GitHub):
         return len(self._repos)
 
     def saveRepos(self, path: str = None) -> None:
+        """Save repos list to file.
+
+        Args:
+            path (str, optional): file path. Defaults to value from settings.
+        """
         if path is None:
             path = self._settings.out_path + "repos.json"
 
@@ -44,6 +62,11 @@ class Scraper(GitHub):
         logging.info(f"Saved {len(self._repos)} repos")
 
     def loadRepos(self, path: str = None) -> None:
+        """Load repos list from file.
+
+        Args:
+            path (str, optional): file path. Defaults to value from settings.
+        """
         if path is None:
             path = self._settings.out_path + "repos.json"
 
@@ -53,6 +76,14 @@ class Scraper(GitHub):
         logging.info(f"Loaded {len(self._repos)} repos")
 
     def reposByLanguage(self, language: str) -> set[Repo]:
+        """Get a set of interesting repos written in a set language.
+
+        Args:
+            language (str): language name
+
+        Returns:
+            set[Repo]: set of repos
+        """
         return set(
             filter(
                 lambda x: x.language == language,
@@ -83,10 +114,12 @@ class Scraper(GitHub):
 
     @property
     def repos(self) -> list[Repo]:
+        """Get the list of repos."""
         return self._repos
 
     @property
     def interesting_repos(self) -> list[Repo]:
+        """Get the list of interesting repos."""
         return sorted(
             [
                 r
@@ -99,10 +132,12 @@ class Scraper(GitHub):
 
     @property
     def interactive_repos(self) -> list[Repo]:
+        """Get the list of interactive repos."""
         return [r for r in self.interesting_repos if r.is_interactive]
 
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:
+        """Get the list of repos grouped by language."""
         languages = sorted(
             list(
                 set([repo.language for repo in self.interesting_repos if repo.language])
@@ -121,6 +156,7 @@ class Scraper(GitHub):
 
     @property
     def stats(self) -> list[str]:
+        """Get the stats."""
         stats = {}
         stats["total_repos"] = len(self._repos)
         stats["interesting_repos"] = len(self.interesting_repos)

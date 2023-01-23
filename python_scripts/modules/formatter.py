@@ -1,10 +1,13 @@
+"""Format HTML."""
 from lxml import etree, html
 
 
 class HTMLFormatter:
+    """Format HTML."""
+
     @classmethod
     def format(cls, html_text: str) -> str:
-        """Format the HTML.
+        """Format the HTML code.
 
         Args:
             html (str): The HTML to format.

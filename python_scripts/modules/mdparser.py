@@ -1,3 +1,4 @@
+"""Markdown to HTML parser module."""
 from __future__ import annotations
 
 import re
@@ -7,11 +8,16 @@ import toml
 
 
 class ParserError(Exception):
+    """Parser error class."""
+
     def __init__(self, *args: object) -> None:
+        """Create a new ParserError instance."""
         super().__init__(*args)
 
 
 class MarkdownParser:
+    """Markdown parser class."""
+
     _title_rules = {
         "h1": r"^#\s*([^#]*)$",
         "h2": r"^##\s*([^#]*)$",
@@ -179,6 +185,7 @@ class MarkdownParser:
 
     def parseFile(self, file_path: str) -> dict[str, Any]:
         """Parse a markdown file. Return the HTML content and the options.
+
         Args:
             file_path (str): The path to the markdown file.
 

@@ -29,7 +29,7 @@ class Renderer:
         """
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
 
-    def nullEmptyStr(self, text: str) -> str:
+    def _nullEmptyStr(self, text: str) -> str:
         if text == "":
             return "None"
         return text
@@ -46,8 +46,8 @@ class Renderer:
         for match in re.finditer(
             r"\{\{([a-z_]+)(\.[a-z_]+)?(\|([a-z_\|]+))*\}\}", text
         ):
-            item = self.nullEmptyStr(match.group(1))
-            attribute = self.nullEmptyStr(match.group(2))
+            item = self._nullEmptyStr(match.group(1))
+            attribute = self._nullEmptyStr(match.group(2))
 
             if attribute:
                 new_value = self._extractAttribute(context, item, attribute)
@@ -102,7 +102,6 @@ class Renderer:
         Returns:
             list[str]: The instructions
         """
-
         instructions = []
         for statement in statements:
             instruction, replaced = self._replaceTokensInCode(str(statement), context)

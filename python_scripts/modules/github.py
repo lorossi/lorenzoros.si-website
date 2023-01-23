@@ -1,13 +1,24 @@
+"""GitHub API wrapper and parsed Repo class."""
 from __future__ import annotations
 
 import logging
 from datetime import datetime
+from typing_extensions import Any
 
 import requests
 import ujson
 
 
-def testCredentialsDecorator(method):
+def testCredentialsDecorator(method: callable):
+    """Credentials decorator for GitHub class methods.
+
+    When this method is called, it will check if the credentials are still.
+    If not, it will raise an exception.
+
+    Args:
+        method (callable): method of the GitHub class.
+    """
+
     def inner(*args):
         if not args[0].testCredentials():
             raise Exception("Invalid credentials")
@@ -17,13 +28,26 @@ def testCredentialsDecorator(method):
 
 
 class GitHub:
+    """GitHub API wrapper class."""
+
     def __init__(self, username: str, token: str):
+        """Initialize the GitHub class.
+
+        Args:
+            username (str): GitHub username.
+            token (str): GitHub token.
+        """
         logging.info(f"Initializing {self.__class__.__name__}...")
         self._username = username
         self._token = token
         self._credentials_tested = False
 
     def testCredentials(self) -> bool:
+        """Test the credentials.
+
+        Returns:
+            bool: True if the credentials are valid, False otherwise.
+        """
         if self._credentials_tested:
             return True
 
@@ -94,19 +118,47 @@ class GitHub:
         return user_data[0]["contributions"]
 
     def getReposUrls(self, skip_private: bool = False) -> list[str]:
+        """Load a list of all the repos urls.
+
+        Args:
+            skip_private (bool, optional): Skip the private repos. \
+                Defaults to False.
+
+        Returns:
+            list[str]
+        """
         logging.info("Getting repos urls")
         return [repo["html_url"] for repo in self._getAllRepos(skip_private)]
 
     def getReposNames(self, skip_private: bool = False) -> list[str]:
+        """Load a list of all the repos names.
+
+        Args:
+            skip_private (bool, optional): Skip the private repos. \
+                Defaults to False.
+
+        Returns:
+            list[str]
+        """
         logging.info("Getting repos names")
         return [repo["name"] for repo in self._getAllRepos(skip_private)]
 
     def getRepoByName(self, name: str) -> Repo:
+        """Get a repo by its name.
+
+        Args:
+            name (str): Repo name.
+
+        Returns:
+            Repo
+        """
         logging.info(f"Getting repo named {name}")
         return self._getRepo(self._username, name)
 
 
 class Repo:
+    """Parsed GitHub repo class."""
+
     _frozen: bool = False
     _attributes = [
         "name",
@@ -131,18 +183,38 @@ class Repo:
 
     _time_attributes = list(filter(lambda x: x.endswith("_at"), _attributes))
 
-    @classmethod
-    def from_json(
-        cls, json_data: dict, languages: list[dict], commits_count: int
-    ) -> Repo:
-        return cls(**json_data, languages=languages, commits_count=commits_count)
-
     def __init__(self, **kwargs):
+        """Initialize the object."""
         for a in self._attributes:
             self.__setattr__(a, kwargs.get(a))
         self._frozen = True
 
-    def __setattr__(self, name: str, value):
+    @classmethod
+    def from_json(
+        cls, json_data: dict, languages: list[dict], commits_count: int
+    ) -> Repo:
+        """Create a Repo object from a json.
+
+        Args:
+            json_data (dict)
+            languages (list[dict])
+            commits_count (int)
+
+        Returns:
+            Repo: _description_
+        """
+        return cls(**json_data, languages=languages, commits_count=commits_count)
+
+    def __setattr__(self, name: str, value: Any) -> None:
+        """Set the attribute of the object.
+
+        Args:
+            name (str)
+            value (_type_)
+
+        Raises:
+            AttributeError: If the attribute cannot be modified.
+        """
         if name not in self._attributes:
             return
 
@@ -153,7 +225,18 @@ class Repo:
 
         super().__setattr__(name, value)
 
-    def __getattr__(self, name: str):
+    def __getattr__(self, name: str) -> Any:
+        """Get the attribute of the object.
+
+        Args:
+            name (str)
+
+        Raises:
+            AttributeError: If the attribute does not exist.
+
+        Returns:
+            Any
+        """
         if name in self._attributes:
             return self.__getattribute__(name)
 
@@ -187,22 +270,27 @@ class Repo:
         )
 
     def __repr__(self) -> str:
+        """Return the representation of the object."""
         attributes = ", ".join(
             [f"{a}={self.__getattribute__(a)!r}" for a in self._attributes]
         )
         return f"{self.__class__.__name__}({attributes})"
 
     def __str__(self) -> str:
+        """Return the string representation of the object."""
         return self.__repr__()
 
     @property
     def json(self) -> dict:
+        """Return the json representation of the object."""
         return ujson.dumps(self.as_dict)
 
     @property
     def as_dict(self) -> dict:
+        """Return the dict representation of the object."""
         return {k: self.__getattribute__(k) for k in self._attributes}
 
     @property
     def is_interactive(self) -> bool:
+        """Return True if the repo is interactive."""
         return self.homepage != "" and self.homepage is not None
