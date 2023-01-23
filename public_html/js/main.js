@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   window.addEventListener("resize", window_resized);
   add_lines();
+  await timeout(500);
   await print_letters();
 });
 
