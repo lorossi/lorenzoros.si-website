@@ -2,31 +2,21 @@ from __future__ import annotations
 
 import logging
 
-import toml
 import ujson
 
 from .github import GitHub, Repo
-from .htmlelements import InteractiveList, StaticList
+from .settings import Settings
 
 
 class Scraper(GitHub):
     _repos: list[Repo]
-    _interactive_list: InteractiveList
-    _static_list: StaticList
-    _settings: dict
+    _settings: Settings
     _settings_path: str
 
     def __init__(self, settings_path: str = "settings.toml"):
         logging.info(f"Initializing {self.__class__.__name__}...")
-        self._settings_path = settings_path
-        self._loadSettings(settings_path)
-        super().__init__(self._settings["username"], self._settings["token"])
-
-    def _loadSettings(self, path: str) -> None:
-        logging.info(f"Loading settings from {path}")
-        with open(path, "r") as f:
-            self._settings = toml.load(f)[self.__class__.__name__]
-        logging.info("Loaded settings")
+        self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
+        super().__init__(self._settings.username, self._settings.token)
 
     def scrapeRepos(self, skip_private: bool = True) -> int:
         logging.info("Loading repos...")
@@ -51,53 +41,48 @@ class Scraper(GitHub):
             self._repos = [Repo(**repo) for repo in ujson.load(f)]
         logging.info(f"Loaded {len(self._repos)} repos")
 
-    def _createInteractiveList(self) -> None:
-        logging.info("Creating interactive list")
+    def reposByLanguage(self, language: str) -> list[Repo]:
+        return set(
+            filter(
+                lambda x: x.language == language,
+                self.interesting_repos,
+            )
+        )
 
-        relevant_repos = sorted(
-            (
-                repo
-                for repo in self._repos
-                if repo.homepage  # the repo has a homepage
-                and repo.name not in self._settings["skip_websites_names"]
-                and set(repo.topics) & set(self._settings["relevant_topics"])
-                and all(
-                    r not in self._settings["skip_websites_topics"] for r in repo.topics
-                )
-            ),
-            key=lambda x: x.created_at_obj,
+    @property
+    def repos(self) -> list[Repo]:
+        return self._repos
+
+    @property
+    def interesting_repos(self) -> list[Repo]:
+        return sorted(
+            [
+                r
+                for r in self._repos
+                if any(t in r.topics for t in self._settings.relevant_topics)
+            ],
+            key=lambda x: x.created_at,
             reverse=True,
         )
 
-        self._interactive_list = InteractiveList(relevant_repos, self._settings_path)
-        logging.info("Created interactive list")
-
-    def _createStaticList(self) -> None:
-        logging.info("Creating static list")
-
-        relevant_repos = [
-            repo
-            for repo in self._repos
-            if set(repo.topics) & set(self._settings["relevant_topics"])
-        ]
-        relevant_repos.sort(key=lambda x: x.created_at_obj, reverse=True)
-        relevant_repos.sort(key=lambda x: x.language)
-
-        self._static_list = StaticList(relevant_repos, self._settings_path)
-
-    def createHTMLLists(self) -> None:
-        self._createInteractiveList()
-        self._createStaticList()
-
-    def saveHTMLLists(self) -> None:
-        out_path = self._settings["out_path"]
-        self._interactive_list.saveHTML(out_path)
-        self._static_list.saveHTML(out_path)
+    @property
+    def interactive_repos(self) -> list[Repo]:
+        return [r for r in self.interesting_repos if r.is_interactive]
 
     @property
-    def interactive_list(self) -> InteractiveList:
-        return self._interactive_list
+    def repos_list(self) -> list[dict[str, list[Repo]]]:
+        languages = sorted(
+            list(
+                set([repo.language for repo in self.interesting_repos if repo.language])
+            )
+        )
+        repos = {lang: [] for lang in languages}
 
-    @property
-    def static_list(self) -> StaticList:
-        return self._static_list
+        for lang in languages:
+            lang_repos = sorted(
+                self.reposByLanguage(lang),
+                key=lambda x: x.created_at,
+            )
+            repos[lang] = lang_repos
+
+        return repos

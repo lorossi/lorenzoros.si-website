@@ -12,13 +12,13 @@
     <meta name="author" content="Lorenzo Rossi" />
     <link rel="shortcut icon" href="favicon.ico" />
 
-    <link rel="stylesheet" href="css/fonts/fonts.css?{{ date }}" />
-    <link rel="stylesheet" href="css/vars.css?{{ date }}" />
-    <link rel="stylesheet" href="css/style.css?{{ date }}" />
-    <link rel="stylesheet" href="css/big-screens.css?{{ date }}" />
+    <link rel="stylesheet" href="css/fonts/fonts.css?{{date}}" />
+    <link rel="stylesheet" href="css/vars.css?{{date}}" />
+    <link rel="stylesheet" href="css/style.css?{{date}}" />
+    <link rel="stylesheet" href="css/big-screens.css?{{date}}" />
 
-    <script src="js/secret.js?{{ date }}"></script>
-    <script src="js/main.js?{{ date }}"></script>
+    <script src="js/secret.js?{{date}}"></script>
+    <script src="js/main.js?{{date}}"></script>
   </head>
 
   <body>
@@ -42,7 +42,17 @@
           some of the interactive projects that I have developed during the
           years
         </div>
-        {{ interactive_list }}
+        <ul class="links-list small-aberration">
+          {% for project in interactive_repos %}
+          <li class="interactive-container">
+            <a class="project-title" href="{{project.homepage}}"
+              >{{project.name_formatted}}</a
+            ><span class="project-date"
+              >: {{project.created_at_formatted}}</span
+            >
+          </li>
+          {% end %}
+        </ul>
       </div>
 
       <div class="section" id="portfolio">
@@ -51,12 +61,26 @@
           many different projects ranging from embedded development to digital
           art
         </div>
-        {{ static_list }}
+        {% for language in repos_list %}
+        <div class="language small-aberration">
+          {{language}}
+          <ul class="project-list">
+            {% for project in repos_list[language] %}
+            <li class="project-container">
+              <a class="project-title" href="{{project.html_url}}"
+                >{{project.name_formatted}}</a
+              ><span class="project-description">
+                {{project.description_formatted}}</span
+              >
+            </li>
+            {% end %}
+          </ul>
+        </div>
+        {% end %}
       </div>
 
       <div class="section" id="links">
         <div class="title aberration">CONTACTS</div>
-
         <div class="contacts-container">
           <ul class="links-list small-aberration">
             <li class="links-container">

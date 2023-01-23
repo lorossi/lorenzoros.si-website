@@ -6,7 +6,7 @@ from modules.renderer import Renderer
 
 
 def main(parser: argparse.ArgumentParser):
-    s = Scraper(settings_path="resources/settings.toml")
+    s = Scraper(settings_path="settings.toml")
 
     arguments = parser.parse_args()
     if arguments.offline:
@@ -15,13 +15,16 @@ def main(parser: argparse.ArgumentParser):
         s.scrapeRepos(skip_private=True)
         s.saveRepos()
 
-    s.createHTMLLists()
+    ...
 
-    r = Renderer(settings_path="resources/settings.toml")
-    r.render(
-        template="resources/base.html",
-        context={"interactive_list": s.interactive_list, "static_list": s.static_list},
-        out_path="../public_html/index.html",
+    r = Renderer()
+    r.renderFile(
+        "base.html",
+        context_dict={
+            "interactive_repos": s.interactive_repos,
+            "repos_list": s.repos_list,
+        },
+        output_path="index.html",
     )
 
 
