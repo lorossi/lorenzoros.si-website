@@ -25,6 +25,7 @@ def main(parser: argparse.ArgumentParser):
             "repos_list": s.repos_list,
         },
         output_path="index.html",
+        format=True,
     )
 
 

@@ -4,10 +4,10 @@ from __future__ import annotations
 import logging
 import re
 
-from bs4 import BeautifulSoup
 from typing_extensions import Any
 
 from .context import Context
+from .formatter import HTMLFormatter
 from .function_factory import FunctionFactory
 from .settings import Settings
 from .statements import Statement
@@ -144,8 +144,7 @@ class Renderer:
         Returns:
             str: The formatted text
         """
-        soup = BeautifulSoup(text, "html.parser")
-        return soup.prettify()
+        return HTMLFormatter.format(text)
 
     def renderFile(
         self,
