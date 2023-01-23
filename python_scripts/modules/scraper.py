@@ -34,25 +34,52 @@ class Scraper(GitHub):
         logging.info(f"Loaded {len(self._repos)} repos")
         return len(self._repos)
 
-    def saveRepos(self, path: str = "repos.json") -> None:
+    def saveRepos(self, path: str = None) -> None:
+        if path is None:
+            path = self._settings.out_path + "repos.json"
+
         logging.info(f"Saving repos to {path}")
         with open(path, "w") as f:
             ujson.dump([r.as_dict for r in self._repos], f, indent=4)
         logging.info(f"Saved {len(self._repos)} repos")
 
-    def loadRepos(self, path: str = "repos.json") -> None:
+    def loadRepos(self, path: str = None) -> None:
+        if path is None:
+            path = self._settings.out_path + "repos.json"
+
         logging.info(f"Loading repos from {path}")
         with open(path, "r") as f:
             self._repos = [Repo(**repo) for repo in ujson.load(f)]
         logging.info(f"Loaded {len(self._repos)} repos")
 
-    def reposByLanguage(self, language: str) -> list[Repo]:
+    def reposByLanguage(self, language: str) -> set[Repo]:
         return set(
             filter(
                 lambda x: x.language == language,
                 self.interesting_repos,
             )
         )
+
+    def _getLanguagesStat(self) -> dict[str, dict]:
+        languages = dict()
+
+        for repo in self._repos:
+            for language in repo.languages:
+                name = language["language"]
+                if name not in languages:
+                    languages[name] = {"size": 0, "repos": 0}
+
+                languages[name]["size"] += language["size"]
+                languages[name]["repos"] += 1
+
+        total_size = sum(lang["size"] for lang in languages.values())
+
+        for language in languages.values():
+            relative_size = language["size"] / total_size
+            language["relative_size"] = relative_size
+            language["relative_size_formatted"] = f"{relative_size:.2%}"
+
+        return languages
 
     @property
     def repos(self) -> list[Repo]:
@@ -76,9 +103,14 @@ class Scraper(GitHub):
 
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:
-        repos = {lang: [] for lang in self.languages}
+        languages = sorted(
+            list(
+                set([repo.language for repo in self.interesting_repos if repo.language])
+            )
+        )
+        repos = {lang: [] for lang in languages}
 
-        for lang in self.repos.keys():
+        for lang in repos.keys():
             lang_repos = sorted(
                 self.reposByLanguage(lang),
                 key=lambda x: x.created_at,
@@ -88,9 +120,16 @@ class Scraper(GitHub):
         return repos
 
     @property
-    def languages(self) -> list[str]:
-        return sorted(
-            list(
-                set([repo.language for repo in self.interesting_repos if repo.language])
-            )
-        )
+    def stats(self) -> list[str]:
+        stats = {}
+        stats["total_repos"] = len(self._repos)
+        stats["interesting_repos"] = len(self.interesting_repos)
+        stats["interactive_repos"] = len(self.interactive_repos)
+        stats["languages"] = self._getLanguagesStat()
+        stats["stargazers_count"] = sum(r.stargazers_count for r in self._repos)
+        stats["forks_count"] = sum(r.forks_count for r in self._repos)
+        stats["watchers_count"] = sum(r.watchers_count for r in self._repos)
+        stats["open_issues_count"] = sum(r.open_issues_count for r in self._repos)
+        stats["commits_count"] = sum(r.commits_count for r in self._repos)
+
+        return stats

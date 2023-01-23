@@ -113,6 +113,7 @@ class Repo:
         "description",
         "html_url",
         "topics",
+        "homepage",
         "id",
         "private",
         "stargazers_count",
@@ -120,9 +121,12 @@ class Repo:
         "created_at",
         "updated_at",
         "pushed_at",
+        "size",
         "languages",
         "commits_count",
-        "homepage",
+        "forks_count",
+        "open_issues_count",
+        "watchers",
     ]
 
     _time_attributes = list(filter(lambda x: x.endswith("_at"), _attributes))
@@ -174,6 +178,9 @@ class Repo:
             if description.endswith("."):
                 return description[:-1]
             return description
+
+        if name == "languages_set":
+            return set([lang["language"] for lang in self.languages])
 
         raise AttributeError(
             f"Attribute {name} does not exist in {self.__class__.__name__}"
