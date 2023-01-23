@@ -10,7 +10,7 @@ class Statement:
         content: str,
         indent: int,
         next_indent: int = None,
-        token_delimiters: str = "{}",
+        token_delimiters: str = "{{",
         list_container: str = "output",
     ) -> Statement:
         """Create a new Statement instance.
