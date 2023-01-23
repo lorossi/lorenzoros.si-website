@@ -3,4 +3,3 @@ __pycache__
 setting*.toml
 .vscode
 venv
-python_scripts/out
