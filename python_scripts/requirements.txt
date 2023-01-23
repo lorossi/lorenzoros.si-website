@@ -1,5 +1,5 @@
-lxml==4.9.2
 requests==2.28.1
 toml==0.10.2
 typing_extensions==4.4.0
 ujson==5.4.0
+yattag==1.15.0

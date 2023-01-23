@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   window.addEventListener("resize", window_resized);
   add_lines();
-  await timeout(500);
   await print_letters();
 });
 
@@ -74,7 +73,7 @@ const remove_cursor = (p) => p.classList.remove("writing");
 const print_letters = async () => {
   const typing_pause = 30;
   const newline_pause = 500;
-  const start_pause = 250;
+  const start_pause = 500;
 
   const container = document.querySelector(".typer");
   let to_write = container

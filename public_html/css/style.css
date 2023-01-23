@@ -83,26 +83,30 @@ a:visited {
 
 .language-container {
   font-size: var(--text-size);
-  margin-top: var(--text-size);
-  margin-bottom: var(--text-size);
+  margin-top: calc(var(--text-size) * 2);
+  margin-bottom: calc(var(--text-size) * 2);
 }
 
 .projects-list,
 .links-list {
   list-style-type: "> ";
-  margin-bottom: calc(var(--text-size) * 2);
+  margin-bottom: var(--text-size);
+  margin-top: var(--text-size);
 }
 
+.interactive-container,
 .project-container {
-  margin-left: calc(var(--small-text-size) * 3);
-  margin-bottom: calc(var(--small-text-size) * 1.5);
   font-size: var(--small-text-size);
+  line-height: 150%;
+  margin-left: calc(var(--small-text-size) * 3);
 }
 
 .interactive-container {
-  margin-left: calc(var(--small-text-size) * 3);
   margin-bottom: calc(var(--small-text-size) * 1.5);
-  font-size: var(--small-text-size);
+}
+
+.project-container {
+  margin-bottom: calc(var(--small-text-size) * 0.5);
 }
 
 .links-container {
@@ -116,15 +120,15 @@ a:visited {
   font-family: HackItalic;
 }
 
-.project-title {
-  padding-right: calc(var(--small-text-size) / 2);
-}
-
 .project-description,
 .project-date {
   margin-top: calc(var(--small-text-size) / 4);
   margin-bottom: calc(var(--small-text-size) / 4);
   opacity: 0.7;
+}
+
+.project-title {
+  margin-right: calc(var(--small-text-size) / 2);
 }
 
 .footer {
@@ -179,7 +183,6 @@ a:visited {
   filter: invert();
   width: var(--text-size);
   height: var(--text-size);
-  margin-right: calc(var(--text-size) / 2);
   vertical-align: text-bottom;
 }
 

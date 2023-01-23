@@ -47,8 +47,9 @@
           <li class="interactive-container">
             <a class="project-title" href="{{project.homepage}}"
               >{{project.name_formatted}}</a
-            ><span class="project-date"
-              >: {{project.created_at_formatted}}</span
+            >
+            <span class="project-date"
+              >created {{project.created_at_formatted}}</span
             >
           </li>
           {% end %}
@@ -62,15 +63,16 @@
           art
         </div>
         {% for language in repos_list %}
-        <div class="language small-aberration">
+        <div class="language-container small-aberration">
           {{language}}
-          <ul class="project-list">
+          <ul class="projects-list">
             {% for project in repos_list[language] %}
             <li class="project-container">
               <a class="project-title" href="{{project.html_url}}"
                 >{{project.name_formatted}}</a
-              ><span class="project-description">
-                {{project.description_formatted}}</span
+              >
+              <span class="project-description"
+                >{{project.description_formatted}}</span
               >
             </li>
             {% end %}

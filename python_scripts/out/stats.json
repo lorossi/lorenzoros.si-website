@@ -1,0 +1,84 @@
+{
+    "total_repos": 94,
+    "interesting_repos": 54,
+    "interactive_repos": 27,
+    "languages": {
+        "TeX": {
+            "size": 1456139,
+            "repos": 11,
+            "relative_size": 0.3370817755013555,
+            "relative_size_formatted": "33.71%"
+        },
+        "Processing": {
+            "size": 23287,
+            "repos": 3,
+            "relative_size": 0.005390710163040799,
+            "relative_size_formatted": "0.54%"
+        },
+        "Python": {
+            "size": 568342,
+            "repos": 31,
+            "relative_size": 0.13156555140133694,
+            "relative_size_formatted": "13.16%"
+        },
+        "Shell": {
+            "size": 22255,
+            "repos": 11,
+            "relative_size": 0.005151812370785115,
+            "relative_size_formatted": "0.52%"
+        },
+        "HTML": {
+            "size": 180652,
+            "repos": 54,
+            "relative_size": 0.041819151130400925,
+            "relative_size_formatted": "4.18%"
+        },
+        "JavaScript": {
+            "size": 1543144,
+            "repos": 55,
+            "relative_size": 0.3572225724153146,
+            "relative_size_formatted": "35.72%"
+        },
+        "CSS": {
+            "size": 87754,
+            "repos": 52,
+            "relative_size": 0.020314183005431453,
+            "relative_size_formatted": "2.03%"
+        },
+        "C++": {
+            "size": 6972,
+            "repos": 1,
+            "relative_size": 0.0016139490383785136,
+            "relative_size_formatted": "0.16%"
+        },
+        "Batchfile": {
+            "size": 591,
+            "repos": 2,
+            "relative_size": 0.00013681065428595835,
+            "relative_size_formatted": "0.01%"
+        },
+        "Go": {
+            "size": 60362,
+            "repos": 3,
+            "relative_size": 0.013973205945869743,
+            "relative_size_formatted": "1.40%"
+        },
+        "C": {
+            "size": 355463,
+            "repos": 6,
+            "relative_size": 0.08228616853544773,
+            "relative_size_formatted": "8.23%"
+        },
+        "Makefile": {
+            "size": 14878,
+            "repos": 5,
+            "relative_size": 0.003444109838352772,
+            "relative_size_formatted": "0.34%"
+        }
+    },
+    "stargazers_count": 68,
+    "forks_count": 16,
+    "watchers_count": 68,
+    "open_issues_count": 5,
+    "commits_count": 1145
+}
