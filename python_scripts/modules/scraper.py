@@ -20,11 +20,16 @@ class Scraper(GitHub):
 
     def scrapeRepos(self, skip_private: bool = True) -> int:
         logging.info("Loading repos...")
-        self._repos = []
+        repos = []
         repo_names = self.getReposNames(skip_private=skip_private)
 
         for repo_name in repo_names:
-            self._repos.append(self.getRepoByName(repo_name))
+            repos.append(self.getRepoByName(repo_name))
+
+        self._repos = sorted(
+            repos,
+            key=lambda x: x.created_at,
+        )
 
         logging.info(f"Loaded {len(self._repos)} repos")
         return len(self._repos)
@@ -71,14 +76,9 @@ class Scraper(GitHub):
 
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:
-        languages = sorted(
-            list(
-                set([repo.language for repo in self.interesting_repos if repo.language])
-            )
-        )
-        repos = {lang: [] for lang in languages}
+        repos = {lang: [] for lang in self.languages}
 
-        for lang in languages:
+        for lang in self.repos.keys():
             lang_repos = sorted(
                 self.reposByLanguage(lang),
                 key=lambda x: x.created_at,
@@ -86,3 +86,11 @@ class Scraper(GitHub):
             repos[lang] = lang_repos
 
         return repos
+
+    @property
+    def languages(self) -> list[str]:
+        return sorted(
+            list(
+                set([repo.language for repo in self.interesting_repos if repo.language])
+            )
+        )
