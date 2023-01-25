@@ -161,6 +161,10 @@ h2 {
   width: 100%;
   font-size: var(--small-text-size);
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .newline::before,
@@ -224,15 +228,28 @@ h2 {
 }
 
 .flag {
-  display: inline-block;
-  vertical-align: text-bottom;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   height: var(--small-text-size);
 }
 
 .flag#it {
-  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAzIDIiPg0KPHBhdGggZmlsbD0iIzAwOTI0NiIgZD0ibTAsMGgxdjJoLTF6Ii8+DQo8cGF0aCBmaWxsPSIjZmZmIiBkPSJtMSwwaDF2MmgtMXoiLz4NCjxwYXRoIGZpbGw9IiNjZTJiMzciIGQ9Im0yLDBoMXYyaC0xeiIvPg0KPC9zdmc+DQo=");
-  background-size: 100% 100%;
-  aspect-ratio: 1.5;
+  aspect-ratio: 3/2;
+  background-color: #f4f9ff;
+  margin-left: var(--small-text-size);
+}
+
+.flag#it > div {
+  width: 33%;
+}
+
+.flag#it > .green {
+  background-color: #008c45;
+}
+
+.flag#it > .red {
+  background-color: #cd212a;
 }
 
 .flag#uk {
