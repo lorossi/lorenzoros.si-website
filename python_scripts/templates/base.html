@@ -29,6 +29,7 @@
         <a href="#interactive">INTERACTIVE</a>
         <a href="#portfolio">PORTFOLIO</a>
         <a href="#links">CONTACTS</a>
+        <a href="blog.html">BLOG</a>
       </div>
       <div class="section">
         <div
@@ -39,11 +40,11 @@
       </div>
 
       <div class="section" id="interactive">
-        <div class="title aberration">INTERACTIVE</div>
-        <div class="subtitle aberration">
+        <h1 class="aberration">INTERACTIVE</h1>
+        <h2 class="aberration">
           some of the interactive projects that I have developed during the
           years
-        </div>
+        </h2>
         <ul class="links-list small-aberration">
           {% for project in interactive_repos %}
           <li class="interactive-container">
@@ -59,11 +60,11 @@
       </div>
 
       <div class="section" id="portfolio">
-        <div class="title aberration">PORTFOLIO</div>
-        <div class="subtitle aberration">
+        <h1 class="aberration">PORTFOLIO</h1>
+        <h2 class="aberration">
           many different projects ranging from embedded development to digital
           art
-        </div>
+        </h2>
         {% for language in repos_list %}
         <div class="language-container small-aberration">
           {{language}}
@@ -84,7 +85,7 @@
       </div>
 
       <div class="section" id="links">
-        <div class="title aberration">CONTACTS</div>
+        <h1 class="aberration">CONTACTS</h1>
         <div class="contacts-container">
           <ul class="links-list small-aberration">
             <li class="links-container">
@@ -142,7 +143,7 @@
 
           <div class="footer small-aberration">
             100% made in Italy
-            <div id="flag"></div>
+            <div class="flag" id="it"></div>
           </div>
         </div>
       </div>

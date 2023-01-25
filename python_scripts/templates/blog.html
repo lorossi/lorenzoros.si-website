@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Lorenzo Rossi Blog" />
+    <meta charset="utf-8" />
+    <title>Random thoughts</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Lorenzo Rossi" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="css/fonts/fonts.css?{{date}}" />
+    <link rel="stylesheet" href="css/vars.css?{{date}}" />
+    <link rel="stylesheet" href="css/style.css?{{date}}" />
+    <link rel="stylesheet" href="css/big-screens.css?{{date}}" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="blog-navbar aberration">
+        <a href="index.html">TAKE ME BACK</a>
+      </div>
+
+      <div class="blog-section">
+        <h1 class="aberration">Random thoughts, things I learned</h1>
+
+        <ul class="articles-list small-aberration">
+          {% if not articles %}
+          <li class="article-container">
+            <span class="article-title"
+              >No articles yet... check again later!</span
+            >
+          </li>
+          {% end %}
+          <span></span>
+          {% for article in articles %}
+          <li class="article-container">
+            <a class="article-title" href="{{base_url}}{{article.link}}"
+              >{{article.title}}</a
+            >
+            <span class="article-date">{{article.date}}</span>
+            {% if article.topic %}
+            <span class="article-topic">in {{article.topic}}</span>
+            {% end %}
+          </li>
+          {% end %}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
