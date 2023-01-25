@@ -76,9 +76,12 @@ const print_letters = async () => {
   const start_pause = 500;
 
   const container = document.querySelector(".typer");
+
+  const line_separator = container.getAttribute("separator") || "|";
+
   let to_write = container
     .getAttribute("data-text")
-    .replaceAll("<br>", "\n")
+    .replaceAll(line_separator, "\n")
     .split("");
   let current_p = add_paragraph(container);
 
