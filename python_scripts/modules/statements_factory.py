@@ -19,8 +19,8 @@ class StatementFactory:
 
     _nextIndentMap = {
         "if": 2,
-        "elif": 2,
-        "else": 2,
+        "elif": 0,
+        "else": 0,
         "for": 2,
         "end": -2,
     }

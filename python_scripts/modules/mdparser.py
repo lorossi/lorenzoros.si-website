@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import re
 from typing import Any
+from .article import Article
 
 import toml
 
@@ -119,10 +120,10 @@ class MarkdownParser:
 
             if language:
                 return self._createElement(
-                    "pre", f'<code language="{language}">\n{content}</code>'
+                    "code", f'<pre language="{language}">\n{content}</pre>'
                 )
             else:
-                return self._createElement("pre", f"<code>{content}</code>")
+                return self._createElement("code", content=content, strip_newlines=True)
 
         return None
 
@@ -183,36 +184,36 @@ class MarkdownParser:
         content = self._formatParagraph(paragraph)
         return self._createElement("p", content)
 
-    def parseFile(self, file_path: str) -> dict[str, Any]:
+    def parseFile(self, file_path: str) -> Article:
         """Parse a markdown file. Return the HTML content and the options.
 
         Args:
             file_path (str): The path to the markdown file.
 
         Returns:
-            tuple[str, dict[str, Any]]: The HTML content and the options.
+            Article: The HTML content and the options.
         """
         with open(file_path, "r") as f:
             content = f.read()
 
         return self.parseString(content)
 
-    def parseString(self, content: str) -> dict[str, Any]:
+    def parseString(self, content: str) -> Article:
         """Parse a markdown string. Return the HTML content and the options.
 
         Args:
             content (str): content of the markdown file.
 
         Returns:
-            tuple[str, dict[str, Any]]: The HTML content and the options.
+            Article: The HTML content and the options.
         """
         options = self._parseOptions(content)
         content = self._removeOptions(content)
 
         paragraphs = self._groupParagraphs(content)
         ...
-        output = "\n".join(
+        content = "\n".join(
             [self._parseParagraph(paragraph) for paragraph in paragraphs if paragraph]
         )
 
-        return {"content": output, **options}
+        return Article(content=content, **options)
