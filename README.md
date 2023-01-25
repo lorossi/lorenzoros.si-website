@@ -92,7 +92,7 @@ this would make the email readable, but not copyable, which is not ideal either.
 I am currently working on a blog section, which will be created using the markdown translator.
 I plan on writing some articles about my projects, my studies and my life in general.
 I also like to write some short stories (sadly, in Italian only).
-)
+
 One article could relate to the development of this website, giving me the opportunity to document and explain the code I wrote.
 
 ## Deployment
