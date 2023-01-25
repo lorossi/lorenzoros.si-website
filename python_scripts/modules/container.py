@@ -1,8 +1,9 @@
-"""Container class for storing data in a dictionary-like object. Supports access to the data as attributes and as dictionary keys."""
+"""Container class for storing data in a dictionary-like object. \
+    Supports access to the data as attributes and as dictionary keys."""
 from __future__ import annotations
 
-from typing_extensions import Any
 import toml
+from typing_extensions import Any
 
 
 class Container:
@@ -20,6 +21,10 @@ class Container:
 
     def __getattr__(self, key: str) -> Any:
         """Get an item from the container."""
+        if key not in self._container:
+            raise AttributeError(
+                f"'{self.__class__.__name__}' object has no attribute '{key}'"
+            )
         return self._container[key]
 
     def __setattr__(self, key: str, value: Any) -> None:
@@ -82,7 +87,10 @@ class Container:
 
     def get(self, key: str, default: Any = "") -> Any:
         """Get an item from the container."""
-        return self._container.get(key, default)
+        try:
+            return self.__getattr__(key)
+        except AttributeError:
+            return default
 
     @classmethod
     def from_toml(cls, toml_file: str) -> Container:

@@ -31,7 +31,7 @@ class Renderer:
 
     def _nullEmptyStr(self, text: str) -> str:
         if text == "":
-            return "None"
+            return None
         return text
 
     def _extractAttribute(self, context: Context, item: Any, attribute: Any) -> Any:
@@ -66,7 +66,7 @@ class Renderer:
             else:
                 text = text.replace(match.group(), match.group()[1:-1])
 
-        return text, new_value
+        return text
 
     def _createStatements(self, template: str) -> list[Statement]:
         """Create statements from the text.
@@ -104,18 +104,7 @@ class Renderer:
         """
         instructions = []
         for statement in statements:
-            instruction, replaced = self._replaceTokensInCode(str(statement), context)
-
-            if "\n" in replaced:
-                # if newline was found in the code, it means that it was replaced
-                # we need to create new statements recursively
-                new_statements = [
-                    self._createStatements(line) for line in replaced.split("\n")
-                ]
-                instructions.append(self._createInstructions(new_statements, context))
-            else:
-                instructions.append(instruction)
-        ...
+            instructions.append(self._replaceTokensInCode(str(statement), context))
         return "\n".join(instructions)
 
     def _runCode(self, code: str, context: Context) -> str:

@@ -53,7 +53,7 @@ class Statement:
         if self._token_delimiters in escaped_content:
             return (
                 f"{self._indent * ' '}{self._list_container}."
-                f'append(f"{escaped_content}")'
+                f'append(f"""{escaped_content}""")'
             )
 
         return (
