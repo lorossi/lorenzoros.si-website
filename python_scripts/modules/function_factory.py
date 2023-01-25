@@ -1,7 +1,8 @@
 """Function factory module."""
 
 from __future__ import annotations
-from .functions import lower, upper, escape_html, as_string, Function
+
+from .functions import Function, as_string, escape_html, lower, strip, upper
 
 
 class FunctionFactory:
@@ -22,6 +23,7 @@ class FunctionFactory:
             "upper": upper,
             "escape": escape_html,
             "as_string": as_string,
+            "strip": strip,
         }
 
         if name in functions_map:
