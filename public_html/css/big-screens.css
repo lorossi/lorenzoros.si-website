@@ -2,27 +2,19 @@
 }
 
 @media screen and (min-width: 770px) {
-  .section {
-    padding-top: 5vh;
-  }
-
   .content {
     margin-left: 25vw;
     margin-right: 25vw;
   }
 
-  .navbar {
+  .navbar,
+  .blog-navbar {
     margin-top: calc(var(--title-size) * 2);
-    justify-content: center;
   }
 
   .navbar a {
     margin-left: calc(var(--title-size) * 2);
     margin-right: calc(var(--title-size) * 2);
-  }
-
-  .typer {
-    margin-top: calc(var(--title-size) * 2);
   }
 
   .typer p {
@@ -34,7 +26,8 @@
     margin-bottom: calc(var(--text-size) / 2);
   }
 
-  .project-container {
+  .project-container,
+  .article-container {
     margin-top: calc(var(--text-size) / 2);
     margin-bottom: calc(var(--text-size) / 2);
   }
@@ -43,7 +36,8 @@
     line-height: 120%;
   }
 
-  .project-link {
+  .project-link,
+  .article-link {
     display: inline-block;
     margin: 0;
     line-height: 150%;

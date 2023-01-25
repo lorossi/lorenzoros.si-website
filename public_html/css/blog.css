@@ -1,0 +1,80 @@
+.blog-section * {
+  color: var(--blog-text-color);
+}
+
+.blog-section h1,
+.blog-section h2,
+.blog-section h3,
+.blog-section h4,
+.blog-section h5,
+.blog-section h6 {
+  text-shadow: var(--small-aberration);
+  padding-top: calc(var(--blog-text-size) * 2);
+  padding-bottom: calc(var(--blog-text-size) / 2);
+  display: inline-block;
+}
+
+.blog-section h1 {
+  font-size: calc(var(--blog-text-size) * 2);
+}
+
+.blog-section h2 {
+  font-size: calc(var(--blog-text-size) * 1.5);
+}
+
+.blog-section h3 {
+  font-size: calc(var(--blog-text-size) * 1.25);
+}
+
+.blog-section h4,
+.blog-section h5,
+.blog-section h6 {
+  font-size: var(--blog-text-size);
+}
+
+.blog-section p {
+  font-size: var(--blog-text-size);
+  margin-bottom: calc(var(--blog-text-size) / 8);
+}
+
+.blog-section img {
+  max-width: 100%;
+}
+
+.underline {
+  content: "";
+  width: 100%;
+  display: block;
+  margin-top: calc(var(--blog-text-size) / 4);
+  border-bottom: 1px solid;
+}
+
+h1 > .underline {
+  border-color: var(--blog-underline-color-1);
+}
+
+h2 > .underline {
+  border-color: var(--blog-underline-color-2);
+}
+
+h3 > .underline {
+  border-color: var(--blog-underline-color-3);
+}
+
+.blog-section bold {
+  font-family: Hack-Bold;
+}
+
+.blog-section italic {
+  font-family: Hack-Italic;
+}
+
+.blog-section strikethrough {
+  text-decoration: line-through;
+}
+
+.blog-section pre {
+  margin-left: calc(var(--blog-text-size) * 2);
+  padding: calc(var(--blog-text-size));
+  background-color: var(--blog-code-background-color);
+}
