@@ -21,6 +21,7 @@ def main(parser: argparse.ArgumentParser):
     s.saveStats()
 
     r = Renderer()
+    # # render base page
     r.renderFile(
         "base.html",
         context_dict={
