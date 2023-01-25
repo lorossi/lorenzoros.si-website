@@ -36,8 +36,12 @@ class Scraper(GitHub):
         repos = []
         repo_names = self.getReposNames(skip_private=skip_private)
 
-        for repo_name in repo_names:
-            repos.append(self.getRepoByName(repo_name))
+        try:
+            for repo_name in repo_names:
+                repos.append(self.getRepoByName(repo_name))
+        except KeyboardInterrupt:
+            logging.info("KeyboardInterrupt, exiting...")
+            return None
 
         self._repos = sorted(
             repos,

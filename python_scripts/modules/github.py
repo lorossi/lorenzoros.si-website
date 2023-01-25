@@ -128,7 +128,8 @@ class GitHub:
             list[str]
         """
         logging.info("Getting repos urls")
-        return [repo["html_url"] for repo in self._getAllRepos(skip_private)]
+        urls = [repo["html_url"] for repo in self._getAllRepos(skip_private)]
+        logging.info(f"Loaded {len(urls)} repos urls")
 
     def getReposNames(self, skip_private: bool = False) -> list[str]:
         """Load a list of all the repos names.
@@ -141,7 +142,9 @@ class GitHub:
             list[str]
         """
         logging.info("Getting repos names")
-        return [repo["name"] for repo in self._getAllRepos(skip_private)]
+        names = [repo["name"] for repo in self._getAllRepos(skip_private)]
+        logging.info(f"Loaded {len(names)} repos names")
+        return names
 
     def getRepoByName(self, name: str) -> Repo:
         """Get a repo by its name.
@@ -153,7 +156,9 @@ class GitHub:
             Repo
         """
         logging.info(f"Getting repo named {name}")
-        return self._getRepo(self._username, name)
+        repo = self._getRepo(self._username, name)
+        logging.info(f"Loaded repo named {name}")
+        return repo
 
 
 class Repo:

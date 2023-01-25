@@ -12,8 +12,11 @@ def main(parser: argparse.ArgumentParser):
     if arguments.offline:
         s.loadRepos()
     else:
-        s.scrapeRepos(skip_private=True)
-        s.saveRepos()
+        loaded = s.scrapeRepos(skip_private=True)
+        if loaded is None:
+            return
+
+        s.saveRepos(arguments.filename)
 
     s.saveStats()
 
@@ -40,6 +43,13 @@ if __name__ == "__main__":
         "--offline",
         action="store_true",
         help="Load repos from local file instead of scraping them",
+    )
+    parser.add_argument(
+        "-f",
+        "--filename",
+        type=str,
+        help="Filename to load and save repos from",
+        default="repos.json",
     )
 
     main(parser)
