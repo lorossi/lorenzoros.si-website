@@ -1,5 +1,4 @@
 """Format HTML."""
-from yattag import indent
 
 
 class HTMLFormatter:
@@ -16,4 +15,4 @@ class HTMLFormatter:
             str: Formatted HTML.
         """
         ...
-        return indent(html_text)
+        raise NotImplementedError("Formatter has not been implemented yet")
