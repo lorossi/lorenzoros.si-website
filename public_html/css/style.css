@@ -127,10 +127,6 @@ a:visited {
   opacity: 0.7;
 }
 
-.project-title {
-  margin-right: calc(var(--small-text-size) / 2);
-}
-
 .footer {
   position: absolute;
   bottom: 1vh;
