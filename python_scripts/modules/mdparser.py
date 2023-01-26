@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime
+from os import path
 from typing import Any
-from .article import Article
 
 import toml
+
+from .article import Article
 
 
 class ParserError(Exception):
@@ -196,7 +199,13 @@ class MarkdownParser:
         with open(file_path, "r") as f:
             content = f.read()
 
-        return self.parseString(content)
+        article = self.parseString(content)
+        if not article.date:
+            created_timestamp = path.getctime(file_path)
+            time_obj = datetime.fromtimestamp(created_timestamp)
+            article.date = time_obj.strftime("%Y-%m-%d")
+
+        return article
 
     def parseString(self, content: str) -> Article:
         """Parse a markdown string. Return the HTML content and the options.
@@ -211,7 +220,6 @@ class MarkdownParser:
         content = self._removeOptions(content)
 
         paragraphs = self._groupParagraphs(content)
-        ...
         content = "\n".join(
             [self._parseParagraph(paragraph) for paragraph in paragraphs if paragraph]
         )
