@@ -149,7 +149,7 @@ h2 {
 .project-date,
 .article-description,
 .article-date,
-.article-topic {
+.article-category {
   margin-top: calc(var(--small-text-size) / 4);
   margin-bottom: calc(var(--small-text-size) / 4);
   opacity: 0.7;
