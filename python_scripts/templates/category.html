@@ -3,28 +3,28 @@
   <head>
     <meta name="description" content="Lorenzo Rossi Blog" />
     <meta charset="utf-8" />
-    <title>Random thoughts</title>
+    <title>Thoughts on {{category}}</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="Lorenzo Rossi" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="../favicon.ico" />
 
-    <link rel="stylesheet" href="css/fonts/fonts.css?{{date}}" />
-    <link rel="stylesheet" href="css/vars.css?{{date}}" />
-    <link rel="stylesheet" href="css/style.css?{{date}}" />
-    <link rel="stylesheet" href="css/big-screens.css?{{date}}" />
+    <link rel="stylesheet" href="../css/fonts/fonts.css?{{date}}" />
+    <link rel="stylesheet" href="../css/vars.css?{{date}}" />
+    <link rel="stylesheet" href="../css/style.css?{{date}}" />
+    <link rel="stylesheet" href="../css/big-screens.css?{{date}}" />
   </head>
   <body>
     <div class="content">
       <div class="blog-navbar aberration">
-        <a href="../blog.html">TAKE ME BACK</a>
+        <a href="../index.html">TAKE ME BACK</a>
       </div>
 
       <div class="blog-section">
-        <h1 class="aberration">Random thoughts, things I learned</h1>
+        <h1 class="aberration">Articles tagged with category {{category}}</h1>
 
         <ul class="articles-list small-aberration">
           {% if not articles %}
@@ -41,14 +41,6 @@
               >{{article.title}}</a
             >
             <span class="article-date">{{article.date}}</span>
-            {% if article.category %}
-            <span class="article-category"
-              >in
-              <a href="{{category_path}}{{article.category}}.html"
-                >{{article.category}}</a
-              ></span
-            >
-            {% end %}
           </li>
           {% end %}
         </ul>
