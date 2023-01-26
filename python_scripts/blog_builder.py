@@ -12,6 +12,10 @@ def create_out_path(s: Settings, a: Article) -> str:
     return s.base_path + s.relative_articles_path + a.link
 
 
+def create_category_out_path(s: Settings, a: Article) -> str:
+    return s.base_path + s.relative_categories_path + a.category + ".html"
+
+
 def main():
     s = Settings.from_toml("settings.toml", "Blog")
 
@@ -34,7 +38,11 @@ def main():
     # render blog homepage
     r.renderFile(
         "blog.html",
-        context_dict={"articles": articles, "base_url": s.relative_articles_path},
+        context_dict={
+            "articles": articles,
+            "base_url": s.relative_articles_path,
+            "category_path": s.relative_categories_path,
+        },
         output_path=s.base_path + "blog.html",
     )
 
@@ -63,6 +71,21 @@ def main():
             output_path=out_path,
         )
         logging.info("Done.")
+
+    for category in set([article.category for article in articles]):
+        category_articles = [
+            article for article in articles if article.category == category
+        ]
+
+        r.renderFile(
+            "category.html",
+            context_dict={
+                "articles": category_articles,
+                "category": category,
+                "base_url": "../",
+            },
+            output_path=f"{s.base_path}{s.relative_categories_path}{category}.html",
+        )
 
 
 if __name__ == "__main__":

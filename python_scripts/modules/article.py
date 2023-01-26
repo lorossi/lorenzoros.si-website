@@ -29,9 +29,9 @@ class Article(Container):
         return self.title.lower().replace(" ", "-") + ".html"
 
     @property
-    def topic(self):
-        if topic := self.get("topic"):
-            return topic
+    def category(self):
+        if category := self.get("category"):
+            return category
 
         return ""
 
