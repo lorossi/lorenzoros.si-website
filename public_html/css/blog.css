@@ -46,7 +46,7 @@
   width: 100%;
   display: block;
   margin-top: calc(var(--blog-text-size) / 4);
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
 }
 
 h1 > .underline {
