@@ -46,19 +46,21 @@
   width: 100%;
   display: block;
   margin-top: calc(var(--blog-text-size) / 4);
-  border-bottom: 2px solid;
 }
 
 h1 > .underline {
   border-color: var(--blog-underline-color-1);
+  border-bottom: 4px solid;
 }
 
 h2 > .underline {
   border-color: var(--blog-underline-color-2);
+  border-bottom: 3px solid;
 }
 
 h3 > .underline {
   border-color: var(--blog-underline-color-3);
+  border-bottom: 2px solid;
 }
 
 .blog-section bold {

@@ -3,18 +3,13 @@
 
 @media screen and (min-width: 770px) {
   .content {
-    margin-left: 25vw;
-    margin-right: 25vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
   }
 
   .navbar,
   .blog-navbar {
     margin-top: calc(var(--title-size) * 2);
-  }
-
-  .navbar a {
-    margin-left: calc(var(--title-size) * 2);
-    margin-right: calc(var(--title-size) * 2);
   }
 
   .typer p {
@@ -65,8 +60,4 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .content {
-    margin-left: 15vw;
-    margin-right: 15vw;
-  }
 }

@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Hack-Italic;
+  src: url(fonts/Hack-Italic.ttf);
+}
+
+@font-face {
+  font-family: Hack-Regular;
+  src: url(fonts/Hack-Regular.ttf);
+}
+
+@font-face {
+  font-family: Hack-Bold;
+  src: url(fonts/Hack-Bold.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +66,7 @@ a:visited {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .navbar {
@@ -82,8 +98,10 @@ h2 {
 }
 
 .content {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 15vw;
+  padding-right: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
