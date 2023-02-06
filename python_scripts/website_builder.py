@@ -1,8 +1,8 @@
 import argparse
 import logging
 
-from modules.scraper import Scraper
 from modules.renderer import Renderer
+from modules.scraper import Scraper
 
 
 def main(parser: argparse.ArgumentParser):

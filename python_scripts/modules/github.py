@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import logging
 from datetime import datetime
-from typing_extensions import Any
 
 import requests
 import ujson
+from typing_extensions import Any
 
 
 def testCredentialsDecorator(method: callable):

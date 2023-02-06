@@ -1,17 +1,29 @@
-from .container import Container
+"""This module contains the Article class."""
+from __future__ import annotations
+
 import re
 from datetime import datetime
 
+from .container import Container
+
 
 class Article(Container):
+    """This class represents an article."""
+
     content: str
 
-    def __init__(self, content: str, **kwargs):
+    def __init__(self, content: str, **kwargs) -> Article:
+        """Create a new Article instance."""
         super().__init__(**kwargs)
         self.content = content
 
     @property
-    def title(self):
+    def title(self) -> str:
+        """Return the title of the article.
+
+        Returns:
+            str
+        """
         if title := self.get("title"):
             return title
 
@@ -22,42 +34,60 @@ class Article(Container):
         return ""
 
     @property
-    def link(self):
+    def link(self) -> str:
+        """Return the link of the article.
+
+        Returns:
+            str
+        """
         if link := self.get("link"):
             return link
 
         return self.title.lower().replace(" ", "-") + ".html"
 
     @property
-    def category(self):
-        if category := self.get("category"):
-            return category
+    def category(self) -> str:
+        """Return the category of the article.
 
-        return ""
-
-    @property
-    def date(self):
-        if date := self.get("date"):
-            return date
-
-        return ""
+        Returns:
+            str
+        """
+        return self.get("category", "")
 
     @property
-    def language(self):
-        if language := self.get("language"):
-            return language
+    def date(self) -> str:
+        """Return the date of the article.
 
-        return "english"
+        Returns:
+            str
+        """
+        return self.get("date", "")
 
     @property
-    def overwrite(self):
-        if overwrite := self.get("overwrite"):
-            return overwrite
+    def language(self) -> str:
+        """Return the language of the article.
 
-        return False
+        Returns:
+            str
+        """
+        return self.get("language", "english")
+
+    @property
+    def overwrite(self) -> bool:
+        """Return the overwrite flag of the article.
+
+        Returns:
+            bool
+        """
+        return self.get("overwrite", False)
 
     @property
     def date_obj(self) -> datetime:
+        """Return the date of the article as a datetime object.
+
+        Returns:
+            datetime
+        """
         if date := self.get("date"):
             return datetime.strptime(date, "%Y-%m-%d")
 

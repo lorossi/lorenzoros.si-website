@@ -1,8 +1,8 @@
-import pysftp
-from glob import glob
-import re
 import logging
+import re
+from glob import glob
 
+import pysftp
 from modules.settings import Settings
 
 
