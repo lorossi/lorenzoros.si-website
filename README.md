@@ -6,7 +6,7 @@ A repo containing all the code used in my [website](http://lorenzoros.si)
 
 *Wow, where do I start?*
 
-My website is created to be completely built on static `html.
+My website is created to be completely built on static html5.
 Given how rarely it needs to be updated, I don't see the point in using a more complex (and expensive) hosting solution like a VPS or a cloud service.
 Furthermore, I *really* like to code, so I developed a custom template engine (which ended up being like flask, but more on that later) to generate the html files.
 
