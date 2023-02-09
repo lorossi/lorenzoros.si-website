@@ -1,8 +1,7 @@
 import logging
+import os
 import re
 from glob import glob
-import os
-
 
 import pysftp
 from modules.settings import Settings
