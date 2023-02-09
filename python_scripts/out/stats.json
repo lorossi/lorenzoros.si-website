@@ -6,73 +6,73 @@
         "TeX": {
             "size": 1456093,
             "repos": 11,
-            "relative_size": 0.3346194831240525,
-            "relative_size_formatted": "33.46%"
+            "relative_size": 0.33222393748747964,
+            "relative_size_formatted": "33.22%"
         },
         "Processing": {
             "size": 23287,
             "repos": 3,
-            "relative_size": 0.005351501520514013,
-            "relative_size_formatted": "0.54%"
+            "relative_size": 0.005313190045052712,
+            "relative_size_formatted": "0.53%"
         },
         "Python": {
-            "size": 599575,
+            "size": 605970,
             "repos": 31,
-            "relative_size": 0.13778616928596166,
-            "relative_size_formatted": "13.78%"
+            "relative_size": 0.1382588470649114,
+            "relative_size_formatted": "13.83%"
         },
         "Shell": {
             "size": 22255,
             "repos": 11,
-            "relative_size": 0.005114341320867409,
+            "relative_size": 0.0050777276786468034,
             "relative_size_formatted": "0.51%"
         },
         "HTML": {
-            "size": 181031,
+            "size": 193310,
             "repos": 54,
-            "relative_size": 0.04160208149440341,
-            "relative_size_formatted": "4.16%"
+            "relative_size": 0.04410584307163395,
+            "relative_size_formatted": "4.41%"
         },
         "JavaScript": {
-            "size": 1543226,
+            "size": 1543782,
             "repos": 55,
-            "relative_size": 0.354643203740145,
-            "relative_size_formatted": "35.46%"
+            "relative_size": 0.35223116563454143,
+            "relative_size_formatted": "35.22%"
         },
         "CSS": {
-            "size": 87756,
+            "size": 90345,
             "repos": 52,
-            "relative_size": 0.020166890000181546,
-            "relative_size_formatted": "2.02%"
+            "relative_size": 0.02061322431486612,
+            "relative_size_formatted": "2.06%"
         },
         "C++": {
             "size": 6972,
             "repos": 1,
-            "relative_size": 0.0016022101859846135,
+            "relative_size": 0.0015907399404864306,
             "relative_size_formatted": "0.16%"
         },
         "Batchfile": {
             "size": 591,
             "repos": 2,
-            "relative_size": 0.00013581557944878178,
+            "relative_size": 0.0001348432737847792,
             "relative_size_formatted": "0.01%"
         },
         "Go": {
             "size": 60362,
             "repos": 3,
-            "relative_size": 0.013871573615376253,
-            "relative_size_formatted": "1.39%"
+            "relative_size": 0.01377226682266809,
+            "relative_size_formatted": "1.38%"
         },
         "C": {
-            "size": 355463,
+            "size": 365022,
             "repos": 6,
-            "relative_size": 0.0816876705881596,
-            "relative_size_formatted": "8.17%"
+            "relative_size": 0.08328386037811789,
+            "relative_size_formatted": "8.33%"
         },
         "Makefile": {
-            "size": 14878,
+            "size": 14877,
             "repos": 5,
-            "relative_size": 0.0034190595449052038,
+            "relative_size": 0.0033943542878107614,
             "relative_size_formatted": "0.34%"
         }
     },
@@ -80,5 +80,5 @@
     "forks_count": 16,
     "watchers_count": 68,
     "open_issues_count": 4,
-    "commits_count": 1185
+    "commits_count": 1227
 }
