@@ -12,6 +12,10 @@
     margin-top: calc(var(--title-size) * 2);
   }
 
+  .navbar {
+    grid-template-columns: repeat(4, auto);
+  }
+
   .typer p {
     line-height: 150%;
   }
@@ -45,7 +49,7 @@
   }
 
   .links-list {
-    max-width: 70%;
+    max-width: 70vw;
   }
 
   .photo-container {
