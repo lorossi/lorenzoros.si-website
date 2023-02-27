@@ -102,6 +102,6 @@ I plan on automating this task via a script so that I can build and deploy the w
 
 ## License
 
-The website is distributed under CC 4.0 License.
+The website is distributed under the [MIT license](LICENSE).
 
 The logos are sourced from [icon blender](https://icon-blender.com/).
