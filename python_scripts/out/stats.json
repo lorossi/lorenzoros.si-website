@@ -1,84 +1,84 @@
 {
-    "total_repos": 94,
-    "interesting_repos": 55,
-    "interactive_repos": 27,
+    "total_repos": 98,
+    "interesting_repos": 57,
+    "interactive_repos": 28,
     "languages": {
         "TeX": {
-            "size": 1456093,
-            "repos": 11,
-            "relative_size": 0.3346194831240525,
-            "relative_size_formatted": "33.46%"
+            "size": 1647599,
+            "repos": 13,
+            "relative_size": 0.34395647891563874,
+            "relative_size_formatted": "34.40%"
         },
         "Processing": {
             "size": 23287,
             "repos": 3,
-            "relative_size": 0.005351501520514013,
-            "relative_size_formatted": "0.54%"
+            "relative_size": 0.004861446580453423,
+            "relative_size_formatted": "0.49%"
         },
         "Python": {
-            "size": 599575,
-            "repos": 31,
-            "relative_size": 0.13778616928596166,
-            "relative_size_formatted": "13.78%"
+            "size": 775947,
+            "repos": 33,
+            "relative_size": 0.16198844375673518,
+            "relative_size_formatted": "16.20%"
         },
         "Shell": {
-            "size": 22255,
-            "repos": 11,
-            "relative_size": 0.005114341320867409,
-            "relative_size_formatted": "0.51%"
+            "size": 26464,
+            "repos": 12,
+            "relative_size": 0.005524684257530785,
+            "relative_size_formatted": "0.55%"
         },
         "HTML": {
-            "size": 181031,
-            "repos": 54,
-            "relative_size": 0.04160208149440341,
+            "size": 199125,
+            "repos": 56,
+            "relative_size": 0.04156978358452303,
             "relative_size_formatted": "4.16%"
         },
         "JavaScript": {
-            "size": 1543226,
-            "repos": 55,
-            "relative_size": 0.354643203740145,
-            "relative_size_formatted": "35.46%"
+            "size": 1572554,
+            "repos": 57,
+            "relative_size": 0.3282899156558746,
+            "relative_size_formatted": "32.83%"
         },
         "CSS": {
-            "size": 87756,
-            "repos": 52,
-            "relative_size": 0.020166890000181546,
-            "relative_size_formatted": "2.02%"
+            "size": 97338,
+            "repos": 54,
+            "relative_size": 0.0203205001609557,
+            "relative_size_formatted": "2.03%"
         },
         "C++": {
             "size": 6972,
             "repos": 1,
-            "relative_size": 0.0016022101859846135,
-            "relative_size_formatted": "0.16%"
+            "relative_size": 0.0014554904263718498,
+            "relative_size_formatted": "0.15%"
         },
         "Batchfile": {
             "size": 591,
             "repos": 2,
-            "relative_size": 0.00013581557944878178,
+            "relative_size": 0.00012337849139210604,
             "relative_size_formatted": "0.01%"
         },
         "Go": {
             "size": 60362,
             "repos": 3,
-            "relative_size": 0.013871573615376253,
-            "relative_size_formatted": "1.39%"
+            "relative_size": 0.012601307102217097,
+            "relative_size_formatted": "1.26%"
         },
         "C": {
-            "size": 355463,
+            "size": 365022,
             "repos": 6,
-            "relative_size": 0.0816876705881596,
-            "relative_size_formatted": "8.17%"
+            "relative_size": 0.07620281503372137,
+            "relative_size_formatted": "7.62%"
         },
         "Makefile": {
-            "size": 14878,
+            "size": 14877,
             "repos": 5,
-            "relative_size": 0.0034190595449052038,
-            "relative_size_formatted": "0.34%"
+            "relative_size": 0.00310575603458606,
+            "relative_size_formatted": "0.31%"
         }
     },
-    "stargazers_count": 68,
-    "forks_count": 16,
-    "watchers_count": 68,
-    "open_issues_count": 4,
-    "commits_count": 1185
+    "stargazers_count": 80,
+    "forks_count": 18,
+    "watchers_count": 80,
+    "open_issues_count": 8,
+    "commits_count": 1715
 }

@@ -11,10 +11,10 @@
         "homepage": "",
         "id": 234403710,
         "private": false,
-        "stargazers_count": 4,
-        "watchers_count": 4,
+        "stargazers_count": 5,
+        "watchers_count": 5,
         "created_at": "2020-01-16T20:16:27Z",
-        "updated_at": "2023-01-12T15:12:57Z",
+        "updated_at": "2023-05-05T15:36:43Z",
         "pushed_at": "2022-04-08T06:52:47Z",
         "size": 2231,
         "languages": [
@@ -26,7 +26,7 @@
         "commits_count": 13,
         "forks_count": 1,
         "open_issues_count": 0,
-        "watchers": 4
+        "watchers": 5
     },
     {
         "name": "perlin-flow-field",
@@ -102,16 +102,16 @@
         "stargazers_count": 0,
         "watchers_count": 0,
         "created_at": "2020-03-23T16:55:33Z",
-        "updated_at": "2021-05-20T14:50:55Z",
-        "pushed_at": "2021-02-10T09:07:58Z",
-        "size": 3895,
+        "updated_at": "2023-06-06T07:53:32Z",
+        "pushed_at": "2023-06-06T07:53:27Z",
+        "size": 4206,
         "languages": [
             {
                 "language": "TeX",
-                "size": 52826
+                "size": 54267
             }
         ],
-        "commits_count": 22,
+        "commits_count": 25,
         "forks_count": 2,
         "open_issues_count": 1,
         "watchers": 0
@@ -162,19 +162,19 @@
         "watchers_count": 1,
         "created_at": "2020-06-05T13:11:52Z",
         "updated_at": "2023-01-04T10:46:36Z",
-        "pushed_at": "2023-01-11T13:19:16Z",
-        "size": 140,
+        "pushed_at": "2023-06-06T13:32:57Z",
+        "size": 196,
         "languages": [
             {
                 "language": "Python",
-                "size": 32653
+                "size": 38066
             },
             {
                 "language": "Shell",
-                "size": 91
+                "size": 170
             }
         ],
-        "commits_count": 38,
+        "commits_count": 61,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 1
@@ -192,10 +192,10 @@
         "homepage": "",
         "id": 272932905,
         "private": false,
-        "stargazers_count": 1,
-        "watchers_count": 1,
+        "stargazers_count": 3,
+        "watchers_count": 3,
         "created_at": "2020-06-17T09:29:12Z",
-        "updated_at": "2022-04-04T15:19:24Z",
+        "updated_at": "2023-04-15T11:35:50Z",
         "pushed_at": "2022-04-04T15:21:27Z",
         "size": 107,
         "languages": [
@@ -205,9 +205,9 @@
             }
         ],
         "commits_count": 16,
-        "forks_count": 3,
+        "forks_count": 4,
         "open_issues_count": 0,
-        "watchers": 1
+        "watchers": 3
     },
     {
         "name": "streams-url-extractor",
@@ -329,34 +329,34 @@
         "watchers_count": 1,
         "created_at": "2020-07-08T16:22:03Z",
         "updated_at": "2022-01-21T08:32:59Z",
-        "pushed_at": "2023-02-06T21:58:28Z",
-        "size": 6991,
+        "pushed_at": "2023-05-23T05:34:37Z",
+        "size": 7040,
         "languages": [
             {
                 "language": "HTML",
-                "size": 76453
+                "size": 76794
             },
             {
                 "language": "Python",
-                "size": 49960
+                "size": 50565
             },
             {
                 "language": "CSS",
-                "size": 15548
+                "size": 15776
             },
             {
                 "language": "JavaScript",
                 "size": 5595
             }
         ],
-        "commits_count": 107,
+        "commits_count": 115,
         "forks_count": 0,
-        "open_issues_count": 0,
+        "open_issues_count": 1,
         "watchers": 1
     },
     {
         "name": "rpi-homepage",
-        "description": "A flask based dashboard for my Raspberry Pi",
+        "description": "A FastAPI-based dashboard for my Raspberry Pi",
         "html_url": "https:\/\/github.com\/lorossi\/rpi-homepage",
         "topics": [
             "hardware",
@@ -371,34 +371,34 @@
         "stargazers_count": 0,
         "watchers_count": 0,
         "created_at": "2020-07-11T16:18:11Z",
-        "updated_at": "2022-01-02T19:37:27Z",
-        "pushed_at": "2022-09-07T15:27:27Z",
-        "size": 905,
+        "updated_at": "2023-06-12T15:24:09Z",
+        "pushed_at": "2023-06-12T15:26:35Z",
+        "size": 1786,
         "languages": [
             {
                 "language": "Python",
-                "size": 5200
-            },
-            {
-                "language": "CSS",
-                "size": 2726
+                "size": 28478
             },
             {
                 "language": "JavaScript",
-                "size": 2200
+                "size": 4478
+            },
+            {
+                "language": "CSS",
+                "size": 4131
             },
             {
                 "language": "HTML",
-                "size": 1862
+                "size": 2263
             },
             {
                 "language": "Shell",
-                "size": 80
+                "size": 163
             }
         ],
-        "commits_count": 7,
+        "commits_count": 92,
         "forks_count": 0,
-        "open_issues_count": 0,
+        "open_issues_count": 2,
         "watchers": 0
     },
     {
@@ -415,18 +415,18 @@
         "stargazers_count": 0,
         "watchers_count": 0,
         "created_at": "2020-07-13T11:59:30Z",
-        "updated_at": "2021-05-05T19:51:29Z",
-        "pushed_at": "2021-02-05T09:30:09Z",
-        "size": 65,
+        "updated_at": "2023-05-02T14:57:35Z",
+        "pushed_at": "2023-05-23T06:41:56Z",
+        "size": 104,
         "languages": [
             {
                 "language": "Python",
-                "size": 14029
+                "size": 13525
             }
         ],
-        "commits_count": 11,
+        "commits_count": 16,
         "forks_count": 0,
-        "open_issues_count": 0,
+        "open_issues_count": 1,
         "watchers": 0
     },
     {
@@ -478,19 +478,19 @@
         "watchers_count": 0,
         "created_at": "2020-09-25T10:00:26Z",
         "updated_at": "2022-06-11T19:24:41Z",
-        "pushed_at": "2023-01-27T14:57:11Z",
-        "size": 54377,
+        "pushed_at": "2023-06-07T07:51:51Z",
+        "size": 54558,
         "languages": [
             {
                 "language": "Python",
-                "size": 52252
+                "size": 100230
             },
             {
                 "language": "Shell",
-                "size": 94
+                "size": 897
             }
         ],
-        "commits_count": 28,
+        "commits_count": 77,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -651,10 +651,10 @@
         "homepage": "https:\/\/lorenzoros.si\/p5js-perlin\/",
         "id": 313689039,
         "private": false,
-        "stargazers_count": 6,
-        "watchers_count": 6,
+        "stargazers_count": 7,
+        "watchers_count": 7,
         "created_at": "2020-11-17T17:11:05Z",
-        "updated_at": "2022-12-29T22:28:40Z",
+        "updated_at": "2023-04-21T19:42:46Z",
         "pushed_at": "2020-12-08T18:20:16Z",
         "size": 551315,
         "languages": [
@@ -674,7 +674,7 @@
         "commits_count": 0,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 6
+        "watchers": 7
     },
     {
         "name": "performances-monitor",
@@ -695,8 +695,8 @@
         "watchers_count": 0,
         "created_at": "2020-11-18T15:24:37Z",
         "updated_at": "2022-09-08T11:31:24Z",
-        "pushed_at": "2022-09-08T16:20:35Z",
-        "size": 692,
+        "pushed_at": "2023-06-06T13:37:01Z",
+        "size": 694,
         "languages": [
             {
                 "language": "Python",
@@ -716,10 +716,10 @@
             },
             {
                 "language": "Shell",
-                "size": 93
+                "size": 170
             }
         ],
-        "commits_count": 2,
+        "commits_count": 3,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -797,10 +797,10 @@
         "homepage": "",
         "id": 318189042,
         "private": false,
-        "stargazers_count": 1,
-        "watchers_count": 1,
+        "stargazers_count": 0,
+        "watchers_count": 0,
         "created_at": "2020-12-03T12:40:15Z",
-        "updated_at": "2023-01-07T14:23:29Z",
+        "updated_at": "2023-03-22T13:00:21Z",
         "pushed_at": "2023-01-11T15:18:04Z",
         "size": 46,
         "languages": [
@@ -820,7 +820,7 @@
         "commits_count": 5,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 1
+        "watchers": 0
     },
     {
         "name": "painting-bubbles",
@@ -1000,12 +1000,12 @@
         "watchers_count": 1,
         "created_at": "2021-01-04T10:53:50Z",
         "updated_at": "2022-12-29T06:13:06Z",
-        "pushed_at": "2023-01-11T15:14:13Z",
-        "size": 767,
+        "pushed_at": "2023-04-20T13:55:50Z",
+        "size": 911,
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 403830
+                "size": 404567
             },
             {
                 "language": "CSS",
@@ -1016,7 +1016,7 @@
                 "size": 1095
             }
         ],
-        "commits_count": 12,
+        "commits_count": 18,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 1
@@ -1156,22 +1156,22 @@
         "homepage": "",
         "id": 332840046,
         "private": false,
-        "stargazers_count": 0,
-        "watchers_count": 0,
+        "stargazers_count": 1,
+        "watchers_count": 1,
         "created_at": "2021-01-25T18:14:51Z",
-        "updated_at": "2021-04-08T22:17:24Z",
-        "pushed_at": "2021-04-08T22:17:21Z",
-        "size": 10146,
+        "updated_at": "2023-02-27T22:15:44Z",
+        "pushed_at": "2023-02-28T07:44:11Z",
+        "size": 12728,
         "languages": [
             {
                 "language": "Python",
-                "size": 17297
+                "size": 32349
             }
         ],
-        "commits_count": 16,
+        "commits_count": 34,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 0
+        "watchers": 1
     },
     {
         "name": "trippy-animations",
@@ -1231,9 +1231,9 @@
         "stargazers_count": 1,
         "watchers_count": 1,
         "created_at": "2021-02-12T21:45:02Z",
-        "updated_at": "2022-04-24T19:55:59Z",
-        "pushed_at": "2021-03-04T21:36:45Z",
-        "size": 72963,
+        "updated_at": "2023-03-28T08:40:39Z",
+        "pushed_at": "2023-03-28T08:40:32Z",
+        "size": 72965,
         "languages": [
             {
                 "language": "Go",
@@ -1252,7 +1252,7 @@
                 "size": 115
             }
         ],
-        "commits_count": 75,
+        "commits_count": 76,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 1
@@ -1273,16 +1273,16 @@
         "stargazers_count": 0,
         "watchers_count": 0,
         "created_at": "2021-02-24T17:15:46Z",
-        "updated_at": "2021-02-28T22:24:23Z",
-        "pushed_at": "2021-02-26T19:55:30Z",
-        "size": 16305,
+        "updated_at": "2023-03-08T11:42:05Z",
+        "pushed_at": "2023-03-08T11:42:09Z",
+        "size": 16310,
         "languages": [
             {
                 "language": "Go",
                 "size": 19381
             }
         ],
-        "commits_count": 19,
+        "commits_count": 20,
         "forks_count": 1,
         "open_issues_count": 0,
         "watchers": 0
@@ -1329,12 +1329,12 @@
         "homepage": "",
         "id": 352172707,
         "private": false,
-        "stargazers_count": 2,
-        "watchers_count": 2,
+        "stargazers_count": 3,
+        "watchers_count": 3,
         "created_at": "2021-03-27T20:40:29Z",
-        "updated_at": "2022-09-07T13:46:50Z",
-        "pushed_at": "2022-09-07T14:58:33Z",
-        "size": 355,
+        "updated_at": "2023-05-05T15:35:41Z",
+        "pushed_at": "2023-06-06T13:34:27Z",
+        "size": 357,
         "languages": [
             {
                 "language": "Python",
@@ -1342,13 +1342,13 @@
             },
             {
                 "language": "Shell",
-                "size": 81
+                "size": 165
             }
         ],
-        "commits_count": 2,
+        "commits_count": 3,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 2
+        "watchers": 3
     },
     {
         "name": "procedural-paintings",
@@ -2351,24 +2351,24 @@
         "stargazers_count": 1,
         "watchers_count": 1,
         "created_at": "2021-06-26T09:20:01Z",
-        "updated_at": "2021-10-26T18:03:41Z",
-        "pushed_at": "2021-08-18T18:05:30Z",
-        "size": 1003415,
+        "updated_at": "2023-04-08T22:17:53Z",
+        "pushed_at": "2023-04-08T22:17:45Z",
+        "size": 1003449,
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 35091
+                "size": 11927
             },
             {
                 "language": "HTML",
-                "size": 1609
+                "size": 1513
             },
             {
                 "language": "CSS",
                 "size": 1319
             }
         ],
-        "commits_count": 0,
+        "commits_count": 1,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 1
@@ -2412,12 +2412,12 @@
         "watchers_count": 0,
         "created_at": "2021-07-16T10:30:53Z",
         "updated_at": "2022-02-10T16:10:18Z",
-        "pushed_at": "2022-02-10T16:09:30Z",
-        "size": 4510,
+        "pushed_at": "2023-04-19T08:58:57Z",
+        "size": 5949,
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 35127
+                "size": 8616
             },
             {
                 "language": "CSS",
@@ -2425,10 +2425,10 @@
             },
             {
                 "language": "HTML",
-                "size": 1363
+                "size": 1269
             }
         ],
-        "commits_count": 0,
+        "commits_count": 5,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -2556,15 +2556,15 @@
         "watchers_count": 0,
         "created_at": "2021-08-02T19:57:14Z",
         "updated_at": "2021-12-08T15:03:33Z",
-        "pushed_at": "2022-10-01T18:38:52Z",
-        "size": 4811,
+        "pushed_at": "2023-04-17T06:49:03Z",
+        "size": 4860,
         "languages": [
             {
                 "language": "TeX",
-                "size": 17057
+                "size": 12828
             }
         ],
-        "commits_count": 1,
+        "commits_count": 3,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -2957,6 +2957,49 @@
         "watchers": 0
     },
     {
+        "name": "turing-multiplication",
+        "description": "a (weird) a Turing Machine that multiplies two numbers",
+        "html_url": "https:\/\/github.com\/lorossi\/turing-multiplication",
+        "topics": [
+            "computer-science",
+            "ecmascript",
+            "html5-canvas",
+            "released",
+            "turing-machine-simulator"
+        ],
+        "homepage": "https:\/\/lorenzoros.si\/turing-multiplication\/",
+        "id": 468849134,
+        "private": false,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "created_at": "2022-03-11T17:51:37Z",
+        "updated_at": "2023-04-04T12:10:33Z",
+        "pushed_at": "2023-04-05T07:37:41Z",
+        "size": 89562,
+        "languages": [
+            {
+                "language": "JavaScript",
+                "size": 25077
+            },
+            {
+                "language": "TeX",
+                "size": 8047
+            },
+            {
+                "language": "CSS",
+                "size": 3246
+            },
+            {
+                "language": "HTML",
+                "size": 2302
+            }
+        ],
+        "commits_count": 30,
+        "forks_count": 0,
+        "open_issues_count": 0,
+        "watchers": 0
+    },
+    {
         "name": "advanced-computer-architectures-notes",
         "description": "Notes for ACA. 2021\/2022 class, Politecnico di Milano",
         "html_url": "https:\/\/github.com\/lorossi\/advanced-computer-architectures-notes",
@@ -2970,26 +3013,26 @@
         "homepage": "",
         "id": 477590099,
         "private": false,
-        "stargazers_count": 1,
-        "watchers_count": 1,
+        "stargazers_count": 8,
+        "watchers_count": 8,
         "created_at": "2022-04-04T07:18:11Z",
-        "updated_at": "2022-11-11T10:55:11Z",
-        "pushed_at": "2022-12-06T10:17:41Z",
-        "size": 11679,
+        "updated_at": "2023-06-07T10:29:27Z",
+        "pushed_at": "2023-06-06T16:05:12Z",
+        "size": 15110,
         "languages": [
             {
                 "language": "TeX",
-                "size": 213167
+                "size": 223467
             },
             {
                 "language": "Python",
-                "size": 1515
+                "size": 2145
             }
         ],
-        "commits_count": 49,
-        "forks_count": 1,
+        "commits_count": 60,
+        "forks_count": 2,
         "open_issues_count": 0,
-        "watchers": 1
+        "watchers": 8
     },
     {
         "name": "appunti-di-algoritmi-e-principi-dell-informatica",
@@ -3004,10 +3047,10 @@
         "homepage": "",
         "id": 483332976,
         "private": false,
-        "stargazers_count": 0,
-        "watchers_count": 0,
+        "stargazers_count": 1,
+        "watchers_count": 1,
         "created_at": "2022-04-19T16:54:41Z",
-        "updated_at": "2022-07-29T16:28:44Z",
+        "updated_at": "2023-04-12T14:02:35Z",
         "pushed_at": "2022-06-27T16:50:10Z",
         "size": 15029,
         "languages": [
@@ -3031,7 +3074,7 @@
         "commits_count": 45,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 0
+        "watchers": 1
     },
     {
         "name": "sorting-visualization",
@@ -3091,15 +3134,15 @@
         "watchers_count": 0,
         "created_at": "2022-08-23T13:24:34Z",
         "updated_at": "2022-10-01T21:39:02Z",
-        "pushed_at": "2022-10-01T21:52:09Z",
-        "size": 8959,
+        "pushed_at": "2023-04-19T16:40:06Z",
+        "size": 9421,
         "languages": [
             {
                 "language": "Python",
-                "size": 26784
+                "size": 55055
             }
         ],
-        "commits_count": 19,
+        "commits_count": 66,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -3136,6 +3179,35 @@
         "watchers": 0
     },
     {
+        "name": "foundations-of-operations-research-notes",
+        "description": "Foundation of Operations Research notes",
+        "html_url": "https:\/\/github.com\/lorossi\/foundations-of-operations-research-notes",
+        "topics": [],
+        "homepage": "",
+        "id": 538118177,
+        "private": false,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "created_at": "2022-09-18T13:28:52Z",
+        "updated_at": "2023-05-10T09:32:15Z",
+        "pushed_at": "2023-01-26T13:22:02Z",
+        "size": 5367,
+        "languages": [
+            {
+                "language": "TeX",
+                "size": 175947
+            },
+            {
+                "language": "Python",
+                "size": 1578
+            }
+        ],
+        "commits_count": 17,
+        "forks_count": 0,
+        "open_issues_count": 0,
+        "watchers": 0
+    },
+    {
         "name": "formal-languages-and-compilers-notes",
         "description": "Notes for FLC. 2022\/2023 class, Politecnico di Milano ",
         "html_url": "https:\/\/github.com\/lorossi\/formal-languages-and-compilers-notes",
@@ -3149,10 +3221,10 @@
         "homepage": "",
         "id": 538118325,
         "private": false,
-        "stargazers_count": 2,
-        "watchers_count": 2,
+        "stargazers_count": 1,
+        "watchers_count": 1,
         "created_at": "2022-09-18T13:29:23Z",
-        "updated_at": "2022-12-15T00:42:25Z",
+        "updated_at": "2023-03-27T20:33:22Z",
         "pushed_at": "2023-01-12T17:37:00Z",
         "size": 9526,
         "languages": [
@@ -3168,7 +3240,7 @@
         "commits_count": 37,
         "forks_count": 0,
         "open_issues_count": 0,
-        "watchers": 2
+        "watchers": 1
     },
     {
         "name": "data-bases-2-notes",
@@ -3220,19 +3292,19 @@
         "watchers_count": 0,
         "created_at": "2022-09-30T17:18:20Z",
         "updated_at": "2023-01-25T09:16:30Z",
-        "pushed_at": "2022-11-08T10:49:41Z",
-        "size": 24,
+        "pushed_at": "2023-04-05T13:12:21Z",
+        "size": 26,
         "languages": [
             {
                 "language": "Shell",
-                "size": 18513
+                "size": 18504
             },
             {
                 "language": "Python",
                 "size": 710
             }
         ],
-        "commits_count": 11,
+        "commits_count": 13,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
@@ -3307,12 +3379,12 @@
         "watchers_count": 0,
         "created_at": "2023-01-06T15:09:28Z",
         "updated_at": "2023-01-11T15:18:35Z",
-        "pushed_at": "2023-01-16T08:31:00Z",
-        "size": 152,
+        "pushed_at": "2023-03-09T10:24:28Z",
+        "size": 153,
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 5651
+                "size": 5728
             },
             {
                 "language": "HTML",
@@ -3327,7 +3399,74 @@
                 "size": 2120
             }
         ],
-        "commits_count": 30,
+        "commits_count": 31,
+        "forks_count": 0,
+        "open_issues_count": 0,
+        "watchers": 0
+    },
+    {
+        "name": "branch-predictor-simulator",
+        "description": "Simple branch prediction simulator in Javascript",
+        "html_url": "https:\/\/github.com\/lorossi\/branch-predictor-simulator",
+        "topics": [],
+        "homepage": "https:\/\/lorossi.github.io\/branch-predictor\/",
+        "id": 613568624,
+        "private": false,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "created_at": "2023-03-13T20:36:35Z",
+        "updated_at": "2023-03-21T09:59:22Z",
+        "pushed_at": "2023-04-05T15:41:35Z",
+        "size": 134,
+        "languages": [
+            {
+                "language": "JavaScript",
+                "size": 50278
+            },
+            {
+                "language": "HTML",
+                "size": 2961
+            },
+            {
+                "language": "CSS",
+                "size": 2114
+            }
+        ],
+        "commits_count": 77,
+        "forks_count": 0,
+        "open_issues_count": 0,
+        "watchers": 0
+    },
+    {
+        "name": "customdataclass",
+        "description": "Custom implementation of the dataclass module from the standard Python library as a base class for other classes.",
+        "html_url": "https:\/\/github.com\/lorossi\/customdataclass",
+        "topics": [
+            "python-library",
+            "python-module",
+            "python3",
+            "released"
+        ],
+        "homepage": "",
+        "id": 633032866,
+        "private": false,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "created_at": "2023-04-26T16:26:26Z",
+        "updated_at": "2023-05-16T13:03:12Z",
+        "pushed_at": "2023-05-29T16:48:34Z",
+        "size": 317,
+        "languages": [
+            {
+                "language": "Python",
+                "size": 47676
+            },
+            {
+                "language": "Shell",
+                "size": 3092
+            }
+        ],
+        "commits_count": 94,
         "forks_count": 0,
         "open_issues_count": 0,
         "watchers": 0
