@@ -1,18 +1,25 @@
+"""This script handles the creation of the website and the blog."""
+
 import argparse
 import logging
 import os
-import re
 from glob import glob
 
-import pysftp
+from modules.deployer import Deployer
 from modules.mdparser import MarkdownParser
 from modules.renderer import Renderer
 from modules.scraper import Scraper
 from modules.settings import Settings
 
 
-def build_homepage(offline=False, filename="repos.json"):
-    s = Scraper(settings_path="settings.toml")
+def build_homepage(offline: bool = False, filename: str = "repos.json"):
+    """Build the homepage.
+
+    Args:
+        offline (bool, optional): If True, does not scrape GitHub. Defaults to False.
+        filename (str, optional): json file for the repos. Defaults to "repos.json".
+    """
+    s = Scraper()
 
     if offline:
         s.loadRepos()
@@ -39,6 +46,8 @@ def build_homepage(offline=False, filename="repos.json"):
 
 
 def build_blog():
+    """Build the blog."""
+    # TODO: encapsulate this into a class
     s = Settings.from_toml("settings.toml", "Blog")
 
     m = MarkdownParser()
@@ -52,7 +61,7 @@ def build_blog():
     r = Renderer()
 
     # delete all rendered articles
-    for a in glob(s.base_path + s.relative_articles_path + "*.html"):
+    for a in glob(s.out_path + "*.html"):
         logging.info(f"Deleting {a} ...")
         os.remove(a)
     logging.info("All old articles deleted.")
@@ -62,15 +71,13 @@ def build_blog():
         "blog.html",
         context_dict={
             "articles": articles,
-            "base_url": s.relative_articles_path,
-            "category_path": s.relative_categories_path,
         },
-        output_path=s.base_path + "blog.html",
+        output_path=s.out_path + "blog.html",
     )
 
     # render articles
     for x, a in enumerate(articles):
-        out_path = s.base_path + s.relative_articles_path + a.link
+        out_path = f"{s.out_path}{a.link}"
 
         # check if article is already rendered
         if glob(out_path) and not a.overwrite:
@@ -94,7 +101,8 @@ def build_blog():
         )
         logging.info("Done.")
 
-    for c in set([article.category for article in articles]):
+    categories = set([article.category.upper() for article in articles])
+    for c in sorted(categories):
         category_articles = [article for article in articles if article.category == c]
 
         r.renderFile(
@@ -102,55 +110,23 @@ def build_blog():
             context_dict={
                 "articles": category_articles,
                 "category": c,
-                "base_url": "../",
             },
-            output_path=f"{s.base_path}{s.relative_categories_path}{c}.html",
+            output_path=f"{s.out_path}category-{c}.html",
         )
 
 
 def deploy():
-    s = Settings.from_toml("settings.toml", "Deploy")
-
-    logging.info(f"Connecting to {s.url} ...")
-    sftp = pysftp.Connection(
-        s.url,
-        username=s.username,
-        private_key=s.key_path,
-        private_key_pass=s.private_key_pass,
-    )
-    logging.info("Connected.")
-
-    for file in glob(s.local_path + "/**/*", recursive=True):
-        remote_path = s.remote_path + re.sub(r".*" + s.local_path, "", file)
-        logging.info(f"Uploading {file} ...")
-
-        if os.path.isdir(file):
-            try:
-                sftp.mkdir(remote_path)
-            except IOError:
-                pass
-        else:
-            # get remote file mtime
-            try:
-                remote_mtime = sftp.stat(remote_path).st_mtime
-            except IOError:
-                remote_mtime = None
-
-            # get local file mtime
-            local_mtime = int(os.path.getmtime(file))
-            if remote_mtime is None or local_mtime > remote_mtime:
-                sftp.put(file, remote_path, preserve_mtime=True)
-                logging.info("Uploaded.")
-            else:
-                time_diff = remote_mtime - local_mtime
-                logging.info(f"Skipped (remote file is {time_diff} seconds newer).")
-
-    logging.info("All files uploaded. Closing connection ...")
-    sftp.close()
-    logging.info("Connection closed.")
+    """Deploy the website."""
+    logging.info("Starting to deploy...")
+    d = Deployer()
+    d.connect()
+    d.deploy()
+    d.disconnect()
+    logging.info("Deployment finished.")
 
 
 def main(parser: argparse.ArgumentParser):
+    """Script entry point."""
     arguments = parser.parse_args()
     if arguments.homepage:
         build_homepage(offline=arguments.offline, filename=arguments.filename)
@@ -201,7 +177,7 @@ if __name__ == "__main__":
         "--filename",
         type=str,
         help="Filename to load and save repos from",
-        default="repos.json",
+        default="out/repos.json",
     )
 
     main(parser)
