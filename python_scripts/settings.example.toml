@@ -17,10 +17,10 @@ out_path = "../public_html/blog/"   # local path to the articles in html
 [Renderer]
 templates_path = "templates/" # local path for templates folder
 
-[Deploy]
-url = ""                       # website url
+[Deployer]
+hostname = ""                  # website url
 username = ""                  # ssh username
-private_key_pass = ""          # ssh password
-key_path = ""                  # ssh key path
+password = ""                  # ssh key password
+key_filename = ""              # ssh key path
 local_path = "../public_html/" # local folder to deploy
-remote_path = "/"              # remote path
+remote_path = ""               # remote path
