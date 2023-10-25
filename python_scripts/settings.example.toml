@@ -3,7 +3,7 @@ username = "" # GitHub Username
 token = "" # GitHub Personal Access Token
 out_path = "out/" # Folder containing the reports
 relevant_topics = ["released"] # Topics to inlcude for the repos in homepage
-skip_names = [] # Repo names to skip
+skip_interactive_names = [] # Repo names to skip
 skip_interactive_topics = [
   "library",
 ] # Topics to skip for the interactive repos list in homepage

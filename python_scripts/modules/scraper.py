@@ -158,8 +158,8 @@ class Scraper(GitHub):
             r
             for r in self.interesting_repos
             if r.is_interactive
-            and (t not in self._settings.skip_interactive_topics for t in r.topics)
-            and r.name not in self._settings.skip_names
+            and all(t not in r.topics for t in self._settings.skip_interactive_topics)
+            and r.name not in self._settings.skip_interactive_names
         ]
         return sorted(repos, key=lambda x: x.created_at, reverse=True)
 
