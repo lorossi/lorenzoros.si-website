@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import logging
 
-import toml
+import ujson
 from modules.github import GitHub, Repo
 from modules.settings import Settings
 
@@ -54,11 +54,11 @@ class Scraper(GitHub):
             path (str, optional): file path. Defaults to value from settings.
         """
         if path is None:
-            path = self._settings.out_path + "stats.toml"
+            path = self._settings.out_path + "stats.json"
 
         logging.info(f"Saving stats to {path}")
         with open(path, "w") as f:
-            toml.dump(self.stats, f)
+            ujson.dump(self.stats, f, sort_keys=True, indent=4)
         logging.info("Saved stats")
 
     def saveRepos(self, path: str | None = None) -> None:
@@ -68,11 +68,11 @@ class Scraper(GitHub):
             path (str, optional): file path. Defaults to value from settings.
         """
         if path is None:
-            path = self._settings.out_path + "repos.toml"
+            path = self._settings.out_path + "repos.json"
 
         logging.info(f"Saving repos to {path}")
         with open(path, "w") as f:
-            toml.dump([r.as_dict for r in self._repos], f)
+            ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
         logging.info(f"Saved {len(self._repos)} repos")
 
     def loadRepos(self, path: str | None = None) -> None:
@@ -82,12 +82,12 @@ class Scraper(GitHub):
             path (str, optional): file path. Defaults to value from settings.
         """
         if path is None:
-            path = self._settings.out_path + "repos.toml"
+            path = self._settings.out_path + "repos.json"
 
         logging.info(f"Loading repos from {path}")
         with open(path, "r") as f:
             self._repos = sorted(
-                [Repo(**repo) for repo in toml.load(f)], key=lambda x: x.created_at
+                [Repo(**repo) for repo in ujson.load(f)], key=lambda x: x.created_at
             )
         logging.info(f"Loaded {len(self._repos)} repos")
 

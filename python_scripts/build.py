@@ -17,7 +17,7 @@ def build_homepage(offline: bool = False, filename: str = "repos.json"):
 
     Args:
         offline (bool, optional): If True, does not scrape GitHub. Defaults to False.
-        filename (str, optional): json file for the repos. Defaults to "repos.json".
+        filename (str, optional): toml file for the repos. Defaults to "repos.json".
     """
     s = Scraper()
 
