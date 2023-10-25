@@ -1,0 +1,26 @@
+[Scraper]
+username = "" # GitHub Username
+token = "" # GitHub Personal Access Token
+out_path = "out/" # Folder containing the reports
+relevant_topics = ["released"] # Topics to inlcude for the repos in homepage
+skip_names = [] # Repo names to skip
+skip_interactive_topics = [
+  "library",
+] # Topics to skip for the interactive repos list in homepage
+
+
+[Blog]
+articles_path = "../blog/articles/" # local path to the articles in markdown
+out_path = "../public_html/blog/"   # local path to the articles in html
+
+
+[Renderer]
+templates_path = "templates/" # local path for templates folder
+
+[Deploy]
+url = ""                       # website url
+username = ""                  # ssh username
+private_key_pass = ""          # ssh password
+key_path = ""                  # ssh key path
+local_path = "../public_html/" # local folder to deploy
+remote_path = "/"              # remote path
