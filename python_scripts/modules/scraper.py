@@ -42,7 +42,7 @@ class Scraper(GitHub):
             logging.info("KeyboardInterrupt, exiting...")
             return None
 
-        self._repos = sorted(repos, key=lambda x: x.created_at, reverse=True)
+        self._repos = sorted(repos, key=lambda x: x.created_at)
 
         logging.info(f"Loaded {len(self._repos)} repos")
         return len(self._repos)
@@ -86,7 +86,9 @@ class Scraper(GitHub):
 
         logging.info(f"Loading repos from {path}")
         with open(path, "r") as f:
-            self._repos = [Repo(**repo) for repo in ujson.load(f)]
+            self._repos = sorted(
+                [Repo(**repo) for repo in ujson.load(f)], key=lambda x: x.created_at
+            )
         logging.info(f"Loaded {len(self._repos)} repos")
 
     def reposByLanguage(self, language: str) -> set[Repo]:
@@ -141,32 +143,35 @@ class Scraper(GitHub):
                 if any(t in r.topics for t in self._settings.relevant_topics)
             ],
             key=lambda x: x.created_at,
-            reverse=True,
         )
+
+    @property
+    def languages(self) -> list[str]:
+        """Get the list of languages used in all the repositories."""
+        languages = set(repo.language for repo in self._repos if repo.language)
+        return sorted(languages)
 
     @property
     def interactive_repos(self) -> list[Repo]:
         """Get the list of interactive repos."""
-        return [
+        repos = [
             r
             for r in self.interesting_repos
             if r.is_interactive
             and (t not in self._settings.skip_interactive_topics for t in r.topics)
             and r.name not in self._settings.skip_names
         ]
+        return sorted(repos, key=lambda x: x.created_at, reverse=True)
 
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:
         """Get the list of repos grouped by language."""
-        languages = sorted(
-            list(
-                set([repo.language for repo in self.interesting_repos if repo.language])
-            )
-        )
-        repos = {lang: [] for lang in languages}
+        repos = {lang: [] for lang in self.languages}
 
         for lang in repos.keys():
-            lang_repos = sorted(self.reposByLanguage(lang), key=lambda x: x.created_at)
+            lang_repos = sorted(
+                self.reposByLanguage(lang), key=lambda x: x.created_at, reverse=True
+            )
             repos[lang] = lang_repos
 
         return repos
