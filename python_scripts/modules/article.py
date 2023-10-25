@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from datetime import datetime
 
-from .container import Container
+from modules.container import Container
 
 
 class Article(Container):

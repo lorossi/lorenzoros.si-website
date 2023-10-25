@@ -1,12 +1,12 @@
 """This module contains functions that can be used in the template engine."""
 
-from typing import Any
+from typing import Any, Callable
 
 
 class Function:
     """Function class."""
 
-    def __init__(self, name: str, f: callable):
+    def __init__(self, name: str, f: Callable):
         """Create a new Function instance."""
         self._name = name
         self._f = f

@@ -9,7 +9,7 @@ class Statement:
         self,
         content: str,
         indent: int,
-        next_indent: int = None,
+        next_indent: int | None = None,
         token_delimiters: str = "{{",
         list_container: str = "output",
     ) -> Statement:
@@ -89,7 +89,10 @@ class ControlStatement(Statement):
     """ControlStatement class."""
 
     def __init__(
-        self, content: str, indent: int, next_indent: int = None
+        self,
+        content: str,
+        indent: int,
+        next_indent: int | None = None,
     ) -> ControlStatement:
         """Create a new ControlStatement instance.
 

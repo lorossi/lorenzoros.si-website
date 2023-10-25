@@ -7,8 +7,7 @@ from os import path
 from typing import Any
 
 import toml
-
-from .article import Article
+from modules.article import Article
 
 
 class ParserError(Exception):
@@ -108,14 +107,14 @@ class MarkdownParser:
     def _createLink(self, text: str, url: str) -> str:
         return f'<a href="{url}">{text}</a>'
 
-    def _matchTitle(self, title: str) -> str:
+    def _matchTitle(self, title: str) -> str | None:
         for tag, rule in self._title_rules.items():
             if match := re.search(rule, title):
                 return self._createElement(tag, match.group(1))
 
         return None
 
-    def _matchCodeBlock(self, paragraph: str) -> str:
+    def _matchCodeBlock(self, paragraph: str) -> str | None:
         expression = self._codeblock_rule
         if match := re.search(expression, paragraph, re.MULTILINE):
             language = match.group(1)
@@ -130,13 +129,13 @@ class MarkdownParser:
 
         return None
 
-    def _matchBlockquote(self, paragraph: str) -> str:
+    def _matchBlockquote(self, paragraph: str) -> str | None:
         if match := re.search(self._blockquote_rule, paragraph):
             return self._createElement("code", match.group(1))
 
         return None
 
-    def _matchImage(self, paragraph: str) -> str:
+    def _matchImage(self, paragraph: str) -> str | None:
         if match := re.search(self._image_rule, paragraph):
             alt = match.group(1)
             url = match.group(2)
@@ -144,7 +143,7 @@ class MarkdownParser:
 
         return None
 
-    def _matchLink(self, paragraph: str) -> str:
+    def _matchLink(self, paragraph: str) -> str | None:
         if match := re.search(self._link_rule, paragraph):
             paragraph = match.group(1)
             url = match.group(2)
@@ -152,7 +151,7 @@ class MarkdownParser:
 
         return None
 
-    def _matchList(self, paragraph: str) -> str:
+    def _matchList(self, paragraph: str) -> str | None:
         for tag, rule in self._list_rules.items():
             if matches := re.findall(rule, paragraph, re.MULTILINE):
                 items = [self._createElement("li", match) for match in matches]
@@ -160,7 +159,7 @@ class MarkdownParser:
 
         return None
 
-    def _formatParagraph(self, paragraph: str) -> str:
+    def _formatParagraph(self, paragraph: str) -> str | None:
         # match spans in paragraph
         for tag, rule in self._span_rules.items():
             paragraph = re.sub(rule, "<" + tag + r">\g<1></" + tag + ">", paragraph)

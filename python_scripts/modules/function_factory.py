@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from .functions import Function, as_string, escape_html, lower, strip, upper
+from modules.functions import Function, as_string, escape_html, lower, strip, upper
 
 
 class FunctionFactory:

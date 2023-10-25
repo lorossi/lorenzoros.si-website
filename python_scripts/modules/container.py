@@ -9,7 +9,7 @@ from typing_extensions import Any
 class Container:
     """Container class."""
 
-    def __init__(self, **kwargs: Any) -> None:
+    def __init__(self, **kwargs: Any) -> Container:
         """Create a new Container instance.
 
         Args:

@@ -3,8 +3,7 @@
 from __future__ import annotations
 
 import toml
-
-from .container import Container
+from modules.container import Container
 
 
 class Settings(Container):
@@ -19,7 +18,7 @@ class Settings(Container):
         super().__init__(**kwargs)
 
     @classmethod
-    def from_toml(cls, path: str, section: str = None):
+    def from_toml(cls, path: str, section: str | None = None):
         """Create a new Settings instance from a TOML file.
 
         Args:

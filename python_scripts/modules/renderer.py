@@ -4,14 +4,13 @@ from __future__ import annotations
 import logging
 import re
 
+from modules.context import Context
+from modules.formatter import HTMLFormatter
+from modules.function_factory import FunctionFactory
+from modules.settings import Settings
+from modules.statements import Statement
+from modules.statements_factory import StatementFactory
 from typing_extensions import Any
-
-from .context import Context
-from .formatter import HTMLFormatter
-from .function_factory import FunctionFactory
-from .settings import Settings
-from .statements import Statement
-from .statements_factory import StatementFactory
 
 
 class Renderer:
@@ -29,7 +28,7 @@ class Renderer:
         """
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
 
-    def _nullEmptyStr(self, text: str) -> str:
+    def _nullEmptyStr(self, text: str) -> str | None:
         if text == "":
             return None
         return text
@@ -93,7 +92,7 @@ class Renderer:
 
         return statements
 
-    def _createInstructions(self, statements: list[Statement], context) -> list[str]:
+    def _createInstructions(self, statements: list[Statement], context) -> str:
         """Create instructions from the statements.
 
         Args:
@@ -137,10 +136,10 @@ class Renderer:
     def renderFile(
         self,
         template_name: str,
-        context_dict: dict = None,
-        context: Context = None,
+        context_dict: dict | None = None,
+        context: Context | None = None,
         format: bool = False,
-        output_path: str = None,
+        output_path: str | None = None,
     ) -> str:
         """Render the template.
 
@@ -175,8 +174,8 @@ class Renderer:
     def renderString(
         self,
         template: str,
-        context_dict: dict = None,
-        context: Context = None,
+        context_dict: dict | None = None,
+        context: Context | None = None,
         format: bool = False,
     ) -> str:
         """Render the template.

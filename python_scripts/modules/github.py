@@ -6,10 +6,10 @@ from datetime import datetime
 
 import requests
 import ujson
-from typing_extensions import Any
+from typing_extensions import Any, Callable
 
 
-def testCredentialsDecorator(method: callable):
+def testCredentialsDecorator(method: Callable):
     """Credentials decorator for GitHub class methods.
 
     When this method is called, it will check if the credentials are still.
@@ -130,6 +130,7 @@ class GitHub:
         logging.info("Getting repos urls")
         urls = [repo["html_url"] for repo in self._getAllRepos(skip_private)]
         logging.info(f"Loaded {len(urls)} repos urls")
+        return urls
 
     def getReposNames(self, skip_private: bool = False) -> list[str]:
         """Load a list of all the repos names.

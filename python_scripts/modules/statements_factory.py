@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 
-from .statements import ControlStatement, Statement
+from modules.statements import ControlStatement, Statement
 
 
 class StatementFactory:

@@ -4,9 +4,8 @@ from __future__ import annotations
 import logging
 
 import ujson
-
-from .github import GitHub, Repo
-from .settings import Settings
+from modules.github import GitHub, Repo
+from modules.settings import Settings
 
 
 class Scraper(GitHub):
@@ -22,7 +21,7 @@ class Scraper(GitHub):
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
         super().__init__(self._settings.username, self._settings.token)
 
-    def scrapeRepos(self, skip_private: bool = True) -> int:
+    def scrapeRepos(self, skip_private: bool = True) -> int | None:
         """Scrape the repos.
 
         Args:
@@ -43,15 +42,12 @@ class Scraper(GitHub):
             logging.info("KeyboardInterrupt, exiting...")
             return None
 
-        self._repos = sorted(
-            repos,
-            key=lambda x: x.created_at,
-        )
+        self._repos = sorted(repos, key=lambda x: x.created_at, reverse=True)
 
         logging.info(f"Loaded {len(self._repos)} repos")
         return len(self._repos)
 
-    def saveStats(self, path: str = None) -> None:
+    def saveStats(self, path: str | None = None) -> None:
         """Save stats to file.
 
         Args:
@@ -65,7 +61,7 @@ class Scraper(GitHub):
             ujson.dump(self.stats, f, indent=4)
         logging.info("Saved stats")
 
-    def saveRepos(self, path: str = None) -> None:
+    def saveRepos(self, path: str | None = None) -> None:
         """Save repos list to file.
 
         Args:
@@ -79,7 +75,7 @@ class Scraper(GitHub):
             ujson.dump([r.as_dict for r in self._repos], f, indent=4)
         logging.info(f"Saved {len(self._repos)} repos")
 
-    def loadRepos(self, path: str = None) -> None:
+    def loadRepos(self, path: str | None = None) -> None:
         """Load repos list from file.
 
         Args:
@@ -155,8 +151,8 @@ class Scraper(GitHub):
             r
             for r in self.interesting_repos
             if r.is_interactive
-            and (t not in self._settings.skip_websites_topics for t in r.topics)
-            and r.name not in self._settings.skip_websites_names
+            and (t not in self._settings.skip_interactive_topics for t in r.topics)
+            and r.name not in self._settings.skip_names
         ]
 
     @property
@@ -170,10 +166,7 @@ class Scraper(GitHub):
         repos = {lang: [] for lang in languages}
 
         for lang in repos.keys():
-            lang_repos = sorted(
-                self.reposByLanguage(lang),
-                key=lambda x: x.created_at,
-            )
+            lang_repos = sorted(self.reposByLanguage(lang), key=lambda x: x.created_at)
             repos[lang] = lang_repos
 
         return repos
