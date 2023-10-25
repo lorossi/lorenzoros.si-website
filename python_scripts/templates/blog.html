@@ -10,17 +10,17 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="Lorenzo Rossi" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="css/fonts/fonts.css?{{date}}" />
-    <link rel="stylesheet" href="css/vars.css?{{date}}" />
-    <link rel="stylesheet" href="css/style.css?{{date}}" />
-    <link rel="stylesheet" href="css/big-screens.css?{{date}}" />
+    <link rel="stylesheet" href="/css/fonts/fonts.css?{{date}}" />
+    <link rel="stylesheet" href="/css/vars.css?{{date}}" />
+    <link rel="stylesheet" href="/css/style.css?{{date}}" />
+    <link rel="stylesheet" href="/css/big-screens.css?{{date}}" />
   </head>
   <body>
     <div class="content">
       <div class="blog-navbar aberration">
-        <a href="../blog.html">TAKE ME BACK</a>
+        <a href="/">TAKE ME BACK</a>
       </div>
 
       <div class="blog-section">
@@ -38,14 +38,14 @@
           <span></span>
           {% for article in articles %}
           <li class="article-container">
-            <a class="article-title" href="{{base_url}}{{article.link}}"
+            <a class="article-title" href="/blog/{{article.link}}"
               >{{article.title}}</a
             >
             <span class="article-date">{{article.date}}</span>
             {% if article.category %}
             <span class="article-category"
               >in
-              <a href="{{category_path}}{{article.category}}.html"
+              <a href="category-{{article.category}}.html"
                 >{{article.category}}</a
               ></span
             >
