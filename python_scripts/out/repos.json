@@ -323,11 +323,11 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 53519
+                "size": 53534
             },
             {
                 "language": "HTML",
-                "size": 47449
+                "size": 45779
             },
             {
                 "language": "CSS",
@@ -341,7 +341,7 @@
         "name": "lorenzoros.si-website",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-10-25T15:49:54Z",
+        "pushed_at": "2023-10-25T16:22:32Z",
         "size": 6900,
         "stargazers_count": 1,
         "topics": [

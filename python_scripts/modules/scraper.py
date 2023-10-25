@@ -166,13 +166,16 @@ class Scraper(GitHub):
     @property
     def repos_list(self) -> list[dict[str, list[Repo]]]:
         """Get the list of repos grouped by language."""
-        repos = {lang: [] for lang in self.languages}
+        repos = {}
 
-        for lang in repos.keys():
+        for lang in self.languages:
             lang_repos = sorted(
-                self.reposByLanguage(lang), key=lambda x: x.created_at, reverse=True
+                self.reposByLanguage(lang),
+                key=lambda x: x.created_at,
+                reverse=True,
             )
-            repos[lang] = lang_repos
+            if lang_repos:
+                repos[lang] = lang_repos
 
         return repos
 
