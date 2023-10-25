@@ -138,7 +138,7 @@ class Renderer:
         template_name: str,
         context_dict: dict | None = None,
         context: Context | None = None,
-        format: bool = False,
+        format: bool = True,
         output_path: str | None = None,
     ) -> str:
         """Render the template.
@@ -146,7 +146,7 @@ class Renderer:
         Args:
             template_name (str): The name of the template
             context (dict, optional): Custom context for the template. Defaults to None.
-            format (bool, optional): Auto format the rendered page. Defaults to False.
+            format (bool, optional): Auto format the rendered page. Defaults to True.
             output_path (str, optional): The path to save the rendered page. \
                 Defaults to None.
 
@@ -160,7 +160,10 @@ class Renderer:
         logging.info(f"Template loaded from {template_path}.")
 
         rendered = self.renderString(
-            template, context_dict=context_dict, context=context, format=format
+            template,
+            context_dict=context_dict,
+            context=context,
+            format=format,
         )
 
         if output_path:
@@ -176,14 +179,14 @@ class Renderer:
         template: str,
         context_dict: dict | None = None,
         context: Context | None = None,
-        format: bool = False,
+        format: bool = True,
     ) -> str:
         """Render the template.
 
         Args:
             template (str): The template
             context (dict, optional): Custom context for the template. Defaults to None.
-            format (bool, optional): Auto format the rendered page. Defaults to False.
+            format (bool, optional): Auto format the rendered page. Defaults to True.
 
         Returns:
             str: rendered page

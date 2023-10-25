@@ -1,5 +1,7 @@
 """Format HTML."""
 
+from lxml.html import fromstring, tostring
+
 
 class HTMLFormatter:
     """Format HTML."""
@@ -14,5 +16,5 @@ class HTMLFormatter:
         Returns:
             str: Formatted HTML.
         """
-        ...
-        raise NotImplementedError("Formatter has not been implemented yet")
+        root = fromstring(html_text)
+        return tostring(root, pretty_print=True).strip().decode("utf-8")
