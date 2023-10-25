@@ -3,3 +3,4 @@ requests==2.31.0
 toml==0.10.2
 typing_extensions==4.8.0
 ujson==5.8.0
+lxml==4.9.3
