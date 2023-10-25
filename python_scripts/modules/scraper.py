@@ -58,7 +58,7 @@ class Scraper(GitHub):
 
         logging.info(f"Saving stats to {path}")
         with open(path, "w") as f:
-            toml.dump(self.stats, f, indent=4)
+            toml.dump(self.stats, f)
         logging.info("Saved stats")
 
     def saveRepos(self, path: str | None = None) -> None:
@@ -72,7 +72,7 @@ class Scraper(GitHub):
 
         logging.info(f"Saving repos to {path}")
         with open(path, "w") as f:
-            toml.dump([r.as_dict for r in self._repos], f, indent=4)
+            toml.dump([r.as_dict for r in self._repos], f)
         logging.info(f"Saved {len(self._repos)} repos")
 
     def loadRepos(self, path: str | None = None) -> None:
