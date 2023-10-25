@@ -64,8 +64,6 @@ a:visited {
 .blog-navbar {
   font-size: var(--text-size);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
   row-gap: var(--text-size);
   justify-items: center;
   align-items: center;
@@ -75,13 +73,8 @@ a:visited {
 .navbar {
   margin-top: calc(var(--text-size) * 3);
   margin-bottom: calc(var(--text-size) * 3);
-}
-
-.blog-navbar {
-  margin-top: calc(var(--text-size) * 3);
-  margin-bottom: calc(var(--text-size) * 2.4);
-  grid-template-columns: repeat(1, auto);
-  justify-content: left;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
 }
 
 .section,
