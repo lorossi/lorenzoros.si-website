@@ -1,5 +1,6 @@
 __pycache__
 *.log
-setting*.toml
-.vscode
+settings*.toml
+!settings.example.toml
 venv
+*.key
