@@ -198,16 +198,16 @@
         "private": false,
         "pushed_at": "2022-04-04T15:21:27Z",
         "size": 107,
-        "stargazers_count": 3,
+        "stargazers_count": 5,
         "topics": [
             "encoding",
             "python3",
             "released",
             "whitespaces"
         ],
-        "updated_at": "2023-04-15T11:35:50Z",
-        "watchers": 3,
-        "watchers_count": 3
+        "updated_at": "2023-12-12T07:44:40Z",
+        "watchers": 5,
+        "watchers_count": 5
     },
     {
         "commits_count": 2,
@@ -302,18 +302,18 @@
         "private": false,
         "pushed_at": "2020-12-08T14:33:29Z",
         "size": 409,
-        "stargazers_count": 0,
+        "stargazers_count": 1,
         "topics": [
             "javascript",
             "released",
             "spam-protection"
         ],
-        "updated_at": "2021-02-05T09:27:30Z",
-        "watchers": 0,
-        "watchers_count": 0
+        "updated_at": "2024-01-07T14:04:27Z",
+        "watchers": 1,
+        "watchers_count": 1
     },
     {
-        "commits_count": 140,
+        "commits_count": 143,
         "created_at": "2020-07-08T16:22:03Z",
         "description": "A repo for my website",
         "forks_count": 0,
@@ -323,11 +323,11 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 53534
+                "size": 53565
             },
             {
                 "language": "HTML",
-                "size": 45779
+                "size": 45638
             },
             {
                 "language": "CSS",
@@ -339,10 +339,10 @@
             }
         ],
         "name": "lorenzoros.si-website",
-        "open_issues_count": 0,
+        "open_issues_count": 1,
         "private": false,
-        "pushed_at": "2023-10-25T16:22:32Z",
-        "size": 6900,
+        "pushed_at": "2023-12-19T21:07:54Z",
+        "size": 6959,
         "stargazers_count": 1,
         "topics": [
             "css",
@@ -627,15 +627,15 @@
         "private": false,
         "pushed_at": "2020-12-02T16:51:56Z",
         "size": 343,
-        "stargazers_count": 2,
+        "stargazers_count": 3,
         "topics": [
             "creative-coding",
             "fireworks",
             "p5js"
         ],
-        "updated_at": "2023-01-06T01:28:06Z",
-        "watchers": 2,
-        "watchers_count": 2
+        "updated_at": "2023-12-11T06:14:55Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 0,
@@ -983,7 +983,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 38,
+        "commits_count": 40,
         "created_at": "2021-01-04T10:53:50Z",
         "description": "Empty HTML5 project with JS canvas",
         "forks_count": 0,
@@ -993,7 +993,7 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 430872
+                "size": 431359
             },
             {
                 "language": "CSS",
@@ -1007,8 +1007,8 @@
         "name": "empty-html5-canvas-project",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-10-16T12:29:47Z",
-        "size": 1006,
+        "pushed_at": "2023-11-29T11:52:48Z",
+        "size": 1016,
         "stargazers_count": 1,
         "topics": [
             "canvas",
@@ -3196,7 +3196,7 @@
         "commits_count": 43,
         "created_at": "2022-09-18T12:41:21Z",
         "description": "Latex template for my notes",
-        "forks_count": 1,
+        "forks_count": 2,
         "homepage": "",
         "html_url": "https:\/\/github.com\/lorossi\/latex-notes-template",
         "id": 538105505,
@@ -3283,7 +3283,7 @@
             "polimi-notes",
             "released"
         ],
-        "updated_at": "2023-03-27T20:33:22Z",
+        "updated_at": "2024-01-12T18:38:15Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -3355,7 +3355,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 83,
+        "commits_count": 137,
         "created_at": "2022-10-18T09:51:46Z",
         "description": "Repo containing some of the animations that I made over the years",
         "forks_count": 0,
@@ -3365,26 +3365,26 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 11303185
-            },
-            {
-                "language": "HTML",
-                "size": 37889
+                "size": 22257869
             },
             {
                 "language": "CSS",
-                "size": 36865
+                "size": 71986
+            },
+            {
+                "language": "HTML",
+                "size": 71012
             },
             {
                 "language": "Python",
-                "size": 1261
+                "size": 2323
             }
         ],
         "name": "random-animations",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-10-23T11:32:31Z",
-        "size": 904,
+        "pushed_at": "2024-01-05T14:48:13Z",
+        "size": 1106,
         "stargazers_count": 0,
         "topics": [
             "digitalart",
@@ -3561,7 +3561,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 94,
+        "commits_count": 102,
         "created_at": "2023-04-26T16:26:26Z",
         "description": "Custom implementation of the dataclass module from the standard Python library as a base class for other classes.",
         "forks_count": 0,
@@ -3571,7 +3571,7 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 47676
+                "size": 50654
             },
             {
                 "language": "Shell",
@@ -3581,8 +3581,8 @@
         "name": "customdataclass",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-05-29T16:48:34Z",
-        "size": 317,
+        "pushed_at": "2023-10-30T16:21:16Z",
+        "size": 372,
         "stargazers_count": 0,
         "topics": [
             "python-library",
@@ -3623,6 +3623,35 @@
             "released"
         ],
         "updated_at": "2023-08-30T16:05:24Z",
+        "watchers": 0,
+        "watchers_count": 0
+    },
+    {
+        "commits_count": 7,
+        "created_at": "2024-01-30T15:43:50Z",
+        "description": "Finding the best model for the MNIST dataset, the hard way",
+        "forks_count": 0,
+        "homepage": "",
+        "html_url": "https:\/\/github.com\/lorossi\/mnist-model",
+        "id": 750411315,
+        "languages": [
+            {
+                "language": "Jupyter Notebook",
+                "size": 1226508
+            }
+        ],
+        "name": "mnist-model",
+        "open_issues_count": 0,
+        "private": false,
+        "pushed_at": "2024-02-06T10:10:24Z",
+        "size": 2347,
+        "stargazers_count": 0,
+        "topics": [
+            "computer-vision",
+            "deep-learning",
+            "keras-tensorflow"
+        ],
+        "updated_at": "2024-02-05T09:10:51Z",
         "watchers": 0,
         "watchers_count": 0
     }

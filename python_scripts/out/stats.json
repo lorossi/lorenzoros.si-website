@@ -1,84 +1,90 @@
 {
-    "commits_count": 2166,
-    "forks_count": 17,
+    "commits_count": 2240,
+    "forks_count": 18,
     "interactive_repos": 25,
     "interesting_repos": 60,
     "languages": {
         "Batchfile": {
-            "relative_size": 3.528878797582617e-5,
+            "relative_size": 2.037833921155895e-5,
             "relative_size_formatted": "0.00%",
             "repos": 2,
             "size": 591
         },
         "C": {
-            "relative_size": 0.02179557354401357,
-            "relative_size_formatted": "2.18%",
+            "relative_size": 0.01258636571181332,
+            "relative_size_formatted": "1.26%",
             "repos": 6,
             "size": 365022
         },
         "C++": {
-            "relative_size": 0.0004163002195726904,
-            "relative_size_formatted": "0.04%",
+            "relative_size": 0.0002404023366886447,
+            "relative_size_formatted": "0.02%",
             "repos": 1,
             "size": 6972
         },
         "CSS": {
-            "relative_size": 0.008094388133318055,
-            "relative_size_formatted": "0.81%",
+            "relative_size": 0.005885305741636726,
+            "relative_size_formatted": "0.59%",
             "repos": 56,
-            "size": 135561
+            "size": 170682
         },
         "Go": {
-            "relative_size": 0.0036042331976257514,
-            "relative_size_formatted": "0.36%",
+            "relative_size": 0.002081349088812388,
+            "relative_size_formatted": "0.21%",
             "repos": 3,
             "size": 60362
         },
         "HTML": {
-            "relative_size": 0.012376751221030876,
-            "relative_size_formatted": "1.24%",
+            "relative_size": 0.008284501752364767,
+            "relative_size_formatted": "0.83%",
             "repos": 58,
-            "size": 207280
+            "size": 240262
         },
         "JavaScript": {
-            "relative_size": 0.7966769903787001,
-            "relative_size_formatted": "79.67%",
+            "relative_size": 0.8378063500560077,
+            "relative_size_formatted": "83.78%",
             "repos": 59,
-            "size": 13342371
+            "size": 24297542
+        },
+        "Jupyter Notebook": {
+            "relative_size": 0.04229136390810617,
+            "relative_size_formatted": "4.23%",
+            "repos": 1,
+            "size": 1226508
         },
         "Makefile": {
-            "relative_size": 0.0008883101501122941,
-            "relative_size_formatted": "0.09%",
+            "relative_size": 0.0005129755540615272,
+            "relative_size_formatted": "0.05%",
             "repos": 5,
             "size": 14877
         },
         "Processing": {
-            "relative_size": 0.0013904737827293806,
-            "relative_size_formatted": "0.14%",
+            "relative_size": 0.0008029617347200903,
+            "relative_size_formatted": "0.08%",
             "repos": 3,
             "size": 23287
         },
         "Python": {
-            "relative_size": 0.053811281652356,
-            "relative_size_formatted": "5.38%",
+            "relative_size": 0.031214960721526994,
+            "relative_size_formatted": "3.12%",
             "repos": 36,
-            "size": 901206
+            "size": 905277
         },
         "Shell": {
-            "relative_size": 0.0018658872004341655,
-            "relative_size_formatted": "0.19%",
+            "relative_size": 0.0010775003756717525,
+            "relative_size_formatted": "0.11%",
             "repos": 14,
             "size": 31249
         },
         "TeX": {
-            "relative_size": 0.09904452173213135,
-            "relative_size_formatted": "9.90%",
+            "relative_size": 0.05719558467937838,
+            "relative_size_formatted": "5.72%",
             "repos": 13,
             "size": 1658751
         }
     },
-    "open_issues_count": 7,
-    "stargazers_count": 87,
-    "total_repos": 102,
-    "watchers_count": 87
+    "open_issues_count": 8,
+    "stargazers_count": 91,
+    "total_repos": 103,
+    "watchers_count": 91
 }
