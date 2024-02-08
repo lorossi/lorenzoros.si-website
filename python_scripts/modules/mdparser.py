@@ -95,7 +95,12 @@ class MarkdownParser:
 
         return paragraphs
 
-    def _createElement(self, tag: str, content: str, strip_newlines=False) -> str:
+    def _createElement(
+        self,
+        tag: str,
+        content: str,
+        strip_newlines: bool = False,
+    ) -> str:
         if strip_newlines:
             content = content.replace("\n", " ")
 
@@ -219,8 +224,6 @@ class MarkdownParser:
         content = self._removeOptions(content)
 
         paragraphs = self._groupParagraphs(content)
-        content = "\n".join(
-            [self._parseParagraph(paragraph) for paragraph in paragraphs if paragraph]
-        )
+        content = "\n".join([self._parseParagraph(p) for p in paragraphs if p])
 
         return Article(content=content, **options)
