@@ -1,4 +1,8 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
+  main();
+});
+
+const main = async () => {
   console.clear();
   console.log(
     "%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website",
@@ -7,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener("resize", window_resized);
   add_lines();
   await print_letters();
-});
+};
 
 const window_resized = () => {
   resize_animation_container();
@@ -29,14 +33,11 @@ const resize_animation_container = () => {
 
 const move_lines = () => {
   const page_height = get_page_height();
-  document
-    .querySelectorAll(".line")
-    .forEach(
-      (l) =>
-        (l.style.top = `${Math.floor(
-          l.getAttribute("percent") * 0.01 * page_height
-        )}px`)
-    );
+  document.querySelectorAll(".line").forEach((l) => {
+    const percent = l.getAttribute("percent");
+    const pos = Math.floor(percent * 0.01 * page_height);
+    l.style.top = `${pos}px`;
+  });
 };
 
 const add_lines = () => {
@@ -102,3 +103,4 @@ const print_letters = async () => {
 };
 
 const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const random_between = (a, b) => Math.random() * (b - a) + a;
