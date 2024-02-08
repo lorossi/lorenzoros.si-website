@@ -1,0 +1,17 @@
+.fullpage {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.error {
+  font-size: var(--title-size);
+  margin-top: calc(var(--title-size) * 2);
+  margin-bottom: calc(var(--title-size) * 2);
+}
