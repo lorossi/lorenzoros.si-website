@@ -85,7 +85,12 @@ class Deployer:
             self._uploadSingleFile(local_path, remote_path, local_mtime)
         else:
             time_diff = remote_mtime - local_mtime
-            logging.info(f"File skipped (remote file is {time_diff} seconds newer).")
+            if time_diff == 0:
+                logging.info("File skipped (remote file has the same mtime).")
+            else:
+                logging.info(
+                    f"File skipped (remote file is {time_diff} seconds newer)."
+                )
 
     def _uploadSingleFile(self, local_path: str, remote_path: str, mtime: int):
         """Upload a single file to the remote server."""
