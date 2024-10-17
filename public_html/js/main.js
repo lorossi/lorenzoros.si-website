@@ -3,22 +3,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const main = async () => {
+  // evil console manipulation!
   console.clear();
   console.log(
     "%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website",
     "font-size: 1rem;"
   );
+  // resize the animations container
   window.addEventListener("resize", window_resized);
+
+  // handle mouse in and out from the image container
+  const photo_container = document.querySelector(".photo");
+  photo_container.addEventListener("mouseenter", photo_mouse_enter);
+  photo_container.addEventListener("mouseleave", photo_mouse_leave);
+
+  // start the animations
   add_lines();
   await print_letters();
 };
 
 const window_resized = () => {
+  // when the window is resized, we need to resize the animations container and move the lines
   resize_animation_container();
   move_lines();
 };
 
 const get_page_height = () => {
+  // somehow this is the only way to get the total height of the page
+  // js is weird
   return [...document.querySelectorAll("body > *")]
     .filter((e) => !e.classList.contains("animations-container"))
     .filter((e) => e.scrollHeight != undefined)
@@ -100,6 +112,18 @@ const print_letters = async () => {
       await timeout(typing_pause);
     }
   }
+};
+
+const photo_mouse_enter = (e) => {
+  // when the mouse enters the photo container, replace the image with the alternate one
+  // store the original image in the src attribute
+  e.target.old_src = e.target.src;
+  e.target.src = "./assets/img/photo_alternate.png";
+};
+
+const photo_mouse_leave = (e) => {
+  // when the mouse leaves the photo container, replace the image with the default one
+  e.target.src = e.target.old_src;
 };
 
 const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
