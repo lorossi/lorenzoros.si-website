@@ -240,6 +240,10 @@ h2 {
   background: url("data:image/svg+xml,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3e%3cg fill=%22currentColor%22%3e%3cpath d=%22M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0a3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z%22/%3e%3c/g%3e%3c/svg%3e");
 }
 
+.icon#unsplash {
+  background: url("data:image/svg+xml,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3e%3cg fill=%22none%22%3e%3cpath d=%22M15 4.5H9v4h6v-4z%22 fill=%22currentColor%22/%3e%3cpath d=%22M4 10.5h5v4h6v-4h5v9H4v-9z%22 fill=%22currentColor%22/%3e%3c/g%3e%3c/svg%3e");
+}
+
 .flag {
   display: flex;
   flex-direction: row;
