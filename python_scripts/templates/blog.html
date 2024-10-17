@@ -12,7 +12,6 @@
     <meta name="author" content="Lorenzo Rossi" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="/css/fonts/fonts.css?{{date}}" />
     <link rel="stylesheet" href="/css/vars.css?{{date}}" />
     <link rel="stylesheet" href="/css/style.css?{{date}}" />
     <link rel="stylesheet" href="/css/big-screens.css?{{date}}" />
@@ -38,7 +37,7 @@
           <span></span>
           {% for article in articles %}
           <li class="article-container">
-            <a class="article-title" href="/blog/{{article.link}}"
+            <a class="article-title" href="{{article.blog_path}}"
               >{{article.title}}</a
             >
             <span class="article-date">{{article.date}}</span>
