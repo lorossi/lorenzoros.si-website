@@ -16,8 +16,7 @@
 .blog-section h6 {
   text-shadow: var(--small-aberration);
   padding-top: calc(var(--blog-text-size) * 2);
-  padding-bottom: calc(var(--blog-text-size) / 2);
-  display: inline-block;
+  padding-bottom: calc(var(--blog-text-size));
 }
 
 .blog-section h1 {
@@ -45,6 +44,9 @@
 
 .blog-section img {
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .underline {
@@ -56,17 +58,17 @@
 
 h1 > .underline {
   border-color: var(--blog-underline-color-1);
-  border-bottom: 4px solid;
+  border-bottom: 3px solid;
 }
 
 h2 > .underline {
   border-color: var(--blog-underline-color-2);
-  border-bottom: 3px solid;
+  border-bottom: 2px solid;
 }
 
 h3 > .underline {
   border-color: var(--blog-underline-color-3);
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
 }
 
 .blog-section bold {

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("resize", window_resized);
   document.querySelectorAll("h1, h2, h3").forEach((e) => create_underline(e));
   document.querySelectorAll("pre").forEach((e) => fix_pre(e));
 });
@@ -6,11 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
 const create_underline = (e) => {
   const underline = document.createElement("div");
   underline.classList.add("underline");
+  e.appendChild(underline);
 
-  const width = e.innerWidth;
+  fix_underline(e);
+};
+
+const fix_underline = (e) => {
+  const width = e.offsetWidth;
+  console.log(width);
+
+  const underline = e.querySelector(".underline");
   underline.style.width = `${width}px`;
 
   e.appendChild(underline);
+};
+
+const window_resized = () => {
+  document.querySelectorAll("h1, h2, h3").forEach((e) => fix_underline(e));
 };
 
 const fix_pre = (e) => {
