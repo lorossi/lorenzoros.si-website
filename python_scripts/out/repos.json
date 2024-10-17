@@ -355,7 +355,7 @@
         "watchers_count": 1
     },
     {
-        "commits_count": 111,
+        "commits_count": 122,
         "created_at": "2020-07-11T16:18:11Z",
         "description": "A FastAPI-based dashboard for my Raspberry Pi",
         "forks_count": 0,
@@ -365,7 +365,7 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 29360
+                "size": 29529
             },
             {
                 "language": "JavaScript",
@@ -373,7 +373,7 @@
             },
             {
                 "language": "CSS",
-                "size": 4253
+                "size": 4263
             },
             {
                 "language": "HTML",
@@ -381,14 +381,14 @@
             },
             {
                 "language": "Shell",
-                "size": 163
+                "size": 520
             }
         ],
         "name": "rpi-homepage",
         "open_issues_count": 2,
         "private": false,
-        "pushed_at": "2023-08-24T12:10:48Z",
-        "size": 1827,
+        "pushed_at": "2024-06-25T12:43:28Z",
+        "size": 1849,
         "stargazers_count": 0,
         "topics": [
             "hardware",
@@ -397,7 +397,7 @@
             "stats",
             "webpage"
         ],
-        "updated_at": "2023-06-12T15:24:09Z",
+        "updated_at": "2024-06-25T12:43:32Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -448,7 +448,7 @@
         "private": false,
         "pushed_at": "2020-09-07T18:57:49Z",
         "size": 44638,
-        "stargazers_count": 3,
+        "stargazers_count": 4,
         "topics": [
             "digitalart",
             "generative-art",
@@ -456,9 +456,9 @@
             "processing",
             "released"
         ],
-        "updated_at": "2023-08-30T07:25:05Z",
-        "watchers": 3,
-        "watchers_count": 3
+        "updated_at": "2024-07-16T05:08:15Z",
+        "watchers": 4,
+        "watchers_count": 4
     },
     {
         "commits_count": 80,
@@ -983,7 +983,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 40,
+        "commits_count": 44,
         "created_at": "2021-01-04T10:53:50Z",
         "description": "Empty HTML5 project with JS canvas",
         "forks_count": 0,
@@ -993,22 +993,22 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 431359
+                "size": 457731
+            },
+            {
+                "language": "HTML",
+                "size": 1703
             },
             {
                 "language": "CSS",
                 "size": 1362
-            },
-            {
-                "language": "HTML",
-                "size": 990
             }
         ],
         "name": "empty-html5-canvas-project",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-11-29T11:52:48Z",
-        "size": 1016,
+        "pushed_at": "2024-10-17T12:51:58Z",
+        "size": 1030,
         "stargazers_count": 1,
         "topics": [
             "canvas",
@@ -1018,7 +1018,7 @@
             "javascript",
             "template"
         ],
-        "updated_at": "2022-12-29T06:13:06Z",
+        "updated_at": "2024-10-17T12:52:03Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -1821,7 +1821,7 @@
         "private": false,
         "pushed_at": "2021-07-04T21:41:59Z",
         "size": 3800,
-        "stargazers_count": 3,
+        "stargazers_count": 4,
         "topics": [
             "creative-coding",
             "ecmascript",
@@ -1829,9 +1829,9 @@
             "javascript",
             "released"
         ],
-        "updated_at": "2023-08-30T09:16:16Z",
-        "watchers": 3,
-        "watchers_count": 3
+        "updated_at": "2024-10-06T05:48:41Z",
+        "watchers": 4,
+        "watchers_count": 4
     },
     {
         "commits_count": 0,
@@ -2435,7 +2435,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 25,
+        "commits_count": 26,
         "created_at": "2021-07-19T21:00:47Z",
         "description": "XOR128 pseudo-random number generator",
         "forks_count": 0,
@@ -2449,14 +2449,14 @@
             },
             {
                 "language": "HTML",
-                "size": 619
+                "size": 719
             }
         ],
         "name": "js-XOR128",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-09-27T14:52:11Z",
-        "size": 430,
+        "pushed_at": "2024-10-17T11:36:00Z",
+        "size": 431,
         "stargazers_count": 0,
         "topics": [
             "ecmascript",
@@ -2465,7 +2465,7 @@
             "library",
             "released"
         ],
-        "updated_at": "2023-10-25T16:12:10Z",
+        "updated_at": "2024-10-17T11:36:04Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -2547,7 +2547,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 7,
+        "commits_count": 17,
         "created_at": "2021-08-02T19:57:14Z",
         "description": "My curriculum-vitae",
         "forks_count": 0,
@@ -2557,17 +2557,17 @@
         "languages": [
             {
                 "language": "TeX",
-                "size": 13564
+                "size": 9524
             }
         ],
         "name": "curriculum-vitae",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2024-02-08T11:36:16Z",
-        "size": 4931,
+        "pushed_at": "2024-10-01T07:07:33Z",
+        "size": 16628,
         "stargazers_count": 0,
         "topics": [],
-        "updated_at": "2021-12-08T15:03:33Z",
+        "updated_at": "2024-10-01T07:07:37Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -3067,7 +3067,7 @@
         "private": false,
         "pushed_at": "2023-08-14T16:56:30Z",
         "size": 17044,
-        "stargazers_count": 8,
+        "stargazers_count": 9,
         "topics": [
             "computer-science",
             "latex",
@@ -3075,9 +3075,9 @@
             "polimi-notes",
             "release"
         ],
-        "updated_at": "2024-04-22T16:37:14Z",
-        "watchers": 8,
-        "watchers_count": 8
+        "updated_at": "2024-10-10T04:20:10Z",
+        "watchers": 9,
+        "watchers_count": 9
     },
     {
         "commits_count": 45,
@@ -3161,7 +3161,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 66,
+        "commits_count": 89,
         "created_at": "2022-08-23T13:24:34Z",
         "description": "I tried to find the best build in MK8D",
         "forks_count": 0,
@@ -3171,14 +3171,14 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 55055
+                "size": 56828
             }
         ],
         "name": "MK8D-analysis",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-04-19T16:40:06Z",
-        "size": 9421,
+        "pushed_at": "2024-07-01T10:25:55Z",
+        "size": 10018,
         "stargazers_count": 0,
         "topics": [
             "data-analysis",
@@ -3188,7 +3188,7 @@
             "python3",
             "released"
         ],
-        "updated_at": "2022-10-01T21:39:02Z",
+        "updated_at": "2024-07-01T10:25:58Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -3246,11 +3246,11 @@
         "private": false,
         "pushed_at": "2023-06-19T13:28:00Z",
         "size": 6815,
-        "stargazers_count": 0,
+        "stargazers_count": 1,
         "topics": [],
-        "updated_at": "2023-05-10T09:32:15Z",
-        "watchers": 0,
-        "watchers_count": 0
+        "updated_at": "2024-08-08T13:38:29Z",
+        "watchers": 1,
+        "watchers_count": 1
     },
     {
         "commits_count": 37,
@@ -3275,7 +3275,7 @@
         "private": false,
         "pushed_at": "2023-01-12T17:37:00Z",
         "size": 9526,
-        "stargazers_count": 1,
+        "stargazers_count": 3,
         "topics": [
             "computer-science",
             "latex",
@@ -3283,9 +3283,9 @@
             "polimi-notes",
             "released"
         ],
-        "updated_at": "2024-01-12T18:38:15Z",
-        "watchers": 1,
-        "watchers_count": 1
+        "updated_at": "2024-10-08T08:05:38Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 24,
@@ -3310,7 +3310,7 @@
         "private": false,
         "pushed_at": "2023-09-05T14:00:48Z",
         "size": 6513,
-        "stargazers_count": 1,
+        "stargazers_count": 2,
         "topics": [
             "computer-science",
             "latex",
@@ -3318,9 +3318,9 @@
             "polimi-notes",
             "released"
         ],
-        "updated_at": "2023-09-29T11:57:35Z",
-        "watchers": 1,
-        "watchers_count": 1
+        "updated_at": "2024-08-08T13:33:39Z",
+        "watchers": 2,
+        "watchers_count": 2
     },
     {
         "commits_count": 15,
@@ -3355,7 +3355,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 149,
+        "commits_count": 163,
         "created_at": "2022-10-18T09:51:46Z",
         "description": "Repo containing some of the animations that I made over the years",
         "forks_count": 0,
@@ -3365,26 +3365,26 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 26631698
+                "size": 32325971
             },
             {
                 "language": "CSS",
-                "size": 85769
+                "size": 103493
             },
             {
                 "language": "HTML",
-                "size": 83003
+                "size": 98537
             },
             {
                 "language": "Python",
-                "size": 3289
+                "size": 3646
             }
         ],
         "name": "random-animations",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2024-05-27T16:11:24Z",
-        "size": 1221,
+        "pushed_at": "2024-10-17T15:14:36Z",
+        "size": 1448,
         "stargazers_count": 0,
         "topics": [
             "digitalart",
@@ -3392,7 +3392,7 @@
             "html5-canvas",
             "released"
         ],
-        "updated_at": "2024-05-27T16:11:28Z",
+        "updated_at": "2024-10-17T15:14:40Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -3613,7 +3613,7 @@
         "private": false,
         "pushed_at": "2023-10-09T14:31:40Z",
         "size": 331581,
-        "stargazers_count": 0,
+        "stargazers_count": 1,
         "topics": [
             "creative-coding",
             "digital-art",
@@ -3622,9 +3622,9 @@
             "overpass-api",
             "released"
         ],
-        "updated_at": "2023-08-30T16:05:24Z",
-        "watchers": 0,
-        "watchers_count": 0
+        "updated_at": "2024-10-06T05:20:33Z",
+        "watchers": 1,
+        "watchers_count": 1
     },
     {
         "commits_count": 33,
@@ -3704,6 +3704,49 @@
         "watchers_count": 0
     },
     {
+        "commits_count": 53,
+        "created_at": "2023-10-04T12:58:50Z",
+        "description": "reference for Principles of Programming Languages course, Politecnico di Milano, A.Y. 2023\/2024",
+        "forks_count": 0,
+        "homepage": "",
+        "html_url": "https:\/\/github.com\/lorossi\/principles-of-programming-languages-reference",
+        "id": 700359503,
+        "languages": [
+            {
+                "language": "TeX",
+                "size": 53283
+            },
+            {
+                "language": "Racket",
+                "size": 9233
+            },
+            {
+                "language": "Haskell",
+                "size": 5016
+            },
+            {
+                "language": "Python",
+                "size": 1049
+            }
+        ],
+        "name": "principles-of-programming-languages-reference",
+        "open_issues_count": 0,
+        "private": false,
+        "pushed_at": "2024-07-01T15:08:06Z",
+        "size": 2334,
+        "stargazers_count": 0,
+        "topics": [
+            "computer-science",
+            "latex",
+            "polimi",
+            "principles-of-programming-languages",
+            "released"
+        ],
+        "updated_at": "2024-07-01T15:09:51Z",
+        "watchers": 0,
+        "watchers_count": 0
+    },
+    {
         "commits_count": 7,
         "created_at": "2024-01-30T15:43:50Z",
         "description": "Finding the best model for the MNIST dataset, the hard way",
@@ -3758,7 +3801,7 @@
         "open_issues_count": 0,
         "private": false,
         "pushed_at": "2024-06-08T13:32:57Z",
-        "size": 562,
+        "size": 607,
         "stargazers_count": 0,
         "topics": [
             "game-development",
@@ -3767,6 +3810,31 @@
             "released"
         ],
         "updated_at": "2024-06-08T13:34:43Z",
+        "watchers": 0,
+        "watchers_count": 0
+    },
+    {
+        "commits_count": 2,
+        "created_at": "2024-10-08T11:58:35Z",
+        "description": null,
+        "forks_count": 0,
+        "homepage": null,
+        "html_url": "https:\/\/github.com\/lorossi\/MRI-scan-cnn",
+        "id": 869498453,
+        "languages": [
+            {
+                "language": "Jupyter Notebook",
+                "size": 16495
+            }
+        ],
+        "name": "MRI-scan-cnn",
+        "open_issues_count": 0,
+        "private": false,
+        "pushed_at": "2024-10-09T16:38:36Z",
+        "size": 4583,
+        "stargazers_count": 0,
+        "topics": [],
+        "updated_at": "2024-10-09T16:38:40Z",
         "watchers": 0,
         "watchers_count": 0
     }

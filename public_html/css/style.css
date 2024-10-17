@@ -292,3 +292,7 @@ h2 {
   border-radius: 100%;
   box-shadow: 2px 2px 5px -1px #00ffff, -2px -2px 5px -1px #ff00ff;
 }
+
+.photo:hover {
+  background-image: url("../assets/img/photo_alternate.png");
+}
