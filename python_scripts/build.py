@@ -50,34 +50,40 @@ def build_blog():
     # TODO: encapsulate this into a class
     s = Settings.from_toml("settings.toml", "Blog")
 
-    m = MarkdownParser()
-    # load articles
-    articles = sorted(
-        [m.parseFile(article) for article in glob(f"{s.articles_path}/*.md")],
-        key=lambda x: x.date_obj,
-        reverse=True,
-    )
-
-    r = Renderer()
-
     # delete all rendered articles
-    for a in glob(s.out_path + "*.html"):
+    for a in glob(s.out_articles_path + "*.html"):
         logging.info(f"Deleting {a} ...")
         os.remove(a)
     logging.info("All old articles deleted.")
 
-    # render blog homepage
-    r.renderFile(
-        "blog.html",
-        context_dict={
-            "articles": articles,
-        },
-        output_path=s.out_path + "blog.html",
-    )
+    # load articles
+    # articles = sorted(
+    #     [m.parseFile(article) for article in glob(f"{s.in_articles_path}/**/*.md")],
+    #     key=lambda x: x.date_obj,
+    #     reverse=True,
+    # )
+
+    m = MarkdownParser()
+    r = Renderer()
+
+    articles = []
 
     # render articles
-    for x, a in enumerate(articles):
-        out_path = f"{s.out_path}{a.link}"
+    for md_file in glob(f"{s.in_articles_path}/**/*.md"):
+        # create directory for article
+
+        folder_name = (
+            md_file.split("/")[-1].replace(".md", "").replace(" ", "-").lower()
+        )
+        file_name = folder_name + ".html"
+        out_folder = os.path.join(s.out_articles_path, folder_name)
+
+        os.makedirs(out_folder, exist_ok=True)
+        out_path = os.path.join(s.out_articles_path, folder_name, file_name)
+
+        a = m.parseFile(md_file, out_folder)
+        a.blog_path = os.path.relpath(out_path, s.out_home_path)
+        articles.append(a)
 
         # check if article is already rendered
         if glob(out_path) and not a.overwrite:
@@ -88,20 +94,25 @@ def build_blog():
             "content": a.content,
             "title": a.title,
             "date": a.date,
-            "prev_link": articles[x + 1].link if x < len(articles) - 1 else "",
-            "next_link": articles[x - 1].link if x > 0 else "",
+            "next_link": "",
+            "prev_link": articles[-1].link if len(articles) > 1 else "",
+            # "next_link": articles[x - 1].link if x > 0 else "",
         }
 
         # render and save the article
         logging.info(f"Rendering article {a.title} to {out_path} ...")
         r.renderFile(
-            "article.html",
+            template_name="article.html",
             context_dict=context_dict,
             output_path=out_path,
         )
         logging.info("Done.")
 
-    categories = set([article.category.upper() for article in articles])
+    # render category pages
+    categories = set(
+        [article.category.upper() for article in articles if article.category != ""]
+    )
+
     for c in sorted(categories):
         category_articles = [article for article in articles if article.category == c]
 
@@ -111,8 +122,18 @@ def build_blog():
                 "articles": category_articles,
                 "category": c,
             },
-            output_path=f"{s.out_path}category-{c}.html",
+            output_path=f"{s.out_home_path}category-{c}.html",
         )
+
+    # render index page
+    # render blog homepage
+    r.renderFile(
+        "blog.html",
+        context_dict={
+            "articles": articles,
+        },
+        output_path=os.path.join(s.out_home_path, "blog.html"),
+    )
 
 
 def deploy():

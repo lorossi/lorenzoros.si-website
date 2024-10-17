@@ -1,13 +1,17 @@
 """Markdown to HTML parser module."""
+
 from __future__ import annotations
 
+import hashlib
+import os
 import re
 from datetime import datetime
-from os import path
 from typing import Any
 
 import toml
+
 from modules.article import Article
+from modules.latex_converter import LatexMathConverter
 
 
 class ParserError(Exception):
@@ -42,6 +46,8 @@ class MarkdownParser:
         "ul": r"^\s*-\s*([^-]*)$",
         "ol": r"^\s*\d+\.\s*(.*)$",
     }
+
+    _math_rule = r"\${1,2}([^\$]+)\${1,2}"
 
     _link_rule = r"\[([^\]]*)\]\(([^\)]*)\)"
     _blockquote_rule = r"^>\s*(.*)$"
@@ -112,9 +118,9 @@ class MarkdownParser:
     def _createLink(self, text: str, url: str) -> str:
         return f'<a href="{url}">{text}</a>'
 
-    def _matchTitle(self, title: str) -> str | None:
+    def _matchTitle(self, paragraph: str) -> str | None:
         for tag, rule in self._title_rules.items():
-            if match := re.search(rule, title):
+            if match := re.search(rule, paragraph):
                 return self._createElement(tag, match.group(1))
 
         return None
@@ -140,14 +146,6 @@ class MarkdownParser:
 
         return None
 
-    def _matchImage(self, paragraph: str) -> str | None:
-        if match := re.search(self._image_rule, paragraph):
-            alt = match.group(1)
-            url = match.group(2)
-            return self._createImage(url, alt)
-
-        return None
-
     def _matchLink(self, paragraph: str) -> str | None:
         if match := re.search(self._link_rule, paragraph):
             paragraph = match.group(1)
@@ -164,6 +162,44 @@ class MarkdownParser:
 
         return None
 
+    def _matchImage(self, paragraph: str, out_folder: str) -> str | None:
+        if match := re.search(self._image_rule, paragraph):
+            alt = match.group(1)
+            url = match.group(2)
+
+            # the image is a remote file
+            if url.startswith("http"):
+                return self._createImage(url, alt)
+
+            # the image is a local file
+            # copy the image to the output directory
+            in_image_path = os.path.basename(url)
+
+            out_image_path = os.path.join(
+                out_folder,
+                in_image_path,
+            )
+            os.makedirs(out_image_path, exist_ok=True)
+            os.system(f"cp {in_image_path} {out_image_path}")
+            # return the image tag
+            return self._createImage(out_image_path, alt)
+
+        return None
+
+    def _matchMath(self, paragraph: str, out_folder: str) -> str | None:
+        if match := re.search(self._math_rule, paragraph):
+            formula = match.group(1)
+            converter = LatexMathConverter()
+            image_name = hashlib.sha256(formula.encode()).hexdigest() + ".png"
+            image_path = os.path.join(out_folder, image_name)
+
+            if not os.path.exists(image_path):
+                converter.convert(formula, image_path)
+
+            return self._createImage(image_name, image_name)
+
+        return None
+
     def _formatParagraph(self, paragraph: str) -> str | None:
         # match spans in paragraph
         for tag, rule in self._span_rules.items():
@@ -177,25 +213,33 @@ class MarkdownParser:
 
         return paragraph.replace("\n", " ")
 
-    def _parseParagraph(self, paragraph: str) -> str:
-        for function in [
+    def _parseParagraph(self, paragraph: str, out_folder: str) -> str:
+        for f in [
             self._matchTitle,
             self._matchCodeBlock,
-            self._matchImage,
-            self._matchList,
             self._matchBlockquote,
+            self._matchList,
+            self._matchLink,
         ]:
-            if result := function(paragraph):
+            if result := f(paragraph):
+                return result
+
+        for f in [
+            self._matchImage,
+            self._matchMath,
+        ]:
+            if result := f(paragraph, out_folder):
                 return result
 
         content = self._formatParagraph(paragraph)
         return self._createElement("p", content)
 
-    def parseFile(self, file_path: str) -> Article:
+    def parseFile(self, file_path: str, out_folder: str) -> Article:
         """Parse a markdown file. Return the HTML content and the options.
 
         Args:
             file_path (str): The path to the markdown file.
+            out_folder (str): The output folder for the attachments.
 
         Returns:
             Article: The HTML content and the options.
@@ -203,19 +247,20 @@ class MarkdownParser:
         with open(file_path, "r") as f:
             content = f.read()
 
-        article = self.parseString(content)
+        article = self.parseString(content, out_folder)
         if not article.date:
-            created_timestamp = path.getctime(file_path)
+            created_timestamp = os.path.getctime(file_path)
             time_obj = datetime.fromtimestamp(created_timestamp)
             article.date = time_obj.strftime("%Y-%m-%d")
 
         return article
 
-    def parseString(self, content: str) -> Article:
+    def parseString(self, content: str, out_folder: str) -> Article:
         """Parse a markdown string. Return the HTML content and the options.
 
         Args:
             content (str): content of the markdown file.
+            out_folder (str): The output folder for the attachments.
 
         Returns:
             Article: The HTML content and the options.
@@ -224,6 +269,13 @@ class MarkdownParser:
         content = self._removeOptions(content)
 
         paragraphs = self._groupParagraphs(content)
-        content = "\n".join([self._parseParagraph(p) for p in paragraphs if p])
+        parsed_paragraphs = []
 
-        return Article(content=content, **options)
+        for p in paragraphs:
+            parsed = self._parseParagraph(p, out_folder)
+            parsed_paragraphs.append(parsed)
+
+        return Article(
+            content="\n".join(parsed_paragraphs),
+            **options,
+        )

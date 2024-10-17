@@ -1,5 +1,6 @@
 """Container class for storing data in a dictionary-like object. \
     Supports access to the data as attributes and as dictionary keys."""
+
 from __future__ import annotations
 
 import toml

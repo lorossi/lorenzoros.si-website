@@ -1,4 +1,5 @@
 """This module contains the Article class."""
+
 from __future__ import annotations
 
 import re
@@ -32,6 +33,15 @@ class Article(Container):
             return html_title.group(1)
 
         return ""
+
+    @property
+    def title_escaped(self) -> str:
+        """Return the escaped title of the article.
+
+        Returns:
+            str
+        """
+        return self.title.lower().replace(" ", "-")
 
     @property
     def link(self) -> str:
