@@ -12,7 +12,7 @@ from typing_extensions import Any
 class Container:
     """Container class."""
 
-    def __init__(self, **kwargs: Any) -> Container:
+    def __init__(self, **kwargs: Any) -> None:
         """Create a new Container instance.
 
         Args:
@@ -91,7 +91,7 @@ class Container:
     def get(self, key: str, default: Any = "") -> Any:
         """Get an item from the container."""
         try:
-            return self.__getattr__(key)
+            return self.getattr(key)
         except AttributeError:
             return default
 

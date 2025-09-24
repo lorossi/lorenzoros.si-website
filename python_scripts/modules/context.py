@@ -1,4 +1,5 @@
 """Context class."""
+
 from __future__ import annotations
 
 from datetime import datetime
@@ -9,7 +10,7 @@ from modules.container import Container
 class Context(Container):
     """Context class."""
 
-    def __init__(self, **kwargs) -> Context:
+    def __init__(self, **kwargs) -> None:
         """Create a new Context instance."""
         super().__init__(**kwargs)
         self._container["timestamp"] = datetime.now().timestamp()

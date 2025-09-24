@@ -51,7 +51,7 @@ class as_string(Function):
 
     def __init__(self):
         """Create a new as_string instance."""
-        super().__init__("as_string", lambda s: str(s))
+        super().__init__("as_string", str)
 
 
 class strip(Function):
@@ -59,4 +59,4 @@ class strip(Function):
 
     def __init__(self):
         """Create a new strip instance."""
-        super().__init__("strip", lambda s: s.strip())
+        super().__init__("strip", str.strip)

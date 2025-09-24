@@ -1,8 +1,11 @@
 """This module contains the Renderer class, which is responsible for rendering."""
+
 from __future__ import annotations
 
 import logging
 import re
+
+from typing_extensions import Any
 
 from modules.context import Context
 from modules.formatter import HTMLFormatter
@@ -10,7 +13,6 @@ from modules.function_factory import FunctionFactory
 from modules.settings import Settings
 from modules.statements import Statement
 from modules.statements_factory import StatementFactory
-from typing_extensions import Any
 
 
 class Renderer:
@@ -153,11 +155,11 @@ class Renderer:
         Returns:
             str: rendered page
         """
-        logging.info(f"Rendering file {template_name} ...")
+        logging.info("Rendering file %s ...", template_name)
         template_path = self._settings.templates_path + template_name
         with open(template_path, "r") as f:
             template = f.read()
-        logging.info(f"Template loaded from {template_path}.")
+        logging.info("Template loaded from %s.", template_path)
 
         rendered = self.renderString(
             template,
@@ -167,7 +169,7 @@ class Renderer:
         )
 
         if output_path:
-            logging.info(f"Saving rendered page to {output_path}...")
+            logging.info("Saving rendered page to %s...", output_path)
             with open(output_path, "w") as f:
                 f.write(rendered)
             logging.info("Saved.")
@@ -191,7 +193,7 @@ class Renderer:
         Returns:
             str: rendered page
         """
-        logging.info(f"Rendering string of length {len(template)}")
+        logging.info("Rendering string of length %s", len(template))
         if context is None:
             context = Context()
 
@@ -201,7 +203,7 @@ class Renderer:
         logging.info("Solving includes...")
         # solve the include first
         for match in re.findall(r"\{% include ([a-z.]+) %\}", template):
-            logging.info(f"Including: {match}")
+            logging.info("Including: %s", match)
             template = template.replace(
                 "{% include " + match + " %}", self.renderFile(match, context=context)
             )

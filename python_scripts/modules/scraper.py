@@ -1,9 +1,11 @@
 """Scraper module."""
+
 from __future__ import annotations
 
 import logging
 
 import ujson
+
 from modules.github import GitHub, Repo
 from modules.settings import Settings
 
@@ -17,7 +19,7 @@ class Scraper(GitHub):
 
     def __init__(self, settings_path: str = "settings.toml") -> Scraper:
         """Create a new Scraper instance."""
-        logging.info(f"Initializing {self.__class__.__name__}...")
+        logging.info("Initializing %s...", self.__class__.__name__)
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
         super().__init__(self._settings.username, self._settings.token)
 
@@ -44,7 +46,7 @@ class Scraper(GitHub):
 
         self._repos = sorted(repos, key=lambda x: x.created_at)
 
-        logging.info(f"Loaded {len(self._repos)} repos")
+        logging.info("Loaded %s repos", len(self._repos))
         return len(self._repos)
 
     def saveStats(self, path: str | None = None) -> None:
@@ -56,7 +58,7 @@ class Scraper(GitHub):
         if path is None:
             path = self._settings.out_path + "stats.json"
 
-        logging.info(f"Saving stats to {path}")
+        logging.info("Saving stats to %s", path)
         with open(path, "w") as f:
             ujson.dump(self.stats, f, sort_keys=True, indent=4)
         logging.info("Saved stats")
@@ -70,10 +72,10 @@ class Scraper(GitHub):
         if path is None:
             path = self._settings.out_path + "repos.json"
 
-        logging.info(f"Saving repos to {path}")
+        logging.info("Saving repos to %s", path)
         with open(path, "w") as f:
             ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
-        logging.info(f"Saved {len(self._repos)} repos")
+        logging.info("Saved %s repos", len(self._repos))
 
     def loadRepos(self, path: str | None = None) -> None:
         """Load repos list from file.
@@ -84,12 +86,12 @@ class Scraper(GitHub):
         if path is None:
             path = self._settings.out_path + "repos.json"
 
-        logging.info(f"Loading repos from {path}")
+        logging.info("Loading repos from %s", path)
         with open(path, "r") as f:
             self._repos = sorted(
                 [Repo(**repo) for repo in ujson.load(f)], key=lambda x: x.created_at
             )
-        logging.info(f"Loaded {len(self._repos)} repos")
+        logging.info("Loaded %s repos", len(self._repos))
 
     def reposByLanguage(self, language: str) -> set[Repo]:
         """Get a set of interesting repos written in a set language.

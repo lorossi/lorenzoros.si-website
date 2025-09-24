@@ -1,4 +1,5 @@
 """GitHub API wrapper and parsed Repo class."""
+
 from __future__ import annotations
 
 import logging
@@ -37,7 +38,7 @@ class GitHub:
             username (str): GitHub username.
             token (str): GitHub token.
         """
-        logging.info(f"Initializing {self.__class__.__name__}...")
+        logging.info("Initializing %s...", self.__class__.__name__)
         self._username = username
         self._token = token
         self._credentials_tested = False
@@ -121,7 +122,7 @@ class GitHub:
         """Load a list of all the repos urls.
 
         Args:
-            skip_private (bool, optional): Skip the private repos. \
+            skip_private (bool, optional): Skip the private repos.
                 Defaults to False.
 
         Returns:
@@ -129,7 +130,7 @@ class GitHub:
         """
         logging.info("Getting repos urls")
         urls = [repo["html_url"] for repo in self._getAllRepos(skip_private)]
-        logging.info(f"Loaded {len(urls)} repos urls")
+        logging.info("Loaded %s repos urls", len(urls))
         return urls
 
     def getReposNames(self, skip_private: bool = False) -> list[str]:
@@ -144,7 +145,7 @@ class GitHub:
         """
         logging.info("Getting repos names")
         names = [repo["name"] for repo in self._getAllRepos(skip_private)]
-        logging.info(f"Loaded {len(names)} repos names")
+        logging.info("Loaded %s repos names", len(names))
         return names
 
     def getRepoByName(self, name: str) -> Repo:
@@ -156,9 +157,9 @@ class GitHub:
         Returns:
             Repo
         """
-        logging.info(f"Getting repo named {name}")
+        logging.info("Getting repo named %s", name)
         repo = self._getRepo(self._username, name)
-        logging.info(f"Loaded repo named {name}")
+        logging.info("Loaded repo named %s", name)
         return repo
 
 
