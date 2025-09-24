@@ -8,12 +8,6 @@ skip_interactive_topics = [
   "library",
 ] # Topics to skip for the interactive repos list in homepage
 
-
-[Blog]
-articles_path = "../blog/articles/" # local path to the articles in markdown
-out_path = "../public_html/blog/"   # local path to the articles in html
-
-
 [Renderer]
 templates_path = "templates/" # local path for templates folder
 

@@ -1,108 +1,108 @@
 {
-    "commits_count": 2492,
+    "commits_count": 2577,
     "forks_count": 18,
     "interactive_repos": 28,
     "interesting_repos": 64,
     "languages": {
         "Batchfile": {
-            "relative_size": 1.4703701018575875e-5,
+            "relative_size": 1.0923547495797068e-5,
             "relative_size_formatted": "0.00%",
             "repos": 2,
             "size": 591
         },
         "C": {
-            "relative_size": 0.009081513287990868,
-            "relative_size_formatted": "0.91%",
+            "relative_size": 0.0067467599898660535,
+            "relative_size_formatted": "0.67%",
             "repos": 6,
             "size": 365022
         },
         "C++": {
-            "relative_size": 0.00017345888917345346,
-            "relative_size_formatted": "0.02%",
+            "relative_size": 0.00012886459076260094,
+            "relative_size_formatted": "0.01%",
             "repos": 1,
             "size": 6972
         },
         "CSS": {
-            "relative_size": 0.005130695998568143,
-            "relative_size_formatted": "0.51%",
+            "relative_size": 0.004608369289394402,
+            "relative_size_formatted": "0.46%",
             "repos": 58,
-            "size": 206223
+            "size": 249328
         },
         "GDScript": {
-            "relative_size": 0.0008488588410368702,
-            "relative_size_formatted": "0.08%",
+            "relative_size": 0.0006306269323335028,
+            "relative_size_formatted": "0.06%",
             "repos": 1,
             "size": 34119
         },
         "Go": {
-            "relative_size": 0.0015017678525943772,
-            "relative_size_formatted": "0.15%",
+            "relative_size": 0.0011156804973626103,
+            "relative_size_formatted": "0.11%",
             "repos": 3,
             "size": 60362
         },
         "HTML": {
-            "relative_size": 0.0067870393070481585,
-            "relative_size_formatted": "0.68%",
+            "relative_size": 0.005773048643629022,
+            "relative_size_formatted": "0.58%",
             "repos": 60,
-            "size": 272798
+            "size": 312341
         },
         "Haskell": {
-            "relative_size": 0.00012479486346730388,
+            "relative_size": 9.271153001508984e-5,
             "relative_size_formatted": "0.01%",
             "repos": 1,
             "size": 5016
         },
         "JavaScript": {
-            "relative_size": 0.8782110606563245,
-            "relative_size_formatted": "87.82%",
+            "relative_size": 0.9078490272580955,
+            "relative_size_formatted": "90.78%",
             "repos": 61,
-            "size": 35298782
+            "size": 49117631
         },
         "Jupyter Notebook": {
-            "relative_size": 0.030925117558701976,
-            "relative_size_formatted": "3.09%",
+            "relative_size": 0.02297462319444711,
+            "relative_size_formatted": "2.30%",
             "repos": 2,
             "size": 1243003
         },
         "Makefile": {
-            "relative_size": 0.00037013022005643535,
-            "relative_size_formatted": "0.04%",
+            "relative_size": 0.000274973969703846,
+            "relative_size_formatted": "0.03%",
             "repos": 5,
             "size": 14877
         },
         "Processing": {
-            "relative_size": 0.0005793656271058822,
-            "relative_size_formatted": "0.06%",
+            "relative_size": 0.0004304173443902307,
+            "relative_size_formatted": "0.04%",
             "repos": 3,
             "size": 23287
         },
         "Python": {
-            "relative_size": 0.022688681449218668,
-            "relative_size_formatted": "2.27%",
+            "relative_size": 0.01698569124328694,
+            "relative_size_formatted": "1.70%",
             "repos": 38,
-            "size": 911948
+            "size": 918982
         },
         "Racket": {
-            "relative_size": 0.00022971111929697303,
+            "relative_size": 0.00017065501527697857,
             "relative_size_formatted": "0.02%",
             "repos": 1,
             "size": 9233
         },
         "Shell": {
-            "relative_size": 0.0008209939592419378,
-            "relative_size_formatted": "0.08%",
+            "relative_size": 0.0006099997258947388,
+            "relative_size_formatted": "0.06%",
             "repos": 15,
-            "size": 32999
+            "size": 33003
         },
         "TeX": {
-            "relative_size": 0.042512106669155926,
-            "relative_size_formatted": "4.25%",
+            "relative_size": 0.03159762722804558,
+            "relative_size_formatted": "3.16%",
             "repos": 14,
-            "size": 1708730
+            "size": 1709536
         }
     },
-    "open_issues_count": 8,
-    "stargazers_count": 101,
+    "open_issues_count": 9,
+    "stargazers_count": 124,
     "total_repos": 108,
-    "watchers_count": 101
+    "watchers_count": 124
 }

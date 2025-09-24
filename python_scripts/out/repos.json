@@ -145,7 +145,7 @@
         "watchers_count": 2
     },
     {
-        "commits_count": 66,
+        "commits_count": 68,
         "created_at": "2020-06-05T13:11:52Z",
         "description": "Free delivery of cute corgi images",
         "forks_count": 0,
@@ -159,14 +159,14 @@
             },
             {
                 "language": "Shell",
-                "size": 170
+                "size": 171
             }
         ],
         "name": "corgos-telegram-bot",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-08-01T12:58:52Z",
-        "size": 217,
+        "pushed_at": "2024-12-13T16:23:13Z",
+        "size": 219,
         "stargazers_count": 1,
         "topics": [
             "corgi",
@@ -175,7 +175,7 @@
             "telegram",
             "telegram-bot"
         ],
-        "updated_at": "2023-01-04T10:46:36Z",
+        "updated_at": "2024-12-13T16:23:17Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -194,20 +194,20 @@
             }
         ],
         "name": "zero-width-steganography",
-        "open_issues_count": 0,
+        "open_issues_count": 1,
         "private": false,
         "pushed_at": "2022-04-04T15:21:27Z",
         "size": 107,
-        "stargazers_count": 6,
+        "stargazers_count": 11,
         "topics": [
             "encoding",
             "python3",
             "released",
             "whitespaces"
         ],
-        "updated_at": "2024-02-14T14:01:59Z",
-        "watchers": 6,
-        "watchers_count": 6
+        "updated_at": "2025-09-15T13:04:39Z",
+        "watchers": 11,
+        "watchers_count": 11
     },
     {
         "commits_count": 2,
@@ -313,7 +313,7 @@
         "watchers_count": 1
     },
     {
-        "commits_count": 149,
+        "commits_count": 160,
         "created_at": "2020-07-08T16:22:03Z",
         "description": "A repo for my website",
         "forks_count": 0,
@@ -323,26 +323,26 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 53736
+                "size": 59391
             },
             {
                 "language": "HTML",
-                "size": 46562
+                "size": 49331
             },
             {
                 "language": "CSS",
-                "size": 16049
+                "size": 16475
             },
             {
                 "language": "JavaScript",
-                "size": 5703
+                "size": 7010
             }
         ],
         "name": "lorenzoros.si-website",
         "open_issues_count": 1,
         "private": false,
-        "pushed_at": "2024-02-08T11:25:12Z",
-        "size": 6980,
+        "pushed_at": "2025-09-24T16:41:13Z",
+        "size": 7445,
         "stargazers_count": 1,
         "topics": [
             "css",
@@ -350,12 +350,12 @@
             "javascript",
             "released"
         ],
-        "updated_at": "2023-10-25T14:43:13Z",
+        "updated_at": "2024-12-18T08:26:47Z",
         "watchers": 1,
         "watchers_count": 1
     },
     {
-        "commits_count": 122,
+        "commits_count": 124,
         "created_at": "2020-07-11T16:18:11Z",
         "description": "A FastAPI-based dashboard for my Raspberry Pi",
         "forks_count": 0,
@@ -387,8 +387,8 @@
         "name": "rpi-homepage",
         "open_issues_count": 2,
         "private": false,
-        "pushed_at": "2024-06-25T12:43:28Z",
-        "size": 1849,
+        "pushed_at": "2024-12-13T16:42:53Z",
+        "size": 1852,
         "stargazers_count": 0,
         "topics": [
             "hardware",
@@ -397,7 +397,7 @@
             "stats",
             "webpage"
         ],
-        "updated_at": "2024-06-25T12:43:32Z",
+        "updated_at": "2024-12-13T16:42:57Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -448,7 +448,7 @@
         "private": false,
         "pushed_at": "2020-09-07T18:57:49Z",
         "size": 44638,
-        "stargazers_count": 4,
+        "stargazers_count": 6,
         "topics": [
             "digitalart",
             "generative-art",
@@ -456,12 +456,12 @@
             "processing",
             "released"
         ],
-        "updated_at": "2024-07-16T05:08:15Z",
-        "watchers": 4,
-        "watchers_count": 4
+        "updated_at": "2024-12-21T04:18:13Z",
+        "watchers": 6,
+        "watchers_count": 6
     },
     {
-        "commits_count": 80,
+        "commits_count": 82,
         "created_at": "2020-09-25T10:00:26Z",
         "description": "Bad memes and bad ideas",
         "forks_count": 0,
@@ -475,14 +475,14 @@
             },
             {
                 "language": "Shell",
-                "size": 897
+                "size": 898
             }
         ],
         "name": "just-memes-telegram",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-10-09T06:44:47Z",
-        "size": 54571,
+        "pushed_at": "2024-12-13T16:33:53Z",
+        "size": 54581,
         "stargazers_count": 0,
         "topics": [
             "memes",
@@ -491,7 +491,7 @@
             "released",
             "telegram-bot"
         ],
-        "updated_at": "2022-06-11T19:24:41Z",
+        "updated_at": "2024-12-13T16:33:58Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -664,7 +664,7 @@
         "private": false,
         "pushed_at": "2020-12-08T18:20:16Z",
         "size": 551315,
-        "stargazers_count": 7,
+        "stargazers_count": 11,
         "topics": [
             "animations",
             "creativecoding",
@@ -672,12 +672,12 @@
             "perlin-noise",
             "released"
         ],
-        "updated_at": "2023-04-21T19:42:46Z",
-        "watchers": 7,
-        "watchers_count": 7
+        "updated_at": "2025-07-30T11:45:18Z",
+        "watchers": 11,
+        "watchers_count": 11
     },
     {
-        "commits_count": 5,
+        "commits_count": 7,
         "created_at": "2020-11-18T15:24:37Z",
         "description": "Handy way to constantly check some hardware stats via browser",
         "forks_count": 0,
@@ -703,14 +703,14 @@
             },
             {
                 "language": "Shell",
-                "size": 170
+                "size": 171
             }
         ],
         "name": "performances-monitor",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-06-13T13:07:10Z",
-        "size": 696,
+        "pushed_at": "2024-12-13T16:39:14Z",
+        "size": 698,
         "stargazers_count": 0,
         "topics": [
             "hardware",
@@ -720,7 +720,7 @@
             "visualization",
             "webpage"
         ],
-        "updated_at": "2022-09-08T11:31:24Z",
+        "updated_at": "2024-12-13T16:39:18Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -983,7 +983,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 44,
+        "commits_count": 51,
         "created_at": "2021-01-04T10:53:50Z",
         "description": "Empty HTML5 project with JS canvas",
         "forks_count": 0,
@@ -993,7 +993,7 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 457731
+                "size": 464643
             },
             {
                 "language": "HTML",
@@ -1007,8 +1007,8 @@
         "name": "empty-html5-canvas-project",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2024-10-17T12:51:58Z",
-        "size": 1030,
+        "pushed_at": "2025-08-24T16:12:39Z",
+        "size": 858,
         "stargazers_count": 1,
         "topics": [
             "canvas",
@@ -1018,7 +1018,7 @@
             "javascript",
             "template"
         ],
-        "updated_at": "2024-10-17T12:52:03Z",
+        "updated_at": "2025-08-24T16:12:42Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -1205,16 +1205,16 @@
         "private": false,
         "pushed_at": "2021-02-06T14:05:59Z",
         "size": 162485,
-        "stargazers_count": 2,
+        "stargazers_count": 3,
         "topics": [
             "creativecoding",
             "javascript",
             "p5js",
             "released"
         ],
-        "updated_at": "2022-12-29T22:25:07Z",
-        "watchers": 2,
-        "watchers_count": 2
+        "updated_at": "2025-08-31T08:23:27Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 76,
@@ -1320,7 +1320,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 3,
+        "commits_count": 8,
         "created_at": "2021-03-27T20:40:29Z",
         "description": "Le parole sono importanti!",
         "forks_count": 0,
@@ -1330,26 +1330,26 @@
         "languages": [
             {
                 "language": "Python",
-                "size": 10506
+                "size": 11212
             },
             {
                 "language": "Shell",
-                "size": 165
+                "size": 166
             }
         ],
         "name": "voltraggio-bot",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2023-06-06T13:34:27Z",
-        "size": 357,
-        "stargazers_count": 2,
+        "pushed_at": "2024-12-13T17:15:34Z",
+        "size": 368,
+        "stargazers_count": 3,
         "topics": [
             "python3",
             "telegram-bot"
         ],
-        "updated_at": "2023-09-08T18:20:25Z",
-        "watchers": 2,
-        "watchers_count": 2
+        "updated_at": "2025-06-24T16:06:44Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 0,
@@ -2145,7 +2145,7 @@
         "watchers_count": 1
     },
     {
-        "commits_count": 0,
+        "commits_count": 1,
         "created_at": "2021-05-17T20:53:27Z",
         "description": "Smooth movements and circles",
         "forks_count": 0,
@@ -2169,8 +2169,8 @@
         "name": "ELASTIC-GRID",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2021-11-01T21:13:07Z",
-        "size": 54928,
+        "pushed_at": "2024-10-17T20:23:10Z",
+        "size": 54927,
         "stargazers_count": 1,
         "topics": [
             "canvas",
@@ -2178,7 +2178,7 @@
             "html5",
             "javascript"
         ],
-        "updated_at": "2021-11-01T21:13:09Z",
+        "updated_at": "2024-10-17T20:23:14Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -2547,7 +2547,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 17,
+        "commits_count": 23,
         "created_at": "2021-08-02T19:57:14Z",
         "description": "My curriculum-vitae",
         "forks_count": 0,
@@ -2557,17 +2557,17 @@
         "languages": [
             {
                 "language": "TeX",
-                "size": 9524
+                "size": 10330
             }
         ],
         "name": "curriculum-vitae",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2024-10-01T07:07:33Z",
-        "size": 16628,
+        "pushed_at": "2024-11-15T09:17:44Z",
+        "size": 18451,
         "stargazers_count": 0,
         "topics": [],
-        "updated_at": "2024-10-01T07:07:37Z",
+        "updated_at": "2024-11-15T09:17:49Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -2778,7 +2778,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 0,
+        "commits_count": 2,
         "created_at": "2021-11-08T13:36:24Z",
         "description": "While I should be studying, I am developing a little pomodoro timer to help me study.",
         "forks_count": 0,
@@ -2802,8 +2802,8 @@
         "name": "pomoc",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2022-02-01T16:55:25Z",
-        "size": 162,
+        "pushed_at": "2025-05-08T11:43:58Z",
+        "size": 249,
         "stargazers_count": 1,
         "topics": [
             "cli",
@@ -2811,7 +2811,7 @@
             "released",
             "timer"
         ],
-        "updated_at": "2022-06-17T16:24:00Z",
+        "updated_at": "2025-05-08T11:44:02Z",
         "watchers": 1,
         "watchers_count": 1
     },
@@ -2871,7 +2871,7 @@
         "private": false,
         "pushed_at": "2022-01-20T12:24:11Z",
         "size": 316,
-        "stargazers_count": 3,
+        "stargazers_count": 4,
         "topics": [
             "chrome-extension",
             "polimi",
@@ -2879,9 +2879,9 @@
             "released",
             "webex-downloader"
         ],
-        "updated_at": "2022-01-21T20:55:19Z",
-        "watchers": 3,
-        "watchers_count": 3
+        "updated_at": "2025-07-19T23:55:55Z",
+        "watchers": 4,
+        "watchers_count": 4
     },
     {
         "commits_count": 0,
@@ -3067,7 +3067,7 @@
         "private": false,
         "pushed_at": "2023-08-14T16:56:30Z",
         "size": 17044,
-        "stargazers_count": 9,
+        "stargazers_count": 10,
         "topics": [
             "computer-science",
             "latex",
@@ -3075,9 +3075,9 @@
             "polimi-notes",
             "release"
         ],
-        "updated_at": "2024-10-10T04:20:10Z",
-        "watchers": 9,
-        "watchers_count": 9
+        "updated_at": "2025-05-01T10:06:45Z",
+        "watchers": 10,
+        "watchers_count": 10
     },
     {
         "commits_count": 45,
@@ -3196,7 +3196,7 @@
         "commits_count": 43,
         "created_at": "2022-09-18T12:41:21Z",
         "description": "Latex template for my notes",
-        "forks_count": 2,
+        "forks_count": 1,
         "homepage": "",
         "html_url": "https:\/\/github.com\/lorossi\/latex-notes-template",
         "id": 538105505,
@@ -3246,11 +3246,11 @@
         "private": false,
         "pushed_at": "2023-06-19T13:28:00Z",
         "size": 6815,
-        "stargazers_count": 1,
+        "stargazers_count": 2,
         "topics": [],
-        "updated_at": "2024-08-08T13:38:29Z",
-        "watchers": 1,
-        "watchers_count": 1
+        "updated_at": "2025-03-05T14:44:47Z",
+        "watchers": 2,
+        "watchers_count": 2
     },
     {
         "commits_count": 37,
@@ -3275,7 +3275,7 @@
         "private": false,
         "pushed_at": "2023-01-12T17:37:00Z",
         "size": 9526,
-        "stargazers_count": 3,
+        "stargazers_count": 6,
         "topics": [
             "computer-science",
             "latex",
@@ -3283,9 +3283,9 @@
             "polimi-notes",
             "released"
         ],
-        "updated_at": "2024-10-08T08:05:38Z",
-        "watchers": 3,
-        "watchers_count": 3
+        "updated_at": "2025-07-08T17:41:19Z",
+        "watchers": 6,
+        "watchers_count": 6
     },
     {
         "commits_count": 24,
@@ -3310,7 +3310,7 @@
         "private": false,
         "pushed_at": "2023-09-05T14:00:48Z",
         "size": 6513,
-        "stargazers_count": 2,
+        "stargazers_count": 1,
         "topics": [
             "computer-science",
             "latex",
@@ -3318,9 +3318,9 @@
             "polimi-notes",
             "released"
         ],
-        "updated_at": "2024-08-08T13:33:39Z",
-        "watchers": 2,
-        "watchers_count": 2
+        "updated_at": "2025-06-28T21:27:12Z",
+        "watchers": 1,
+        "watchers_count": 1
     },
     {
         "commits_count": 15,
@@ -3355,7 +3355,7 @@
         "watchers_count": 0
     },
     {
-        "commits_count": 163,
+        "commits_count": 208,
         "created_at": "2022-10-18T09:51:46Z",
         "description": "Repo containing some of the animations that I made over the years",
         "forks_count": 0,
@@ -3365,26 +3365,26 @@
         "languages": [
             {
                 "language": "JavaScript",
-                "size": 32325971
+                "size": 46136601
             },
             {
                 "language": "CSS",
-                "size": 103493
+                "size": 146172
             },
             {
                 "language": "HTML",
-                "size": 98537
+                "size": 135311
             },
             {
                 "language": "Python",
-                "size": 3646
+                "size": 4319
             }
         ],
         "name": "random-animations",
         "open_issues_count": 0,
         "private": false,
-        "pushed_at": "2024-10-17T15:14:36Z",
-        "size": 1448,
+        "pushed_at": "2025-08-24T17:18:20Z",
+        "size": 1889,
         "stargazers_count": 0,
         "topics": [
             "digitalart",
@@ -3392,7 +3392,7 @@
             "html5-canvas",
             "released"
         ],
-        "updated_at": "2024-10-17T15:14:40Z",
+        "updated_at": "2025-08-24T17:18:23Z",
         "watchers": 0,
         "watchers_count": 0
     },
@@ -3613,7 +3613,7 @@
         "private": false,
         "pushed_at": "2023-10-09T14:31:40Z",
         "size": 331581,
-        "stargazers_count": 1,
+        "stargazers_count": 3,
         "topics": [
             "creative-coding",
             "digital-art",
@@ -3622,9 +3622,9 @@
             "overpass-api",
             "released"
         ],
-        "updated_at": "2024-10-06T05:20:33Z",
-        "watchers": 1,
-        "watchers_count": 1
+        "updated_at": "2025-04-01T20:33:40Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 33,
@@ -3765,15 +3765,15 @@
         "private": false,
         "pushed_at": "2024-02-06T10:10:24Z",
         "size": 2347,
-        "stargazers_count": 0,
+        "stargazers_count": 3,
         "topics": [
             "computer-vision",
             "deep-learning",
             "keras-tensorflow"
         ],
-        "updated_at": "2024-02-05T09:10:51Z",
-        "watchers": 0,
-        "watchers_count": 0
+        "updated_at": "2025-08-15T02:01:53Z",
+        "watchers": 3,
+        "watchers_count": 3
     },
     {
         "commits_count": 46,
@@ -3817,7 +3817,7 @@
         "commits_count": 2,
         "created_at": "2024-10-08T11:58:35Z",
         "description": null,
-        "forks_count": 0,
+        "forks_count": 1,
         "homepage": null,
         "html_url": "https:\/\/github.com\/lorossi\/MRI-scan-cnn",
         "id": 869498453,

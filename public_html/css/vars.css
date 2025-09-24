@@ -2,16 +2,10 @@
   --background-color: #0a0a0d;
   --text-color: #f2f2f2;
   --link-hover-color: #bfbfbf;
-  --blog-text-color: #fff;
-  --blog-underline-color-1: #ffffff40;
-  --blog-underline-color-2: #ffffff20;
-  --blog-underline-color-3: #ffffff10;
-  --blog-code-background-color: #202020;
 
   --title-size: 3rem;
   --text-size: 1.5rem;
   --small-text-size: 1rem;
-  --blog-text-size: 1.8rem;
 
   --aberration: 1px 1px #00ffff, -1px -1px #ff00ff;
   --small-aberration: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
@@ -29,6 +23,5 @@ body {
     --title-size: 4rem;
     --text-size: 3rem;
     --small-text-size: 2rem;
-    --blog-text-size: 2.125rem;
   }
 }

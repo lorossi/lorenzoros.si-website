@@ -4,4 +4,3 @@ settings*.toml
 !settings.example.toml
 .venv
 *.key
-blog/articles/*
