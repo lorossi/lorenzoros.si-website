@@ -1,9 +1,13 @@
 """Scraper module."""
+
 from __future__ import annotations
 
 import logging
+import os
+from typing import Any
 
 import ujson
+
 from modules.github import GitHub, Repo
 from modules.settings import Settings
 
@@ -15,9 +19,9 @@ class Scraper(GitHub):
     _settings: Settings
     _settings_path: str
 
-    def __init__(self, settings_path: str = "settings.toml") -> Scraper:
+    def __init__(self, settings_path: str = "settings.toml") -> None:
         """Create a new Scraper instance."""
-        logging.info(f"Initializing {self.__class__.__name__}...")
+        logging.info("Initializing %s...", self.__class__.__name__)
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
         super().__init__(self._settings.username, self._settings.token)
 
@@ -25,7 +29,7 @@ class Scraper(GitHub):
         """Scrape the repos.
 
         Args:
-            skip_private (bool, optional): if true, private repos are skipped. \
+            skip_private (bool, optional): if true, private repos are skipped.
                 Defaults to True.
 
         Returns:
@@ -44,52 +48,55 @@ class Scraper(GitHub):
 
         self._repos = sorted(repos, key=lambda x: x.created_at)
 
-        logging.info(f"Loaded {len(self._repos)} repos")
+        logging.info("Loaded %s repos", len(self._repos))
         return len(self._repos)
 
-    def saveStats(self, path: str | None = None) -> None:
+    def saveStats(self, path: str = "") -> None:
         """Save stats to file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not os.path.exists(self._settings.out_path):
+            os.makedirs(self._settings.out_path)
+
+        if not path:
             path = self._settings.out_path + "stats.json"
 
-        logging.info(f"Saving stats to {path}")
+        logging.info("Saving stats to %s", path)
         with open(path, "w") as f:
             ujson.dump(self.stats, f, sort_keys=True, indent=4)
         logging.info("Saved stats")
 
-    def saveRepos(self, path: str | None = None) -> None:
+    def saveRepos(self, path: str = "") -> None:
         """Save repos list to file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not path:
             path = self._settings.out_path + "repos.json"
 
-        logging.info(f"Saving repos to {path}")
+        logging.info("Saving repos to %s", path)
         with open(path, "w") as f:
             ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
-        logging.info(f"Saved {len(self._repos)} repos")
+        logging.info("Saved %s repos", len(self._repos))
 
-    def loadRepos(self, path: str | None = None) -> None:
+    def loadRepos(self, path: str = "") -> None:
         """Load repos list from file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not path:
             path = self._settings.out_path + "repos.json"
 
-        logging.info(f"Loading repos from {path}")
+        logging.info("Loading repos from %s", path)
         with open(path, "r") as f:
             self._repos = sorted(
                 [Repo(**repo) for repo in ujson.load(f)], key=lambda x: x.created_at
             )
-        logging.info(f"Loaded {len(self._repos)} repos")
+        logging.info("Loaded %s repos", len(self._repos))
 
     def reposByLanguage(self, language: str) -> set[Repo]:
         """Get a set of interesting repos written in a set language.
@@ -164,7 +171,7 @@ class Scraper(GitHub):
         return sorted(repos, key=lambda x: x.created_at, reverse=True)
 
     @property
-    def repos_list(self) -> list[dict[str, list[Repo]]]:
+    def repos_list(self) -> dict[str, list[Repo]]:
         """Get the list of repos grouped by language."""
         repos = {}
 
@@ -180,7 +187,7 @@ class Scraper(GitHub):
         return repos
 
     @property
-    def stats(self) -> list[str]:
+    def stats(self) -> dict[str, Any]:
         """Get the stats."""
         stats = {}
         stats["total_repos"] = len(self._repos)

@@ -57,8 +57,7 @@ a:visited {
   text-shadow: var(--small-aberration);
 }
 
-.navbar,
-.blog-navbar {
+.navbar {
   font-size: var(--text-size);
   display: grid;
   row-gap: var(--text-size);
@@ -70,12 +69,10 @@ a:visited {
 .navbar {
   margin-top: calc(var(--text-size) * 3);
   margin-bottom: calc(var(--text-size) * 3);
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.section,
-.blog-section {
+.section {
   min-height: 100vh;
   position: relative;
 }

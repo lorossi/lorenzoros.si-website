@@ -8,6 +8,7 @@ import re
 from glob import glob
 
 import paramiko
+
 from modules.settings import Settings
 
 
@@ -18,7 +19,7 @@ class Deployer:
     _client: paramiko.SSHClient
     _sftp: paramiko.SFTPClient
 
-    def __init__(self, settings_path="settings.toml") -> Deployer:
+    def __init__(self, settings_path="settings.toml") -> None:
         """Create a new Renderer instance.
 
         Args:
@@ -51,7 +52,7 @@ class Deployer:
             remote_path = self._settings.remote_path + re.sub(
                 r".*" + self._settings.local_path, "", local_path
             )
-            logging.info(f"Uploading {local_path} ... to {remote_path}")
+            logging.info("Uploading %s to %s", local_path, remote_path)
 
             if os.path.isdir(local_path):
                 self._createFolder(remote_path)
@@ -63,7 +64,7 @@ class Deployer:
         try:
             self._sftp.mkdir(remote_path)
         except IOError:
-            logging.info(f"Folder {remote_path} already exists.")
+            logging.info("Folder %s already exists.", remote_path)
 
     def _getRemoteMtime(self, remote_path: str) -> int | None:
         """Get the mtime of a remote file."""
@@ -89,7 +90,8 @@ class Deployer:
                 logging.info("File skipped (remote file has the same mtime).")
             else:
                 logging.info(
-                    f"File skipped (remote file is {time_diff} seconds newer)."
+                    "File skipped (remote file is %d seconds newer).",
+                    time_diff,
                 )
 
     def _uploadSingleFile(self, local_path: str, remote_path: str, mtime: int):

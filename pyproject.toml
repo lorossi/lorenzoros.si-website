@@ -1,0 +1,9 @@
+[tool.ruff.lint]
+preview = true                                   # needed for "DOC" rules
+exclude = ["venv", "__pycache__", "__init__.py"]
+select = ["D", "E", "W", "F", "ANN", "DOC"]
+ignore = ["ANN401"]                              # ignore "Any" type
+unfixable = ["F401"]                             # do not fix unused imports
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
