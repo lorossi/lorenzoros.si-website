@@ -1,6 +1,13 @@
+# python
 __pycache__
+.venv
+# log files
 *.log
+# settings files
 settings*.toml
 !settings.example.toml
-.venv
-*.key
+# ssh keys
+id_rsa.key
+# generated files
+python_scripts/out/
+public_html/index.html
