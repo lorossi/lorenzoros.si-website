@@ -17,4 +17,4 @@ class HTMLFormatter:
             str: Formatted HTML.
         """
         root = fromstring(html_text)
-        return tostring(root, pretty_print=True).strip().decode("utf-8")
+        return tostring(root, pretty_print=True, encoding="unicode").strip()
