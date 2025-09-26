@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import logging
+import os
+from typing import Any
 
 import ujson
 
@@ -27,7 +29,7 @@ class Scraper(GitHub):
         """Scrape the repos.
 
         Args:
-            skip_private (bool, optional): if true, private repos are skipped. \
+            skip_private (bool, optional): if true, private repos are skipped.
                 Defaults to True.
 
         Returns:
@@ -55,6 +57,9 @@ class Scraper(GitHub):
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
+        if not os.path.exists(self._settings.out_path):
+            os.makedirs(self._settings.out_path)
+
         if not path:
             path = self._settings.out_path + "stats.json"
 
@@ -166,7 +171,7 @@ class Scraper(GitHub):
         return sorted(repos, key=lambda x: x.created_at, reverse=True)
 
     @property
-    def repos_list(self) -> list[dict[str, list[Repo]]]:
+    def repos_list(self) -> dict[str, list[Repo]]:
         """Get the list of repos grouped by language."""
         repos = {}
 
@@ -182,7 +187,7 @@ class Scraper(GitHub):
         return repos
 
     @property
-    def stats(self) -> list[str]:
+    def stats(self) -> dict[str, Any]:
         """Get the stats."""
         stats = {}
         stats["total_repos"] = len(self._repos)

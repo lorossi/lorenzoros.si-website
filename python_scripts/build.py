@@ -29,15 +29,15 @@ def build_homepage(offline: bool = False, filename: str = "repos.json"):
     s.saveStats()
 
     r = Renderer()
+
     # # render base page
     r.renderFile(
         "base.html",
-        context_dict={
+        data={
             "interactive_repos": s.interactive_repos,
             "repos_list": s.repos_list,
         },
         output_path="../public_html/index.html",
-        format=False,
     )
 
 
@@ -51,23 +51,8 @@ def deploy():
     logging.info("Deployment finished.")
 
 
-def main(arg_parser: argparse.ArgumentParser):
-    """Script entry point."""
-    arguments = arg_parser.parse_args()
-    if arguments.homepage:
-        build_homepage(offline=arguments.offline, filename=arguments.filename)
-    if arguments.deploy:
-        deploy()
-
-    if not arguments.homepage and not arguments.deploy:
-        arg_parser.print_help()
-
-
-if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-    )
-
+def gather_arguments() -> argparse.Namespace:
+    """Gather command line arguments."""
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -90,6 +75,7 @@ if __name__ == "__main__":
         action="store_true",
         help="Load repos from local file instead of scraping them",
     )
+
     parser.add_argument(
         "-f",
         "--filename",
@@ -98,4 +84,34 @@ if __name__ == "__main__":
         default="out/repos.json",
     )
 
-    main(parser)
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging",
+    )
+
+    return parser.parse_args()
+
+
+def main():
+    """Script entry point."""
+    arguments = gather_arguments()
+    log_level = logging.DEBUG if arguments.verbose else logging.INFO
+    logging.basicConfig(
+        level=log_level,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+
+    if not arguments.homepage and not arguments.deploy:
+        arguments.print_help()
+        return
+
+    if arguments.homepage:
+        build_homepage(offline=arguments.offline, filename=arguments.filename)
+    if arguments.deploy:
+        deploy()
+
+
+if __name__ == "__main__":
+    main()

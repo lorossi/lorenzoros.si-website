@@ -58,7 +58,7 @@ class GitHub:
         return r.status_code == 200
 
     @testCredentialsDecorator
-    def _getAllRepos(self, skip_private: bool) -> list[str]:
+    def _getAllRepos(self, skip_private: bool) -> list[dict]:
         url = f"https://api.github.com/users/{self._username}/repos"
 
         if skip_private:
@@ -101,7 +101,7 @@ class GitHub:
         )
 
     @testCredentialsDecorator
-    def _getRepoLanguages(self, url: str) -> dict:
+    def _getRepoLanguages(self, url: str) -> list[dict[str, float]]:
         r = requests.get(url, auth=(self._username, self._token))
         languages = [
             {"language": lang, "size": size} for lang, size in r.json().items()
@@ -137,7 +137,7 @@ class GitHub:
         """Load a list of all the repos names.
 
         Args:
-            skip_private (bool, optional): Skip the private repos. \
+            skip_private (bool, optional): Skip the private repos.
                 Defaults to False.
 
         Returns:
