@@ -1,5 +1,4 @@
 """This module contains the Statement and ControlStatement classes."""
-from __future__ import annotations
 
 
 class Statement:
@@ -12,7 +11,7 @@ class Statement:
         next_indent: int | None = None,
         token_delimiters: str = "{{",
         list_container: str = "output",
-    ) -> Statement:
+    ) -> None:
         """Create a new Statement instance.
 
         Args:
@@ -56,9 +55,7 @@ class Statement:
                 f'append(f"""{escaped_content}""")'
             )
 
-        return (
-            f"{self._indent * ' '}{self._list_container}.append(\"{escaped_content}\")"
-        )
+        return f'{self._indent * " "}{self._list_container}.append("{escaped_content}")'
 
     def __str__(self) -> str:
         """Return a string representation of the statement."""
@@ -93,7 +90,7 @@ class ControlStatement(Statement):
         content: str,
         indent: int,
         next_indent: int | None = None,
-    ) -> ControlStatement:
+    ) -> None:
         """Create a new ControlStatement instance.
 
         Args:

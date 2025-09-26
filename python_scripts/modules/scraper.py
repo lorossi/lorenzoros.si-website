@@ -17,7 +17,7 @@ class Scraper(GitHub):
     _settings: Settings
     _settings_path: str
 
-    def __init__(self, settings_path: str = "settings.toml") -> Scraper:
+    def __init__(self, settings_path: str = "settings.toml") -> None:
         """Create a new Scraper instance."""
         logging.info("Initializing %s...", self.__class__.__name__)
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
@@ -49,13 +49,13 @@ class Scraper(GitHub):
         logging.info("Loaded %s repos", len(self._repos))
         return len(self._repos)
 
-    def saveStats(self, path: str | None = None) -> None:
+    def saveStats(self, path: str = "") -> None:
         """Save stats to file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not path:
             path = self._settings.out_path + "stats.json"
 
         logging.info("Saving stats to %s", path)
@@ -63,13 +63,13 @@ class Scraper(GitHub):
             ujson.dump(self.stats, f, sort_keys=True, indent=4)
         logging.info("Saved stats")
 
-    def saveRepos(self, path: str | None = None) -> None:
+    def saveRepos(self, path: str = "") -> None:
         """Save repos list to file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not path:
             path = self._settings.out_path + "repos.json"
 
         logging.info("Saving repos to %s", path)
@@ -77,13 +77,13 @@ class Scraper(GitHub):
             ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
         logging.info("Saved %s repos", len(self._repos))
 
-    def loadRepos(self, path: str | None = None) -> None:
+    def loadRepos(self, path: str = "") -> None:
         """Load repos list from file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if path is None:
+        if not path:
             path = self._settings.out_path + "repos.json"
 
         logging.info("Loading repos from %s", path)

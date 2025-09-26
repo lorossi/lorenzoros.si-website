@@ -1,5 +1,4 @@
 """Factory for creating statements."""
-from __future__ import annotations
 
 import re
 

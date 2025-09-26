@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import toml
+
 from modules.container import Container
 
 
@@ -13,7 +14,7 @@ class Settings(Container):
     Can be instantiated from a TOML file.
     """
 
-    def __init__(self, **kwargs) -> Settings:
+    def __init__(self, **kwargs) -> None:
         """Create a new Settings instance."""
         super().__init__(**kwargs)
 
@@ -31,6 +32,7 @@ class Settings(Container):
         with open(path, "r") as f:
             settings = toml.load(f)
 
-        if section:
+        if section is not None:
             return cls(**settings[section])
+
         return cls(**settings)

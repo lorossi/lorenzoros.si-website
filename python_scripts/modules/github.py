@@ -288,7 +288,7 @@ class Repo:
         return self.__repr__()
 
     @property
-    def json(self) -> dict:
+    def json(self) -> str:
         """Return the json representation of the object."""
         return ujson.dumps(self.as_dict, sort_keys=True, indent=4)
 
