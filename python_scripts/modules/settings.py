@@ -2,29 +2,39 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 import toml
 
-from modules.container import Container
 
-
-class Settings(Container):
+class Settings:
     """Settings class.
 
     Supports access to the settings as attributes and as dictionary keys.
     Can be instantiated from a TOML file.
     """
 
+    _settings: dict
+
     def __init__(self, **kwargs) -> None:
         """Create a new Settings instance."""
-        super().__init__(**kwargs)
+        self._settings = kwargs
 
-    @classmethod
-    def from_toml(cls, path: str, section: str | None = None):
+    def __getattr__(self, name: str) -> Any:
+        """Get attribute."""
+        if name in self._settings:
+            return self._settings[name]
+
+        raise AttributeError(f"{self.__class__.__name__} has no attribute {name}")
+
+    @staticmethod
+    def from_toml(path: str, section: str | None = None) -> Settings:
         """Create a new Settings instance from a TOML file.
 
         Args:
             path (str): Path to the TOML file.
-            section (str, optional): Section to load. Defaults to None.
+            section (str, optional): Section to load. If None, loads the whole file.
+                Defaults to None.
 
         Returns:
             Settings: Settings instance.
@@ -33,6 +43,9 @@ class Settings(Container):
             settings = toml.load(f)
 
         if section is not None:
-            return cls(**settings[section])
+            if section not in settings:
+                raise ValueError(f"Section {section} not found in {path}")
 
-        return cls(**settings)
+            settings = settings[section]
+
+        return Settings(**settings)
