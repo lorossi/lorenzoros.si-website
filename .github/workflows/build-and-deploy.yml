@@ -39,7 +39,6 @@ jobs:
           cd python_scripts
           python3 ci/environment.py --setup --settings "${SETTINGS_FILE}" --key-filename "${KEY_FILENAME}"
         env:
-          SCRAPER_USERNAME: ${{ secrets.SCRAPER_USERNAME }}
           SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
           DEPLOYER_USERNAME: ${{ secrets.DEPLOYER_USERNAME }}
           DEPLOYER_PASSWORD: ${{ secrets.DEPLOYER_PASSWORD }}
