@@ -46,10 +46,10 @@ def build_homepage(
     )
 
 
-def deploy():
+def deploy(settings_path: str = "settings.toml") -> None:
     """Deploy the website."""
     logging.info("Starting to deploy...")
-    d = Deployer()
+    d = Deployer(settings_path=settings_path)
     d.connect()
     d.deploy()
     d.disconnect()
@@ -125,7 +125,9 @@ def main():
             settings_path=arguments.settings,
         )
     if arguments.deploy:
-        deploy()
+        deploy(
+            settings_path=arguments.settings,
+        )
 
 
 if __name__ == "__main__":
