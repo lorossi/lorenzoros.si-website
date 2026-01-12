@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: stats
-          path: "${{ env.STATS_FILENAME }},${{env.REPOS_FILENAME }}"
+          path: "${{ env.STATS_FILENAME }}"
       - name: Tear down CI environment
         if: always()
         run: |
