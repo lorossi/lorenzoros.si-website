@@ -12,8 +12,8 @@ on:
 env:
   SETTINGS_FILE: "ci-settings.toml"
   KEY_FILENAME: "ci-key.key"
-  REPOS_FILENAME: "repos.json"
-  STATS_FILENAME: "stats.json"
+  REPOS_FILENAME: "artifacts/repos.json"
+  STATS_FILENAME: "artifacts/stats.json"
 
 jobs:
   build-and-deploy:
@@ -51,13 +51,11 @@ jobs:
           cd python_scripts
           python3 build.py -HD --settings "${SETTINGS_FILE}" --repo-filename "${REPOS_FILENAME}" --stats-filename "${STATS_FILENAME}"
 
-      - name: Upload stats artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: stats
-          path: |
-            "python_scripts/${STATS_FILENAME}"
-            "python_scripts/${REPOS_FILENAME}"
+          path: "artifacts"
       - name: Tear down CI environment
         if: always()
         run: |
