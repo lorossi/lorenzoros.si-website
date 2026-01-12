@@ -32,7 +32,6 @@ class Renderer:
         self,
         template_name: str,
         data: dict | None = None,
-        format: bool = True,
         output_path: str | None = None,
     ) -> str:
         """Render the template.

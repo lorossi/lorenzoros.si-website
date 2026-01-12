@@ -116,7 +116,6 @@ def main():
     )
 
     if not arguments.homepage and not arguments.deploy:
-        arguments.print_help()
         return
 
     if arguments.homepage:

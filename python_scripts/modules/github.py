@@ -111,7 +111,29 @@ class GitHub:
     @testCredentialsDecorator
     def _getRepoCommitsCount(self, url: str) -> int:
         r = requests.get(url, auth=(self._username, self._token))
-        user_data = list(filter(lambda x: x["login"] == self._username, r.json()))
+        
+        # Check for HTTP errors
+        if r.status_code != 200:
+            logging.warning(
+                "Failed to get commits count: HTTP %d - %s", r.status_code, r.text
+            )
+            return 0
+        
+        try:
+            json_data = r.json()
+        except (ValueError, ujson.JSONDecodeError):
+            logging.warning("Failed to parse JSON response for commits count")
+            return 0
+        
+        # Ensure json_data is a list
+        if not isinstance(json_data, list):
+            logging.warning(
+                "Unexpected response format for commits count (expected list, got %s)",
+                type(json_data).__name__,
+            )
+            return 0
+        
+        user_data = list(filter(lambda x: x["login"] == self._username, json_data))
 
         if not user_data:
             return 0
