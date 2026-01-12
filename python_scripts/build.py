@@ -88,14 +88,14 @@ def gather_arguments() -> argparse.Namespace:
         "--repo-filename",
         type=str,
         help="Filename to load and save repos from",
-        default="out/repos.json",
+        default="repos.json",
     )
 
     parser.add_argument(
         "--stats-filename",
         type=str,
         help="Filename to save stats to",
-        default="out/stats.json",
+        default="stats.json",
     )
 
     parser.add_argument(
