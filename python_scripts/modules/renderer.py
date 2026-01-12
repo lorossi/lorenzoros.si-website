@@ -6,7 +6,6 @@ import logging
 
 import jinja2
 import jinja2.sandbox
-from lxml.html import fromstring, tostring
 
 from modules.settings import Settings
 
@@ -54,10 +53,6 @@ class Renderer:
         logging.info("Template loaded from %s.", template_path)
 
         content = template.render(data if data is not None else {})
-
-        if format:
-            root = fromstring(content)
-            content = tostring(root, pretty_print=True, encoding="unicode").strip()
 
         if output_path:
             logging.info("Saving rendered page to %s...", output_path)
