@@ -12,6 +12,7 @@ def build_homepage(
     offline: bool = False,
     filename: str = "repos.json",
     settings_path: str = "settings.toml",
+    unique_id: str | None = None,
 ) -> None:
     """Build the homepage.
 
@@ -35,12 +36,13 @@ def build_homepage(
 
     r = Renderer(settings_path=settings_path)
 
-    # # render base page
+    # render base page
     r.renderFile(
         "base.html",
         data={
             "interactive_repos": s.interactive_repos,
             "repos_list": s.repos_list,
+            "unique_id": unique_id,
         },
         output_path="../public_html/index.html",
     )
@@ -97,6 +99,13 @@ def gather_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--unique_id",
+        type=str,
+        help="Unique ID to append to CSS and JS files for cache busting",
+        default=None,
+    )
+
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -123,6 +132,7 @@ def main():
             offline=arguments.offline,
             filename=arguments.filename,
             settings_path=arguments.settings,
+            unique_id=arguments.unique_id,
         )
     if arguments.deploy:
         deploy(
