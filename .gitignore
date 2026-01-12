@@ -9,5 +9,7 @@ settings*.toml
 # ssh keys
 id_rsa.key
 # generated files
-python_scripts/out/
+python_scripts/stats.json
+python_scripts/repos.json
+# deployment files
 public_html/index.html

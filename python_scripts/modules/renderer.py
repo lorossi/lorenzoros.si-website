@@ -51,7 +51,15 @@ class Renderer:
         template_path = self._settings.templates_path + template_name
         logging.info("Template loaded from %s.", template_path)
 
-        content = template.render(data if data is not None else {})
+        if data is not None:
+            data_clean = {k: v for k, v in data.items() if v is not None}
+            logging.debug("Rendering with data: %s", data_clean)
+        else:
+            data_clean = {}
+            logging.debug("Rendering with no data.")
+
+        content = template.render(**data_clean)
+        logging.info("Rendered file %s.", template_name)
 
         if output_path:
             logging.info("Saving rendered page to %s...", output_path)

@@ -22,9 +22,11 @@ def setup(
                 print(f"Loading {env_var} from environment.")
                 settings[section][key] = env_value
 
+    env_key_var = "DEPLOYER_KEY_CONTENT"
     settings["Deployer"]["key_filename"] = key_filename
+    print(f"Writing deployer from environment variable {env_key_var}.")
     with open(key_filename, "w") as f:
-        key_content = os.environ.get("DEPLOYER_KEY_CONTENT", "")
+        key_content = os.environ.get(env_key_var, "")
         f.write(key_content)
 
     with open(settings_file, "w") as f:

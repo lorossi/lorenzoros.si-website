@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-import os
 from typing import Any
 
 import ujson
@@ -19,7 +18,7 @@ class Scraper(GitHub):
     _settings: Settings
     _settings_path: str
 
-    def __init__(self, settings_path: str = "settings.toml") -> None:
+    def __init__(self, settings_path: str = "settings.json") -> None:
         """Create a new Scraper instance."""
         logging.info("Initializing %s...", self.__class__.__name__)
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
@@ -51,55 +50,39 @@ class Scraper(GitHub):
         logging.info("Loaded %s repos", len(self._repos))
         return len(self._repos)
 
-    def saveStats(self, path: str = "") -> None:
+    def saveStats(self, path: str = "stats.json") -> None:
         """Save stats to file.
 
         Args:
-            path (str, optional): file path. Defaults to value from settings.
+            path (str, optional): file path. Defaults to "stats.json".
         """
-        if not os.path.exists(self._settings.out_path):
-            os.makedirs(self._settings.out_path)
-
-        if not path:
-            path = self._settings.out_path + "stats.json"
-
         logging.info("Saving stats to %s", path)
         with open(path, "w") as f:
-            ujson.dump(self.stats, f, sort_keys=True, indent=4)
+            ujson.dump(self.stats, f)
         logging.info("Saved stats")
 
-    def saveRepos(self, path: str = "") -> None:
+    def saveRepos(self, path: str = "repos.json") -> None:
         """Save repos list to file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if not path:
-            path = self._settings.out_path + "repos.json"
-
         logging.info("Saving repos to %s", path)
-        if not os.path.exists(os.path.dirname(path)):
-            logging.info("Creating directory %s", os.path.dirname(path))
-            os.makedirs(os.path.dirname(path))
-
         with open(path, "w") as f:
-            ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
+            dicts = {"Repositories": [r.as_dict for r in self._repos]}
+            ujson.dump(dicts, f)  # type: ignore
         logging.info("Saved %s repos", len(self._repos))
 
-    def loadRepos(self, path: str = "") -> None:
+    def loadRepos(self, path: str = "repos.json") -> None:
         """Load repos list from file.
 
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if not path:
-            path = self._settings.out_path + "repos.json"
-
         logging.info("Loading repos from %s", path)
         with open(path, "r") as f:
-            self._repos = sorted(
-                [Repo(**repo) for repo in ujson.load(f)], key=lambda x: x.created_at
-            )
+            data = ujson.load(f)
+            self._repos = [Repo(**repo_dict) for repo_dict in data["Repositories"]]
         logging.info("Loaded %s repos", len(self._repos))
 
     def reposByLanguage(self, language: str) -> set[Repo]:
@@ -203,5 +186,6 @@ class Scraper(GitHub):
         stats["watchers_count"] = sum(r.watchers_count for r in self._repos)
         stats["open_issues_count"] = sum(r.open_issues_count for r in self._repos)
         stats["commits_count"] = sum(r.commits_count for r in self._repos)
+        stats["github_requests_count"] = self.requests_count
 
         return stats

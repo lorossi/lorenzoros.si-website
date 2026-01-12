@@ -1,7 +1,6 @@
 [Scraper]
 username = "lorossi" # GitHub Username
 token = "" # GitHub Personal Access Token
-out_path = "out/" # Folder containing the reports
 relevant_topics = ["released"] # Topics to inlcude for the repos in homepage
 skip_interactive_names = ["lorenzoros.si-website"] # Repo names to skip
 skip_interactive_topics = [
@@ -18,6 +17,6 @@ templates_path = "templates/" # local path for templates folder
 hostname = "lorenzoros.si"     # website url
 username = ""                  # ssh username
 password = ""                  # ssh key password
-key_filename = "id_rsa.key"    # ssh key path
+key_filename = ""              # ssh key path
 local_path = "../public_html/" # local folder to deploy
 remote_path = ""               # remote path

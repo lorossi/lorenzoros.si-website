@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import logging
 import os
 import re
@@ -66,36 +67,32 @@ class Deployer:
         except IOError:
             logging.info("Folder %s already exists.", remote_path)
 
-    def _getRemoteMtime(self, remote_path: str) -> int | None:
-        """Get the mtime of a remote file."""
+    def _hashRemoteFile(self, remote_path: str) -> str | None:
+        """Get the SHA256 hash of a remote file."""
         try:
-            return self._sftp.stat(remote_path).st_mtime
+            with self._sftp.open(remote_path, "rb") as f:
+                file_data = f.read()
+                return hashlib.sha256(file_data).hexdigest()
         except IOError:
             return None
 
-    def _getLocalMtime(self, local_path: str) -> int:
-        """Get the mtime of a local file."""
-        return int(os.path.getmtime(local_path))
+    def _hashLocalFile(self, local_path: str) -> str:
+        """Get the SHA256 hash of a local file."""
+        with open(local_path, "rb") as f:
+            file_data = f.read()
+            return hashlib.sha256(file_data).hexdigest()
 
     def _uploadFile(self, local_path: str, remote_path: str) -> None:
         """Upload a file to the remote server."""
-        local_mtime = self._getLocalMtime(local_path)
-        remote_mtime = self._getRemoteMtime(remote_path)
+        local_hash = self._hashLocalFile(local_path)
+        remote_hash = self._hashRemoteFile(remote_path)
 
-        if remote_mtime is None or local_mtime > remote_mtime:
-            self._uploadSingleFile(local_path, remote_path, local_mtime)
+        if remote_hash is None or local_hash != remote_hash:
+            self._uploadSingleFile(local_path, remote_path)
         else:
-            time_diff = remote_mtime - local_mtime
-            if time_diff == 0:
-                logging.info("File skipped (remote file has the same mtime).")
-            else:
-                logging.info(
-                    "File skipped (remote file is %d seconds newer).",
-                    time_diff,
-                )
+            logging.info("File skipped (remote file has the same hash).")
 
-    def _uploadSingleFile(self, local_path: str, remote_path: str, mtime: int):
+    def _uploadSingleFile(self, local_path: str, remote_path: str) -> None:
         """Upload a single file to the remote server."""
         self._sftp.put(local_path, remote_path)
-        self._sftp.utime(remote_path, (mtime, mtime))
         logging.info("File uploaded.")
