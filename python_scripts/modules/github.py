@@ -53,7 +53,7 @@ class GitHub:
             return True
 
         url = "https://api.github.com"
-        r = requests.get(url, auth=(self._username, self._token))
+        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
         self._credentials_tested = r.status_code == 200
         return r.status_code == 200
 
@@ -76,7 +76,11 @@ class GitHub:
         }
 
         while True:
-            r = requests.get(url, auth=(self._username, self._token), params=params)
+            r = requests.get(
+                url,
+                headers={"Authorization": f"Bearer {self._token}"},
+                params=params,
+            )
             if not r.json():
                 return repos_json
 
@@ -90,7 +94,7 @@ class GitHub:
         name: str,
     ) -> Repo:
         url = f"https://api.github.com/repos/{user}/{name}"
-        r = requests.get(url, auth=(self._username, self._token))
+        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
         json_data = r.json()
 
         languages = self._getRepoLanguages(json_data["languages_url"])
@@ -102,7 +106,7 @@ class GitHub:
 
     @testCredentialsDecorator
     def _getRepoLanguages(self, url: str) -> list[dict[str, float]]:
-        r = requests.get(url, auth=(self._username, self._token))
+        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
         languages = [
             {"language": lang, "size": size} for lang, size in r.json().items()
         ]
@@ -110,21 +114,21 @@ class GitHub:
 
     @testCredentialsDecorator
     def _getRepoCommitsCount(self, url: str) -> int:
-        r = requests.get(url, auth=(self._username, self._token))
-        
+        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
+
         # Check for HTTP errors
         if r.status_code != 200:
             logging.warning(
                 "Failed to get commits count: HTTP %d - %s", r.status_code, r.text
             )
             return 0
-        
+
         try:
             json_data = r.json()
         except (ValueError, ujson.JSONDecodeError):
             logging.warning("Failed to parse JSON response for commits count")
             return 0
-        
+
         # Ensure json_data is a list
         if not isinstance(json_data, list):
             logging.warning(
@@ -132,7 +136,7 @@ class GitHub:
                 type(json_data).__name__,
             )
             return 0
-        
+
         user_data = list(filter(lambda x: x["login"] == self._username, json_data))
 
         if not user_data:
