@@ -203,5 +203,6 @@ class Scraper(GitHub):
         stats["watchers_count"] = sum(r.watchers_count for r in self._repos)
         stats["open_issues_count"] = sum(r.open_issues_count for r in self._repos)
         stats["commits_count"] = sum(r.commits_count for r in self._repos)
+        stats["github_requests_count"] = self.requests_count
 
         return stats

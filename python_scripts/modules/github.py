@@ -42,6 +42,30 @@ class GitHub:
         self._username = username
         self._token = token
         self._credentials_tested = False
+        self._requests_count = 0
+
+    def _makeAuthorizedRequest(
+        self, url: str, params: dict | None = None
+    ) -> requests.Response:
+        """Make an authorized request to the GitHub API.
+
+        Args:
+            url (str): URL to make the request to.
+            params (dict | None, optional): Query parameters. Defaults to None.
+
+        Returns:
+            requests.Response: Response object.
+        """
+        headers = {"Authorization": f"Bearer {self._token}"}
+        response = requests.get(url, headers=headers, params=params)
+        if response.status_code != 200:
+            logging.warning(
+                "GitHub API request failed: HTTP %d - %s",
+                response.status_code,
+                response.text,
+            )
+        self._requests_count += 1
+        return response
 
     def testCredentials(self) -> bool:
         """Test the credentials.
@@ -52,8 +76,7 @@ class GitHub:
         if self._credentials_tested:
             return True
 
-        url = "https://api.github.com"
-        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
+        r = self._makeAuthorizedRequest("https://api.github.com")
         self._credentials_tested = r.status_code == 200
         return r.status_code == 200
 
@@ -76,11 +99,7 @@ class GitHub:
         }
 
         while True:
-            r = requests.get(
-                url,
-                headers={"Authorization": f"Bearer {self._token}"},
-                params=params,
-            )
+            r = self._makeAuthorizedRequest(url, params=params)
             if not r.json():
                 return repos_json
 
@@ -94,7 +113,7 @@ class GitHub:
         name: str,
     ) -> Repo:
         url = f"https://api.github.com/repos/{user}/{name}"
-        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
+        r = self._makeAuthorizedRequest(url)
         json_data = r.json()
 
         languages = self._getRepoLanguages(json_data["languages_url"])
@@ -106,7 +125,7 @@ class GitHub:
 
     @testCredentialsDecorator
     def _getRepoLanguages(self, url: str) -> list[dict[str, float]]:
-        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
+        r = self._makeAuthorizedRequest(url)
         languages = [
             {"language": lang, "size": size} for lang, size in r.json().items()
         ]
@@ -114,28 +133,8 @@ class GitHub:
 
     @testCredentialsDecorator
     def _getRepoCommitsCount(self, url: str) -> int:
-        r = requests.get(url, headers={"Authorization": f"Bearer {self._token}"})
-
-        # Check for HTTP errors
-        if r.status_code != 200:
-            logging.warning(
-                "Failed to get commits count: HTTP %d - %s", r.status_code, r.text
-            )
-            return 0
-
-        try:
-            json_data = r.json()
-        except (ValueError, ujson.JSONDecodeError):
-            logging.warning("Failed to parse JSON response for commits count")
-            return 0
-
-        # Ensure json_data is a list
-        if not isinstance(json_data, list):
-            logging.warning(
-                "Unexpected response format for commits count (expected list, got %s)",
-                type(json_data).__name__,
-            )
-            return 0
+        r = self._makeAuthorizedRequest(url)
+        json_data = r.json()
 
         user_data = list(filter(lambda x: x["login"] == self._username, json_data))
 
@@ -187,6 +186,15 @@ class GitHub:
         repo = self._getRepo(self._username, name)
         logging.info("Loaded repo named %s", name)
         return repo
+
+    @property
+    def requests_count(self) -> int:
+        """Return the number of requests made to the GitHub API.
+
+        Returns:
+            int
+        """
+        return self._requests_count
 
 
 class Repo:

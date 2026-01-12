@@ -10,7 +10,8 @@ from modules.scraper import Scraper
 
 def build_homepage(
     offline: bool = False,
-    filename: str = "repos.json",
+    repo_filename: str = "repos.json",
+    stats_filename: str = "stats.json",
     settings_path: str = "settings.toml",
     unique_id: str | None = None,
 ) -> None:
@@ -30,9 +31,9 @@ def build_homepage(
         if loaded is None:
             return
 
-        s.saveRepos(filename)
+        s.saveRepos(repo_filename)
 
-    s.saveStats()
+    s.saveStats(path=stats_filename)
 
     r = Renderer(settings_path=settings_path)
 
@@ -85,10 +86,17 @@ def gather_arguments() -> argparse.Namespace:
 
     parser.add_argument(
         "-f",
-        "--filename",
+        "--repo_filename",
         type=str,
         help="Filename to load and save repos from",
         default="out/repos.json",
+    )
+
+    parser.add_argument(
+        "--stats_filename",
+        type=str,
+        help="Filename to save stats to",
+        default="out/stats.json",
     )
 
     parser.add_argument(
@@ -130,7 +138,8 @@ def main():
     if arguments.homepage:
         build_homepage(
             offline=arguments.offline,
-            filename=arguments.filename,
+            repo_filename=arguments.repo_filename,
+            stats_filename=arguments.stats_filename,
             settings_path=arguments.settings,
             unique_id=arguments.unique_id,
         )
