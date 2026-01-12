@@ -8,14 +8,19 @@ from modules.renderer import Renderer
 from modules.scraper import Scraper
 
 
-def build_homepage(offline: bool = False, filename: str = "repos.json"):
+def build_homepage(
+    offline: bool = False,
+    filename: str = "repos.json",
+    settings_path: str = "settings.toml",
+) -> None:
     """Build the homepage.
 
     Args:
         offline (bool, optional): If True, does not scrape GitHub. Defaults to False.
         filename (str, optional): toml file for the repos. Defaults to "repos.json".
+        settings_path (str, optional): settings file path. Defaults to "settings.toml".
     """
-    s = Scraper()
+    s = Scraper(settings_path=settings_path)
 
     if offline:
         s.loadRepos()
@@ -85,6 +90,13 @@ def gather_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--settings",
+        type=str,
+        help="Settings file path",
+        default="settings.toml",
+    )
+
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -108,7 +120,11 @@ def main():
         return
 
     if arguments.homepage:
-        build_homepage(offline=arguments.offline, filename=arguments.filename)
+        build_homepage(
+            offline=arguments.offline,
+            filename=arguments.filename,
+            settings_path=arguments.settings,
+        )
     if arguments.deploy:
         deploy()
 
