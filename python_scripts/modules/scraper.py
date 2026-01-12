@@ -78,6 +78,10 @@ class Scraper(GitHub):
             path = self._settings.out_path + "repos.json"
 
         logging.info("Saving repos to %s", path)
+        if not os.path.exists(os.path.dirname(path)):
+            logging.info("Creating directory %s", os.path.dirname(path))
+            os.makedirs(os.path.dirname(path))
+
         with open(path, "w") as f:
             ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
         logging.info("Saved %s repos", len(self._repos))
