@@ -41,6 +41,8 @@ class Scraper(GitHub):
         try:
             for repo_name in repo_names:
                 repos.append(self.getRepoByName(repo_name))
+                print("Loading ONLY ONE REPO FOR TESTING PURPOSES")
+                break  # TEMPORARY FOR TESTS
         except KeyboardInterrupt:
             logging.info("KeyboardInterrupt, exiting...")
             return None

@@ -51,11 +51,14 @@ jobs:
           cd python_scripts
           python3 build.py -HD --settings "${SETTINGS_FILE}" --repo-filename "${REPOS_FILENAME}" --stats-filename "${STATS_FILENAME}"
 
-      - name: Upload artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: stats
-          path: "${{ env.STATS_FILENAME }}"
+          name: build-output
+          path: |
+            python_scripts/${{ env.STATS_FILENAME }}
+            python_scripts/${{ env.REPOS_FILENAME }}
+
       - name: Tear down CI environment
         if: always()
         run: |
