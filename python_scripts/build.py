@@ -33,7 +33,7 @@ def build_homepage(
 
     s.saveStats()
 
-    r = Renderer()
+    r = Renderer(settings_path=settings_path)
 
     # # render base page
     r.renderFile(
