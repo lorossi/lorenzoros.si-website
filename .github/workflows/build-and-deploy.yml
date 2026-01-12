@@ -36,11 +36,6 @@ jobs:
         run: |
           cd python_scripts
           python3 ci/environment.py --setup --settings "$SETTINGS_FILE" --key-filename "$KEY_FILENAME"
-
-      - name: Build and deploy website
-        run: |
-          cd python_scripts
-          python3 build.py -HD --settings "$SETTINGS_FILE"
         env:
           SCRAPER_USERNAME: ${{ secrets.SCRAPER_USERNAME }}
           SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
@@ -48,6 +43,11 @@ jobs:
           DEPLOYER_PASSWORD: ${{ secrets.DEPLOYER_PASSWORD }}
           DEPLOYER_REMOTE_PATH: ${{ secrets.DEPLOYER_REMOTE_PATH }}
           DEPLOYER_KEY_CONTENT: ${{ secrets.DEPLOYER_KEY_CONTENT }}
+
+      - name: Build and deploy website
+        run: |
+          cd python_scripts
+          python3 build.py -HD --settings "$SETTINGS_FILE"
 
       - name: Tear down CI environment
         if: always()
