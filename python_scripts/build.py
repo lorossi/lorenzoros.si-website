@@ -106,7 +106,7 @@ def gather_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--unique_id",
+        "--unique-id",
         type=str,
         help="Unique ID to append to CSS and JS files for cache busting",
         default=None,
