@@ -74,13 +74,16 @@ class Scraper(GitHub):
         Args:
             path (str, optional): file path. Defaults to value from settings.
         """
-        if not path:
-            path = self._settings.out_path + "repos.json"
+        if path:
+            base_path = self._settings.out_path
+        elif not path:
+            base_path = self._settings.out_path
+            path = base_path + "repos.json"
 
         logging.info("Saving repos to %s", path)
-        if not os.path.exists(os.path.dirname(path)):
-            logging.info("Creating directory %s", os.path.dirname(path))
-            os.makedirs(os.path.dirname(path))
+        if base_path and not os.path.exists(base_path):
+            logging.info("Creating directory %s", base_path)
+            os.makedirs(base_path)
 
         with open(path, "w") as f:
             ujson.dump([r.as_dict for r in self._repos], f, sort_keys=True, indent=4)
