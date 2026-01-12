@@ -17,6 +17,6 @@ templates_path = "templates/" # local path for templates folder
 hostname = "lorenzoros.si"     # website url
 username = ""                  # ssh username
 password = ""                  # ssh key password
-key_filename = "id_rsa.key"    # ssh key path
+key_filename = ""              # ssh key path
 local_path = "../public_html/" # local folder to deploy
 remote_path = ""               # remote path
