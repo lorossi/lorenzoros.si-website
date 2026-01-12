@@ -53,10 +53,10 @@ class Renderer:
 
         if data is not None:
             data_clean = {k: v for k, v in data.items() if v is not None}
-            logging.info("Rendering with data: %s", data_clean)
+            logging.debug("Rendering with data: %s", data_clean)
         else:
             data_clean = {}
-            logging.info("Rendering with no data.")
+            logging.debug("Rendering with no data.")
 
         content = template.render(**data_clean)
         logging.info("Rendered file %s.", template_name)
