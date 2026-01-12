@@ -56,8 +56,8 @@ jobs:
         with:
           name: stats
           path: |
-            "${STATS_FILENAME}"
-            "${REPOS_FILENAME}"
+            "python_scripts/${STATS_FILENAME}"
+            "python_scripts/${REPOS_FILENAME}"
       - name: Tear down CI environment
         if: always()
         run: |
