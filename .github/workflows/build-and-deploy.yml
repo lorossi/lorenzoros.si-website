@@ -52,7 +52,7 @@ jobs:
           python3 build.py -HD --settings "${SETTINGS_FILE}" --repo-filename "${REPOS_FILENAME}" --stats-filename "${STATS_FILENAME}"
 
       - name: Upload stats artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: stats
           path: |
