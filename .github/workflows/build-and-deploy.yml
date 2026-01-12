@@ -43,7 +43,7 @@ jobs:
           python3 build.py -HD --settings "$SETTINGS_FILE"
         env:
           SCRAPER_USERNAME: ${{ secrets.SCRAPER_USERNAME }}
-          SCRAPER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
           DEPLOYER_USERNAME: ${{ secrets.DEPLOYER_USERNAME }}
           DEPLOYER_PASSWORD: ${{ secrets.DEPLOYER_PASSWORD }}
           DEPLOYER_REMOTE_PATH: ${{ secrets.DEPLOYER_REMOTE_PATH }}
