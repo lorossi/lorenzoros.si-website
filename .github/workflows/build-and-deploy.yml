@@ -12,8 +12,8 @@ on:
 env:
   SETTINGS_FILE: "ci-settings.toml"
   KEY_FILENAME: "ci-key.key"
-  REPOS_FILENAME: "artifacts/repos.json"
-  STATS_FILENAME: "artifacts/stats.json"
+  REPOS_FILENAME: "repos.json"
+  STATS_FILENAME: "stats.json"
 
 jobs:
   build-and-deploy:
@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: stats
-          path: "artifacts"
+          path: "${{ env.STATS_FILENAME }},${{env.REPOS_FILENAME }}"
       - name: Tear down CI environment
         if: always()
         run: |
