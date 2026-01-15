@@ -50,8 +50,12 @@ One article could relate to the development of this website, giving me the oppor
 
 ## Deployment
 
-After generating the website, I manually upload it to the server via `sftp` using the `filezilla` client.
-I plan on automating this task via a script so that I can build and deploy the website with a single command.
+After generating the website, the deployment is done via `ssh` directly from the python `build.py` script.
+
+Furthermore, a GitHub Action is set to automatically build and deploy the website on:
+
+- commits to the `main` branch, affecting the `python_scripts` or `public_html` folders
+- scheduled builds (weekly)
 
 ## License
 
