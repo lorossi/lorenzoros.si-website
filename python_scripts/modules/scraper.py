@@ -24,7 +24,7 @@ class Scraper(GitHub):
         self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
         super().__init__(self._settings.username, self._settings.token)
 
-    def scrapeRepos(self, skip_private: bool = True) -> int | None:
+    def scrape_repos(self, skip_private: bool = True) -> int | None:
         """Scrape the repos.
 
         Args:
@@ -36,11 +36,11 @@ class Scraper(GitHub):
         """
         logging.info("Loading repos...")
         repos = []
-        repo_names = self.getReposNames(skip_private=skip_private)
+        repo_names = self.get_repos_names(skip_private=skip_private)
 
         try:
             for repo_name in repo_names:
-                repos.append(self.getRepoByName(repo_name))
+                repos.append(self.get_repo_by_name(repo_name))
         except KeyboardInterrupt:
             logging.info("KeyboardInterrupt, exiting...")
             return None
@@ -50,7 +50,7 @@ class Scraper(GitHub):
         logging.info("Loaded %s repos", len(self._repos))
         return len(self._repos)
 
-    def saveStats(self, path: str = "stats.json") -> None:
+    def save_stats(self, path: str = "stats.json") -> None:
         """Save stats to file.
 
         Args:
@@ -61,7 +61,7 @@ class Scraper(GitHub):
             ujson.dump(self.stats, f)
         logging.info("Saved stats")
 
-    def saveRepos(self, path: str = "repos.json") -> None:
+    def save_repos(self, path: str = "repos.json") -> None:
         """Save repos list to file.
 
         Args:
@@ -73,7 +73,7 @@ class Scraper(GitHub):
             ujson.dump(dicts, f)  # type: ignore
         logging.info("Saved %s repos", len(self._repos))
 
-    def loadRepos(self, path: str = "repos.json") -> None:
+    def load_repos(self, path: str = "repos.json") -> None:
         """Load repos list from file.
 
         Args:
@@ -85,7 +85,7 @@ class Scraper(GitHub):
             self._repos = [Repo(**repo_dict) for repo_dict in data["Repositories"]]
         logging.info("Loaded %s repos", len(self._repos))
 
-    def reposByLanguage(self, language: str) -> set[Repo]:
+    def repos_by_language(self, language: str) -> set[Repo]:
         """Get a set of interesting repos written in a set language.
 
         Args:
@@ -101,7 +101,7 @@ class Scraper(GitHub):
             )
         )
 
-    def _getLanguagesStat(self) -> dict[str, dict]:
+    def _get_languages_stat(self) -> dict[str, dict]:
         languages = dict()
 
         for repo in self._repos:
@@ -164,7 +164,7 @@ class Scraper(GitHub):
 
         for lang in self.languages:
             lang_repos = sorted(
-                self.reposByLanguage(lang),
+                self.repos_by_language(lang),
                 key=lambda x: x.created_at,
                 reverse=True,
             )
@@ -180,7 +180,7 @@ class Scraper(GitHub):
         stats["total_repos"] = len(self._repos)
         stats["interesting_repos"] = len(self.interesting_repos)
         stats["interactive_repos"] = len(self.interactive_repos)
-        stats["languages"] = self._getLanguagesStat()
+        stats["languages"] = self._get_languages_stat()
         stats["stargazers_count"] = sum(r.stargazers_count for r in self._repos)
         stats["forks_count"] = sum(r.forks_count for r in self._repos)
         stats["watchers_count"] = sum(r.watchers_count for r in self._repos)

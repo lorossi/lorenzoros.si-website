@@ -25,15 +25,15 @@ def build_homepage(
     s = Scraper(settings_path=settings_path)
 
     if offline:
-        s.loadRepos(repo_filename)
+        s.load_repos(repo_filename)
     else:
-        loaded = s.scrapeRepos(skip_private=True)
+        loaded = s.scrape_repos(skip_private=True)
         if loaded is None:
             return
 
-        s.saveRepos(repo_filename)
+        s.save_repos(repo_filename)
 
-    s.saveStats(path=stats_filename)
+    s.save_stats(path=stats_filename)
 
     r = Renderer(settings_path=settings_path)
 

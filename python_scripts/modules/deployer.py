@@ -56,18 +56,18 @@ class Deployer:
             logging.info("Uploading %s to %s", local_path, remote_path)
 
             if os.path.isdir(local_path):
-                self._createFolder(remote_path)
+                self.create_folder(remote_path)
             else:
-                self._uploadFile(local_path, remote_path)
+                self.upload_file(local_path, remote_path)
 
-    def _createFolder(self, remote_path: str) -> None:
+    def create_folder(self, remote_path: str) -> None:
         """Create a folder on the remote server."""
         try:
             self._sftp.mkdir(remote_path)
         except IOError:
             logging.info("Folder %s already exists.", remote_path)
 
-    def _hashRemoteFile(self, remote_path: str) -> str | None:
+    def _hash_remote_file(self, remote_path: str) -> str | None:
         """Get the SHA256 hash of a remote file."""
         try:
             with self._sftp.open(remote_path, "rb") as f:
@@ -76,23 +76,18 @@ class Deployer:
         except IOError:
             return None
 
-    def _hashLocalFile(self, local_path: str) -> str:
+    def _hash_local_file(self, local_path: str) -> str:
         """Get the SHA256 hash of a local file."""
         with open(local_path, "rb") as f:
             file_data = f.read()
             return hashlib.sha256(file_data).hexdigest()
 
-    def _uploadFile(self, local_path: str, remote_path: str) -> None:
+    def upload_file(self, local_path: str, remote_path: str) -> None:
         """Upload a file to the remote server."""
-        local_hash = self._hashLocalFile(local_path)
-        remote_hash = self._hashRemoteFile(remote_path)
+        local_hash = self._hash_local_file(local_path)
+        remote_hash = self._hash_remote_file(remote_path)
 
         if remote_hash is None or local_hash != remote_hash:
-            self._uploadSingleFile(local_path, remote_path)
+            self._sftp.put(local_path, remote_path)
         else:
             logging.info("File skipped (remote file has the same hash).")
-
-    def _uploadSingleFile(self, local_path: str, remote_path: str) -> None:
-        """Upload a single file to the remote server."""
-        self._sftp.put(local_path, remote_path)
-        logging.info("File uploaded.")
