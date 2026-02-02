@@ -8,7 +8,7 @@ from typing import Any
 import ujson
 
 
-class Repo:
+class Repository:
     """Parsed GitHub repo class."""
 
     _frozen: bool = False
@@ -44,7 +44,7 @@ class Repo:
     @classmethod
     def from_json(
         cls, json_data: dict, languages: list[dict], commits_count: int
-    ) -> Repo:
+    ) -> Repository:
         """Create a Repo object from a json.
 
         Args:

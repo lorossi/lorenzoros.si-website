@@ -7,7 +7,7 @@ from typing import Any, Callable
 
 import requests
 
-from modules.repo import Repo
+from python_scripts.modules.repository import Repository
 
 
 def check_credentials_decorator(method: Callable) -> Callable:
@@ -111,7 +111,7 @@ class GitHub:
         self,
         user: str,
         name: str,
-    ) -> Repo:
+    ) -> Repository:
         url = f"https://api.github.com/repos/{user}/{name}"
         r = self._make_authorized_request(url)
         json_data = r.json()
@@ -119,7 +119,7 @@ class GitHub:
         languages = self._get_repo_languages(json_data["languages_url"])
         commits_count = self._get_repo_commits_count(json_data["contributors_url"])
 
-        return Repo.from_json(
+        return Repository.from_json(
             r.json(), languages=languages, commits_count=commits_count
         )
 
@@ -173,7 +173,7 @@ class GitHub:
         logging.info("Loaded %s repos names", len(names))
         return names
 
-    def get_repo_by_name(self, name: str) -> Repo:
+    def get_repo_by_name(self, name: str) -> Repository:
         """Get a repo by its name.
 
         Args:

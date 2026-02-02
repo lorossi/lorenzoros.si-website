@@ -7,14 +7,14 @@ from typing import Any
 
 import ujson
 
-from modules.github import GitHub, Repo
+from modules.github import GitHub, Repository
 from modules.settings import Settings
 
 
 class Scraper(GitHub):
     """Scraper class."""
 
-    _repos: list[Repo]
+    _repos: list[Repository]
     _settings: Settings
     _settings_path: str
 
@@ -82,10 +82,12 @@ class Scraper(GitHub):
         logging.info("Loading repos from %s", path)
         with open(path, "r") as f:
             data = ujson.load(f)
-            self._repos = [Repo(**repo_dict) for repo_dict in data["Repositories"]]
+            self._repos = [
+                Repository(**repo_dict) for repo_dict in data["Repositories"]
+            ]
         logging.info("Loaded %s repos", len(self._repos))
 
-    def repos_by_language(self, language: str) -> set[Repo]:
+    def repos_by_language(self, language: str) -> set[Repository]:
         """Get a set of interesting repos written in a set language.
 
         Args:
@@ -123,12 +125,12 @@ class Scraper(GitHub):
         return languages
 
     @property
-    def repos(self) -> list[Repo]:
+    def repos(self) -> list[Repository]:
         """Get the list of repos."""
         return self._repos
 
     @property
-    def interesting_repos(self) -> list[Repo]:
+    def interesting_repos(self) -> list[Repository]:
         """Get the list of interesting repos."""
         return sorted(
             [
@@ -146,7 +148,7 @@ class Scraper(GitHub):
         return sorted(languages)
 
     @property
-    def interactive_repos(self) -> list[Repo]:
+    def interactive_repos(self) -> list[Repository]:
         """Get the list of interactive repos."""
         repos = [
             r
@@ -158,7 +160,7 @@ class Scraper(GitHub):
         return sorted(repos, key=lambda x: x.created_at, reverse=True)
 
     @property
-    def repos_list(self) -> dict[str, list[Repo]]:
+    def repos_list(self) -> dict[str, list[Repository]]:
         """Get the list of repos grouped by language."""
         repos = {}
 
