@@ -7,7 +7,7 @@ from typing import Any, Callable
 
 import requests
 
-from python_scripts.modules.repository import Repository
+from modules.repository import Repository
 
 
 def check_credentials_decorator(method: Callable) -> Callable:
