@@ -1,9 +1,89 @@
+[project]
+name = "lorenzoros-si-website"
+version = "0.1.0"
+description = "Static site generator and deployer for lorenzoros.si"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["jinja2>=3.1.6", "paramiko>=3.5.0", "requests>=2.32.3"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+    "ty>=0.0.89",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+src = ["python_scripts"]
+
 [tool.ruff.lint]
-preview = true                                   # needed for "DOC" rules
-exclude = ["venv", "__pycache__", "__init__.py"]
-select = ["D", "E", "W", "F", "ANN", "DOC"]
-ignore = ["ANN401"]                              # ignore "Any" type
-unfixable = ["F401"]                             # do not fix unused imports
+preview = true # needed for "DOC" rules
+select = [
+    "A",    # flake8-builtins
+    "ANN",  # flake8-annotations
+    "ARG",  # flake8-unused-arguments
+    "B",    # flake8-bugbear
+    "BLE",  # flake8-blind-except
+    "C4",   # flake8-comprehensions
+    "C90",  # mccabe complexity
+    "D",    # pydocstyle
+    "DOC",  # pydoclint
+    "E",    # pycodestyle errors
+    "ERA",  # commented-out code
+    "F",    # pyflakes
+    "FBT",  # boolean positional arguments
+    "FURB", # refurb
+    "G",    # logging format
+    "I",    # isort
+    "LOG",  # flake8-logging
+    "N",    # pep8-naming
+    "PERF", # perflint
+    "PIE",  # flake8-pie
+    "PL",   # pylint
+    "PTH",  # use pathlib
+    "RET",  # flake8-return
+    "RUF",  # ruff-specific
+    "S",    # flake8-bandit
+    "SIM",  # flake8-simplify
+    "T20",  # print statements
+    "TRY",  # tryceratops
+    "UP",   # pyupgrade
+    "W",    # pycodestyle warnings
+]
+ignore = [
+    "any-type",          # allow "Any"
+    "raise-vanilla-args", # allow long messages in exception constructors
+    "no-self-use",       # methods that do not use self are fine
+]
+
+[tool.ruff.lint.per-file-ignores]
+"python_scripts/build.py" = [
+    "blind-except", # main() logs any failure and turns it into an exit code
+]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ty.environment]
+python-version = "3.14"
+extra-paths = ["python_scripts"]
+
+[tool.ty.rules]
+# promote the rules that are warnings by default to errors
+possibly-missing-attribute = "error"
+possibly-missing-import = "error"
+possibly-unresolved-reference = "error"
+redundant-cast = "error"
+unused-ignore-comment = "error"
+deprecated = "error"
+undefined-reveal = "error"
+
+[tool.ty.terminal]
+error-on-warning = true
