@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% set intro = [
+  "Hi, I'm Lorenzo.",
+  "I'm a creative, a programmer, an engineer at CERN.",
+  "Welcome to my website.",
+  "Try my interactive projects, take a look at my repos, see what I like to do.",
+  "Scroll down to find the links to all my social media accounts.",
+  "Don't forget to check out my GitHub profile!",
+] %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/animations.css?{{ unique_id }}" />
+    <script src="/js/secret.js?{{ unique_id }}" defer></script>
+    <script src="/js/main.js?{{ unique_id }}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <canvas class="animations-container" aria-hidden="true"></canvas>
+    <div class="content">
+      <nav class="navbar aberration">
+        <a href="#interactive">INTERACTIVE</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#links">CONTACTS</a>
+      </nav>
+
+      <section class="section">
+        <div class="typer aberration" data-separator="|" data-text="{{ intro | join('|') }}|">
+          <noscript>
+            {% for line in intro %}
+            <p>{{ line }}</p>
+            {% endfor %}
+          </noscript>
+        </div>
+      </section>
+
+      <section class="section" id="interactive">
+        <h1 class="aberration">INTERACTIVE</h1>
+        <h2 class="aberration">
+          some of the interactive projects that I have developed during the years
+        </h2>
+        <ul class="links-list small-aberration">
+          {% for project in interactive_repos %}
+          <li class="interactive-container">
+            <a class="project-title" href="{{ project.homepage }}">{{ project.name_formatted }}</a>
+            <span class="project-date">created {{ project.created_at_formatted }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="section" id="portfolio">
+        <h1 class="aberration">PORTFOLIO</h1>
+        <h2 class="aberration">
+          many different projects ranging from embedded development to digital art
+        </h2>
+        {% for language, projects in repos_list.items() %}
+        <div class="language-container small-aberration">
+          {{ language }}
+          <ul class="projects-list">
+            {% for project in projects %}
+            <li class="project-container">
+              <a class="project-title" href="{{ project.html_url }}">{{ project.name_formatted }}</a>
+              {% if project.description_formatted %}
+              <span class="project-description">{{ project.description_formatted }}</span>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="section" id="links">
+        <h1 class="aberration">CONTACTS</h1>
+        <div class="contacts-container">
+          <ul class="links-list small-aberration">
+            {% for contact in contacts %}
+            <li class="links-container">
+              <span class="icon icon-{{ contact.icon }}" aria-hidden="true"></span>
+              <span>{{ contact.text }}</span>
+              {% if contact.secret is defined %}
+              <a data-secret="{{ contact.secret }}">enable JavaScript to see the {{ contact.label }}</a>
+              {% else %}
+              <a href="{{ contact.href }}">{{ contact.label }}</a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+
+          <div class="photo-container">
+            <img
+              src="/assets/img/photo.png"
+              loading="lazy"
+              alt="Lorenzo Rossi"
+              class="photo"
+            />
+            <img
+              src="/assets/img/photo_alternate.png"
+              loading="lazy"
+              alt=""
+              aria-hidden="true"
+              class="photo photo-alternate"
+            />
+          </div>
+        </div>
+
+        <footer class="footer small-aberration">
+          100% made in Italy
+          <span class="flag" id="it" role="img" aria-label="Italian flag">
+            <span class="green"></span>
+            <span class="red"></span>
+          </span>
+        </footer>
+      </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Page not found{% endblock %}
+{% block description %}Lorenzo Rossi page 404{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/error.css?{{ unique_id }}" />
+{% endblock %}
+
+{% block body %}
+    <main class="fullpage">
+      <p class="error aberration">404: page not found</p>
+      <a class="small-aberration" href="/">go back</a>
+    </main>
+{% endblock %}
