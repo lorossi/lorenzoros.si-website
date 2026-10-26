@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   main();
 });
 
+const LINES_COUNT = 500;
+const LINE_MAX_OPACITY = 0.5;
+
 const main = async () => {
   // evil console manipulation!
   console.clear();
@@ -9,69 +12,69 @@ const main = async () => {
     "%c Curious? Check the repo! https://github.com/lorossi/lorenzoros.si-website",
     "font-size: 1rem;"
   );
-  // resize the animations container
-  window.addEventListener("resize", window_resized);
 
-  // handle mouse in and out from the image container
-  const photo_container = document.querySelector(".photo");
-  photo_container.addEventListener("mouseenter", photo_mouse_enter);
-  photo_container.addEventListener("mouseleave", photo_mouse_leave);
+  const reduced_motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (!reduced_motion.matches) start_lines();
 
-  // start the animations
-  add_lines();
   await print_letters();
 };
 
-const window_resized = () => {
-  // when the window is resized, we need to resize the animations container and move the lines
-  resize_animation_container();
-  move_lines();
+const start_lines = () => {
+  // the canvas covers the viewport; each line has a fixed position relative
+  // to the whole page, and only the visible ones are drawn
+  const canvas = document.querySelector(".animations-container");
+  const ctx = canvas.getContext("2d");
+  const color = getComputedStyle(document.documentElement)
+    .getPropertyValue("--line-color")
+    .trim();
+
+  const lines = Array.from({ length: LINES_COUNT }, () => ({
+    position: Math.random(), // fraction of the page height
+    duration: random_between(200, 500), // ms
+    delay: random_between(0, 2000), // ms
+  }));
+
+  const resize = () => {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(window.innerWidth * dpr);
+    canvas.height = Math.floor(window.innerHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  window.addEventListener("resize", resize);
+  resize();
+
+  const draw = (time) => {
+    const page_height = document.documentElement.scrollHeight;
+    const line_height = window.innerWidth >= 770 ? 2 : 5;
+
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    ctx.fillStyle = color;
+
+    for (const line of lines) {
+      const y = Math.floor(line.position * page_height) - window.scrollY;
+      if (y < -line_height || y > window.innerHeight) continue;
+
+      const opacity = line_opacity(line, time);
+      if (opacity <= 0) continue;
+
+      ctx.globalAlpha = opacity;
+      ctx.fillRect(0, y, window.innerWidth, line_height);
+    }
+
+    requestAnimationFrame(draw);
+  };
+  requestAnimationFrame(draw);
 };
 
-const get_page_height = () => {
-  // somehow this is the only way to get the total height of the page
-  // js is weird
-  return [...document.querySelectorAll("body > *")]
-    .filter((e) => !e.classList.contains("animations-container"))
-    .filter((e) => e.scrollHeight != undefined)
-    .reduce((acc, e) => acc + e.scrollHeight, 0);
-};
+const line_opacity = (line, time) => {
+  // fade from max opacity to 0 and back (alternate, ease-in-out), after a delay
+  const t = (time - line.delay) / line.duration;
+  if (t < 0) return 0;
 
-const resize_animation_container = () => {
-  const container = document.querySelector(".animations-container");
-  container.style.height = `${get_page_height()}px`;
-  return container;
-};
-
-const move_lines = () => {
-  const page_height = get_page_height();
-  document.querySelectorAll(".line").forEach((l) => {
-    const percent = l.getAttribute("percent");
-    const pos = Math.floor(percent * 0.01 * page_height);
-    l.style.top = `${pos}px`;
-  });
-};
-
-const add_lines = () => {
-  // select the animations container
-  const container = resize_animation_container();
-  const page_height = get_page_height();
-
-  // loop to create the lines
-  for (let i = 0; i < 500; i++) {
-    const line = document.createElement("div");
-    line.classList.add("line");
-    // random position
-    const percent = Math.random() * 100;
-    const position = Math.floor(percent * 0.01 * page_height);
-
-    line.style.top = `${position}px`;
-    line.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`;
-    line.style.animationDelay = `${Math.random() * 2}s`;
-    line.setAttribute("percent", percent);
-    // add to container
-    container.appendChild(line);
-  }
+  const cycle = Math.floor(t);
+  const progress = cycle % 2 === 0 ? t - cycle : 1 - (t - cycle);
+  const eased = 0.5 - 0.5 * Math.cos(Math.PI * progress);
+  return LINE_MAX_OPACITY * (1 - eased);
 };
 
 const add_paragraph = (container) => {
@@ -89,41 +92,22 @@ const print_letters = async () => {
   const start_pause = 500;
 
   const container = document.querySelector(".typer");
+  const separator = container.dataset.separator || "|";
+  const to_write = [...container.dataset.text.replaceAll(separator, "\n")];
 
-  const line_separator = container.getAttribute("separator") || "|";
-
-  let to_write = container
-    .getAttribute("data-text")
-    .replaceAll(line_separator, "\n")
-    .split("");
   let current_p = add_paragraph(container);
-
   await timeout(start_pause);
 
-  while (to_write.length > 0) {
-    const current_char = to_write.shift();
-
-    if (current_char == "\n") {
+  for (const char of to_write) {
+    if (char === "\n") {
       await timeout(newline_pause);
       remove_cursor(current_p);
       current_p = add_paragraph(container);
     } else {
-      current_p.innerHTML += current_char;
+      current_p.textContent += char;
       await timeout(typing_pause);
     }
   }
-};
-
-const photo_mouse_enter = (e) => {
-  // when the mouse enters the photo container, replace the image with the alternate one
-  // store the original image in the src attribute
-  e.target.old_src = e.target.src;
-  e.target.src = "./assets/img/photo_alternate.png";
-};
-
-const photo_mouse_leave = (e) => {
-  // when the mouse leaves the photo container, replace the image with the default one
-  e.target.src = e.target.old_src;
 };
 
 const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
