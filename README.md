@@ -68,7 +68,7 @@ this would make the email readable, but not copyable, which is not ideal either.
 After generating the website, the deployment is done via `sftp` directly from the python `build.py` script.
 Only files that changed are uploaded; files removed locally are *not* deleted from the server.
 
-If the `host_key` setting is set (e.g. `ssh-ed25519 AAAA...`, as printed by `ssh-keyscan lorenzoros.si`), the server must present that key; otherwise any key is accepted and a warning is logged.
+If the `server_public_key` setting is set (e.g. `ssh-ed25519 AAAA...`, as printed by `ssh-keyscan lorenzoros.si`), the server must present that key; otherwise any key is accepted and a warning is logged.
 
 Furthermore, a GitHub Action lints the code and then builds and deploys the website on:
 

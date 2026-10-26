@@ -11,7 +11,7 @@ from pathlib import Path
 from types import TracebackType
 
 import paramiko
-from paramiko.hostkeys import HostKeyEntry
+from paramiko.hostkeys import HostKeyEntry, InvalidHostKey
 
 from modules.settings import DeployerSettings
 
@@ -71,48 +71,57 @@ class Deployer:
         Raises:
             ValueError: if the key cannot be parsed.
         """
-        content = self._settings.key_content
+        content = self._settings.private_key
         if not content:
             return None
 
-        passphrase = self._settings.password or None
+        passphrase = self._settings.private_key_passphrase or None
         for key_class in KEY_CLASSES:
             try:
                 return key_class.from_private_key(io.StringIO(content), passphrase)
             except paramiko.SSHException:
                 continue
-        raise ValueError("Cannot parse the private key in key_content")
+        raise ValueError("Cannot parse private_key")
 
     def connect(self) -> None:
         """Connect to the remote server.
 
-        If `host_key` is set, the server must present that key; otherwise any
-        key is accepted (and a warning is logged).
+        If `server_public_key` is set, the server must present that key;
+        otherwise any key is accepted (and a warning is logged).
 
         Raises:
-            ValueError: if `host_key` cannot be parsed.
+            ValueError: if `server_public_key` cannot be parsed.
         """
         hostname = self._settings.hostname
         logger.info("Connecting to %s...", hostname)
         self._client = paramiko.SSHClient()
 
-        if self._settings.host_key:
-            entry = HostKeyEntry.from_line(f"{hostname} {self._settings.host_key}")
+        if server_key := self._settings.server_public_key:
+            error = (
+                "Cannot parse server_public_key: it must be the server's public "
+                'key, e.g. "ssh-ed25519 AAAA..." as printed by ssh-keyscan'
+            )
+            try:
+                entry = HostKeyEntry.from_line(f"{hostname} {server_key}")
+            except InvalidHostKey as e:
+                raise ValueError(error) from e
             if entry is None or entry.key is None:
-                raise ValueError("Cannot parse host_key")
+                raise ValueError(error)
             self._client.get_host_keys().add(hostname, entry.key.get_name(), entry.key)
             self._client.set_missing_host_key_policy(paramiko.RejectPolicy())
         else:
-            logger.warning("No host_key set: the server identity will NOT be verified.")
+            logger.warning(
+                "No server_public_key set: the server identity will NOT be verified."
+            )
             self._client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-        key_filename = self._settings.key_filename
+        key_path = self._settings.private_key_path
         self._client.connect(
             hostname=hostname,
             username=self._settings.username or None,
             pkey=self._load_key(),
-            key_filename=key_filename and str(key_filename),
-            passphrase=self._settings.password or None,
+            key_filename=key_path and str(key_path),
+            passphrase=self._settings.private_key_passphrase or None,
             allow_agent=False,
             look_for_keys=False,
         )

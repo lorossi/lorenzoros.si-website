@@ -50,10 +50,10 @@ jobs:
         env:
           SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
           DEPLOYER_USERNAME: ${{ secrets.DEPLOYER_USERNAME }}
-          DEPLOYER_PASSWORD: ${{ secrets.DEPLOYER_PASSWORD }}
+          DEPLOYER_PRIVATE_KEY_PASSPHRASE: ${{ secrets.DEPLOYER_PRIVATE_KEY_PASSPHRASE }}
           DEPLOYER_REMOTE_PATH: ${{ secrets.DEPLOYER_REMOTE_PATH }}
-          DEPLOYER_KEY_CONTENT: ${{ secrets.DEPLOYER_KEY_CONTENT }}
-          DEPLOYER_HOST_KEY: ${{ secrets.DEPLOYER_HOST_KEY }}
+          DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY }}
+          DEPLOYER_SERVER_PUBLIC_KEY: ${{ secrets.DEPLOYER_SERVER_PUBLIC_KEY }}
 
       - name: Upload artifacts
         if: always()

@@ -15,7 +15,7 @@ class _Section:
 
     The section name in the TOML file is the class name without the "Settings"
     suffix. Fields typed as `str` can be overridden by an environment variable
-    named `<SECTION>_<FIELD>` (e.g. `DEPLOYER_PASSWORD`). Fields typed as
+    named `<SECTION>_<FIELD>` (e.g. `DEPLOYER_PRIVATE_KEY`). Fields typed as
     `Path` are resolved relative to the folder containing the TOML file; an
     empty path is treated as unset.
     """
@@ -93,8 +93,8 @@ class DeployerSettings(_Section):
 
     hostname: str
     username: str = ""
-    password: str = ""
-    key_filename: Path | None = None
-    key_content: str = ""
-    host_key: str = ""
+    private_key: str = ""
+    private_key_path: Path | None = None
+    private_key_passphrase: str = ""
+    server_public_key: str = ""
     remote_path: str = ""

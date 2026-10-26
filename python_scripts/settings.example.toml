@@ -1,5 +1,5 @@
 # Every string value can be overridden by an environment variable named
-# <SECTION>_<KEY>, e.g. SCRAPER_TOKEN or DEPLOYER_PASSWORD.
+# <SECTION>_<KEY>, e.g. SCRAPER_TOKEN or DEPLOYER_PRIVATE_KEY.
 # Relative paths are resolved from the folder containing this file.
 
 [Scraper]
@@ -20,10 +20,10 @@ data_path = "data"               # data files used by the templates
 output_path = "../dist"          # generated website, this folder gets deployed
 
 [Deployer]
-hostname = "lorenzoros.si" # website url
-username = ""              # ssh username
-password = ""              # ssh key passphrase
-key_filename = ""          # ssh key path (or use key_content)
-key_content = ""           # ssh private key, as text (used in CI)
-host_key = ""              # server host key, e.g. "ssh-ed25519 AAAA..."
-remote_path = ""           # remote path
+hostname = "lorenzoros.si"   # website url
+username = ""                # ssh username
+private_key = ""             # ssh private key, as text (used in CI)
+private_key_path = ""        # ssh private key file (alternative to private_key)
+private_key_passphrase = ""  # passphrase of the private key, if encrypted
+server_public_key = ""       # server public key, e.g. "ssh-ed25519 AAAA..." from ssh-keyscan
+remote_path = ""             # remote path
