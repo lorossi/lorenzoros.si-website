@@ -1,15 +1,17 @@
 # python
 __pycache__
 .venv
+.ruff_cache
 # log files
 *.log
-# settings files
-settings*.toml
-!settings.example.toml
+# settings files (may contain secrets)
+*settings*.toml
+*settings*.toml.bak
+!python_scripts/settings.example.toml
 # ssh keys
-id_rsa.key
+*.key
+id_rsa*
 # generated files
 python_scripts/stats.json
 python_scripts/repos.json
-# deployment files
-public_html/index.html
+dist/
