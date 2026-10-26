@@ -3,68 +3,54 @@
 from __future__ import annotations
 
 import logging
+from pathlib import Path
+from typing import Any
 
 import jinja2
-import jinja2.sandbox
 
-from modules.settings import Settings
+logger = logging.getLogger(__name__)
 
 
 class Renderer:
     """This class is responsible for rendering the templates."""
 
-    _settings: Settings
-    _environment: jinja2.sandbox.SandboxedEnvironment
-    _list_container: str = "output"
-
-    def __init__(self, settings_path="settings.toml") -> None:
+    def __init__(self, templates_path: Path, **template_globals: Any) -> None:
         """Create a new Renderer instance.
 
         Args:
-            settings_path (str, optional): Settings path. Defaults to "settings.toml".
+            templates_path (Path): folder containing the templates.
+            **template_globals: variables available to every template.
         """
-        self._settings = Settings.from_toml(settings_path, self.__class__.__name__)
-        self._environment = jinja2.sandbox.SandboxedEnvironment(
-            loader=jinja2.FileSystemLoader(self._settings.templates_path)
+        self._environment = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(templates_path),
+            autoescape=jinja2.select_autoescape(),
+            undefined=jinja2.StrictUndefined,
+            trim_blocks=True,
+            lstrip_blocks=True,
         )
+        self._environment.globals.update(template_globals)
 
-    def renderFile(
+    def render_file(
         self,
         template_name: str,
-        data: dict | None = None,
-        output_path: str | None = None,
+        output_path: Path,
+        data: dict[str, Any] | None = None,
     ) -> str:
-        """Render the template.
+        """Render a template and save it to a file.
 
         Args:
-            template_name (str): The name of the template
-            data (dict, optional): The data to render the template with. Defaults to None.
-            format (bool, optional): Auto format the rendered page. Defaults to True.
-        output_path (str, optional): The path to save the rendered page.
-                Defaults to None.
+            template_name (str): The name of the template.
+            output_path (Path): The path to save the rendered page to.
+            data (dict[str, Any] | None, optional): The data to render the
+                template with. Defaults to None.
 
         Returns:
             str: rendered page
         """
-        logging.info("Rendering file %s ...", template_name)
+        logger.info("Rendering %s to %s", template_name, output_path)
         template = self._environment.get_template(template_name)
-        template_path = self._settings.templates_path + template_name
-        logging.info("Template loaded from %s.", template_path)
+        content = template.render(**(data or {}))
 
-        if data is not None:
-            data_clean = {k: v for k, v in data.items() if v is not None}
-            logging.debug("Rendering with data: %s", data_clean)
-        else:
-            data_clean = {}
-            logging.debug("Rendering with no data.")
-
-        content = template.render(**data_clean)
-        logging.info("Rendered file %s.", template_name)
-
-        if output_path:
-            logging.info("Saving rendered page to %s...", output_path)
-            with open(output_path, "w") as f:
-                f.write(content)  # type: ignore
-            logging.info("Saved.")
-
-        return content  # type: ignore
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(content, encoding="utf-8")
+        return content

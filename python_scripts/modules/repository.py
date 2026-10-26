@@ -1,148 +1,85 @@
-"""This module contains the Repo class."""
+"""This module contains the Repository class."""
 
 from __future__ import annotations
 
+from dataclasses import asdict, dataclass, field, fields
 from datetime import datetime
 from typing import Any
 
-import ujson
 
-
+@dataclass(frozen=True, eq=False)
 class Repository:
-    """Parsed GitHub repo class."""
+    """Parsed GitHub repository."""
 
-    _frozen: bool = False
-    _attributes = [
-        "name",
-        "description",
-        "html_url",
-        "topics",
-        "homepage",
-        "id",
-        "private",
-        "stargazers_count",
-        "watchers_count",
-        "created_at",
-        "updated_at",
-        "pushed_at",
-        "size",
-        "languages",
-        "commits_count",
-        "forks_count",
-        "open_issues_count",
-        "watchers",
-    ]
-
-    _time_attributes = list(filter(lambda x: x.endswith("_at"), _attributes))
-
-    def __init__(self, **kwargs):
-        """Initialize the object."""
-        for a in self._attributes:
-            self.__setattr__(a, kwargs.get(a))
-        self._frozen = True
+    name: str
+    html_url: str
+    created_at: str
+    description: str | None = None
+    topics: list[str] = field(default_factory=list)
+    homepage: str | None = None
+    id: int | None = None
+    private: bool = False
+    stargazers_count: int = 0
+    watchers_count: int = 0
+    updated_at: str | None = None
+    pushed_at: str | None = None
+    size: int = 0
+    languages: list[dict[str, Any]] = field(default_factory=list)
+    commits_count: int = 0
+    forks_count: int = 0
+    open_issues_count: int = 0
+    watchers: int = 0
 
     @classmethod
-    def from_json(
-        cls, json_data: dict, languages: list[dict], commits_count: int
-    ) -> Repository:
-        """Create a Repo object from a json.
+    def from_dict(cls, data: dict[str, Any], **extra: Any) -> Repository:
+        """Create a Repository from a dict, ignoring unknown keys.
 
         Args:
-            json_data (dict)
-            languages (list[dict])
-            commits_count (int)
+            data (dict[str, Any]): repository data, e.g. from the GitHub API.
+            **extra: additional values, overriding the ones in `data`.
 
         Returns:
-            Repo: _description_
+            Repository
         """
-        return cls(**json_data, languages=languages, commits_count=commits_count)
+        known = {f.name for f in fields(cls)}
+        values = {k: v for k, v in (data | extra).items() if k in known}
+        return cls(**values)
 
-    def __setattr__(self, name: str, value: Any) -> None:
-        """Set the attribute of the object.
-
-        Args:
-            name (str)
-            value (_type_)
-
-        Raises:
-            AttributeError: If the attribute cannot be modified.
-        """
-        if name not in self._attributes:
-            return
-
-        if self._frozen:
-            raise AttributeError(
-                f"Attribute {name} cannot be modified in {self.__class__.__name__}"
-            )
-
-        super().__setattr__(name, value)
-
-    def __getattr__(self, name: str) -> Any:
-        """Get the attribute of the object.
-
-        Args:
-            name (str)
-
-        Raises:
-            AttributeError: If the attribute does not exist.
-
-        Returns:
-            Any
-        """
-        if name in self._attributes:
-            return self.__getattribute__(name)
-
-        if (n := name.replace("_obj", "")) in self._time_attributes:
-            a = self.__getattribute__(n).replace("Z", "+00:00")
-            return datetime.fromisoformat(a)
-
-        if (n := name.replace("_formatted", "")) in self._time_attributes:
-            a = self.__getattribute__(n).replace("Z", "+00:00")
-            return datetime.fromisoformat(a).strftime("%Y-%m-%d")
-
-        if name == "language":
-            if len(self.languages) == 0:
-                return None
-            return self.languages[0]["language"]
-
-        if name == "name_formatted":
-            return self.name.replace("-", " ").lower()
-
-        if name == "description_formatted":
-            description = self.description[0].upper() + self.description[1:]
-            if description.endswith("."):
-                return description[:-1]
-            return description
-
-        if name == "languages_set":
-            return set([lang["language"] for lang in self.languages])
-
-        raise AttributeError(
-            f"Attribute {name} does not exist in {self.__class__.__name__}"
-        )
-
-    def __repr__(self) -> str:
-        """Return the representation of the object."""
-        attributes = ", ".join(
-            [f"{a}={self.__getattribute__(a)!r}" for a in self._attributes]
-        )
-        return f"{self.__class__.__name__}({attributes})"
-
-    def __str__(self) -> str:
-        """Return the string representation of the object."""
-        return self.__repr__()
+    def as_dict(self) -> dict[str, Any]:
+        """Return the dict representation of the repository."""
+        return asdict(self)
 
     @property
-    def json(self) -> str:
-        """Return the json representation of the object."""
-        return ujson.dumps(self.as_dict, sort_keys=True, indent=4)
+    def created_at_obj(self) -> datetime:
+        """Creation date, as a datetime."""
+        return datetime.fromisoformat(self.created_at)
 
     @property
-    def as_dict(self) -> dict:
-        """Return the dict representation of the object."""
-        return {k: self.__getattribute__(k) for k in self._attributes}
+    def created_at_formatted(self) -> str:
+        """Creation date, formatted as YYYY-MM-DD."""
+        return self.created_at_obj.strftime("%Y-%m-%d")
+
+    @property
+    def language(self) -> str | None:
+        """Main language of the repository, if any."""
+        if not self.languages:
+            return None
+        return self.languages[0]["language"]
+
+    @property
+    def name_formatted(self) -> str:
+        """Name of the repository, in a human-readable form."""
+        return self.name.replace("-", " ").lower()
+
+    @property
+    def description_formatted(self) -> str:
+        """Description, capitalised and without the final period."""
+        if not self.description:
+            return ""
+        description = self.description[0].upper() + self.description[1:]
+        return description.removesuffix(".")
 
     @property
     def is_interactive(self) -> bool:
-        """Return True if the repo is interactive."""
-        return self.homepage != "" and self.homepage is not None
+        """Whether the repository has a homepage."""
+        return bool(self.homepage)

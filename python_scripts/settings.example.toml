@@ -1,7 +1,11 @@
+# Every string value can be overridden by an environment variable named
+# <SECTION>_<KEY>, e.g. SCRAPER_TOKEN or DEPLOYER_PASSWORD.
+# Relative paths are resolved from the folder containing this file.
+
 [Scraper]
 username = "lorossi" # GitHub Username
-token = "" # GitHub Personal Access Token
-relevant_topics = ["released"] # Topics to inlcude for the repos in homepage
+token = ""           # GitHub Personal Access Token
+relevant_topics = ["released"] # Topics to include for the repos in homepage
 skip_interactive_names = ["lorenzoros.si-website"] # Repo names to skip
 skip_interactive_topics = [
   "library",
@@ -9,14 +13,17 @@ skip_interactive_topics = [
   "javascript-library",
 ] # Topics to skip for the interactive repos list in homepage
 
-
-[Renderer]
-templates_path = "templates/" # local path for templates folder
+[Builder]
+templates_path = "templates"     # Jinja templates
+static_path = "../public_html"   # static assets, copied as they are
+data_path = "data"               # data files used by the templates
+output_path = "../dist"          # generated website, this folder gets deployed
 
 [Deployer]
-hostname = "lorenzoros.si"     # website url
-username = ""                  # ssh username
-password = ""                  # ssh key password
-key_filename = ""              # ssh key path
-local_path = "../public_html/" # local folder to deploy
-remote_path = ""               # remote path
+hostname = "lorenzoros.si" # website url
+username = ""              # ssh username
+password = ""              # ssh key passphrase
+key_filename = ""          # ssh key path (or use key_content)
+key_content = ""           # ssh private key, as text (used in CI)
+host_key = ""              # server host key, e.g. "ssh-ed25519 AAAA..."
+remote_path = ""           # remote path
