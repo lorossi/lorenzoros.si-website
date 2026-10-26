@@ -1,0 +1,136 @@
+/* long-form text needs a smaller font than the rest of the site */
+:root {
+  --article-text-size: 1.6rem;
+  --article-line-color: #ffffff20;
+  --article-code-background-color: #1a1a20;
+}
+
+@media screen and (min-width: 770px) {
+  :root {
+    --article-text-size: 2rem;
+  }
+}
+
+.article-container {
+  font-size: var(--small-text-size);
+  line-height: 150%;
+  margin-left: calc(var(--small-text-size) * 3);
+  margin-bottom: calc(var(--small-text-size) * 1.5);
+}
+
+.article-container > span {
+  display: block;
+}
+
+.article-date {
+  display: block;
+  font-size: calc(var(--article-text-size) * 0.85);
+  opacity: 0.7;
+  padding-bottom: calc(var(--title-size) / 2);
+}
+
+.article-content {
+  font-size: var(--article-text-size);
+  line-height: 160%;
+  max-width: 80ch;
+  padding-bottom: calc(var(--title-size) * 2);
+  overflow-wrap: break-word;
+}
+
+.article-content > * + * {
+  margin-top: var(--article-text-size);
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  text-shadow: var(--small-aberration);
+  padding-top: var(--article-text-size);
+  padding-bottom: 0;
+  line-height: 130%;
+  user-select: text;
+}
+
+.article-content h1 {
+  font-size: calc(var(--article-text-size) * 1.75);
+}
+
+.article-content h2 {
+  font-size: calc(var(--article-text-size) * 1.5);
+}
+
+.article-content h3 {
+  font-size: calc(var(--article-text-size) * 1.25);
+}
+
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  font-size: var(--article-text-size);
+}
+
+.article-content strong {
+  text-shadow: var(--small-aberration);
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: calc(var(--article-text-size) * 2);
+}
+
+.article-content ul {
+  list-style-type: "> ";
+}
+
+.article-content blockquote {
+  border-left: 2px solid var(--article-line-color);
+  padding-left: var(--article-text-size);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.article-content code {
+  background-color: var(--article-code-background-color);
+  padding: 0 0.3ch;
+}
+
+.article-content pre {
+  background-color: var(--article-code-background-color);
+  padding: var(--article-text-size);
+  overflow-x: auto;
+  line-height: 140%;
+}
+
+.article-content pre code {
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.article-content img,
+.article-content video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid var(--article-line-color);
+}
+
+.article-content table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid var(--article-line-color);
+  padding: 0.25em 0.75em;
+}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Lorenzo Rossi - Blog{% endblock %}
+{% block description %}Lorenzo Rossi blog: random thoughts, things I learned{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/blog.css?{{ unique_id }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+      <nav class="navbar blog-navbar aberration">
+        <a href="/">HOME</a>
+      </nav>
+
+      <main class="section">
+        <h1 class="aberration">BLOG</h1>
+        <h2 class="aberration">random thoughts, things I learned</h2>
+        <ul class="links-list small-aberration">
+          {% for article in articles %}
+          <li class="article-container">
+            <a class="project-title" href="{{ article.url }}">{{ article.title }}</a>
+            <span class="project-date">{{ article.date_formatted }}</span>
+            {% if article.description %}
+            <span class="project-description">{{ article.description }}</span>
+            {% endif %}
+          </li>
+          {% else %}
+          <li class="article-container">no articles yet... check again later!</li>
+          {% endfor %}
+        </ul>
+      </main>
+    </div>
+{% endblock %}

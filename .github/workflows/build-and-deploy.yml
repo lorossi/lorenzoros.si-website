@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "public_html/**"
+      - "blog/**"
       - "python_scripts/**"
       - "pyproject.toml"
       - "uv.lock"

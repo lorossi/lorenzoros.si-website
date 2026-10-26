@@ -84,6 +84,7 @@ class BuilderSettings(_Section):
     templates_path: Path
     static_path: Path
     data_path: Path
+    blog_path: Path
     output_path: Path
 
 

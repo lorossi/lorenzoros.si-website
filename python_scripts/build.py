@@ -8,6 +8,7 @@ import sys
 import tomllib
 from pathlib import Path
 
+from modules.article import Article, load_articles
 from modules.deployer import Deployer
 from modules.renderer import Renderer
 from modules.scraper import Scraper
@@ -55,8 +56,44 @@ def load_repos(
     scraper.save_stats(stats_path)
 
 
+def build_blog(
+    renderer: Renderer, settings: BuilderSettings, articles: list[Article]
+) -> None:
+    """Render the blog index and the articles.
+
+    Any file in the blog folder that is not an article (e.g. an image) is
+    copied as it is, so it can be referenced as `/blog/<file>`.
+
+    Args:
+        renderer (Renderer): renderer to use.
+        settings (BuilderSettings): builder settings.
+        articles (list[Article]): articles to render, newest first.
+    """
+    output = settings.output_path / "blog"
+    shutil.copytree(
+        settings.blog_path,
+        output,
+        ignore=shutil.ignore_patterns("*.md"),
+        dirs_exist_ok=True,
+    )
+
+    renderer.render_file(
+        "blog.html", output / "index.html", data={"articles": articles}
+    )
+    for article in articles:
+        renderer.render_file(
+            "article.html",
+            output / article.slug / "index.html",
+            data={"article": article},
+        )
+
+
 def build_site(
-    settings: BuilderSettings, scraper: Scraper, unique_id: str | None
+    settings: BuilderSettings,
+    scraper: Scraper,
+    unique_id: str | None,
+    *,
+    include_drafts: bool = False,
 ) -> None:
     """Build the whole website in the output folder.
 
@@ -65,9 +102,15 @@ def build_site(
         scraper (Scraper): scraper with the repos already loaded.
         unique_id (str | None): cache-busting id. If None, it is computed
             from the static files.
+        include_drafts (bool, optional): if True, draft articles are
+            published too. Defaults to False.
     """
     output = settings.output_path
     logger.info("Building website in %s", output)
+
+    # load the articles first, so a broken one fails the build before
+    # the output folder is touched
+    articles = load_articles(settings.blog_path, include_drafts=include_drafts)
 
     if output.exists():
         shutil.rmtree(output)
@@ -90,6 +133,7 @@ def build_site(
         },
     )
     renderer.render_file("404.html", output / "404.html")
+    build_blog(renderer, settings, articles)
 
 
 def gather_arguments() -> argparse.Namespace:
@@ -120,6 +164,11 @@ def gather_arguments() -> argparse.Namespace:
         "--offline",
         action="store_true",
         help="Load repos from local file instead of scraping them",
+    )
+    parser.add_argument(
+        "--drafts",
+        action="store_true",
+        help="Publish the draft blog articles too (for previewing)",
     )
     parser.add_argument(
         "--repo-filename",
@@ -175,7 +224,12 @@ def run(arguments: argparse.Namespace) -> None:
             repo_path=arguments.repo_filename,
             stats_path=arguments.stats_filename,
         )
-        build_site(builder_settings, scraper, arguments.unique_id)
+        build_site(
+            builder_settings,
+            scraper,
+            arguments.unique_id,
+            include_drafts=arguments.drafts,
+        )
 
     if arguments.deploy:
         with Deployer(DeployerSettings.from_toml(arguments.settings)) as d:

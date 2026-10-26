@@ -17,6 +17,7 @@ skip_interactive_topics = [
 templates_path = "templates"     # Jinja templates
 static_path = "../public_html"   # static assets, copied as they are
 data_path = "data"               # data files used by the templates
+blog_path = "../blog"            # blog articles, in Markdown
 output_path = "../dist"          # generated website, this folder gets deployed
 
 [Deployer]

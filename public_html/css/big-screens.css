@@ -1,6 +1,10 @@
 @media screen and (min-width: 770px) {
   .navbar {
     margin-top: calc(var(--title-size) * 2);
+    /* a single row, with one equal column per link */
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
   }
 
   .language-container {

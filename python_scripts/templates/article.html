@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - Lorenzo Rossi{% endblock %}
+{% block description %}{{ article.description or article.title }}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/blog.css?{{ unique_id }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+      <nav class="navbar blog-navbar aberration">
+        <a href="/">HOME</a>
+        <a href="/blog/">BLOG</a>
+      </nav>
+
+      <main class="section">
+        <article>
+          <header>
+            <h1 class="aberration">{{ article.title }}</h1>
+            <time class="article-date small-aberration" datetime="{{ article.date_formatted }}">{{ article.date_formatted }}</time>
+          </header>
+          <div class="article-content">
+            {{ article.content | safe }}
+          </div>
+        </article>
+      </main>
+    </div>
+{% endblock %}

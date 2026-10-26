@@ -20,6 +20,7 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/).
 - `public_html/`: static files (css, js, fonts, images), copied as they are
 - `python_scripts/templates/`: `jinja2` templates; `base.html` is the layout shared by all the pages
 - `python_scripts/data/`: data used by the templates (e.g. the contact links)
+- `blog/`: blog articles, in Markdown (see [Blog](#blog))
 - `dist/`: the generated website, which is what gets deployed (not committed)
 
 ### Building
@@ -28,6 +29,7 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/).
 cp python_scripts/settings.example.toml python_scripts/settings.toml # then fill it in
 uv run python python_scripts/build.py --build            # scrape GitHub and build into dist/
 uv run python python_scripts/build.py --build --offline  # rebuild from the cached repos.json
+uv run python python_scripts/build.py --build --drafts   # also publish the draft articles, for previewing
 uv run python python_scripts/build.py --deploy           # upload dist/ to the server
 ```
 
@@ -42,6 +44,26 @@ uv run ruff format python_scripts
 uv run ruff check python_scripts
 uv run ty check python_scripts
 ```
+
+### Blog
+
+Each article is a Markdown file in the `blog/` folder, starting with a TOML front matter:
+
+```markdown
++++
+title = "My article"
+date = 2026-10-26
+description = "Optional, shown in the articles list and in the meta tags"
+draft = true # optional: drafts are skipped unless --drafts is passed
++++
+
+The content, in [CommonMark](https://commonmark.org/), plus tables and strikethrough.
+```
+
+The file name is the url: `blog/my-article.md` becomes `/blog/my-article/`.
+Any other file in `blog/` (e.g. images) is copied as it is to `/blog/`.
+
+The build generates the articles list in `/blog/` and one page per article.
 
 ## Frontend
 
