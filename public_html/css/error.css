@@ -1,17 +1,17 @@
-.fullpage {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  min-height: 100vh;
+.error {
+  padding: 128px 0 var(--space-9);
+  min-height: calc(100vh - 57px);
 }
 
-.error {
-  font-size: var(--title-size);
-  margin-top: calc(var(--title-size) * 2);
-  margin-bottom: calc(var(--title-size) * 2);
+.error h1 {
+  margin: 0 0 var(--space-5);
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 720px) {
+  .error {
+    padding: 56px 0 var(--space-6);
+  }
 }
