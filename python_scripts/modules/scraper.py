@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import json
 import logging
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
+
+import requests
 
 from modules.github import GitHub
 from modules.repository import Repository
@@ -37,7 +40,30 @@ class Scraper:
                 Defaults to True.
         """
         repos = self._github.get_repos(skip_private=skip_private)
-        self._repos = sorted(repos, key=lambda x: x.created_at)
+        self._repos = sorted(
+            (self._with_real_push_date(r) for r in repos), key=lambda x: x.created_at
+        )
+
+    def _with_real_push_date(self, repo: Repository) -> Repository:
+        """Ignore the commits that only touch the preview in the push date.
+
+        Only interactive repos are affected. On failure the repo is unchanged.
+
+        Args:
+            repo (Repository): the repository.
+
+        Returns:
+            Repository: the repo, with `pushed_at` of its last relevant commit.
+        """
+        ignored = self._settings.ignored_commit_messages
+        if self._settings.interactive_topic not in repo.topics or not ignored:
+            return repo
+        try:
+            date = self._github.get_last_commit_date(repo, ignored)
+        except requests.RequestException as e:
+            logger.warning("Last commit of %s not found: %s", repo.name, e)
+            return repo
+        return replace(repo, pushed_at=date) if date else repo
 
     def save_repos(self, path: Path) -> None:
         """Save repos list to file.
@@ -95,23 +121,23 @@ class Scraper:
     @property
     def interesting_repos(self) -> list[Repository]:
         """Repos with at least one of the relevant topics."""
-        return [
-            r
-            for r in self._repos
-            if any(t in r.topics for t in self._settings.relevant_topics)
-        ]
+        return [r for r in self._repos if self._settings.relevant_topic in r.topics]
 
     @property
     def interactive_repos(self) -> list[Repository]:
-        """Interesting repos that have a homepage, newest first."""
-        repos = [
-            r
-            for r in self.interesting_repos
-            if r.is_interactive
-            and all(t not in r.topics for t in self._settings.skip_interactive_topics)
-            and r.name not in self._settings.skip_interactive_names
-        ]
-        return sorted(repos, key=lambda x: x.created_at, reverse=True)
+        """Repos tagged with the interactive topic, most recently pushed first.
+
+        Only the topic marks a repo as interactive; the homepage is just where
+        the visitors are sent.
+        """
+        repos = [r for r in self._repos if self._settings.interactive_topic in r.topics]
+        for repo in repos:
+            if not repo.homepage:
+                logger.warning(
+                    "%s is interactive but has no homepage, linking the repo",
+                    repo.name,
+                )
+        return sorted(repos, key=lambda x: x.last_push, reverse=True)
 
     @property
     def repos_list(self) -> dict[str, list[Repository]]:

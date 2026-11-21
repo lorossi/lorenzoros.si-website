@@ -72,9 +72,12 @@ class ScraperSettings(_Section):
 
     username: str
     token: str = ""
-    relevant_topics: list[str] = field(default_factory=list)
-    skip_interactive_names: list[str] = field(default_factory=list)
-    skip_interactive_topics: list[str] = field(default_factory=list)
+    relevant_topic: str = "released"
+    interactive_topic: str = "interactive"
+    preview_path: str = ".github/preview.png"
+    # commits whose message contains one of these (case-insensitive) are not
+    # counted as an update of an interactive repo (e.g. preview image changes)
+    ignored_commit_messages: list[str] = field(default_factory=lambda: ["preview"])
 
 
 @dataclass(frozen=True)
@@ -84,7 +87,9 @@ class BuilderSettings(_Section):
     templates_path: Path
     static_path: Path
     data_path: Path
+    blog_path: Path
     output_path: Path
+    cache_path: Path
 
 
 @dataclass(frozen=True)
@@ -98,3 +103,4 @@ class DeployerSettings(_Section):
     private_key_passphrase: str = ""
     server_public_key: str = ""
     remote_path: str = ""
+    prune_paths: list[str] = field(default_factory=lambda: ["blog"])

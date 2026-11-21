@@ -91,6 +91,59 @@ class GitHub:
                 return contributor["contributions"]
         return 0
 
+    def get_last_commit_date(
+        self, repo: Repository, ignored_messages: list[str]
+    ) -> str | None:
+        """Find the date of the last commit that is not ignored.
+
+        Args:
+            repo (Repository): the repository.
+            ignored_messages (list[str]): commits whose message contains one of
+                these (case-insensitive) are skipped.
+
+        Returns:
+            str | None: ISO date of the commit, or None if there is none among
+                the latest 100 commits.
+        """
+        url = f"{API_URL}/repos/{self._username}/{repo.name}/commits"
+        ignored = [m.lower() for m in ignored_messages]
+        for commit in self._get(url, params={"per_page": 100}):
+            message = commit["commit"]["message"].lower()
+            if not any(m in message for m in ignored):
+                return commit["commit"]["committer"]["date"]
+        return None
+
+    def check_token(self) -> None:
+        """Check that the token is valid and belongs to the configured user.
+
+        Raises:
+            ValueError: if no token is set, if GitHub rejects it, or if it
+                belongs to another user.
+        """
+        if "Authorization" not in self._session.headers:
+            raise ValueError("No GitHub token set")
+
+        response = self._session.get(f"{API_URL}/user", timeout=30)
+        self._requests_count += 1
+        if response.status_code in {HTTPStatus.UNAUTHORIZED, HTTPStatus.FORBIDDEN}:
+            raise ValueError(
+                "GitHub rejected the token (expired, revoked or missing "
+                f"permissions): HTTP {response.status_code} - {response.text}"
+            )
+        response.raise_for_status()
+
+        user = response.json()
+        if user["login"].lower() != self._username.lower():
+            raise ValueError(
+                f"The token belongs to {user['login']}, not to {self._username}"
+            )
+
+        # only sent for tokens with an expiration date
+        expiration = response.headers.get("github-authentication-token-expiration")
+        logger.info(
+            "GitHub token OK for %s (expires: %s)", user["login"], expiration or "never"
+        )
+
     def get_repos(self, *, skip_private: bool = True) -> list[Repository]:
         """Load all the repositories of the user, with languages and commits.
 
