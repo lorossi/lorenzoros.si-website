@@ -19,6 +19,14 @@ on:
     - cron: "15 2 * * 0"
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: read
+
+# never deploy twice at once, but let a running deploy finish
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
 jobs:
   lint:
     uses: ./.github/workflows/lint.yml

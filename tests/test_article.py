@@ -172,3 +172,8 @@ class TestCollections:
     def test_tag_url_is_encoded(self) -> None:
         assert tag_url("c++") == "/blog/tag/c%2B%2B/"
         assert tag_url("a b") == "/blog/tag/a%20b/"
+
+
+def test_crlf_line_endings(tmp_path: Path) -> None:
+    file = write(tmp_path, "a.md", VALID.replace("\n", "\r\n"))
+    assert Article.from_file(file).title == "Hello"

@@ -77,7 +77,7 @@
     else if (p.startsWith("~")) {
       base = [];
       p = p.slice(1);
-    } else if (p.startsWith("/home/lorenzo")) {
+    } else if (p === "/home/lorenzo" || p.startsWith("/home/lorenzo/")) {
       base = [];
       p = p.slice(13);
     } else if (p.startsWith("/")) base = [];

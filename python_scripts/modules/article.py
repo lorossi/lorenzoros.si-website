@@ -258,7 +258,7 @@ class Article:
         Raises:
             ValueError: if the front matter is missing or invalid.
         """
-        text = path.read_text(encoding="utf-8")
+        text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
         opening, _, rest = text.partition("\n")
         front_matter, delimiter, body = rest.partition(f"\n{FRONT_MATTER_DELIMITER}\n")
         if opening.strip() != FRONT_MATTER_DELIMITER or not delimiter:

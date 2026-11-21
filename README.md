@@ -40,9 +40,12 @@ Since the pages use absolute paths, preview them with a local server: `python -m
 ### Linting
 
 ```bash
-uv run ruff format python_scripts
-uv run ruff check python_scripts
-uv run ty check python_scripts
+uv run ruff format python_scripts tests
+uv run ruff check python_scripts tests
+uv run ty check python_scripts tests
+uv run djlint python_scripts/templates --check --lint  # HTML templates
+biome ci                                               # JS and CSS
+uv run pytest                                          # tests
 ```
 
 ### Blog
@@ -54,6 +57,7 @@ Each article is a Markdown file in the `blog/` folder, starting with a TOML fron
 title = "My article"
 date = 2026-10-26
 description = "Optional, shown in the articles list and in the meta tags"
+tags = ["physics", "c"] # optional, each tag gets a page at /blog/tag/<tag>/
 draft = true # optional: drafts are skipped unless --drafts is passed
 +++
 
@@ -77,7 +81,7 @@ Previews are downloaded at every online build into `python_scripts/.cache/previe
 
 ## Frontend
 
-The whole website is a set of static pages styled like a terminal, with only a few lines of javascript to reveal the contact links.
+The whole website is a set of static pages styled like a terminal, with a few lines of javascript to reveal the contact links, plus the optional `/shell` page, the website as a fake terminal (`shell.js`).
 The font is [JetBrains Mono](https://www.jetbrains.com/lp/mono/), self-hosted.
 The blog index can be filtered by tag: each tag has its own page at `/blog/tag/<tag>/`, so the filter works without javascript.
 
@@ -106,7 +110,7 @@ The rest of the server is never touched, so it can host other files too.
 
 If the `server_public_key` setting is set (e.g. `ssh-ed25519 AAAA...`, as printed by `ssh-keyscan lorenzoros.si`), the server must present that key; otherwise any key is accepted and a warning is logged.
 
-Furthermore, a GitHub Action lints the code and then builds and deploys the website on:
+Furthermore, a GitHub Action lints the code, runs the tests and then builds and deploys the website on:
 
 - commits to the `main` branch, affecting the website, the scripts or the dependencies
 - scheduled builds (weekly)

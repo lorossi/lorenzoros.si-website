@@ -89,6 +89,20 @@ def build_previews(
     return fetcher.copy_to(repos, output)
 
 
+def check_slugs(articles: list[Article]) -> None:
+    """Check that no article uses a reserved name.
+
+    Args:
+        articles (list[Article]): articles to check.
+
+    Raises:
+        ValueError: if an article is named "tag", like the tag pages folder.
+    """
+    if any(a.slug == "tag" for a in articles):
+        msg = 'an article cannot be named "tag", it is used by the tag pages'
+        raise ValueError(msg)
+
+
 def build_blog(
     renderer: Renderer, settings: BuilderSettings, articles: list[Article]
 ) -> None:
@@ -103,14 +117,9 @@ def build_blog(
         renderer (Renderer): renderer to use.
         settings (BuilderSettings): builder settings.
         articles (list[Article]): articles to render, newest first.
-
-    Raises:
-        ValueError: if an article is named "tag", like the tag pages folder.
     """
     output = settings.output_path / "blog"
-    if any(a.slug == "tag" for a in articles):
-        msg = 'an article cannot be named "tag", it is used by the tag pages'
-        raise ValueError(msg)
+    check_slugs(articles)
     shutil.copytree(
         settings.blog_path,
         output,
@@ -234,6 +243,7 @@ def build_site(
     # load the articles first, so a broken one fails the build before
     # the output folder is touched
     articles = load_articles(settings.blog_path, include_drafts=include_drafts)
+    check_slugs(articles)
 
     if output.exists():
         shutil.rmtree(output)

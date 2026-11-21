@@ -3,5 +3,5 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": { "includes": ["public_html/js/**", "public_html/css/**", "!public_html/js/secret.js"] },
   "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
-  "linter": { "rules": { "recommended": true } }
+  "linter": { "rules": { "preset": "recommended" } }
 }

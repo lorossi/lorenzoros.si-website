@@ -145,7 +145,7 @@ a.u:focus-visible {
 
 .nav a::before {
   content: "./";
-  color: var(--line);
+  color: var(--dim);
 }
 
 .nav a:hover,
@@ -361,7 +361,7 @@ a.u:focus-visible {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  color: var(--line);
+  color: var(--dim);
   background: repeating-linear-gradient(
     135deg,
     transparent 0 10px,
@@ -617,7 +617,8 @@ a.u:focus-visible {
     transition: none;
   }
 
-  .card:hover {
+  .card:hover,
+  .card:focus-visible {
     transform: none;
   }
 }
