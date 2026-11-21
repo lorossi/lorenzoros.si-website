@@ -1,6 +1,7 @@
 /* the /shell page: the website as a terminal */
 
 [hidden] {
+  /* biome-ignore lint/complexity/noImportantStyles: [hidden] must beat any display rule */
   display: none !important;
 }
 

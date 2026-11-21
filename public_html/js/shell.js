@@ -3,8 +3,6 @@
 // (#shell-data); everything else is made up on the spot.
 
 (() => {
-  "use strict";
-
   const DATA = JSON.parse(document.getElementById("shell-data").textContent);
   const $ = (id) => document.getElementById(id);
 
@@ -31,7 +29,8 @@
 
   const repoFile = (r, launch) => {
     const lines = [`# ${r.name}`, "", r.description || "(no description)", ""];
-    if (launch) lines.push(`updated ${r.date}`, `→ ${r.url}`, "", `run  open ${r.name}.url  to launch it`);
+    if (launch)
+      lines.push(`updated ${r.date}`, `→ ${r.url}`, "", `run  open ${r.name}.url  to launch it`);
     else lines.push(`last push ${r.date}`, `→ ${r.url}`);
     return mkFile(lines.join("\n"), r.date, { url: r.url });
   };
@@ -156,7 +155,11 @@
   // ---------- toys ----------
 
   // enigma: rotors I II III, reflector B, start AAA, no plugboard
-  const ROT = ["EKMFLGDQVZNTOWYHXUSPAIBRCJ", "AJDKSIRUXBLHWTMCQGZNPYFVOE", "BDFHJLCPRTXVZNYEIWGAKMUSQO"];
+  const ROT = [
+    "EKMFLGDQVZNTOWYHXUSPAIBRCJ",
+    "AJDKSIRUXBLHWTMCQGZNPYFVOE",
+    "BDFHJLCPRTXVZNYEIWGAKMUSQO",
+  ];
   const REFL = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
   const INV = ROT.map((w) => {
     const a = [];
@@ -174,7 +177,8 @@
       } else if (right) pos[1] = (pos[1] + 1) % 26;
       pos[2] = (pos[2] + 1) % 26;
       let c = ch.charCodeAt(0) - 65;
-      for (let i = 2; i >= 0; i--) c = (ROT[i].charCodeAt((c + pos[i]) % 26) - 65 - pos[i] + 26) % 26;
+      for (let i = 2; i >= 0; i--)
+        c = (ROT[i].charCodeAt((c + pos[i]) % 26) - 65 - pos[i] + 26) % 26;
       c = REFL.charCodeAt(c) - 65;
       for (let j = 0; j < 3; j++) c = (INV[j][(c + pos[j]) % 26] - pos[j] + 26) % 26;
       return String.fromCharCode(c + 65);
@@ -182,7 +186,8 @@
   };
 
   const decimalTime = (d) => {
-    const s = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds() + d.getMilliseconds() / 1000;
+    const s =
+      d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds() + d.getMilliseconds() / 1000;
     const dec = Math.floor((s / 86400) * 100000);
     const two = (n) => String(n).padStart(2, "0");
     return `${Math.floor(dec / 10000)}:${two(Math.floor(dec / 100) % 100)}:${two(dec % 100)}`;
@@ -222,7 +227,8 @@
   ];
   const TRAIN_W = Math.max(...TRAIN.map((l) => l.length));
 
-  const KONAMI = "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a";
+  const KONAMI =
+    "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a";
   const ACCENTS = ["cyan", "green", "amber", "magenta"];
   const MATRIX_CHARS = "0123456789ABCDEFlorenzosi<>*+=:/";
   const HOG = "vscode-spotify-now-playing";
@@ -326,7 +332,12 @@
     return d;
   };
 
-  const promptSegs = (path) => [T("lorenzo", "acc", true), T("@rossi:"), T(path, "acc"), T("$ ", "dim")];
+  const promptSegs = (path) => [
+    T("lorenzo", "acc", true),
+    T("@rossi:"),
+    T(path, "acc"),
+    T("$ ", "dim"),
+  ];
 
   const fillPrompt = (node, path) => {
     node.replaceChildren(...promptSegs(path).map(segEl));
@@ -370,7 +381,8 @@
       : ed
         ? `${ed.kind} ${ed.path}`
         : `lorenzo@rossi: ${dispPath(st.cwd)}`;
-    $("term-info").textContent = ed || app ? "" : `zsh — ${st.count} command${st.count === 1 ? "" : "s"}`;
+    $("term-info").textContent =
+      ed || app ? "" : `zsh — ${st.count} command${st.count === 1 ? "" : "s"}`;
     const quit = $("term-quit");
     quit.hidden = !(ed || app);
     quit.textContent = app ? app.quit : ed && ed.kind === "nano" ? "^X exit" : ":q quit";
@@ -387,7 +399,10 @@
       box.replaceChildren();
       for (const r of rows) {
         const row = el("div", "vi-row");
-        row.append(el("span", "vi-num", r.num), el("span", `c-${r.l.role}${r.l.bold ? " b" : ""}`, r.l.text));
+        row.append(
+          el("span", "vi-num", r.num),
+          el("span", `c-${r.l.role}${r.l.bold ? " b" : ""}`, r.l.text),
+        );
         box.appendChild(row);
       }
       for (let i = rows.length; i < 26; i++) {
@@ -401,7 +416,8 @@
     } else {
       const box = $("nano-rows");
       box.replaceChildren();
-      for (const r of rows) box.appendChild(el("div", `tl c-${r.l.role}${r.l.bold ? " b" : ""}`, r.l.text));
+      for (const r of rows)
+        box.appendChild(el("div", `tl c-${r.l.role}${r.l.bold ? " b" : ""}`, r.l.text));
       box.scrollTop = 0;
       $("nano-path").textContent = ed.path;
     }
@@ -538,15 +554,27 @@
       } else {
         const now = new Date().toTimeString().slice(0, 8);
         lines.push(txt(`top - ${now} up ${upS},  1 user,  load average: ${load.join(", ")}`));
-        lines.push(txt(`Tasks: ${procs.length} total,   1 running, ${procs.length - 1} sleeping,   0 stopped,   0 zombie`));
-        lines.push(txt(`%Cpu(s): ${(total / 4).toFixed(1)} us,  0.3 sy,  0.0 ni, ${(100 - total / 4).toFixed(1)} id`));
+        lines.push(
+          txt(
+            `Tasks: ${procs.length} total,   1 running, ${procs.length - 1} sleeping,   0 stopped,   0 zombie`,
+          ),
+        );
+        lines.push(
+          txt(
+            `%Cpu(s): ${(total / 4).toFixed(1)} us,  0.3 sy,  0.0 ni, ${(100 - total / 4).toFixed(1)} id`,
+          ),
+        );
       }
       lines.push(txt(""), line(T("  PID USER      %CPU %MEM     TIME+ COMMAND", "acc", true)));
       for (const p of list.slice(0, Math.max(5, size.rows - 8))) {
         const hot = p.cpu > 50;
         lines.push(
           line(
-            T(`${lpad(p.pid, 5)} lorenzo  ${lpad(p.cpu.toFixed(1), 5)} ${lpad(p.mem.toFixed(1), 4)} ${lpad(fmt(p.time), 9)} `, hot ? "fg" : "dim", hot),
+            T(
+              `${lpad(p.pid, 5)} lorenzo  ${lpad(p.cpu.toFixed(1), 5)} ${lpad(p.mem.toFixed(1), 4)} ${lpad(fmt(p.time), 9)} `,
+              hot ? "fg" : "dim",
+              hot,
+            ),
             T(p.name, hot ? "acc" : "fg", hot),
           ),
         );
@@ -567,7 +595,9 @@
       const lines = [];
       for (let i = 0; i < top; i++) lines.push(txt(""));
       lines.push(txt(crop(SMOKE[f % 6 < 3 ? 0 : 1]), "dim"));
-      TRAIN.forEach((l, i) => lines.push(txt(crop(l), i === TRAIN.length - 1 ? "dim" : "fg")));
+      TRAIN.forEach((l, i) => {
+        lines.push(txt(crop(l), i === TRAIN.length - 1 ? "dim" : "fg"));
+      });
       drawApp(lines);
       x -= 2;
       f++;
@@ -587,7 +617,11 @@
     const flags = args.filter((a) => a.startsWith("-")).join("");
     const targets = args.filter((a) => !a.startsWith("-"));
     const r = resolve(cwd, targets[0]);
-    if (r.err) return { ok: false, lines: [txt(`ls: cannot access '${targets[0]}': No such file or directory`)] };
+    if (r.err)
+      return {
+        ok: false,
+        lines: [txt(`ls: cannot access '${targets[0]}': No such file or directory`)],
+      };
     const isDir = r.node.type === "dir";
     const names = isDir ? sorted(r.node) : [r.path[r.path.length - 1]];
     const nodeOf = (n) => (isDir ? r.node.children[n] : r.node);
@@ -599,7 +633,8 @@
     };
     if (!flags.includes("l")) {
       const segs = [];
-      if (flags.includes("a")) segs.push(T(".", "acc", true), T("  "), C("..", "cd .. && ls", "acc", true), T("  "));
+      if (flags.includes("a"))
+        segs.push(T(".", "acc", true), T("  "), C("..", "cd .. && ls", "acc", true), T("  "));
       names.forEach((n, i) => {
         if (i) segs.push(T("  "));
         segs.push(entry(n));
@@ -618,7 +653,11 @@
   };
 
   const cmdCat = (name, args) => {
-    if (!args.length) return { ok: false, lines: [txt(`${name}: missing operand`), txt("try: cat about.txt", "dim")] };
+    if (!args.length)
+      return {
+        ok: false,
+        lines: [txt(`${name}: missing operand`), txt("try: cat about.txt", "dim")],
+      };
     const lines = [];
     let ok = true;
     for (const a of args) {
@@ -633,7 +672,10 @@
         ok = false;
         lines.push(
           txt(`${name}: ${a}: Permission denied`),
-          txt(`  the ${r.node.what} is kept away from spambots: the homepage reveals it with JavaScript.`, "dim"),
+          txt(
+            `  the ${r.node.what} is kept away from spambots: the homepage reveals it with JavaScript.`,
+            "dim",
+          ),
           line(T("  see it at ", "dim"), Lk("lorenzoros.si/#contacts", "/#contacts")),
         );
       } else {
@@ -647,7 +689,8 @@
 
   const cmdTree = (args) => {
     const r = resolve(cwd, args[0]);
-    if (r.err || r.node.type !== "dir") return { ok: false, lines: [txt(`${args[0] || "."} [error opening dir]`)] };
+    if (r.err || r.node.type !== "dir")
+      return { ok: false, lines: [txt(`${args[0] || "."} [error opening dir]`)] };
     const lines = [line(T(args[0] || ".", "acc", true))];
     let dirs = 0;
     let files = 0;
@@ -674,9 +717,18 @@
   };
 
   const cmdEdit = (kind, name, args) => {
-    if (!args.length) return { ok: false, lines: [txt(`${name}: which file? try: ${name} about.txt`, "dim")] };
+    if (!args.length)
+      return { ok: false, lines: [txt(`${name}: which file? try: ${name} about.txt`, "dim")] };
     const r = resolve(cwd, args[0]);
-    if (r.err) return { ok: false, lines: [txt(`${name}: ${args[0]}: No such file (and this file system is read-only, so no new ones)`)] };
+    if (r.err)
+      return {
+        ok: false,
+        lines: [
+          txt(
+            `${name}: ${args[0]}: No such file (and this file system is read-only, so no new ones)`,
+          ),
+        ],
+      };
     if (r.node.type === "dir") return { ok: false, lines: [txt(`"${args[0]}" is a directory`)] };
     if (r.node.locked) return { ok: false, lines: [txt(`"${args[0]}" [Permission Denied]`)] };
     const lines = fileLines(r.path[r.path.length - 1], r.node.content);
@@ -690,10 +742,15 @@
   };
 
   const cmdOpen = (args) => {
-    if (!args.length) return { ok: false, lines: [txt("open: which one? try: ls ~/interactive", "dim")] };
+    if (!args.length)
+      return { ok: false, lines: [txt("open: which one? try: ls ~/interactive", "dim")] };
     const r = resolve(cwd, args[0]);
     if (r.err) return { ok: false, lines: [txt(`open: ${args[0]}: No such file or directory`)] };
-    if (!r.node.url) return { ok: false, lines: [txt(`open: nothing to launch in ${args[0]}, try cat ${args[0]}`, "dim")] };
+    if (!r.node.url)
+      return {
+        ok: false,
+        lines: [txt(`open: nothing to launch in ${args[0]}, try cat ${args[0]}`, "dim")],
+      };
     if (r.node.url.startsWith("/")) window.location.href = r.node.url;
     else window.open(r.node.url, "_blank", "noopener");
     return { ok: true, lines: [line(T("opening ", "dim"), Lk(r.node.url, r.node.url))] };
@@ -710,21 +767,38 @@
       [T("Host", "acc", true), T(": lorenzoros.si")],
       [T("Kernel", "acc", true), T(": python build.py --build")],
       [T("Uptime", "acc", true), T(`: ${Math.floor(up / 60)} mins, ${up % 60} secs`)],
-      [T("Packages", "acc", true), T(`: ${DATA.repos_total} (github), ${Object.keys(DATA.portfolio).length} languages`)],
+      [
+        T("Packages", "acc", true),
+        T(`: ${DATA.repos_total} (github), ${Object.keys(DATA.portfolio).length} languages`),
+      ],
       [T("Files", "acc", true), T(`: ${files}`)],
       [T("Shell", "acc", true), T(": zsh, allegedly")],
       [T("Font", "acc", true), T(": JetBrains Mono")],
       [T("Theme", "acc", true), T(`: dark, always (accent ${accent})`)],
       [T("Job", "acc", true), T(": software engineer @ CERN")],
       [],
-      [T("███", "cyan"), T("███", "green"), T("███", "amber"), T("███", "magenta"), T("███", "dim"), T("███", "fg")],
+      [
+        T("███", "cyan"),
+        T("███", "green"),
+        T("███", "amber"),
+        T("███", "magenta"),
+        T("███", "dim"),
+        T("███", "fg"),
+      ],
     ];
-    return { ok: true, lines: info.map((segs, i) => ({ segs: [T(`  ${pad(LOGO[i] || "", 20)}`, "acc", true), ...segs] })) };
+    return {
+      ok: true,
+      lines: info.map((segs, i) => ({
+        segs: [T(`  ${pad(LOGO[i] || "", 20)}`, "acc", true), ...segs],
+      })),
+    };
   };
 
   const cmdRmRf = (entry) => {
     const files = allFiles(ROOT, [], []);
-    const lines = files.map((f) => txt(`${f.dir ? "removed directory" : "removed"} '${f.p}'`, "dim"));
+    const lines = files.map((f) =>
+      txt(`${f.dir ? "removed directory" : "removed"} '${f.p}'`, "dim"),
+    );
     lines.push(txt(""), txt(`rm: ${files.length} entries removed. the website is gone.`));
     const end = [
       txt(""),
@@ -762,11 +836,17 @@
     for (const [c, d] of HELP) lines.push(line(T(`  ${pad(c, 18)}`), T(d, "dim")));
     lines.push(txt(""), txt("also installed", "acc"));
     const segs = [T("  ")];
-    ["neofetch", "htop", "top", "matrix", "corgi", "decimalclock", "enigma hello"].forEach((c, i) => {
-      if (i) segs.push(T("  "));
-      segs.push(C(c, c));
-    });
-    lines.push({ segs }, txt(""), txt("tab completes names, ↑ ↓ walk the history, ctrl+l clears.", "dim"));
+    ["neofetch", "htop", "top", "matrix", "corgi", "decimalclock", "enigma hello"].forEach(
+      (c, i) => {
+        if (i) segs.push(T("  "));
+        segs.push(C(c, c));
+      },
+    );
+    lines.push(
+      { segs },
+      txt(""),
+      txt("tab completes names, ↑ ↓ walk the history, ctrl+l clears.", "dim"),
+    );
     return { ok: true, lines };
   };
 
@@ -786,7 +866,8 @@
       case "cd": {
         const r = resolve(cwd, args[0] || "~");
         if (r.err) return { ok: false, lines: [txt(`cd: no such file or directory: ${args[0]}`)] };
-        if (r.node.type !== "dir") return { ok: false, lines: [txt(`cd: not a directory: ${args[0]}`)] };
+        if (r.node.type !== "dir")
+          return { ok: false, lines: [txt(`cd: not a directory: ${args[0]}`)] };
         cwd = r.path;
         return { ok: true, lines: [] };
       }
@@ -807,7 +888,13 @@
       case "pico":
         return cmdEdit("nano", name, args);
       case "emacs":
-        return { ok: false, lines: [txt("zsh: command not found: emacs"), txt("vi and nano are installed. pick a side.", "dim")] };
+        return {
+          ok: false,
+          lines: [
+            txt("zsh: command not found: emacs"),
+            txt("vi and nano are installed. pick a side.", "dim"),
+          ],
+        };
       case "open":
       case "xdg-open":
         return cmdOpen(args);
@@ -828,7 +915,13 @@
           line(T("decimal time  ", "dim"), T(decimalTime(new Date()), "acc", true)),
           txt("10 hours a day, 100 minutes an hour, 100 seconds a minute.", "dim"),
         ];
-        if (real) lines.push(line(T("the real one: ", "dim"), C("open ~/interactive/decimalclock.url", "open ~/interactive/decimalclock.url")));
+        if (real)
+          lines.push(
+            line(
+              T("the real one: ", "dim"),
+              C("open ~/interactive/decimalclock.url", "open ~/interactive/decimalclock.url"),
+            ),
+          );
         return { ok: true, lines };
       }
       case "enigma":
@@ -837,8 +930,14 @@
           ok: true,
           lines: [
             txt(enigma(args.join(" ")), "acc"),
-            txt("rotors I II III · reflector B · start AAA. run it on the output to decode.", "dim"),
-            line(T("the full machine: ", "dim"), Lk("github.com/lorossi/pynigma", "https://github.com/lorossi/pynigma")),
+            txt(
+              "rotors I II III · reflector B · start AAA. run it on the output to decode.",
+              "dim",
+            ),
+            line(
+              T("the full machine: ", "dim"),
+              Lk("github.com/lorossi/pynigma", "https://github.com/lorossi/pynigma"),
+            ),
           ],
         };
       case "corgi":
@@ -846,7 +945,10 @@
           ok: true,
           lines: CORGI.map((l) => txt(l)).concat([
             txt(""),
-            line(T("free delivery of more corgis: ", "dim"), Lk("t.me/corgos_bot", "https://t.me/corgos_bot")),
+            line(
+              T("free delivery of more corgis: ", "dim"),
+              Lk("t.me/corgos_bot", "https://t.me/corgos_bot"),
+            ),
           ]),
         };
       case "neofetch":
@@ -862,13 +964,23 @@
       case "ssh":
         return {
           ok: true,
-          lines: [txt(`ssh: connecting to ${args[0] || "lorenzoros.si"}...`, "dim"), txt("you're already here."), txt("(look up)", "dim")],
+          lines: [
+            txt(`ssh: connecting to ${args[0] || "lorenzoros.si"}...`, "dim"),
+            txt("you're already here."),
+            txt("(look up)", "dim"),
+          ],
         };
       case "history":
-        return { ok: true, lines: st.hist.map((h, i) => line(T(`${lpad(i + 1, 4)}  `, "dim"), C(h, h))) };
+        return {
+          ok: true,
+          lines: st.hist.map((h, i) => line(T(`${lpad(i + 1, 4)}  `, "dim"), C(h, h))),
+        };
       case "sudo":
         if (args[0] === "rm") return run(args.join(" "), entry);
-        return { ok: false, lines: [txt("lorenzo is not in the sudoers file. This incident will be reported.")] };
+        return {
+          ok: false,
+          lines: [txt("lorenzo is not in the sudoers file. This incident will be reported.")],
+        };
       case "rm": {
         const flags = args.filter((a) => a.startsWith("-")).join("");
         if (flags.includes("r") && flags.includes("f")) return cmdRmRf(entry);
@@ -882,7 +994,10 @@
       case "chmod":
         return { ok: false, lines: [txt(`${name}: read-only file system`)] };
       case "man":
-        return { ok: false, lines: [line(T("What manual page do you want? try "), C("help", "help", "acc"))] };
+        return {
+          ok: false,
+          lines: [line(T("What manual page do you want? try "), C("help", "help", "acc"))],
+        };
       case "exit":
       case "logout":
         return {
@@ -950,7 +1065,8 @@
       const r = resolve(st.cwd, dirPart);
       if (r.err || r.node.type !== "dir") return;
       matches = sorted(r.node).filter((k) => k.startsWith(base));
-      apply = (m, full) => dirPart + m + (full ? (r.node.children[m].type === "dir" ? "/" : " ") : "");
+      apply = (m, full) =>
+        dirPart + m + (full ? (r.node.children[m].type === "dir" ? "/" : " ") : "");
     }
     if (!matches.length) return;
     if (matches.length === 1) {
@@ -1067,8 +1183,10 @@
     if ([":q", ":q!", ":qa", ":qa!", ":wq", ":wq!", ":x", "ZZ", "ZQ"].includes(v)) closeEditor();
     else if (v === ":w!") edMsg("E212: Can't open file for writing");
     else if (v.startsWith(":w")) edMsg("E45: 'readonly' option is set (add ! to override)");
-    else if (["i", "a", "o", "I", "A", "O"].includes(v)) edMsg("-- INSERT -- not today: this file is read-only. :q to quit");
-    else if (v === ":help" || v === ":h") edMsg("type :q and press Enter. everyone has been there.");
+    else if (["i", "a", "o", "I", "A", "O"].includes(v))
+      edMsg("-- INSERT -- not today: this file is read-only. :q to quit");
+    else if (v === ":help" || v === ":h")
+      edMsg("type :q and press Enter. everyone has been there.");
     else if (v.startsWith(":")) edMsg(`E492: Not an editor command: ${v.slice(1)}`);
     else edMsg("type :q and press Enter to quit");
   });
@@ -1101,7 +1219,12 @@
     if (k === "matrix") {
       e.preventDefault();
       stopApp();
-    } else if (k === "top" && (e.key.toLowerCase() === "q" || e.key === "Escape" || (e.ctrlKey && e.key.toLowerCase() === "c"))) {
+    } else if (
+      k === "top" &&
+      (e.key.toLowerCase() === "q" ||
+        e.key === "Escape" ||
+        (e.ctrlKey && e.key.toLowerCase() === "c"))
+    ) {
       e.preventDefault();
       stopApp();
     } else if (k === "sl") e.preventDefault(); // sl ignores you, as it should
@@ -1113,7 +1236,11 @@
   printTo(newEntry(null), [
     txt(`Last login: ${now.toDateString()} ${now.toTimeString().slice(0, 5)} on ttys001`, "dim"),
     txt(""),
-    line(T("type "), C("help", "help", "acc"), T(" for the commands, or click any name to open it.")),
+    line(
+      T("type "),
+      C("help", "help", "acc"),
+      T(" for the commands, or click any name to open it."),
+    ),
     txt(""),
   ]);
   input.placeholder = "type help, or try: cd portfolio";
