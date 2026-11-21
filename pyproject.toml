@@ -4,10 +4,19 @@ version = "0.1.0"
 description = "Static site generator and deployer for lorenzoros.si"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = ["jinja2>=3.1.6", "paramiko>=3.5.0", "requests>=2.32.3"]
+dependencies = [
+    "jinja2>=3.1.6",
+    "latex2mathml>=3.81.1",
+    "markdown-it-py>=3.0.0",
+    "mdit-py-plugins>=0.7.0",
+    "paramiko>=3.5.0",
+    "requests>=2.32.3",
+]
 
 [dependency-groups]
 dev = [
+    "djlint>=1.54.0",
+    "pytest>=9.2.0",
     "ruff>=0.6",
     "ty>=0.0.89",
 ]
@@ -15,10 +24,14 @@ dev = [
 [tool.uv]
 package = false
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["python_scripts"]
+
 [tool.ruff]
 line-length = 88
 target-version = "py314"
-src = ["python_scripts"]
+src = ["python_scripts", "tests"]
 
 [tool.ruff.lint]
 preview = true # needed for "DOC" rules
@@ -65,6 +78,16 @@ ignore = [
     "blind-except", # main() logs any failure and turns it into an exit code
 ]
 
+"tests/*" = [
+    "assert",          # pytest uses plain asserts
+    "D",               # test names are the documentation
+    "DOC",             # same, for helper docstrings
+    "S105",            # fake secrets
+    "compare-to-empty-string",
+    "PLR2004",         # magic values are fine in assertions
+    "S101",            # assert
+]
+
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
@@ -87,3 +110,9 @@ undefined-reveal = "error"
 
 [tool.ty.terminal]
 error-on-warning = true
+
+[tool.djlint]
+profile = "jinja"
+indent = 2
+max_line_length = 120
+ignore = "J018" # url_for() is Flask-only; this is a static site

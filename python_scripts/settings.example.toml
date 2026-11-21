@@ -3,27 +3,31 @@
 # Relative paths are resolved from the folder containing this file.
 
 [Scraper]
-username = "lorossi" # GitHub Username
-token = ""           # GitHub Personal Access Token
-relevant_topics = ["released"] # Topics to include for the repos in homepage
-skip_interactive_names = ["lorenzoros.si-website"] # Repo names to skip
-skip_interactive_topics = [
-  "library",
-  "c-library",
-  "javascript-library",
-] # Topics to skip for the interactive repos list in homepage
+username = "lorossi"                 # GitHub Username
+token = ""                           # GitHub Personal Access Token
+relevant_topic = "released"       # Topic to include for the repos in homepage
+interactive_topic = "interactive"    # GitHub topic marking a repo as interactive
+preview_path = ".github/preview.png" # image in the repo (default branch) used as preview
+# commits whose message contains one of these (case-insensitive) do not count as
+# an update of an interactive repo, so changing the preview keeps the old date
+ignored_commit_messages = ["preview"]
 
 [Builder]
-templates_path = "templates"     # Jinja templates
-static_path = "../public_html"   # static assets, copied as they are
-data_path = "data"               # data files used by the templates
-output_path = "../dist"          # generated website, this folder gets deployed
+templates_path = "templates"   # Jinja templates
+static_path = "../public_html" # static assets, copied as they are
+data_path = "data"             # data files used by the templates
+blog_path = "../blog"          # blog articles, in Markdown
+output_path = "../dist"        # generated website, this folder gets deployed
+cache_path = ".cache"          # downloaded files kept between builds (not committed)
 
 [Deployer]
-hostname = "lorenzoros.si"   # website url
-username = ""                # ssh username
-private_key = ""             # ssh private key, as text (used in CI)
-private_key_path = ""        # ssh private key file (alternative to private_key)
-private_key_passphrase = ""  # passphrase of the private key, if encrypted
-server_public_key = ""       # server public key, e.g. "ssh-ed25519 AAAA..." from ssh-keyscan
-remote_path = ""             # remote path
+hostname = "lorenzoros.si"  # website url
+username = ""               # ssh username
+private_key = ""            # ssh private key, as text (used in CI)
+private_key_path = ""       # ssh private key file (alternative to private_key)
+private_key_passphrase = "" # passphrase of the private key, if encrypted
+server_public_key = ""      # server public key, e.g. "ssh-ed25519 AAAA..." from ssh-keyscan
+remote_path = ""            # remote path
+# folders (relative to remote_path) fully owned by the build: after uploading,
+# remote files in them that are not in the build are deleted
+prune_paths = ["blog"]

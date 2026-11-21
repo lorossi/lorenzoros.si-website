@@ -1,20 +1,45 @@
+/* Design tokens of the "Lorenzo Rossi Terminal" design system */
 :root {
-  --background-color: #0a0a0d;
-  --text-color: #f2f2f2;
-  --line-color: rgb(21, 20, 20);
+  /* color */
+  --bg: #0b0d10;
+  --panel: #11151a;
+  --line: #232a33; /* borders and rules only, never text */
+  --fg: #dde1e8;
+  --dim: #8d97a6;
 
-  --title-size: 3rem;
-  --text-size: 1.5rem;
-  --small-text-size: 1rem;
+  --accent-cyan: #4fd8ec;
+  --accent-green: #7ee787;
+  --accent-amber: #ffb454;
+  --accent-magenta: #ff6ad5;
+  /* the site's accent: repoint it to recolor everything, never mix two */
+  --accent: var(--accent-cyan);
 
-  --aberration: 1px 1px #00ffff, -1px -1px #ff00ff;
-  --small-aberration: 1px 1px #00ffff7f, -1px -1px #ff00ff7f;
-}
+  --glitch-cyan: #00ffff73;
+  --glitch-magenta: #ff00ff73;
+  --glitch: 1px 1px 0 var(--glitch-cyan), -1px -1px 0 var(--glitch-magenta);
 
-@media screen and (min-width: 770px) {
-  :root {
-    --title-size: 4rem;
-    --text-size: 3rem;
-    --small-text-size: 2rem;
-  }
+  --flag-green: #008c45;
+  --flag-white: #f4f9ff;
+  --flag-red: #cd212a;
+
+  /* type */
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --text-body: clamp(16px, 0.9vw + 4px, 20px);
+  --text-small: 14px;
+  --text-tag: 13px;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 80px;
+  --space-9: 96px;
+
+  --touch-target: 44px;
+  --measure-article: 72ch;
+  --page-max: 1600px;
 }

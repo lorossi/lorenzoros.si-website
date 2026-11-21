@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} - Lorenzo Rossi{% endblock %}
+{% block description %}{{ article.description or article.title }}{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="/css/blog.css?{{ unique_id }}" />
+{% endblock %}
+{% block nav %}
+  <a href="/">home</a>
+  <a href="/blog/">blog</a>
+{% endblock %}
+{% block body %}
+  <article class="art">
+    <header>
+      <p class="crumb">~/blog/{{ article.slug }}</p>
+      <h1 class="glitch">{{ article.title }}</h1>
+      <p class="date"><time datetime="{{ article.date_formatted }}">{{ article.date_long }}</time></p>
+      {% if article.tags %}
+        <p class="article-tags">{% for tag in article.tags %}<a href="{{ tag_url(tag) }}">#{{ tag }}</a>{% endfor %}</p>
+      {% endif %}
+    </header>
+    <div class="article-content">{{ article.content | safe }}</div>
+  </article>
+  <footer class="ft">
+    <a href="/blog/">← back to blog</a>
+  </footer>
+{% endblock %}

@@ -6,36 +6,46 @@ on:
       - main
     paths:
       - "public_html/**"
+      - "blog/**"
       - "python_scripts/**"
+      - "tests/**"
       - "pyproject.toml"
       - "uv.lock"
+      - "biome.json"
       - ".github/workflows/build-and-deploy.yml"
+      - ".github/workflows/lint.yml"
+      - ".github/workflows/test.yml"
   schedule:
     - cron: "15 2 * * 0"
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: read
+
+# never deploy twice at once, but let a running deploy finish
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
 jobs:
   lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    uses: ./.github/workflows/lint.yml
 
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v6
-
-      - name: Ruff
-        run: |
-          uv run ruff format --check python_scripts
-          uv run ruff check python_scripts
-
-      - name: ty
-        run: uv run ty check python_scripts
+  test:
+    uses: ./.github/workflows/test.yml
 
   build-and-deploy:
-    needs: lint
+    needs: [lint, test]
     runs-on: ubuntu-latest
     environment: deploy
+    # every string setting can be overridden by a <SECTION>_<KEY> variable
+    env:
+      SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
+      DEPLOYER_USERNAME: ${{ secrets.DEPLOYER_USERNAME }}
+      DEPLOYER_PRIVATE_KEY_PASSPHRASE: ${{ secrets.DEPLOYER_PRIVATE_KEY_PASSPHRASE }}
+      DEPLOYER_REMOTE_PATH: ${{ secrets.DEPLOYER_REMOTE_PATH }}
+      DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY }}
+      DEPLOYER_SERVER_PUBLIC_KEY: ${{ secrets.DEPLOYER_SERVER_PUBLIC_KEY }}
 
     steps:
       - name: Checkout repository
@@ -44,16 +54,11 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v6
 
+      - name: Check GitHub token and SSH key
+        run: uv run --no-dev python python_scripts/build.py --check --settings python_scripts/settings.example.toml
+
       - name: Build and deploy website
-        # every string setting can be overridden by a <SECTION>_<KEY> variable
         run: uv run --no-dev python python_scripts/build.py --build --deploy --settings python_scripts/settings.example.toml
-        env:
-          SCRAPER_TOKEN: ${{ secrets.SCRAPER_TOKEN }}
-          DEPLOYER_USERNAME: ${{ secrets.DEPLOYER_USERNAME }}
-          DEPLOYER_PRIVATE_KEY_PASSPHRASE: ${{ secrets.DEPLOYER_PRIVATE_KEY_PASSPHRASE }}
-          DEPLOYER_REMOTE_PATH: ${{ secrets.DEPLOYER_REMOTE_PATH }}
-          DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY }}
-          DEPLOYER_SERVER_PUBLIC_KEY: ${{ secrets.DEPLOYER_SERVER_PUBLIC_KEY }}
 
       - name: Upload artifacts
         if: always()

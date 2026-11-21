@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+    # main is tested by build-and-deploy.yml, which calls this workflow
+    branches-ignore:
+      - main
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    name: Python (pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: pytest
+        run: uv run pytest

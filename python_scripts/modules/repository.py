@@ -17,6 +17,7 @@ class Repository:
     description: str | None = None
     topics: list[str] = field(default_factory=list)
     homepage: str | None = None
+    default_branch: str = "main"
     id: int | None = None
     private: bool = False
     stargazers_count: int = 0
@@ -60,6 +61,16 @@ class Repository:
         return self.created_at_obj.strftime("%Y-%m-%d")
 
     @property
+    def last_push(self) -> str:
+        """Date of the last push, or the creation date if never pushed."""
+        return self.pushed_at or self.created_at
+
+    @property
+    def last_push_formatted(self) -> str:
+        """Date of the last push, formatted as YYYY-MM-DD."""
+        return datetime.fromisoformat(self.last_push).strftime("%Y-%m-%d")
+
+    @property
     def language(self) -> str | None:
         """Main language of the repository, if any."""
         if not self.languages:
@@ -80,6 +91,9 @@ class Repository:
         return description.removesuffix(".")
 
     @property
-    def is_interactive(self) -> bool:
-        """Whether the repository has a homepage."""
-        return bool(self.homepage)
+    def interactive_url(self) -> str:
+        """Where to send the visitors of an interactive repo.
+
+        This is the homepage, or the repository itself if it has none.
+        """
+        return self.homepage or self.html_url
