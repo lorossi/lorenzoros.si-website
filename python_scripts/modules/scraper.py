@@ -29,6 +29,7 @@ class Scraper:
                 created from the settings. Defaults to None.
         """
         self._settings = settings
+        self._warned_no_homepage: set[str] = set()
         self._github = github or GitHub(settings.username, settings.token)
         self._repos: list[Repository] = []
 
@@ -132,7 +133,8 @@ class Scraper:
         """
         repos = [r for r in self._repos if self._settings.interactive_topic in r.topics]
         for repo in repos:
-            if not repo.homepage:
+            if not repo.homepage and repo.name not in self._warned_no_homepage:
+                self._warned_no_homepage.add(repo.name)
                 logger.warning(
                     "%s is interactive but has no homepage, linking the repo",
                     repo.name,
