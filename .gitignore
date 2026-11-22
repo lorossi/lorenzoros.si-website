@@ -15,3 +15,5 @@ id_rsa*
 python_scripts/stats.json
 python_scripts/repos.json
 dist/
+# downloaded repo previews
+python_scripts/.cache/
