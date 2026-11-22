@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Lorenzo Rossi - Shell{% endblock %}
+{% block description %}Lorenzo Rossi homepage, explored from a shell{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="/css/shell.css?{{ unique_id }}" />
+  <script src="/js/shell.js?{{ unique_id }}" defer></script>
+{% endblock %}
+{% block nav %}
+  <a href="/#interactive" data-cmd="cd ~/interactive && ls">interactive</a>
+  <a href="/#portfolio" data-cmd="cd ~/portfolio && ls">portfolio</a>
+  <a href="/blog/" data-cmd="cd ~/blog && ls -l">blog</a>
+  <a href="/#contacts" data-cmd="cd ~/contacts && ls">contacts</a>
+{% endblock %}
+{% block body %}
+  <section class="shell-hero">
+    <h1 class="glitch">Hi, I'm Lorenzo.</h1>
+    <noscript>
+      <p class="sub">
+        This shell needs JavaScript. The <a class="u" href="/">regular website</a> works without it.
+      </p>
+    </noscript>
+  </section>
+  <section class="term" aria-label="Terminal">
+    <div class="term-head">
+      <span><span class="mark" aria-hidden="true">▌ </span><span id="term-title">lorenzo@rossi: ~</span></span>
+      <span id="term-info" class="hide-s"></span>
+      <button type="button" id="term-quit" class="term-quit" hidden></button>
+    </div>
+    <div class="term-body">
+      <div id="sh" class="sh">
+        <div id="out" role="log" aria-label="Terminal output"></div>
+        <div class="prompt-row">
+          <label for="sh-input"><span id="ps"></span><span class="sr-only">command</span></label>
+          <input id="sh-input"
+                 type="text"
+                 autocomplete="off"
+                 autocapitalize="off"
+                 spellcheck="false"
+                 enterkeyhint="go" />
+        </div>
+      </div>
+      <div id="vi" class="vi" hidden>
+        <div id="vi-rows" class="vi-rows"></div>
+        <div class="vi-status">
+          <span id="vi-path"></span><span id="vi-info"></span>
+        </div>
+        <div class="vi-cmdline">
+          <label for="vi-cmd" class="sr-only">vi command line, type :q and press Enter to quit</label>
+          <input id="vi-cmd"
+                 type="text"
+                 autocomplete="off"
+                 autocapitalize="off"
+                 spellcheck="false" />
+        </div>
+      </div>
+      <div id="nano" class="nano" hidden>
+        <div class="nano-bar">
+          <span>GNU nano 8.2</span><span id="nano-path"></span><span class="hide-s">[ Read-only ]</span>
+        </div>
+        <div id="nano-rows" class="nano-rows"></div>
+        <div class="nano-msg">
+          <span id="nano-msg"></span>
+        </div>
+        <label for="nano-key" class="sr-only">nano, press Control and X to exit</label>
+        <input id="nano-key" class="sr-only" type="text" readonly />
+        <div class="nano-keys">
+          <button type="button" data-nano="exit"><kbd>^X</kbd>Exit</button>
+          <button type="button" data-nano="write"><kbd>^O</kbd>Write Out</button>
+          <button type="button" data-nano="cut"><kbd>^K</kbd>Cut</button>
+          <button type="button" data-nano="help"><kbd>^G</kbd>Help</button>
+        </div>
+      </div>
+      <div id="app" class="app" hidden>
+        <div id="app-rows" class="app-rows"></div>
+        <label for="app-key" class="sr-only">full-screen program, press q to quit</label>
+        <input id="app-key" class="sr-only" type="text" readonly />
+      </div>
+    </div>
+  </section>
+  <footer class="ft">
+    <span>100% made in Italy<span class="flag" role="img" aria-label="Italian flag"></span></span>
+    <a href="/">the regular website →</a>
+    <span>© Lorenzo Rossi</span>
+  </footer>
+  <script id="shell-data" type="application/json">{{ shell | tojson }}</script>
+{% endblock %}

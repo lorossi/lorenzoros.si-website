@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{% if active_tag %}#{{ active_tag }} - {% endif %}Lorenzo Rossi - Blog{% endblock %}
+{% block description %}Lorenzo Rossi blog: random thoughts, things I learned{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="/css/blog.css?{{ unique_id }}" />
+{% endblock %}
+{% block body %}
+  <div class="page">
+    <p class="crumb">~/blog{% if active_tag %}/tag/{{ active_tag }}{% endif %}</p>
+    <h1 class="glitch">blog</h1>
+    <p class="sub">
+      {{ shown }} post{{ "" if shown == 1 else "s" }}{% if active_tag %} tagged #{{ active_tag }}{% endif %}, newest first
+    </p>
+    {% if tags %}
+      <nav class="filter" aria-label="Filter by tag">
+        <a href="/blog/"{% if not active_tag %} class="on" aria-current="page"{% endif %}>all<b>{{ total }}</b></a>
+        {% for tag, count in tags.items() %}
+          <a href="{{ tag_url(tag) }}"{% if tag == active_tag %} class="on" aria-current="page"{% endif %}>#{{ tag }}<b>{{ count }}</b></a>
+        {% endfor %}
+      </nav>
+    {% endif %}
+    {% for year, articles in years.items() %}
+      <h2 class="year">{{ year }}</h2>
+      <div class="list">
+        {% for article in articles %}
+          <a class="post" href="{{ article.url }}">
+            <time class="d" datetime="{{ article.date_formatted }}">{{ article.date_short }}</time>
+            <span>
+              <span class="t">{{ article.title }}</span>
+              {% if article.description %}
+                <span class="d x">{{ article.description }}</span>
+              {% endif %}
+              {% if article.tags %}
+                <span class="tags">{% for tag in article.tags %}<span>#{{ tag }}</span>{% endfor %}</span>
+              {% endif %}
+            </span>
+            <span class="go" aria-hidden="true">read →</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="d">no posts yet... check again later!</p>
+    {% endfor %}
+  </div>
+  <footer class="ft">
+    <a href="/">← back home</a>
+  </footer>
+{% endblock %}
