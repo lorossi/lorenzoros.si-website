@@ -217,6 +217,34 @@ def shell_data(
     }
 
 
+def check_output_path(settings: BuilderSettings) -> None:
+    """Make sure the output folder can be safely deleted and recreated.
+
+    Args:
+        settings (BuilderSettings): builder settings.
+
+    Raises:
+        ValueError: if the output folder is, or contains, an input folder or
+            the working directory.
+    """
+    output = settings.output_path.resolve()
+    protected = [
+        Path.cwd(),
+        SCRIPT_DIR,
+        settings.static_path,
+        settings.templates_path,
+        settings.data_path,
+        settings.blog_path,
+        settings.cache_path,
+    ]
+    for path in protected:
+        path = path.resolve()
+        if output == path or output in path.parents:
+            raise ValueError(
+                f"Refusing to delete the output folder {output}: it contains {path}"
+            )
+
+
 def build_site(
     settings: BuilderSettings,
     scraper: Scraper,
@@ -245,6 +273,7 @@ def build_site(
     articles = load_articles(settings.blog_path, include_drafts=include_drafts)
     check_slugs(articles)
 
+    check_output_path(settings)
     if output.exists():
         shutil.rmtree(output)
     shutil.copytree(settings.static_path, output)
@@ -388,6 +417,8 @@ def gather_arguments() -> argparse.Namespace:
     arguments = parser.parse_args()
     if not (arguments.build or arguments.deploy or arguments.check):
         parser.error("nothing to do: pass --build, --deploy and/or --check")
+    if arguments.drafts and arguments.deploy:
+        parser.error("--drafts cannot be combined with --deploy")
     if arguments.check and (arguments.build or arguments.deploy):
         parser.error("--check cannot be combined with --build or --deploy")
     return arguments
@@ -450,7 +481,10 @@ def main() -> int:
     try:
         run(arguments)
     except Exception:
-        logger.exception("Build failed, nothing was deployed after the error.")
+        logger.exception(
+            "Failed. If the error happened while deploying, the remote site "
+            "may be partially updated: deploy again."
+        )
         return 1
 
     logger.info("Done.")
