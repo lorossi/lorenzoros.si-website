@@ -110,7 +110,10 @@ def _math(latex: str, *, display: bool) -> str:
     Returns:
         str: the MathML.
     """
-    return latex_to_mathml(latex, display="block" if display else "inline")
+    try:
+        return latex_to_mathml(latex, display="block" if display else "inline")
+    except Exception as e:
+        raise ValueError(f"Invalid LaTeX {latex!r}: {e}") from e
 
 
 def _bracket_math_inline(state: StateInline, silent: bool) -> bool:  # ruff: ignore[boolean-type-hint-positional-argument]
@@ -132,6 +135,10 @@ def _bracket_math_inline(state: StateInline, silent: bool) -> bool:  # ruff: ign
     closer = "\\)" if opener == "\\(" else "\\]"
     end = state.src.find(closer, state.pos + 2)
     if end == -1:
+        return False
+    try:  # not valid LaTeX: leave it to the escape rule, as literal text
+        _math(state.src[state.pos + 2 : end], display=False)
+    except ValueError:
         return False
     if not silent:
         kind = "math_inline" if opener == "\\(" else "math_inline_double"
@@ -259,13 +266,23 @@ class Article:
             ValueError: if the front matter is missing or invalid.
         """
         text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
-        opening, _, rest = text.partition("\n")
-        front_matter, delimiter, body = rest.partition(f"\n{FRONT_MATTER_DELIMITER}\n")
-        if opening.strip() != FRONT_MATTER_DELIMITER or not delimiter:
+        lines = text.split("\n")
+        closing = next(
+            (
+                i
+                for i, line in enumerate(lines[1:], start=1)
+                if line.strip() == FRONT_MATTER_DELIMITER
+            ),
+            None,
+        )
+        if lines[0].strip() != FRONT_MATTER_DELIMITER or closing is None:
             raise ValueError(
                 f"{path}: the article must start with a front matter "
                 f"enclosed by {FRONT_MATTER_DELIMITER} lines"
             )
+
+        front_matter = "\n".join(lines[1:closing])
+        body = "\n".join(lines[closing + 1 :])
 
         try:
             meta = tomllib.loads(front_matter)
@@ -299,7 +316,7 @@ class Article:
     @property
     def url(self) -> str:
         """Absolute path of the article on the website."""
-        return f"/blog/{self.slug}/"
+        return f"/blog/{quote(self.slug)}/"
 
     @property
     def date_formatted(self) -> str:
