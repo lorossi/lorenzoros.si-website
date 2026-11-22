@@ -76,12 +76,20 @@ class Deployer:
             return None
 
         passphrase = self._settings.private_key_passphrase or None
+        errors: list[str] = []
         for key_class in KEY_CLASSES:
             try:
                 return key_class.from_private_key(io.StringIO(content), passphrase)
-            except paramiko.SSHException:
-                continue
-        raise ValueError("Cannot parse private_key")
+            except paramiko.PasswordRequiredException as e:
+                raise ValueError(
+                    "The private_key is encrypted: set the passphrase"
+                ) from e
+            except paramiko.SSHException as e:
+                errors.append(f"{key_class.__name__}: {e}")
+        raise ValueError(
+            "Cannot parse private_key (wrong passphrase or unsupported key?): "
+            + "; ".join(errors)
+        )
 
     def connect(self) -> None:
         """Connect to the remote server.
@@ -155,7 +163,18 @@ class Deployer:
 
         Args:
             local_path (Path): local folder to deploy.
+
+        Raises:
+            ValueError: if the folder does not look like a complete build, since
+                pruning it would delete live files.
         """
+        for required in ("index.html", "blog/index.html"):
+            if not (local_path / required).is_file():
+                raise ValueError(
+                    f"Refusing to deploy {local_path}: {required} is missing "
+                    "(run a full build first)"
+                )
+
         for path in sorted(local_path.rglob("*")):
             relative = path.relative_to(local_path).as_posix()
             remote_path = posixpath.join(self._settings.remote_path, relative)
@@ -260,4 +279,15 @@ class Deployer:
             return
 
         logger.info("Uploading %s to %s", local_path, remote_path)
-        self._sftp.put(str(local_path), remote_path)
+        # upload next to the target and rename, so visitors never see (and a
+        # dropped connection never leaves) a partial file
+        temporary = f"{remote_path}.tmp"
+        try:
+            self._sftp.put(str(local_path), temporary)
+            self._sftp.posix_rename(temporary, remote_path)
+        except Exception:
+            try:
+                self._sftp.remove(temporary)
+            except OSError:
+                pass
+            raise
