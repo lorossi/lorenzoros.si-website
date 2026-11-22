@@ -20,6 +20,7 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/).
 - `public_html/`: static files (css, js, fonts, images), copied as they are
 - `python_scripts/templates/`: `jinja2` templates; `base.html` is the layout shared by all the pages
 - `python_scripts/data/`: data used by the templates (e.g. the contact links)
+- `blog/`: blog articles, in Markdown (see [Blog](#blog))
 - `dist/`: the generated website, which is what gets deployed (not committed)
 
 ### Building
@@ -28,6 +29,7 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/).
 cp python_scripts/settings.example.toml python_scripts/settings.toml # then fill it in
 uv run python python_scripts/build.py --build            # scrape GitHub and build into dist/
 uv run python python_scripts/build.py --build --offline  # rebuild from the cached repos.json
+uv run python python_scripts/build.py --build --drafts   # also publish the draft articles, for previewing
 uv run python python_scripts/build.py --deploy           # upload dist/ to the server
 ```
 
@@ -38,14 +40,50 @@ Since the pages use absolute paths, preview them with a local server: `python -m
 ### Linting
 
 ```bash
-uv run ruff format python_scripts
-uv run ruff check python_scripts
-uv run ty check python_scripts
+uv run ruff format python_scripts tests
+uv run ruff check python_scripts tests
+uv run ty check python_scripts tests
+uv run djlint python_scripts/templates --check --lint  # HTML templates
+biome ci                                               # JS and CSS
+uv run pytest                                          # tests
 ```
+
+### Blog
+
+Each article is a Markdown file in the `blog/` folder, starting with a TOML front matter:
+
+```markdown
++++
+title = "My article"
+date = 2026-10-26
+description = "Optional, shown in the articles list and in the meta tags"
+tags = ["physics", "c"] # optional, each tag gets a page at /blog/tag/<tag>/
+draft = true # optional: drafts are skipped unless --drafts is passed
++++
+
+The content, in [CommonMark](https://commonmark.org/), plus tables and strikethrough.
+```
+
+The file name is the url: `blog/my-article.md` becomes `/blog/my-article/`.
+Any other file in `blog/` (e.g. images) is copied as it is to `/blog/`.
+
+The build generates the articles list in `/blog/` and one page per article.
+
+### Interactive projects
+
+The cards in the interactive section come from the GitHub repositories, and only from them:
+
+- a repository is interactive if it has the `interactive` topic (the `interactive_topic` setting). Nothing else is inferred, so a repository with a homepage is not interactive unless it is tagged;
+- the card links to the repository homepage, or to the repository itself if it has none (a warning is logged);
+- the preview is the image at `.github/preview.png` (the `preview_path` setting) in the default branch of the repository. It must be a PNG, JPEG, WebP, GIF or AVIF smaller than 2 MiB, ideally 16:10. A repository without it gets a plain placeholder.
+
+Previews are downloaded at every online build into `python_scripts/.cache/previews/` (not committed) and copied to `/assets/previews/`. With `--offline` nothing is downloaded and the cached previews are used.
 
 ## Frontend
 
-The whole website is just a static page with a few javascript functions to create the animations, the typer effect and the contact links.
+The whole website is a set of static pages styled like a terminal, with a few lines of javascript to reveal the contact links, plus the optional `/shell` page, the website as a fake terminal (`shell.js`).
+The font is [JetBrains Mono](https://www.jetbrains.com/lp/mono/), self-hosted.
+The blog index can be filtered by tag: each tag has its own page at `/blog/tag/<tag>/`, so the filter works without javascript.
 
 I made it all without using any framework, just by using html and css styling.
 I tested the website on multiple browsers with different screen sizes and it seems to scale well.
@@ -66,11 +104,13 @@ this would make the email readable, but not copyable, which is not ideal either.
 ## Deployment
 
 After generating the website, the deployment is done via `sftp` directly from the python `build.py` script.
-Only files that changed are uploaded; files removed locally are *not* deleted from the server.
+Only files that changed are uploaded.
+Files removed locally are *not* deleted from the server, except inside the folders listed in the `prune_paths` setting (by default only `blog/`): after the upload, anything in them that is not part of the build (e.g. a deleted or renamed article, or a draft deployed by mistake) is deleted.
+The rest of the server is never touched, so it can host other files too.
 
 If the `server_public_key` setting is set (e.g. `ssh-ed25519 AAAA...`, as printed by `ssh-keyscan lorenzoros.si`), the server must present that key; otherwise any key is accepted and a warning is logged.
 
-Furthermore, a GitHub Action lints the code and then builds and deploys the website on:
+Furthermore, a GitHub Action lints the code, runs the tests and then builds and deploys the website on:
 
 - commits to the `main` branch, affecting the website, the scripts or the dependencies
 - scheduled builds (weekly)
@@ -80,4 +120,4 @@ Furthermore, a GitHub Action lints the code and then builds and deploys the webs
 
 The website is distributed under the [MIT license](LICENSE.md).
 
-The logos are sourced from [icon blender](https://icon-blender.com/).
+JetBrains Mono is distributed under the [SIL Open Font License](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt).
