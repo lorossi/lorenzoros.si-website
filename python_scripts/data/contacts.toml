@@ -1,59 +1,59 @@
-# Contact links shown on the homepage.
+# Contact links shown on the homepage, as "<name>  <text> <label>".
 #
 # Entries with `secret` have no href in the generated HTML: secret.js fills in
 # the link and its text at runtime, to keep them away from scrapers.
 # `secret` is the key of the entry in secret.js.
 
 [[contacts]]
-icon = "email"
+name = "email"
 text = "Send me an"
 label = "email"
 secret = "email"
 
 [[contacts]]
-icon = "curriculum"
+name = "cv"
 text = "Take a look at my"
 label = "curriculum"
 secret = "curriculum"
 
 [[contacts]]
-icon = "github"
+name = "github"
 text = "Check my projects on"
 label = "GitHub"
 href = "https://github.com/lorossi"
 
 [[contacts]]
-icon = "telegram"
+name = "telegram"
 text = "Contact me on"
 label = "Telegram"
 secret = "telegram"
 
 [[contacts]]
-icon = "telegram"
+name = "channel"
 text = "Take a look at my Telegram"
 label = "channel"
 secret = "telegram-channel"
 
 [[contacts]]
-icon = "linkedin"
+name = "linkedin"
 text = "Add me on"
 label = "LinkedIn"
 href = "https://linkedin.com/in/lorenzo-rossi-897628212"
 
 [[contacts]]
-icon = "instagram"
+name = "instagram"
 text = "View my profile on"
 label = "Instagram"
 href = "https://www.instagram.com/lorossi97/"
 
 [[contacts]]
-icon = "vimeo"
+name = "vimeo"
 text = "Watch my videos on"
 label = "Vimeo"
 href = "https://vimeo.com/user128765833"
 
 [[contacts]]
-icon = "unsplash"
+name = "unsplash"
 text = "Check my photos on"
 label = "Unsplash"
 href = "https://unsplash.com/@lorossi97"

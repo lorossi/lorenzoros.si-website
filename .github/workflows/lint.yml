@@ -1,0 +1,64 @@
+name: Lint
+
+on:
+  push:
+    # main is linted by build-and-deploy.yml, which calls this workflow
+    branches-ignore:
+      - main
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python (ruff, ty)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Ruff format
+        run: uv run ruff format --check python_scripts tests
+
+      - name: Ruff lint
+        run: uv run ruff check python_scripts tests
+
+      - name: ty
+        run: uv run ty check python_scripts tests
+
+  js-css:
+    name: JS and CSS (biome)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: 2.6.8
+
+      # runs both the formatter check and the linter, config in biome.json
+      - name: Biome
+        run: biome ci
+
+  html:
+    name: HTML templates (djlint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: djlint format
+        run: uv run djlint python_scripts/templates --check
+
+      - name: djlint lint
+        run: uv run djlint python_scripts/templates --lint

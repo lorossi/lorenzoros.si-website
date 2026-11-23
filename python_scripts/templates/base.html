@@ -3,19 +3,45 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% block description %}Lorenzo Rossi homepage{% endblock %}" />
+    <meta name="description"
+          content="{% block description %}Lorenzo Rossi homepage{% endblock %}" />
     <meta name="author" content="Lorenzo Rossi" />
+    <meta name="color-scheme" content="dark" />
     <title>{% block title %}Lorenzo Rossi{% endblock %}</title>
-    <link rel="icon" href="/favicon.ico" />
-
-    <link rel="preload" href="/css/fonts/Hack-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload"
+          href="/css/fonts/JetBrainsMono-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin />
+    <link rel="preload"
+          href="/css/fonts/JetBrainsMono-700-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin />
     <link rel="stylesheet" href="/css/vars.css?{{ unique_id }}" />
     <link rel="stylesheet" href="/css/style.css?{{ unique_id }}" />
-    <link rel="stylesheet" href="/css/big-screens.css?{{ unique_id }}" />
     {% block head %}{% endblock %}
   </head>
-
   <body>
-    {% block body %}{% endblock %}
+    <header class="bar">
+      <div class="wrap">
+        <a href="/" class="ps"><b>lorenzo</b>@rossi:~$</a>
+        <nav class="nav" aria-label="Main">
+          {% block nav %}
+            <a href="/#interactive">interactive</a>
+            <a href="/#portfolio">portfolio</a>
+            <a href="/blog/">blog</a>
+            <a href="/#contacts">contacts</a>
+            <a href="/shell/">shell</a>
+          {% endblock %}
+        </nav>
+      </div>
+    </header>
+    <main class="wrap" id="top">
+      {% block body %}{% endblock %}
+    </main>
   </body>
 </html>

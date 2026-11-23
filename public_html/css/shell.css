@@ -1,0 +1,335 @@
+/* the /shell page: the website as a terminal */
+
+[hidden] {
+  /* biome-ignore lint/complexity/noImportantStyles: [hidden] must beat any display rule */
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.shell-hero {
+  position: relative;
+  isolation: isolate;
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.shell-hero::before,
+.shell-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.shell-hero::before {
+  width: min(40vw, 520px);
+  height: 300px;
+  left: -80px;
+  top: -40px;
+  background: rgba(0, 255, 255, 0.16);
+}
+
+.shell-hero::after {
+  width: min(36vw, 460px);
+  height: 260px;
+  left: min(22vw, 260px);
+  top: 40px;
+  background: rgba(255, 0, 255, 0.13);
+}
+
+.shell-hero h1 {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.shell-hero .sub {
+  margin: var(--space-3) 0 0;
+}
+
+/* terminal window */
+
+.term {
+  position: relative;
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.term:focus-within {
+  border-color: var(--accent);
+}
+
+.term-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 36px;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
+  border-bottom: 1px solid var(--line);
+  color: var(--dim);
+  font-size: var(--text-tag);
+}
+
+.term-head .mark {
+  color: var(--accent);
+}
+
+.term-quit,
+.nano-keys button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding: 0 6px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.term-body {
+  height: 620px;
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.sh {
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: var(--space-3) 20px;
+}
+
+.tl {
+  min-height: 1.6em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.entry {
+  margin-bottom: 2px;
+}
+
+/* text roles */
+
+.c-fg {
+  color: var(--fg);
+}
+.c-dim {
+  color: var(--dim);
+}
+.c-acc {
+  color: var(--accent);
+}
+.c-cyan {
+  color: var(--accent-cyan);
+}
+.c-green {
+  color: var(--accent-green);
+}
+.c-amber {
+  color: var(--accent-amber);
+}
+.c-magenta {
+  color: var(--accent-magenta);
+}
+.b {
+  font-weight: 700;
+}
+
+.cmd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  white-space: pre-wrap;
+  cursor: pointer;
+}
+
+.cmd:hover,
+.cmd:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lnk {
+  border-bottom: 1px dashed var(--dim);
+}
+
+.lnk:hover,
+.lnk:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+/* prompt */
+
+.prompt-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.prompt-row label {
+  white-space: pre;
+}
+
+.prompt-row input,
+.vi-cmdline input {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  caret-color: var(--accent);
+}
+
+.prompt-row input:focus-visible,
+.vi-cmdline input:focus-visible {
+  outline: none;
+}
+
+.prompt-row input::placeholder,
+.vi-cmdline input::placeholder {
+  color: var(--dim);
+  opacity: 1;
+}
+
+/* vi */
+
+.vi,
+.nano {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vi-rows {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 12px 0;
+}
+
+.vi-row {
+  display: flex;
+  white-space: pre;
+}
+
+.vi-num {
+  flex: none;
+  width: 5ch;
+  padding-right: 2ch;
+  color: var(--dim);
+  text-align: right;
+}
+
+.vi-status {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 2px var(--space-3);
+  background: var(--line);
+  color: var(--fg);
+  font-size: var(--text-tag);
+}
+
+.vi-cmdline {
+  display: flex;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-small);
+}
+
+/* nano */
+
+.nano-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 2px var(--space-3);
+  background: var(--fg);
+  color: var(--bg);
+  font-size: var(--text-tag);
+}
+
+.nano-rows {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 12px 20px;
+}
+
+.nano-msg {
+  padding: 2px var(--space-3);
+  font-size: var(--text-tag);
+  text-align: center;
+}
+
+.nano-msg span,
+.nano-keys kbd {
+  padding: 0 4px;
+  background: var(--fg);
+  color: var(--bg);
+  font: inherit;
+}
+
+.nano-keys {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-3);
+  padding: var(--space-1) 12px var(--space-2);
+  font-size: var(--text-tag);
+}
+
+.nano-keys button {
+  color: var(--fg);
+}
+
+/* full-screen programs: matrix, top, sl */
+
+.app {
+  height: 100%;
+}
+
+.app-rows {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: var(--space-3) 20px;
+}
+
+.app-rows .tl {
+  overflow: hidden;
+  white-space: pre;
+  word-break: normal;
+}
+
+@media (max-width: 720px) {
+  .term-body {
+    height: 480px;
+    font-size: 13px;
+  }
+
+  .hide-s {
+    display: none;
+  }
+}
+
+.term ~ .ft {
+  align-items: center;
+}

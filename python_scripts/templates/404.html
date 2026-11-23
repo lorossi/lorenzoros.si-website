@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-
 {% block title %}Page not found{% endblock %}
 {% block description %}Lorenzo Rossi page 404{% endblock %}
-
 {% block head %}
-    <link rel="stylesheet" href="/css/error.css?{{ unique_id }}" />
+  <link rel="stylesheet" href="/css/error.css?{{ unique_id }}" />
 {% endblock %}
-
 {% block body %}
-    <main class="fullpage">
-      <p class="error aberration">404: page not found</p>
-      <a class="small-aberration" href="/">go back</a>
-    </main>
+  <div class="error">
+    <p class="crumb">~/404</p>
+    <h1 class="glitch">404: page not found</h1>
+    <p class="ln">there's nothing at this address<span class="caret" aria-hidden="true"></span></p>
+    <a class="all" href="/">← back home</a>
+  </div>
 {% endblock %}
