@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import io
 import logging
@@ -286,8 +287,6 @@ class Deployer:
             self._sftp.put(str(local_path), temporary)
             self._sftp.posix_rename(temporary, remote_path)
         except Exception:
-            try:
+            with contextlib.suppress(OSError):
                 self._sftp.remove(temporary)
-            except OSError:
-                pass
             raise

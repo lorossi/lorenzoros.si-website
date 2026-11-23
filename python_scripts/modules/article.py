@@ -109,6 +109,9 @@ def _math(latex: str, *, display: bool) -> str:
 
     Returns:
         str: the MathML.
+
+    Raises:
+        ValueError: if the formula is not valid LaTeX.
     """
     try:
         return latex_to_mathml(latex, display="block" if display else "inline")

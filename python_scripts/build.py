@@ -237,8 +237,8 @@ def check_output_path(settings: BuilderSettings) -> None:
         settings.blog_path,
         settings.cache_path,
     ]
-    for path in protected:
-        path = path.resolve()
+    for protected_path in protected:
+        path = protected_path.resolve()
         if output == path or output in path.parents:
             raise ValueError(
                 f"Refusing to delete the output folder {output}: it contains {path}"
