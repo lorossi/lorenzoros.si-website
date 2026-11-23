@@ -90,3 +90,21 @@ def test_prune_refuses_when_local_folder_is_missing(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="Refusing to prune"):
         make_deployer(sftp).prune(tmp_path, "blog")
     assert "/www/blog/a.html" in sftp.tree
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [
+        "ssh-ed25519 AAAA",
+        "lorenzoros.si ssh-ed25519 AAAA",
+        "lorenzoros.si ssh-ed25519 AAAA comment\n",
+        "[lorenzoros.si]:22,1.2.3.4 ssh-ed25519 AAAA",
+    ],
+)
+def test_clean_server_key_strips_host_prefix(raw: str) -> None:
+    assert Deployer._clean_server_key(raw) == "ssh-ed25519 AAAA"
+
+
+def test_clean_server_key_leaves_empty_and_garbage() -> None:
+    assert Deployer._clean_server_key("") == ""
+    assert Deployer._clean_server_key(" garbage ") == "garbage"

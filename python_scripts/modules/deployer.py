@@ -18,6 +18,8 @@ from modules.settings import DeployerSettings
 
 logger = logging.getLogger(__name__)
 
+KEY_TYPE_PREFIXES = ("ssh-", "ecdsa-", "sk-")
+
 KEY_CLASSES: tuple[type[paramiko.PKey], ...] = (
     paramiko.Ed25519Key,
     paramiko.ECDSAKey,
@@ -63,6 +65,25 @@ class Deployer:
         """Disconnect from the remote server."""
         self.disconnect()
 
+    @staticmethod
+    def _clean_server_key(server_key: str) -> str:
+        """Strip anything before the key type from a server public key.
+
+        Pasting a line from `ssh-keyscan` or `known_hosts` includes the host
+        name in front of the key (e.g. "example.com ssh-ed25519 AAAA...").
+
+        Args:
+            server_key (str): the key, with or without a host prefix.
+
+        Returns:
+            str: "<type> <base64>", or the stripped input if no key type is found.
+        """
+        tokens = server_key.split()
+        for i, token in enumerate(tokens):
+            if token.startswith(KEY_TYPE_PREFIXES):
+                return " ".join(tokens[i : i + 2])
+        return server_key.strip()
+
     def _load_key(self) -> paramiko.PKey | None:
         """Load the private key from its text content, if provided.
 
@@ -105,7 +126,7 @@ class Deployer:
         logger.info("Connecting to %s...", hostname)
         self._client = paramiko.SSHClient()
 
-        if server_key := self._settings.server_public_key:
+        if server_key := self._clean_server_key(self._settings.server_public_key):
             error = (
                 "Cannot parse server_public_key: it must be the server's public "
                 'key, e.g. "ssh-ed25519 AAAA..." as printed by ssh-keyscan'
