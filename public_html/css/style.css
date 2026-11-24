@@ -31,6 +31,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   /* keep anchored sections clear of the sticky bar */
   scroll-padding-top: 72px;
@@ -112,7 +113,8 @@ a.u:focus-visible {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: rgba(11, 13, 16, 0.92);
+  background: rgba(11, 13, 16, 0.97);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -164,7 +166,7 @@ a.u:focus-visible {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: minmax(0, 1fr) 300px;
   gap: var(--space-7);
   align-items: center;
   padding: 128px 0 var(--space-9);
@@ -514,6 +516,7 @@ a.u:focus-visible {
 
 .kv dd {
   margin: 0;
+  overflow-wrap: anywhere;
   min-height: var(--touch-target);
 }
 
@@ -553,8 +556,21 @@ a.u:focus-visible {
 /* phones */
 
 @media (max-width: 720px) {
+  /* prompt on its own row, links on a single compact row */
+  .bar .wrap {
+    padding-block: var(--space-1);
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-5);
     padding: 56px 0 var(--space-6);
   }
@@ -563,8 +579,9 @@ a.u:focus-visible {
     font-size: 34px;
   }
 
+  /* keep the glows inside the viewport so nothing is clipped or scrolls */
   .hero::before {
-    right: -20%;
+    right: 0;
     top: 0;
   }
 
@@ -575,8 +592,10 @@ a.u:focus-visible {
 
   .photo {
     order: -1;
-    width: 140px;
-    height: 140px;
+    width: min(200px, 60%);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    justify-self: center;
   }
 
   .sec {
@@ -593,12 +612,26 @@ a.u:focus-visible {
   }
 
   .kv {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .kv dt {
     border: 0;
     padding-bottom: 0;
+  }
+}
+
+/* very small phones */
+@media (max-width: 339px) {
+  .nav {
+    font-size: 11px;
+  }
+}
+
+/* roomier phones: bigger nav text */
+@media (min-width: 400px) and (max-width: 720px) {
+  .nav {
+    font-size: 13px;
   }
 }
 
@@ -621,4 +654,8 @@ a.u:focus-visible {
   .card:focus-visible {
     transform: none;
   }
+}
+
+.shell-link {
+  margin: var(--space-3) 0 0;
 }
